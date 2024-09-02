@@ -1,0 +1,105 @@
+/* css styles */
+.navbar-dark {
+  background-color: #112D4E !important;
+}
+
+.title {
+  font-weight: 700;
+  font-style: bold;
+}
+
+.nav-link {
+    text-transform: none !important;
+    font-weight: 700;
+    font-size: 1.25rem !important;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  font-variant: small-caps !important;
+}
+
+.navbar-title {
+    text-transform: none !important;
+    font-weight: 700;
+}
+
+h1, h2, h3 {
+  font-variant: small-caps;
+}
+
+.navbar-brand {
+    font-size: 1.50rem !important;
+}
+
+.nav-fixed .quarto-light {
+  padding-top: 90px;
+}
+
+.ul-reading {
+    list-style: none;
+    padding-left: 0;
+}
+.ul-reading li {
+    position: relative;
+    padding-left: 20px;
+}
+.ul-reading li:before {
+    content: '';
+    width: 50px;
+    height: 54px;
+    position: absolute;
+    background-image: url("assets/reading-icon-1.png");
+    background-size: cover;
+    background-position: center;
+    left: -3%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.h1-reading {
+  text-decoration: underline;
+  margin-top: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: none;
+}
+
+.h2-reading {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.prev-next {
+  padding-right: 1rem;
+  font-weight: 700;
+}
+
+.prev-next-container {
+  padding-top: 1rem;
+}
+
+.navbar-dark .navbar-brand {
+    color: #F9F7F7 !important;
+}
+
+.navbar-dark .navbar-brand:hover,.navbar-dark .navbar-brand:focus {
+    color: #545555 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #F9F7F7 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #545555  !important;
+}
+
+a.nav-link {
+    color: #F9F7F7   !important;
+}
+
+a.navbar-brand {
+    color: #F9F7F7   !important;
+}

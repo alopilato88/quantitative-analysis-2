@@ -1,0 +1,54 @@
+---
+title: "Quantitative Analysis 2"
+---
+
+**Welcome to the homepage for Quantitative Analysis 2 (PHD1504-1)**!
+
+```{r}
+#| echo: false
+#| warning: false
+library(ggplot2)
+set.seed(1)
+
+plot_alpha <- .50
+plot_fill <- "#3F72AF"
+plot_color <- "#112D4E"
+
+n <- 200
+x <- rnorm(n)
+lin_pred <- 3*x 
+
+y <- rbinom(n, 1, prob = plogis(lin_pred))
+
+mod <- glm(y ~ x, family = binomial())
+
+data <- tibble::tibble(
+  x = x,
+  y = y,
+  pred_prob = predict(mod, type = "response")
+)
+
+ggplot2::ggplot(
+  data = data,
+  ggplot2::aes(x = x, y = y)
+) + 
+  ggplot2::geom_point(fill = plot_fill, size = 3, alpha = plot_alpha) + 
+  ggplot2::geom_line(ggplot2::aes(x = x, y = pred_prob),
+                     linewidth = 1.5, color = plot_fill) + 
+  ggplot2::theme(
+    plot.background = element_rect(fill = "#F9F7F7", colour = "#F9F7F7"),
+    panel.background = element_rect(fill = "#F9F7F7"),
+    axis.line.x = element_line(colour = "#3D3C42"),
+    axis.line.y = ggplot2::element_blank(),
+    panel.grid.minor = element_line(colour = "#F9F7F7"),
+    panel.grid.major = element_line(colour = "#F9F7F7"),
+    axis.ticks.y = ggplot2::element_line(linewidth = 0),
+    axis.text.y = ggplot2::element_blank(),
+    axis.text.x = ggplot2::element_blank()
+  ) + 
+  ggplot2::labs(
+    x = "",
+    y = ""
+  )
+
+```

@@ -1,0 +1,63 @@
+/*-- scss:defaults --*/
+
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;700&display=swap');
+
+// fonts
+$font-family-sans-serif: 'Oswald';
+
+// colors for background
+$body-bg: #F9F7F7;
+$body-color: #112D4E;
+$link-color: #112D4E;
+$selection-bg: #112D4E;
+
+// headings
+// $presentation-heading-font: "Oswald";
+
+// $presentation-heading-text-transform: uppercase !default;
+$presentation-heading-font-weight: bold;
+$presentation-heading-color: #3F72AF;
+
+/*-- scss:rules --*/
+:root {
+  --r-main-font-size: 35px;
+}
+
+.reveal .slide blockquote {
+  color: #112D4E;
+}
+
+.reveal .slide .aside-footnotes {
+  color: #112D4E;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.reveal .slide h2 {
+  font-size: 1.4em;
+}
+
+#hypo-column {
+  font-size: 30px;
+}
+
+.width-direct-image{
+  width: 300px!important;
+  height: 96px!important;
+}
+
+.width-moderated-image{
+  width: 280px!important;
+  height: 248px!important;
+}
+
+.width-mediated-image{
+  width: 500px!important;
+  height: 99px!important;
+}

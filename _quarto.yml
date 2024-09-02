@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Quantitative Analysis 2"
+  navbar:
+    left:
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: schedule.qmd
+        text: Schedule
+      - href: assignment.qmd
+        text: Assignments
+  search: false
+
+format:
+  html:
+    theme: [cosmo, theme.scss]
+    css: styles.css
+    toc: false
+
+editor: source

@@ -1,0 +1,630 @@
+---
+title: "Review of Statistical Concepts"
+format: 
+  revealjs:
+    theme: [default, theme-lecture-slides.scss] 
+    css: styles-lecture-slides.css
+    slide-number: true
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+source("packages-lecture.R")
+source("helper-functions-lecture.R")
+
+```
+
+## Welcome Back Everyone! 
+
+Hope you all had a refreshing summer! 
+
+## What Are We Doing this Semester? 
+
+Extend the regression model in two ways: 
+
+1. Relax the normality assumption: Logistic Regression (GLMs) 
+2. Relax the independent residuals assumption: Mixed-effects regression models 
+
+## Semester Assignments 
+
+- Homework (~5-6 over the course)
+- In-Class Projects (For immersion days)
+- Project 
+
+## Overview for Today
+
+- Probability & Statistics Review 
+- R/RStudio Review 
+
+## What is Probability?
+
+Probability is the language of uncertainty.
+
+Anytime we are dealing with random events such as the outcome of a coin toss or the response to a survey question, we rely on probability to talk about these events.
+
+## Axioms (Rules) of Probability
+
+Probability theory is built on three rules: 
+
+1. $P(\text{Event}) \ge 0$
+2. $P(\text{Any Event} = 1$
+3. $P(\text{A or B}) = P(\text{A}) + P(\text{B})$ for Mutually Exclusive events
+
+## Joint & Conditional Probabilities 
+
+When dealing with two or more random variables, we can describe the probability of multiple events happening using joint probabilities and conditional probabilities:
+
+1. *Joint Probability*: Probability of rolling a 1 and a 2
+2. *Conditional Probability*: Probability of rolling a 1 given (conditional on) your first roll was a 1
+
+## Simulating a Roll of Two Dice
+
+```{r}
+#| eval: false
+
+set.seed(435)
+roll_1 <- sample(1:6, size = 20000, replace = TRUE)
+roll_2 <- sample(1:6, size = 20000, replace = TRUE)
+xtabs(~roll_1 + roll_2) |> prop.table() |> round(2)
+```
+
+## Simulating a Roll of Two Dice
+
+```{r}
+#| echo: false 
+
+set.seed(435)
+roll_1 <- sample(1:6, size = 20000, replace = TRUE)
+roll_2 <- sample(1:6, size = 20000, replace = TRUE)
+xtabs(~roll_1 + roll_2) |> prop.table() |> round(2)
+```
+
+## Independent Events
+
+Two or more events are independent when the occurrence of one event has no impact on the occurrence of the other events: 
+
+$P(A|B) = P(A)$
+
+## Are Die Rolls Independent? 
+
+If you roll a pair of dice, is the first roll independent of the second? 
+
+## Calculating Conditional Independence 
+
+```{r}
+#| eval: false
+xtabs(~roll_1 + roll_2) |> prop.table(1) |> round(2)
+```
+
+## Calculating Conditional Independence 
+
+```{r}
+#| echo: false
+xtabs(~roll_1 + roll_2) |> prop.table(1) |> round(2)
+```
+
+## Probability Mass/Distribution Function
+
+Probability Mass and Density Functions (PMF & PDF, respectively) are functions that take the value of a random variable as an input and output the probability of that value occurring. Every statistical model we will use will assume a certain PMF or PDF.
+
+- PMF is a probability distribution function for **discrete random variables**
+- PDF is a probability distribution function for **continuous random variables** 
+
+## Bernouli Distribution 
+
+The Bernoulli Distribution is a PMF used for a random variable that takes on two different values: 
+
+- Coin toss: Heads or Tails
+- Football game: Win or Loss
+- Clicked on an ad: Yes or No
+
+## PMF for UGA Winning the College Football National Championship
+
+$$p(\text{Win}) = \pi^{Y}(1-\pi)^{1 - Y}$$
+$$\pi = \text{Probability UGA Wins}$$
+$$Y = \text{1 if they win, 0 if they lose}$$
+
+## Using PMFs in R
+
+$$p(\text{Win}) = .25^{Y}(1-.25)^{1 - Y}$$
+
+```{r}
+dbinom(1, 1, prob = .25)
+dbinom(0, 1, prob = .25)
+```
+
+## Binomial Distribution 
+
+The binomial distribution is a PMF used for a random variable that is the count of successes of n independent experiments/trials (multiple, independent Bernoulli variables): 
+
+- Probability of 10 heads out of 15 tosses (head = success)
+- Probability a college football team wins 10 of its 12 games
+- Probability a user clicks on 3 of the 5 ads presented to them
+
+## The Probability Distribution of UGA's Regular Season Record
+
+UGA's record under their current head coach: 94-16 (94%). So let's say they have a 94% chance of winning each game -- what does the probability distribution of their 12 game season win-loss record look like? 
+
+```{r}
+#| eval: false
+
+data_record <- 
+  tibble::tibble(
+    record = 0:12,
+    prob = dbinom(record, 12, .94)
+  )
+
+ggplot2::ggplot(
+  data = data_record, 
+  ggplot2::aes(x = as.factor(record), y = prob)
+) + 
+  ggplot2::geom_bar(stat = "identity") + 
+  ggplot2::ylim(c(0, 1))
+```
+
+## The Probability Distribution of UGA's Regular Season Record
+
+```{r}
+#| echo: false
+
+data_record <- 
+  tibble::tibble(
+    record = 0:12,
+    prob = dbinom(record, 12, .94)
+  )
+
+ggplot2::ggplot(
+  data = data_record, 
+  ggplot2::aes(x = as.factor(record), y = prob)
+) + 
+  ggplot2::geom_bar(stat = "identity", color = plot_color, fill = plot_fill) + 
+  ggplot2::ylim(c(0, 1)) + 
+  lecture_ggplot_theme_barplot +
+  ggplot2::labs(
+    x = "Regular Season Wins",
+    y = "Probability"
+  )
+```
+
+## Cumulative Distribution Function
+
+The Cumulative Distribution Function (CDF) specifies the probability that a random variable takes a value, Y, or any value less than Y (think of percentiles).
+
+## Probability UGA Wins 10 or Less Games
+
+$$F(\text{UGA Record = 10}) = P(\text{UGA Record} \le 10)$$
+
+```{r}
+#| echo: false
+data_record_cum <-
+  tibble::tibble(
+    record = 0:12, 
+    prob = pbinom(record, size = 12, prob = .94)
+  )
+
+ggplot2::ggplot(
+  data = data_record_cum, 
+  ggplot2::aes(x = as.factor(record), y = prob)
+) + 
+  ggplot2::geom_bar(stat = "identity", fill = plot_fill, color = plot_color) + 
+  ggplot2::ylim(c(0, 1)) +
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Regular Season Wins",
+    y = "Probability"
+  )
+```
+
+## How Does Regression Connect to Probability?
+
+The simple linear regression model we've seen before: 
+
+$$Y_i = \beta_0 + \beta_1X_{i1} + \epsilon_i$$ 
+$$\epsilon_i \sim N(0, \sigma)$$
+
+## Regression as a Probability Model
+
+Rewriting linear regression as a probability model: 
+
+$$P(Y_i|X_{i1})=N(\beta_0 + \beta_1X_{i1}, \sigma)$$
+
+## US Heights by Sex
+
+```{r}
+#| echo: false 
+
+set.seed(326)
+n <- 10000
+sex_male <- sample(0:1, size = n, replace = TRUE, prob = c(.48, .52))
+ht_male <- rnorm(sum(sex_male), 69.1, 2.9)
+ht_female <- rnorm(sum(1 - sex_male), 63.7, 2.7)
+ht <- c(ht_male, ht_female)
+
+data_ht <- 
+  tibble::tibble(
+    ht = c(ht_male, ht_female),
+    sex = c(rep("M", length(ht_male)), rep("F", length(ht_female)))
+  )
+
+ggplot2::ggplot(
+  data_ht,
+  ggplot2::aes(x = ht, fill = sex)
+) +
+  ggplot2::geom_histogram(
+    position = ggplot2::position_dodge(),
+    bins = 45,
+    color = plot_color
+  ) +
+  ggplot2::theme(
+    plot.background = element_rect(fill = "#F9F7F7", colour = "#F9F7F7"),
+    panel.background = element_rect(fill = "#F9F7F7"),
+    axis.line.x = element_line(colour = "#3D3C42"),
+    axis.line.y = ggplot2::element_blank(),
+    panel.grid.minor = element_line(colour = "#F9F7F7"),
+    panel.grid.major = element_line(colour = "#F9F7F7"),
+    axis.ticks.y = ggplot2::element_line(linewidth = 0),
+    axis.text.y = ggplot2::element_blank()
+  ) +
+  ggplot2::labs(
+    x = "Height (Inches)",
+    y = "",
+    fill = "Sex"
+  ) + 
+  ggplot2::geom_text(
+    ggplot2::aes(label = "Mean Male Ht: 69.1", x = 76, y = 400)
+  ) + 
+  ggplot2::geom_text(
+    ggplot2::aes(label = "SD Male Ht: 2.9", x = 76, y = 380)
+  ) + 
+  ggplot2::geom_text(
+    ggplot2::aes(label = "Mean Female Ht: 63.7", x = 76, y = 360)
+  ) + 
+  ggplot2::geom_text(
+    ggplot2::aes(label = "SD Female Ht: 2.7", x = 76, y = 340)
+  )
+
+```
+
+## Using Linear Regression to Describe Heights
+
+```{r}
+mod_ht <- lm(ht ~ sex, data = data_ht)
+```
+
+```{r}
+#| echo: false
+data_ht
+```
+
+## What Does the Model Tell Us? 
+
+How do we translate our model results into a probability model? 
+
+```{r}
+#| echo: false
+
+summary(mod_ht)
+```
+
+## Why It's Important to Think of Regression as a Probability Model 
+
+Conceptualizing linear regression as a probability model allows us to generalize the ideas of linear regression to a larger number of probability distributions than just the normal distribution. 
+
+It opens up the world of **Generalized Linear Models**, which we will become more familiar with throughout the semester.
+
+## Regression Question 
+
+You want to understand the impact that an employee's job demands and resources have on their work engagement.
+
+## A Look at Our Simulated Data
+
+```{r}
+#| echo: false
+set.seed(45)
+n <- 2000
+var_jd <- rnorm(n)
+var_jr <- rnorm(n)
+part_time <- sample(0:1, n, replace = TRUE, prob = c(.80, .20))
+var_eng <- 4 + var_jr + -var_jd + .5*var_jr*var_jd + -1*part_time + rnorm(n, sd = 2.5)
+
+data_jdr <- 
+  tibble::tibble(
+    job_demand = var_jd,
+    job_res = var_jr,
+    part_time = dplyr::if_else(part_time == 1, "yes", "no"),
+    eng = var_eng
+  )
+```
+
+```{r}
+#| echo: false
+#| fig-align: center
+data_jdr |> head()
+```
+
+## Estimating a Regression Model with R 
+
+```{r}
+mod_engage <- lm(eng ~ job_demand + job_res, data = data_jdr)
+```
+
+## Interpreting the Model Output 
+
+What does the output below tell us about the relationships between engagement and job demands and job resources? 
+
+```{r}
+summary(mod_engage)
+```
+
+## Communicating the Model Results
+
+- While adjusting for a worker's level of job resources, for every one unit increase in job demands, worker engagement should decrease by .99 units, on average. 
+
+- While adjusting for a worker's level of job demands, for every one unit increase in job resources, worker engagement should increase by .92 units, on average. 
+
+- Overall, our model accounts (or explains) 20% of the variance in worker engagement. 
+
+## Statistical Significance and Regression 
+
+Statistical significance asks the question: "If I believe the null hypothesis is true (usually no effect), what is the probability that my estimate would be this large or larger?"  
+
+The p-value (probability value) tells us this probability and it is up to us to decide if the probability is small enough for us to reject the null hypothesis (usually if the probability is less than .05).
+
+## Standard Errors, Test Statistics, and Null Distributions
+
+Significance testing relies heavily on the concepts of standard errors, test statistics, and null distributions: 
+
+- **Standard Errors**: Amount of uncertainty in our estimate.
+- **Test Statistics**: The number of standard deviations the estimate is away from the null value.
+- **Null Distributions**: The probability distribution specified by the null hypothesis. 
+
+## Visualizing the Significance Test
+
+```{r}
+#| echo: false
+ggplot2::ggplot(NULL, ggplot2::aes(-3.5:3.5)) + 
+ggplot2::geom_area(
+    stat = "function",
+    fun = dnorm,
+    args = list(mean = 0, sd = 1),
+    xlim = c(-3.5, qnorm(.025)),
+    color = plot_color,
+    fill = "red",
+    alpha = plot_alpha
+  ) + 
+  ggplot2::geom_area(
+    stat = "function",
+    fun = dnorm,
+    args = list(mean = 0, sd = 1),
+    xlim = c(qnorm(.025), qnorm(.975)),
+    color = plot_color,
+    fill = plot_fill,
+    alpha = plot_alpha
+  ) + 
+  ggplot2::geom_area(
+    stat = "function",
+    fun = dnorm,
+    args = list(mean = 0, sd = 1),
+    xlim = c(qnorm(.975), 3.5),
+    color = plot_color,
+    fill = "red",
+    alpha = plot_alpha
+  ) + 
+  ggplot2::geom_segment(
+    ggplot2::aes(
+      x = qnorm(.975),
+      xend = qnorm(.975),
+      y = 0,
+      yend = dnorm(qnorm(.975))
+    )
+  ) + 
+  ggplot2::geom_segment(
+    ggplot2::aes(
+      x = qnorm(.025),
+      xend = qnorm(.025),
+      y = 0,
+      yend = dnorm(qnorm(.025))
+    )
+  ) + 
+  ggplot2::geom_segment(
+    ggplot2::aes(
+      x = 0,
+      xend = 0,
+      y = 0,
+      yend = dnorm(qnorm(.50))
+    ),
+    color = "yellow"
+  ) + 
+  ggplot2::theme(
+    plot.background = element_rect(fill = "#F9F7F7", colour = "#F9F7F7"),
+    panel.background = element_rect(fill = "#F9F7F7"),
+    axis.line.x = element_line(colour = "#3D3C42"),
+    axis.line.y = ggplot2::element_blank(),
+    panel.grid.minor = element_line(colour = "#F9F7F7"),
+    panel.grid.major = element_line(colour = "#F9F7F7"),
+    axis.ticks.y = ggplot2::element_line(linewidth = 0),
+    axis.text.y = ggplot2::element_blank()
+  ) + 
+  ggplot2::labs(
+    x = "Test Statistic",
+    y = ""  )
+```
+
+## Understanding Model Predictions and Errors (Residuals)
+
+- **Model Prediction**: $3.80 + -.99*.341 + .92*-1.14 = 2.41$
+- **Model Error**: Observed - Predicted 
+
+## Calculating Model Predictions and Errors
+
+```{r}
+data_jdr |> 
+  dplyr::select(job_demand, job_res, eng) |>
+  dplyr::mutate(
+    prediction = predict(mod_engage),
+    error = mod_engage$residuals
+  )
+```
+
+
+## Assessing Model Fit with R-Squared
+
+The $R^2$ can be calculated by squaring the correlation between our model predictions of the outcome variable and the actual values of the outcome variable.  
+
+Although it was developed for normal linear models, the $R^2$ can still be a helpful measure of fit for generalized linear models. 
+
+## Assessing Model Diagnostics Using Residuals
+
+```{r}
+#| fig-align: center
+#| echo: false
+
+plot_resid_fit <- 
+  ggplot2::ggplot(
+    data = data.frame(fit = predict(mod_engage), resid = rstandard(mod_engage)),
+    ggplot2::aes(x = fit, y = resid)
+  ) + 
+  ggplot2::geom_point(color = plot_fill) + 
+  lecture_ggplot_theme_moderation_plot + 
+  ggplot2::labs(
+    x = "Predicted Values",
+    y = "Standardized Residuals"
+  ) 
+
+plot_qq <- 
+  ggplot2::ggplot(
+    data = tibble::tibble(
+      resid = sort(rstandard(mod_engage)),
+      pp = ppoints(length(resid)),
+      qn = qnorm(pp)
+    ),
+    ggplot2::aes(
+      x = qn,
+      y = resid
+    ) 
+  ) + 
+  ggplot2::geom_point(color = plot_fill) + 
+  ggplot2::labs(
+    x = "Theoretical Normal Quantiles",
+    y = "Standardized Residuals"
+  ) +
+  ggplot2::geom_abline(intercept = 0, slope = 1) + 
+  lecture_ggplot_theme_moderation_plot
+
+plot_lev <- 
+  ggplot2::ggplot(
+    data = tibble::tibble(
+      resid = rstandard(mod_engage),
+      hat_val = hatvalues(mod_engage)
+    ),
+    ggplot2::aes(x = hat_val, y = resid)
+  ) + 
+  ggplot2::geom_point(color = plot_fill) + 
+  lecture_ggplot_theme_moderation_plot + 
+  ggplot2::labs(
+    x = "Leverage",
+    y = "Standardized Residuals"
+  )
+
+((plot_resid_fit + plot_qq) / plot_lev) + lecture_ggplot_theme_moderation_plot
+```
+
+## Categorical Predictors and Indicator Coding
+
+To use a categorical predictor with K groups in a regression model, you have to transform the variable into K - 1 indicator variables (variables that only take on 0 and 1 values), where the group coded as 0 is referred to as the **reference group**: 
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+x1 <- c("Completed", "Incomplete", "Did Not Start")
+x2 <- model.matrix(~as.factor(x1))
+x3 <- tibble::as_tibble(cbind(x1, x2[, -1]))
+names(x3) <- c("Group", "Did Not Start", "Incomplete")
+```
+
+```{r}
+x3
+```
+
+
+## Interpreting the Effects of Indicator Variables
+
+For a model where the only predictor is the indicator variable: 
+
+- Intercept is the mean of the outcome variable for the reference group
+- The remaining K - 1 coefficients compare the outcome variable mean for the K - 1 groups to the outcome variable mean for the reference group 
+
+## Impact Part-Time Status has on  Engagement
+
+```{r}
+mod_engage_cat <- lm(eng ~ part_time, data = data_jdr)
+summary(mod_engage_cat)
+```
+
+## Interaction (Moderation) Effects 
+
+An interaction effect allows us to test if the impact of a predictor variable on an outcome variable changes at different levels of another predictor variable:
+
+- The relationship between job demands and engagement is strong and negative when job resources are low, but weak, and likely non-significant, when job resources are high. 
+
+- Too Much of a Good Thing Effect (Vitamins are good for you unless you take a lot at once!)
+
+## Estimating & Interpreting Interaction Effects
+
+```{r}
+mod_engage_int <- lm(eng ~ job_demand * job_res, data = data_jdr)
+summary(mod_engage_int)
+```
+
+## Always Plot Interaction Effects
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+data_int <- 
+  tibble::tibble(
+    job_demand_cat = rep(c("low", "med", "high"), each = 3),
+    job_resource_cat = rep(c("low", "med", "high"), 3),
+    job_demand_val = dplyr::case_when(
+      job_demand_cat == "low" ~ as.numeric(quantile(data_jdr$job_demand, .10)),
+      job_demand_cat == "med" ~ as.numeric(quantile(data_jdr$job_demand, .50)),
+      job_demand_cat == "high" ~ as.numeric(quantile(data_jdr$job_demand, .90)),
+    ),
+    job_resource_val = dplyr::case_when(
+      job_resource_cat == "low" ~ as.numeric(quantile(data_jdr$job_res, .10)),
+      job_resource_cat == "med" ~ as.numeric(quantile(data_jdr$job_res, .50)),
+      job_resource_cat == "high" ~ as.numeric(quantile(data_jdr$job_res, .90)),
+    ),
+    pred_eng = 3.8 + -.97*job_demand_val + .92*job_resource_val + .47*job_demand_val*job_resource_val
+  )
+
+plot_interaction <- 
+  ggplot2::ggplot(
+    data = data_int,
+    ggplot2::aes(
+      x = job_demand_val, 
+      y = pred_eng,
+      shape = job_resource_cat
+    )
+  ) + 
+  ggplot2::geom_point(color = plot_fill) + 
+  ggplot2::geom_line(color = plot_fill) + 
+  lecture_ggplot_theme_moderation_plot + 
+  ggplot2::labs(
+    x = "Job Demand Score",
+    y = "Predicted Engagement Score",
+    shape = "Job Resouce Score"
+  )
+
+plot_interaction
+```
+
+
+

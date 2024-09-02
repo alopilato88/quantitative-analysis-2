@@ -1,0 +1,352 @@
+[
+  {
+    "objectID": "lectures/01-lecture-page.html",
+    "href": "lectures/01-lecture-page.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Next Week’s Materials »"
+  },
+  {
+    "objectID": "lectures/01-lecture-page.html#lecture-stats-bootcamp",
+    "href": "lectures/01-lecture-page.html#lecture-stats-bootcamp",
+    "title": "Quantitative Analysis 2",
+    "section": "Lecture: Stats Bootcamp",
+    "text": "Lecture: Stats Bootcamp\n\n\nTo download a pdf version of these slides, click here.\nTo download the R script that follows the R portion of the lecture, click here."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Welcome to the homepage for Quantitative Analysis 2 (PHD1504-1)!"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Quantitative Analysis 2 (PHD1504-1)",
+    "section": "",
+    "text": "To download a pdf version of this syllabus, click here.\nMeeting Time: Tuesdays, 5 PM to 7 PM ET\nLocation: Zoom Meeting and Smith 307 when in person\nEmail: alex.lopilato@gmail.com (for quick responses) or alopilato@bentley.edu (for discussions about grades, personal info, etc.)\nOffice Hours: By request (will likely be virtual as I do not have an office on campus)\nCourse Format: Hybrid Synchronous\n\nCourse Description\nThis course focuses on applications of categorical models and linear mixed-effects regression models to model data collected from observational, quasi-experimental, and experimental study designs. This course will introduce students to the basics of categorical data analysis and linear mixed-effects regression models.\n\n\nCourse Objectives\nBy the end of this course, you will:\n\nHave an understanding of how to model categorical data.\nHave an understanding of how to model clustered data.\nHave an understanding of how to use both categorical regression models and mixed-effects regression models in your own research.\nFeel comfortable using R to estimate categorical regression and mixed-effects regression models.\n\n\n\nTextbooks\nNo textbooks are required for this course, but I will be drawing heavily from the following books:\n\nIntroduction to Categorical Data Analysis. Alan Agressti. Third Edition.\nPractical Multievel Modeling using R. Francis Huang.\nMultilevel Analysis: An Introduction to Basic and Advanced Multilevel Modeling. Tom Snijders & Roel Bosker.\n\n\n\nCourse Technology\nThis course will use Brightspace to post important updates and Zoom recordings. Please do not use Brightspace to email me! Use either of the emails listed above.\n\nCourse Website\nThe website for the course is: https://alopilato88.github.io/quantitative-analysis-2/. All of the lectures can be found there and will be made publicly available on the day of the lecture.\n\n\nStatistical Computing\nThis course will rely solely on the R programming language for all statistical computing. At the very least, you will need to download R to your local machine (or use your lab computer), and I highly recommend also downloading RStudio, which is an Integrated Development Environment (IDE) that makes programming in R (and other programming languages) much easier. Please reach out to me if you are unable to install R.\nWhile you can use another statistical software program such as SPSS, SAS, or STATA, I will not be providing example code for those different programs. I will only be providing example R code.\n\n\n\nGrading Criteria\nA combination of homework and a final research project will be used to determine your grade for this course. Homework will account for 90% of your grade and the research project will account for 10%. While I encourage you to consult with your colleagues (your instructor, classmates, professors, etc.) when you are struggling with any of the homework assignments or the research project, your final products must be your own.\n\nHomework\nI will send out periodic homework assignments in order to give you students experience applying the methods we discuss in class. These assignments will be a mix of conceptual, statistical, and computational exercises. Please reach out to me if you find yourself struggling or overly stressing with these assignments. They are meant to be a learning tool not a major stressor!\n\n\nResearch Project\nOne of the more exciting things about being a graduate student is that you are able to explore the topics you find interesting. Use this research project to apply the methods we learn to any topic of your choice. Alternatively, I have fictitious data you can use if you do not have access to data of your own. Please talk to me by October 17th about your research project, even if your not 100% sure about it.\nYour final product should include four components:\n\nA brief introduction to your topic, the theory you are testing, and your hypotheses.\nA methods section write-up that parallels methods sections found in published articles.\nA results secection write-up that parallels methods sections found in published articles.\nThe code you used to analyze your data along with the dataset (assuming you are allowed to share the data).\n\n\n\n\nUniversity Honor Code, Academic Honesty Policy, Bentley Core Values\nThis class will be conducted in full accordance with The Bentley Core Values. Please reread the Values, which can be found at https://www.bentley.edu/about/mission-and-values.\nBentley College Honor Code: The Bentley College Honor Code formally recognized the responsibility of students to act in an ethical manner. It expects all students to maintain academic honesty in their own work, recognizing that most students will maintain academic honesty because of their own high standards. The Honor Code expects students to promote ethical behavior throughout the Bentley community and to take responsible action when there is a reason to suspect dishonesty.\nPersonal Academic Behavior: A student acknowledges that all submitted work (e.g., examination, papers, cases homework assignments) must be his or her own. The exception is the case in which an instructor permits or encourages students to work together on some or all assignments. When a student is in doubt, he or she should consult the instructor for clarification.\nResponsible Actions: Each student, as an integral member of the academic community, is expected to make a commitment to act honestly and to reject dishonesty on the part of other students. The students as a community are responsible for maintaining an ethical environment. Policies may be found at: http://www.bentley.edu/centers/alliance/academic-integrity\n\n\nBias Incident Reporting\nThe Bias Incident Response Team (BIRT) provides students affected by bias or bias-related incidents with access to appropriate resources. Where appropriate, BIRT assists the University in its response to situations that may impact the overall campus climate related to diversity and inclusion. Working closely with appropriate students, faculty, committees, organizations, and staff, BIRT plays an educational role in fostering an inclusive campus community and supporting targeted individuals when bias or bias-related incidents occur. More information about BIRT and how to file a bias incident report can be found at: https://www.bentley.edu/offices/student-affairs/birt.\n\n\nSpecial Accommodations\nStatement of Disabilities: Bentley University abides by Section 504 of the Rehabilitation Act of 1973 and the Americans with Disabilities Act of 1990 which stipulate no student shall be denied the benefits of an education solely by reason of a disability. If you have a hidden or visible disability which may require classroom accommodations, please call (if you are a residential student or on online student) Disability Services within the first 4 weeks of the semester to schedule an appointment. Disability Services is located in the Office of Academic Services (JEN 336, 781.891.2004). Disability Services is responsible for managing accommodations and services for all students with disabilities.\n\n\nWriting Center\nThe Writing Center offers one-on-one tutoring to students of all years and skill levels. Located on the lower level of the Bentley library (room 023), the Writing Center provides a welcoming and supportive environment in which students can work on writing from any class or discipline. Writers are encouraged to visit at all stages of the writing process; they can come with a draft, an outline, or just some initial thoughts and questions.\nStaffed by highly skilled student tutors, the Writing Center is open six days a week. Most conferences will be conducted online, but limited in-person hours will be held by appointment only. Appointments can be made at bentley.mywconline.net. For specific hours and additional information, please visit the Writing Center SharePoint site.\n\n\nESOL\nThe ESOL Center offers online appointments for helping undergraduate and graduate students strengthen their writing and English language skills. Our ESOL faculty tutors specialize in working with international and multilingual students to provide one-on-one support for all courses writing at any stage in the writing process. Along with individualized help for writing, the ESOL tutors provide guidance and feedback for documenting sources, oral presentation practice, and pronunciation/fluency enrichment.\nThe ESOL Center offers real-time video appointments Monday through Friday between 7:30 a.m. and 10:00 p.m. These can be reserved through our website: https://bentleyesol.mywconline.net. The complete information about booking appointments and uploading papers is clarified on the website’s announcement page.\n\n\nCourse Style\nI want this course to be an enjoyable and engaging experience for all, so although I will have lecture slides to talk through, I will also be using this course more as a discussion about statistical topics, not a lecture about them.\nIn order to meaningfully engage in this discussion, I encourage you to read through the required readings and skim through the supplemental readings (although I think they are all interesting reads!). I understand everyone is busy, so, despite being labeleled “Required Readings”, I will not make the readings required, but to make this course useful you will need to engage with the material and come with questions!\nTo be successful in this course, you will need to:\n\nDo the required readings and skim the supplemental readings\nCome to class and bring questions\nEngage in the course discussions\nMost importantly, ASK QUESTIONS\n\n\n\nTentative Course Schedule\nNOTE: The course syllabus is a general plan for the course and as such there may be deviations throughout the semester. Supplemental readings are any readings that are italicized or hyperlinked.\n\n\n\nDate\nTopic\nReadings\n\n\n\n\n9/3\nCourse Introduction & Review\nNo readings\n\n\n\n\n\n\n\n9/10\nIntroduction to Categorical Data Analysis\n\nhttps://www.statisticshowto.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/\nMyung (2003). Tutorial on Maximum Likelihood Estimation\n\n\n\n\n\n\n\n\n9/17\nNo Class\n\n\n\n\n\n\n\n\n9/27\nSimple & Multiple Logistic Regresssion Models\nImmersion Day\n\nHoetker (2007). The use of logit and probit models in strategic management research: Critical issues.\nStolzfus (2011). Logistic regression: A brief primer\nSainani (2014). Logistic regression.\nhttps://peopleanalytics-regression-book.org/bin-log-reg.html\n\n\n\n\n\n\n\n\n10/01\nInteractions & Model Building\n\nZelner (2009). Using simulation to interpret results from logit, probit, and other nonlinear models.\nJeong et al. (2020). A recentering approach for interpreting interaction effects from logit, probit, and other nonlinear models.\nHuang & Shields (2000). Interpretation of interaction effects in logit and probit analyses.\n\n\n\n\n\n\n\n\n10/08\nGoodness of fit & Predictive Power\n\nMittlbock & Schemper (1996). Explained variation for logistic regression.\nRoyston & Altman (2010). Visualizing and assessing discrimination in the logistic regression model.\n\n\n\n\n\n\n\n\n10/15\nFall Break - No Class\n\n\n\n\n\n\n\n\n10/22\nMulticategorical Outcome Models\n\nhttps://peopleanalytics-regression-book.org/multinomial-logistic-regression-for-nominal-category-outcomes.html\nhttps://peopleanalytics-regression-book.org/ord-reg.html\nLiddell & Kruschke (2018). Analyzing ordinal data with metric models: What could possibly go wrong?\n\n\n\n\n\n\n\n\n11/1\nGeneralized Linear Models & Intro to Analyzing Clustered Data\nImmersion Day\n\nRonkko et al. (2022). Eight simple guidelines for improved understanding of transformations and nonlinear effects.\nhttps://albert-rapp.de/posts/14_glms/14_glms\nBliese & Hanges (2004). Being both too liberal and too conservative: The perils of treating grouped data as though they were independent.\nHofmann (1997). An overview of the logic and rationale of hierarchical linear models.\n\n\n\n\n\n\n\n\n11/5\nThe LMER Model\n\nMathieu et al. (2012). Understanding and estimating the power to detect cross-level interaction effects in multilevel modeling.\nWoltman et al. (2012). An introduction to hierarchical linear modeling.\nHeisig & Schaeffer (2019). Why you should always include a random slope for the lower-level variables invovled in a cross-level interaction.\n\n\n\n\n\n\n\n\n11/12\nModel Specification & Centering Decisions\n\nBliese et al. (2018). Back to basics with mixed-effects models: Nine take-away points.\nEnders & Tofighi (2007). Centering predictor variables in cross-sectional multilevel models: A new look at an old issue.\n\n\n\n\n\n\n\n\n11/19\n\\(R^2\\) & LMER Model Assumptions\n\nLaHuis et al. (2014). Explained variance measures for multilevel models.\nHuang (2018). Multilevel modeling myths.\n\n\n\n\n\n\n\n\n11/26\nThanksgiving Break No Class\n\n\n\n\n\n\n\n\n12/6\nAdvanced uses of LMER Models\nImmersion Day\n\nBliese & Ployhart (2008). Growth modeling using random coefficient models.\nhttps://peopleanalytics-regression-book.org/modeling-explicit-and-latent-hierarchy-in-data.html#mixed\nGuo & Zhao (2000). Multilevel modeling for binary data.\n\n\n\n\n\n\n\n\n12/10\nWrap-Up\nNo readings"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#welcome-back-everyone",
+    "href": "lectures/01-lecture-slides.html#welcome-back-everyone",
+    "title": "Review of Statistical Concepts",
+    "section": "Welcome Back Everyone!",
+    "text": "Welcome Back Everyone!\nHope you all had a refreshing summer!"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#what-are-we-doing-this-semester",
+    "href": "lectures/01-lecture-slides.html#what-are-we-doing-this-semester",
+    "title": "Review of Statistical Concepts",
+    "section": "What Are We Doing this Semester?",
+    "text": "What Are We Doing this Semester?\nExtend the regression model in two ways:\n\nRelax the normality assumption: Logistic Regression (GLMs)\nRelax the independent residuals assumption: Mixed-effects regression models"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#semester-assignments",
+    "href": "lectures/01-lecture-slides.html#semester-assignments",
+    "title": "Review of Statistical Concepts",
+    "section": "Semester Assignments",
+    "text": "Semester Assignments\n\nHomework (~5-6 over the course)\nIn-Class Projects (For immersion days)\nProject"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#overview-for-today",
+    "href": "lectures/01-lecture-slides.html#overview-for-today",
+    "title": "Review of Statistical Concepts",
+    "section": "Overview for Today",
+    "text": "Overview for Today\n\nProbability & Statistics Review\nR/RStudio Review"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#what-is-probability",
+    "href": "lectures/01-lecture-slides.html#what-is-probability",
+    "title": "Review of Statistical Concepts",
+    "section": "What is Probability?",
+    "text": "What is Probability?\nProbability is the language of uncertainty.\nAnytime we are dealing with random events such as the outcome of a coin toss or the response to a survey question, we rely on probability to talk about these events."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#axioms-rules-of-probability",
+    "href": "lectures/01-lecture-slides.html#axioms-rules-of-probability",
+    "title": "Review of Statistical Concepts",
+    "section": "Axioms (Rules) of Probability",
+    "text": "Axioms (Rules) of Probability\nProbability theory is built on three rules:\n\n\\(P(\\text{Event}) \\ge 0\\)\n\\(P(\\text{Any Event} = 1\\)\n\\(P(\\text{A or B}) = P(\\text{A}) + P(\\text{B})\\) for Mutually Exclusive events"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#joint-conditional-probabilities",
+    "href": "lectures/01-lecture-slides.html#joint-conditional-probabilities",
+    "title": "Review of Statistical Concepts",
+    "section": "Joint & Conditional Probabilities",
+    "text": "Joint & Conditional Probabilities\nWhen dealing with two or more random variables, we can describe the probability of multiple events happening using joint probabilities and conditional probabilities:\n\nJoint Probability: Probability of rolling a 1 and a 2\nConditional Probability: Probability of rolling a 1 given (conditional on) your first roll was a 1"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice",
+    "href": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice",
+    "title": "Review of Statistical Concepts",
+    "section": "Simulating a Roll of Two Dice",
+    "text": "Simulating a Roll of Two Dice\n\nset.seed(435)\nroll_1 &lt;- sample(1:6, size = 20000, replace = TRUE)\nroll_2 &lt;- sample(1:6, size = 20000, replace = TRUE)\nxtabs(~roll_1 + roll_2) |&gt; prop.table() |&gt; round(2)"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice-1",
+    "href": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice-1",
+    "title": "Review of Statistical Concepts",
+    "section": "Simulating a Roll of Two Dice",
+    "text": "Simulating a Roll of Two Dice\n\n\n      roll_2\nroll_1    1    2    3    4    5    6\n     1 0.03 0.03 0.03 0.03 0.03 0.03\n     2 0.03 0.03 0.03 0.03 0.03 0.03\n     3 0.03 0.03 0.03 0.03 0.03 0.03\n     4 0.03 0.03 0.03 0.03 0.03 0.03\n     5 0.03 0.03 0.03 0.03 0.03 0.03\n     6 0.03 0.03 0.03 0.03 0.03 0.03"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#independent-events",
+    "href": "lectures/01-lecture-slides.html#independent-events",
+    "title": "Review of Statistical Concepts",
+    "section": "Independent Events",
+    "text": "Independent Events\nTwo or more events are independent when the occurrence of one event has no impact on the occurrence of the other events:\n\\(P(A|B) = P(A)\\)"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#are-die-rolls-independent",
+    "href": "lectures/01-lecture-slides.html#are-die-rolls-independent",
+    "title": "Review of Statistical Concepts",
+    "section": "Are Die Rolls Independent?",
+    "text": "Are Die Rolls Independent?\nIf you roll a pair of dice, is the first roll independent of the second?"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#calculating-conditional-independence",
+    "href": "lectures/01-lecture-slides.html#calculating-conditional-independence",
+    "title": "Review of Statistical Concepts",
+    "section": "Calculating Conditional Independence",
+    "text": "Calculating Conditional Independence\n\nxtabs(~roll_1 + roll_2) |&gt; prop.table(1) |&gt; round(2)"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#calculating-conditional-independence-1",
+    "href": "lectures/01-lecture-slides.html#calculating-conditional-independence-1",
+    "title": "Review of Statistical Concepts",
+    "section": "Calculating Conditional Independence",
+    "text": "Calculating Conditional Independence\n\n\n      roll_2\nroll_1    1    2    3    4    5    6\n     1 0.17 0.17 0.16 0.16 0.17 0.17\n     2 0.17 0.18 0.18 0.16 0.17 0.16\n     3 0.17 0.17 0.17 0.16 0.16 0.18\n     4 0.15 0.18 0.17 0.16 0.17 0.17\n     5 0.16 0.17 0.16 0.18 0.16 0.17\n     6 0.16 0.17 0.16 0.17 0.17 0.18"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#probability-massdistribution-function",
+    "href": "lectures/01-lecture-slides.html#probability-massdistribution-function",
+    "title": "Review of Statistical Concepts",
+    "section": "Probability Mass/Distribution Function",
+    "text": "Probability Mass/Distribution Function\nProbability Mass and Density Functions (PMF & PDF, respectively) are functions that take the value of a random variable as an input and output the probability of that value occurring. Every statistical model we will use will assume a certain PMF or PDF.\n\nPMF is a probability distribution function for discrete random variables\nPDF is a probability distribution function for continuous random variables"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#bernouli-distribution",
+    "href": "lectures/01-lecture-slides.html#bernouli-distribution",
+    "title": "Review of Statistical Concepts",
+    "section": "Bernouli Distribution",
+    "text": "Bernouli Distribution\nThe Bernoulli Distribution is a PMF used for a random variable that takes on two different values:\n\nCoin toss: Heads or Tails\nFootball game: Win or Loss\nClicked on an ad: Yes or No"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#pmf-for-uga-winning-the-college-football-national-championship",
+    "href": "lectures/01-lecture-slides.html#pmf-for-uga-winning-the-college-football-national-championship",
+    "title": "Review of Statistical Concepts",
+    "section": "PMF for UGA Winning the College Football National Championship",
+    "text": "PMF for UGA Winning the College Football National Championship\n\\[p(\\text{Win}) = \\pi^{Y}(1-\\pi)^{1 - Y}\\] \\[\\pi = \\text{Probability UGA Wins}\\] \\[Y = \\text{1 if they win, 0 if they lose}\\]"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#using-pmfs-in-r",
+    "href": "lectures/01-lecture-slides.html#using-pmfs-in-r",
+    "title": "Review of Statistical Concepts",
+    "section": "Using PMFs in R",
+    "text": "Using PMFs in R\n\\[p(\\text{Win}) = .25^{Y}(1-.25)^{1 - Y}\\]\n\ndbinom(1, 1, prob = .25)\n\n[1] 0.25\n\ndbinom(0, 1, prob = .25)\n\n[1] 0.75"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#binomial-distribution",
+    "href": "lectures/01-lecture-slides.html#binomial-distribution",
+    "title": "Review of Statistical Concepts",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\nThe binomial distribution is a PMF used for a random variable that is the count of successes of n independent experiments/trials (multiple, independent Bernoulli variables):\n\nProbability of 10 heads out of 15 tosses (head = success)\nProbability a college football team wins 10 of its 12 games\nProbability a user clicks on 3 of the 5 ads presented to them"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record",
+    "href": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record",
+    "title": "Review of Statistical Concepts",
+    "section": "The Probability Distribution of UGA’s Regular Season Record",
+    "text": "The Probability Distribution of UGA’s Regular Season Record\nUGA’s record under their current head coach: 94-16 (94%). So let’s say they have a 94% chance of winning each game – what does the probability distribution of their 12 game season win-loss record look like?\n\ndata_record &lt;- \n  tibble::tibble(\n    record = 0:12,\n    prob = dbinom(record, 12, .94)\n  )\n\nggplot2::ggplot(\n  data = data_record, \n  ggplot2::aes(x = as.factor(record), y = prob)\n) + \n  ggplot2::geom_bar(stat = \"identity\") + \n  ggplot2::ylim(c(0, 1))"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record-1",
+    "href": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record-1",
+    "title": "Review of Statistical Concepts",
+    "section": "The Probability Distribution of UGA’s Regular Season Record",
+    "text": "The Probability Distribution of UGA’s Regular Season Record"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#cumulative-distribution-function",
+    "href": "lectures/01-lecture-slides.html#cumulative-distribution-function",
+    "title": "Review of Statistical Concepts",
+    "section": "Cumulative Distribution Function",
+    "text": "Cumulative Distribution Function\nThe Cumulative Distribution Function (CDF) specifies the probability that a random variable takes a value, Y, or any value less than Y (think of percentiles)."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#probability-uga-wins-10-or-less-games",
+    "href": "lectures/01-lecture-slides.html#probability-uga-wins-10-or-less-games",
+    "title": "Review of Statistical Concepts",
+    "section": "Probability UGA Wins 10 or Less Games",
+    "text": "Probability UGA Wins 10 or Less Games\n\\[F(\\text{UGA Record = 10}) = P(\\text{UGA Record} \\le 10)\\]"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#how-does-regression-connect-to-probability",
+    "href": "lectures/01-lecture-slides.html#how-does-regression-connect-to-probability",
+    "title": "Review of Statistical Concepts",
+    "section": "How Does Regression Connect to Probability?",
+    "text": "How Does Regression Connect to Probability?\nThe simple linear regression model we’ve seen before:\n\\[Y_i = \\beta_0 + \\beta_1X_{i1} + \\epsilon_i\\] \\[\\epsilon_i \\sim N(0, \\sigma)\\]"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#regression-as-a-probability-model",
+    "href": "lectures/01-lecture-slides.html#regression-as-a-probability-model",
+    "title": "Review of Statistical Concepts",
+    "section": "Regression as a Probability Model",
+    "text": "Regression as a Probability Model\nRewriting linear regression as a probability model:\n\\[P(Y_i|X_{i1})=N(\\beta_0 + \\beta_1X_{i1}, \\sigma)\\]"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#us-heights-by-sex",
+    "href": "lectures/01-lecture-slides.html#us-heights-by-sex",
+    "title": "Review of Statistical Concepts",
+    "section": "US Heights by Sex",
+    "text": "US Heights by Sex"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#using-linear-regression-to-describe-heights",
+    "href": "lectures/01-lecture-slides.html#using-linear-regression-to-describe-heights",
+    "title": "Review of Statistical Concepts",
+    "section": "Using Linear Regression to Describe Heights",
+    "text": "Using Linear Regression to Describe Heights\n\nmod_ht &lt;- lm(ht ~ sex, data = data_ht)\n\n\n\n# A tibble: 10,000 × 2\n      ht sex  \n   &lt;dbl&gt; &lt;chr&gt;\n 1  70.7 M    \n 2  67.9 M    \n 3  73.6 M    \n 4  68.4 M    \n 5  67.0 M    \n 6  71.2 M    \n 7  67.5 M    \n 8  68.8 M    \n 9  63.9 M    \n10  69.9 M    \n# ℹ 9,990 more rows"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#what-does-the-model-tell-us",
+    "href": "lectures/01-lecture-slides.html#what-does-the-model-tell-us",
+    "title": "Review of Statistical Concepts",
+    "section": "What Does the Model Tell Us?",
+    "text": "What Does the Model Tell Us?\nHow do we translate our model results into a probability model?\n\n\n\nCall:\nlm(formula = ht ~ sex, data = data_ht)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-11.1388  -1.8635   0.0065   1.8557  11.6430 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 63.68069    0.04038 1576.85   &lt;2e-16 ***\nsexM         5.39268    0.05610   96.13   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.803 on 9998 degrees of freedom\nMultiple R-squared:  0.4803,    Adjusted R-squared:  0.4803 \nF-statistic:  9242 on 1 and 9998 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#why-its-important-to-think-of-regression-as-a-probability-model",
+    "href": "lectures/01-lecture-slides.html#why-its-important-to-think-of-regression-as-a-probability-model",
+    "title": "Review of Statistical Concepts",
+    "section": "Why It’s Important to Think of Regression as a Probability Model",
+    "text": "Why It’s Important to Think of Regression as a Probability Model\nConceptualizing linear regression as a probability model allows us to generalize the ideas of linear regression to a larger number of probability distributions than just the normal distribution.\nIt opens up the world of Generalized Linear Models, which we will become more familiar with throughout the semester."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#regression-question",
+    "href": "lectures/01-lecture-slides.html#regression-question",
+    "title": "Review of Statistical Concepts",
+    "section": "Regression Question",
+    "text": "Regression Question\nYou want to understand the impact that an employee’s job demands and resources have on their work engagement."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#a-look-at-our-simulated-data",
+    "href": "lectures/01-lecture-slides.html#a-look-at-our-simulated-data",
+    "title": "Review of Statistical Concepts",
+    "section": "A Look at Our Simulated Data",
+    "text": "A Look at Our Simulated Data\n\n\n# A tibble: 6 × 4\n  job_demand job_res part_time   eng\n       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;\n1      0.341 -1.14   no         1.30\n2     -0.703 -1.02   no         3.39\n3     -0.380 -0.575  no         1.38\n4     -0.746 -0.0909 yes        6.44\n5     -0.898 -0.0192 no         4.52\n6     -0.335 -1.51   no         3.20"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#estimating-a-regression-model-with-r",
+    "href": "lectures/01-lecture-slides.html#estimating-a-regression-model-with-r",
+    "title": "Review of Statistical Concepts",
+    "section": "Estimating a Regression Model with R",
+    "text": "Estimating a Regression Model with R\n\nmod_engage &lt;- lm(eng ~ job_demand + job_res, data = data_jdr)"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#interpreting-the-model-output",
+    "href": "lectures/01-lecture-slides.html#interpreting-the-model-output",
+    "title": "Review of Statistical Concepts",
+    "section": "Interpreting the Model Output",
+    "text": "Interpreting the Model Output\nWhat does the output below tell us about the relationships between engagement and job demands and job resources?\n\nsummary(mod_engage)\n\n\nCall:\nlm(formula = eng ~ job_demand + job_res, data = data_jdr)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-10.5697  -1.7671   0.0077   1.6561  10.1450 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  3.80444    0.05883   64.67   &lt;2e-16 ***\njob_demand  -0.98796    0.05832  -16.94   &lt;2e-16 ***\njob_res      0.91971    0.06021   15.28   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.631 on 1997 degrees of freedom\nMultiple R-squared:  0.2053,    Adjusted R-squared:  0.2045 \nF-statistic:   258 on 2 and 1997 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#communicating-the-model-results",
+    "href": "lectures/01-lecture-slides.html#communicating-the-model-results",
+    "title": "Review of Statistical Concepts",
+    "section": "Communicating the Model Results",
+    "text": "Communicating the Model Results\n\nWhile adjusting for a worker’s level of job resources, for every one unit increase in job demands, worker engagement should decrease by .99 units, on average.\nWhile adjusting for a worker’s level of job demands, for every one unit increase in job resources, worker engagement should increase by .92 units, on average.\nOverall, our model accounts (or explains) 20% of the variance in worker engagement."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#statistical-significance-and-regression",
+    "href": "lectures/01-lecture-slides.html#statistical-significance-and-regression",
+    "title": "Review of Statistical Concepts",
+    "section": "Statistical Significance and Regression",
+    "text": "Statistical Significance and Regression\nStatistical significance asks the question: “If I believe the null hypothesis is true (usually no effect), what is the probability that my estimate would be this large or larger?”\nThe p-value (probability value) tells us this probability and it is up to us to decide if the probability is small enough for us to reject the null hypothesis (usually if the probability is less than .05)."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#standard-errors-test-statistics-and-null-distributions",
+    "href": "lectures/01-lecture-slides.html#standard-errors-test-statistics-and-null-distributions",
+    "title": "Review of Statistical Concepts",
+    "section": "Standard Errors, Test Statistics, and Null Distributions",
+    "text": "Standard Errors, Test Statistics, and Null Distributions\nSignificance testing relies heavily on the concepts of standard errors, test statistics, and null distributions:\n\nStandard Errors: Amount of uncertainty in our estimate.\nTest Statistics: The number of standard deviations the estimate is away from the null value.\nNull Distributions: The probability distribution specified by the null hypothesis."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#visualizing-the-significance-test",
+    "href": "lectures/01-lecture-slides.html#visualizing-the-significance-test",
+    "title": "Review of Statistical Concepts",
+    "section": "Visualizing the Significance Test",
+    "text": "Visualizing the Significance Test"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#understanding-model-predictions-and-errors-residuals",
+    "href": "lectures/01-lecture-slides.html#understanding-model-predictions-and-errors-residuals",
+    "title": "Review of Statistical Concepts",
+    "section": "Understanding Model Predictions and Errors (Residuals)",
+    "text": "Understanding Model Predictions and Errors (Residuals)\n\nModel Prediction: \\(3.80 + -.99*.341 + .92*-1.14 = 2.41\\)\nModel Error: Observed - Predicted"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#calculating-model-predictions-and-errors",
+    "href": "lectures/01-lecture-slides.html#calculating-model-predictions-and-errors",
+    "title": "Review of Statistical Concepts",
+    "section": "Calculating Model Predictions and Errors",
+    "text": "Calculating Model Predictions and Errors\n\ndata_jdr |&gt; \n  dplyr::select(job_demand, job_res, eng) |&gt;\n  dplyr::mutate(\n    prediction = predict(mod_engage),\n    error = mod_engage$residuals\n  )\n\n# A tibble: 2,000 × 5\n   job_demand job_res   eng prediction  error\n        &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;\n 1      0.341 -1.14    1.30       2.42 -1.12 \n 2     -0.703 -1.02    3.39       3.56 -0.172\n 3     -0.380 -0.575   1.38       3.65 -2.28 \n 4     -0.746 -0.0909  6.44       4.46  1.98 \n 5     -0.898 -0.0192  4.52       4.67 -0.156\n 6     -0.335 -1.51    3.20       2.75  0.452\n 7     -0.501 -0.585   7.61       3.76  3.85 \n 8     -0.175 -1.76    1.13       2.36 -1.23 \n 9      1.81   1.39    4.99       3.30  1.70 \n10     -0.230  0.545   7.03       4.53  2.49 \n# ℹ 1,990 more rows"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#assessing-model-fit-with-r-squared",
+    "href": "lectures/01-lecture-slides.html#assessing-model-fit-with-r-squared",
+    "title": "Review of Statistical Concepts",
+    "section": "Assessing Model Fit with R-Squared",
+    "text": "Assessing Model Fit with R-Squared\nThe \\(R^2\\) can be calculated by squaring the correlation between our model predictions of the outcome variable and the actual values of the outcome variable.\nAlthough it was developed for normal linear models, the \\(R^2\\) can still be a helpful measure of fit for generalized linear models."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#assessing-model-diagnostics-using-residuals",
+    "href": "lectures/01-lecture-slides.html#assessing-model-diagnostics-using-residuals",
+    "title": "Review of Statistical Concepts",
+    "section": "Assessing Model Diagnostics Using Residuals",
+    "text": "Assessing Model Diagnostics Using Residuals"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#categorical-predictors-and-indicator-coding",
+    "href": "lectures/01-lecture-slides.html#categorical-predictors-and-indicator-coding",
+    "title": "Review of Statistical Concepts",
+    "section": "Categorical Predictors and Indicator Coding",
+    "text": "Categorical Predictors and Indicator Coding\nTo use a categorical predictor with K groups in a regression model, you have to transform the variable into K - 1 indicator variables (variables that only take on 0 and 1 values), where the group coded as 0 is referred to as the reference group:\n\nx3\n\n# A tibble: 3 × 3\n  Group         `Did Not Start` Incomplete\n  &lt;chr&gt;         &lt;chr&gt;           &lt;chr&gt;     \n1 Completed     0               0         \n2 Incomplete    0               1         \n3 Did Not Start 1               0"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#interpreting-the-effects-of-indicator-variables",
+    "href": "lectures/01-lecture-slides.html#interpreting-the-effects-of-indicator-variables",
+    "title": "Review of Statistical Concepts",
+    "section": "Interpreting the Effects of Indicator Variables",
+    "text": "Interpreting the Effects of Indicator Variables\nFor a model where the only predictor is the indicator variable:\n\nIntercept is the mean of the outcome variable for the reference group\nThe remaining K - 1 coefficients compare the outcome variable mean for the K - 1 groups to the outcome variable mean for the reference group"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#impact-part-time-status-has-on-engagement",
+    "href": "lectures/01-lecture-slides.html#impact-part-time-status-has-on-engagement",
+    "title": "Review of Statistical Concepts",
+    "section": "Impact Part-Time Status has on Engagement",
+    "text": "Impact Part-Time Status has on Engagement\n\nmod_engage_cat &lt;- lm(eng ~ part_time, data = data_jdr)\nsummary(mod_engage_cat)\n\n\nCall:\nlm(formula = eng ~ part_time, data = data_jdr)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-12.6198  -1.8585   0.0857   1.9740   9.7262 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   3.99385    0.07345  54.372  &lt; 2e-16 ***\npart_timeyes -0.95968    0.16125  -5.951 3.13e-09 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.924 on 1998 degrees of freedom\nMultiple R-squared:  0.01742,   Adjusted R-squared:  0.01693 \nF-statistic: 35.42 on 1 and 1998 DF,  p-value: 3.13e-09"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#interaction-moderation-effects",
+    "href": "lectures/01-lecture-slides.html#interaction-moderation-effects",
+    "title": "Review of Statistical Concepts",
+    "section": "Interaction (Moderation) Effects",
+    "text": "Interaction (Moderation) Effects\nAn interaction effect allows us to test if the impact of a predictor variable on an outcome variable changes at different levels of another predictor variable:\n\nThe relationship between job demands and engagement is strong and negative when job resources are low, but weak, and likely non-significant, when job resources are high.\nToo Much of a Good Thing Effect (Vitamins are good for you unless you take a lot at once!)"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#estimating-interpreting-interaction-effects",
+    "href": "lectures/01-lecture-slides.html#estimating-interpreting-interaction-effects",
+    "title": "Review of Statistical Concepts",
+    "section": "Estimating & Interpreting Interaction Effects",
+    "text": "Estimating & Interpreting Interaction Effects\n\nmod_engage_int &lt;- lm(eng ~ job_demand * job_res, data = data_jdr)\nsummary(mod_engage_int)\n\n\nCall:\nlm(formula = eng ~ job_demand * job_res, data = data_jdr)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-9.6683 -1.7158  0.0427  1.6745 10.3648 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)         3.80063    0.05794  65.591  &lt; 2e-16 ***\njob_demand         -0.96718    0.05750 -16.821  &lt; 2e-16 ***\njob_res             0.92433    0.05930  15.588  &lt; 2e-16 ***\njob_demand:job_res  0.47113    0.05949   7.919 3.94e-15 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.591 on 1996 degrees of freedom\nMultiple R-squared:  0.2295,    Adjusted R-squared:  0.2284 \nF-statistic: 198.2 on 3 and 1996 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#always-plot-interaction-effects",
+    "href": "lectures/01-lecture-slides.html#always-plot-interaction-effects",
+    "title": "Review of Statistical Concepts",
+    "section": "Always Plot Interaction Effects",
+    "text": "Always Plot Interaction Effects"
+  }
+]

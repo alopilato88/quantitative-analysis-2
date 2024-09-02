@@ -1,0 +1,20 @@
+---
+format: 
+  html:
+    page-layout: article
+---
+
+<div class = "prev-next-container">
+<a class="prev-next" href="02-lecture-page.html">Next Week's Materials &raquo;</a>
+</div>
+
+## Lecture: Stats Bootcamp
+
+<iframe src="01-lecture-slides.html" name="01-lecture-slides"></iframe>
+
+To download a pdf version of these slides, click <a href="01-lecture-slides.pdf" download target="_blank" rel="noopener noreferrer"><strong>here</strong></a>.
+
+To download the R script that follows the R portion of the lecture, click <a href="01-lecture-script.R" download target="_blank" rel="noopener noreferrer"><strong>here</strong></a>.
+
+
+

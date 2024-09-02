@@ -1,0 +1,234 @@
+---
+title: "Quantitative Analysis 2 (PHD1504-1)"
+---
+
+To download a pdf version of this syllabus, click <a href="assets/pdf/quant-2-syllabus-2024.pdf" download target="_blank" rel="noopener noreferrer"><strong>here</strong></a>.
+
+**Meeting Time:** Tuesdays, 5 PM to 7 PM ET
+
+**Location:** Zoom Meeting and Smith 307 when in person
+
+**Email:** alex.lopilato@gmail.com (for quick responses) or alopilato@bentley.edu (for discussions about grades, personal info, etc.)
+
+**Office Hours:** By request (will likely be virtual as I do not have an office on campus)
+
+**Course Format:** Hybrid Synchronous
+
+### Course Description
+
+This course focuses on applications of categorical models and linear mixed-effects regression models to model data collected from observational, quasi-experimental, and experimental study designs. This course will introduce students to the basics of categorical data analysis and linear mixed-effects regression models.
+
+### Course Objectives
+
+By the end of this course, you will: 
+
+- Have an understanding of how to model categorical data.
+- Have an understanding of how to model clustered data.
+- Have an understanding of how to use both categorical regression models and mixed-effects regression models in your own research. 
+- Feel comfortable using R to estimate categorical regression and mixed-effects regression models.
+
+### Textbooks
+
+No textbooks are required for this course, but I will be drawing heavily from the following books: 
+
+- Introduction to Categorical Data Analysis. Alan Agressti. Third Edition.
+- Practical Multievel Modeling using R. Francis Huang. 
+- Multilevel Analysis: An Introduction to Basic and Advanced Multilevel Modeling. Tom Snijders & Roel Bosker.
+
+### Course Technology
+
+This course will use Brightspace to post important updates and Zoom recordings. Please do not use Brightspace to email me! Use either of the emails listed above.
+
+#### Course Website
+
+The website for the course is: <https://alopilato88.github.io/quantitative-analysis-2/>. All of the lectures can be found there and will be made publicly available on the day of the lecture.
+
+#### Statistical Computing 
+
+This course will rely solely on the R programming language for all statistical computing. At the very least, you will need to download R to your local machine (or use your lab computer), and I highly recommend also downloading RStudio, which is an Integrated Development Environment (IDE) that makes programming in R (and other programming languages) much easier. **Please reach out to me if you are unable to install R.**
+
+While you can use another statistical software program such as SPSS, SAS, or STATA, I will not be providing example code for those different programs. I will only be providing example R code.
+
+### Grading Criteria
+
+A combination of homework and a final research project will be used to determine your grade for this course. Homework will account for 90% of your grade and the research project will account for 10%. While I encourage you to consult with your colleagues (your instructor, classmates, professors, etc.) when you are struggling with any of the homework assignments or the research project, your final products must be your own. 
+
+#### Homework
+
+I will send out periodic homework assignments in order to give you students experience applying the methods we discuss in class. These assignments will be a mix of conceptual, statistical, and computational exercises. **Please reach out to me if you find yourself struggling or overly stressing with these assignments. They are meant to be a learning tool not a major stressor!** 
+
+#### Research Project
+
+One of the more exciting things about being a graduate student is that you are able to explore the topics you find interesting. Use this research project to apply the methods we learn to any topic of your choice. Alternatively, I have fictitious data you can use if you do not have access to data of your own. Please talk to me by October 17th about your research project, even if your not 100% sure about it.  
+
+Your final product should include four components: 
+
+1. A brief introduction to your topic, the theory you are testing, and your hypotheses.
+2. A methods section write-up that parallels methods sections found in published articles. 
+3. A results secection write-up that parallels methods sections found in published articles. 
+4. The code you used to analyze your data along with the dataset (assuming you are allowed to share the data). 
+
+### University Honor Code, Academic Honesty Policy, Bentley Core Values
+
+This class will be conducted in full accordance with The Bentley Core Values. Please reread the Values, which can be found at https://www.bentley.edu/about/mission-and-values.
+
+**Bentley College Honor Code**: The Bentley College Honor Code formally recognized the responsibility of students to act in an ethical manner. It expects all students to maintain academic honesty in their own work, recognizing that most students will maintain academic honesty because of their own high standards. The Honor Code expects students to promote ethical behavior throughout the Bentley community and to take responsible action when there is a reason to suspect dishonesty.
+
+**Personal Academic Behavior**: A student acknowledges that all submitted work (e.g., examination, papers, cases homework assignments) must be his or her own. The exception is the case in which an instructor permits or encourages students to work together on some or all assignments. When a student is in doubt, he or she should consult the instructor for clarification.  
+
+**Responsible Actions**: Each student, as an integral member of the academic community, is expected to make a commitment to act honestly and to reject dishonesty on the part of other students. The students as a community are responsible for maintaining an ethical environment. Policies may be found at: http://www.bentley.edu/centers/alliance/academic-integrity
+
+### Bias Incident Reporting
+
+The Bias Incident Response Team (BIRT) provides students affected by bias or bias-related incidents with access to appropriate resources. Where appropriate, BIRT assists the University in its response to situations that may impact the overall campus climate related to diversity and inclusion. Working closely with appropriate students, faculty, committees, organizations, and staff, BIRT plays an educational role in fostering an inclusive campus community and supporting targeted individuals when bias or bias-related incidents occur. More information about BIRT and how to file a bias incident report can be found at: https://www.bentley.edu/offices/student-affairs/birt. 
+
+### Special Accommodations
+
+**Statement of Disabilities**:  Bentley University abides by Section 504 of the Rehabilitation Act of 1973 and the Americans with Disabilities Act of 1990 which stipulate no student shall be denied the benefits of an education solely by reason of a disability. If you have a hidden or visible disability which may require classroom accommodations, please call (if you are a residential student or on online student) Disability Services within the first 4 weeks of the semester to schedule an appointment. Disability Services is located in the Office of Academic Services (JEN 336, 781.891.2004). Disability Services is responsible for managing accommodations and services for all students with disabilities.
+
+### Writing Center
+
+The Writing Center offers one-on-one tutoring to students of all years and skill levels. Located on the lower level of the Bentley library (room 023), the Writing Center provides a welcoming and supportive environment in which students can work on writing from any class or discipline. Writers are encouraged to visit at all stages of the writing process; they can come with a draft, an outline, or just some initial thoughts and questions. 
+
+Staffed by highly skilled student tutors, the Writing Center is open six days a week. Most conferences will be conducted online, but limited in-person hours will be held by appointment only. Appointments can be made at bentley.mywconline.net. For specific hours and additional information, please visit the Writing Center SharePoint site.
+
+### ESOL
+
+The ESOL Center offers online appointments for helping undergraduate and graduate students strengthen their writing and English language skills. Our ESOL faculty tutors specialize in working with international and multilingual students to provide one-on-one support for all courses writing at any stage in the writing process. Along with individualized help for writing, the ESOL tutors provide guidance and feedback for documenting sources, oral presentation practice, and pronunciation/fluency enrichment.  
+ 
+The ESOL Center offers real-time video appointments Monday through Friday between 7:30 a.m. and 10:00 p.m. These can be reserved through our website: https://bentleyesol.mywconline.net. The complete information about booking appointments and uploading papers is clarified on the website’s announcement page.
+
+### Course Style
+
+I want this course to be an enjoyable and engaging experience for all, so although I will have lecture slides to talk through, I will also be using this course more as a discussion about statistical topics, not a lecture about them. 
+
+In order to meaningfully engage in this discussion, I encourage you to read through the required readings and skim through the supplemental readings (although I think they are all interesting reads!). I understand everyone is busy, so, despite being labeleled "Required Readings", I will not make the readings required, but to make this course useful you will need to engage with the material and come with questions! 
+
+To be successful in this course, you will need to:
+
+- Do the required readings and skim the supplemental readings
+- Come to class and bring questions
+- Engage in the course discussions
+- Most importantly, **ASK QUESTIONS**
+
+### Tentative Course Schedule
+
+**NOTE:** The course syllabus is a general plan for the course and as such there may be deviations throughout the semester. Supplemental readings are any readings that are italicized or hyperlinked.  
+
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| Date  | Topic                  | Readings                                                                                                              |
++:======+:=======================+:======================================================================================================================+
+| 9/3   | Course Introduction  & | No readings                                                                                                           |
+|       | Review                 |                                                                                                                       |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 9/10  | Introduction to        | - <https://www.statisticshowto.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/>        |
+|       | Categorical Data       |                                                                                                                       |
+|       | Analysis               | - Myung (2003). Tutorial on Maximum Likelihood Estimation                                                             |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 9/17  | No Class               |                                                                                                                       |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 9/27  | Simple & Multiple      | - Hoetker (2007). The use of logit and probit models in strategic management research: Critical issues.               |
+|       | Logistic Regresssion   |                                                                                                                       |
+|       | Models                 | - Stolzfus (2011). Logistic regression: A brief primer                                                                |
+|       |                        |                                                                                                                       |
+|       | **Immersion Day**      | - Sainani (2014). Logistic regression.                                                                                |
+|       |                        |                                                                                                                       |
+|       |                        | - <https://peopleanalytics-regression-book.org/bin-log-reg.html>                                                      |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 10/01 | Interactions           | - Zelner (2009). Using simulation to interpret results from logit, probit, and other nonlinear models.                |
+|       | & Model Building       |                                                                                                                       |
+|       |                        | - Jeong et al. (2020). A recentering approach for interpreting interaction effects from logit, probit, and other      |
+|       |                        |                        nonlinear models.                                                                              |
+|       |                        |                                                                                                                       |
+|       |                        | - Huang & Shields (2000). Interpretation of interaction effects in logit and probit analyses.                         |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 10/08 | Goodness of fit &      | - Mittlbock & Schemper (1996). Explained variation for logistic regression.                                           |
+|       | Predictive Power       |                                                                                                                       |
+|       |                        | - Royston & Altman (2010). Visualizing and assessing discrimination in the logistic regression model.                 |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 10/15 | Fall Break - No Class  |                                                                                                                       |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 10/22 | Multicategorical       | - <https://peopleanalytics-regression-book.org/multinomial-logistic-regression-for-nominal-category-outcomes.html>    |
+|       | Outcome Models         |                                                                                                                       |
+|       |                        | - <https://peopleanalytics-regression-book.org/ord-reg.html>                                                          |
+|       |                        |                                                                                                                       |      
+|       |                        | - Liddell & Kruschke (2018). Analyzing ordinal data with metric models: What could possibly go wrong?                 |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 11/1  | Generalized Linear     | - Ronkko et al. (2022). Eight simple guidelines for improved understanding of transformations and nonlinear effects.  |
+|       | Models & Intro to      |                                                                                                                       |
+|       | Analyzing Clustered    | - <https://albert-rapp.de/posts/14_glms/14_glms>                                                                      |
+|       | Data                   |                                                                                                                       |
+|       |                        | - Bliese & Hanges (2004). Being both too liberal and too conservative: The perils of treating grouped data as though  |
+|       | **Immersion Day**      |                           they were independent.                                                                      |
+|       |                        |                                                                                                                       |
+|       |                        | - Hofmann (1997). An overview of the logic and rationale of hierarchical linear models.                               |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 11/5  | The LMER Model         | - Mathieu et al. (2012). Understanding and estimating the power to detect cross-level interaction effects in          |
+|       |                        |                          multilevel modeling.                                                                         |
+|       |                        |                                                                                                                       |
+|       |                        | - Woltman et al. (2012). An introduction to hierarchical linear modeling.                                             |
+|       |                        |                                                                                                                       |
+|       |                        | - Heisig & Schaeffer (2019). Why you should always include a random slope for the lower-level variables invovled in   |
+|       |                        |                              a cross-level interaction.                                                               |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 11/12 | Model Specification &  | - Bliese et al. (2018). Back to basics with mixed-effects models: Nine take-away points.                              |
+|       | Centering Decisions    |                                                                                                                       |
+|       |                        | - Enders & Tofighi (2007). Centering predictor variables in cross-sectional multilevel models: A new look at an old   |
+|       |                        |                            issue.                                                                                     |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 11/19 | $R^2$ &                | - LaHuis et al. (2014). Explained variance measures for multilevel models.                                            |
+|       | LMER Model Assumptions |                                                                                                                       |
+|       |                        | - Huang (2018). Multilevel modeling myths.                                                                            |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 11/26 | Thanksgiving Break     |                                                                                                                       |
+|       | No Class               |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 12/6  | Advanced uses of LMER  | - Bliese & Ployhart (2008). Growth modeling using random coefficient models.                                          |
+|       | Models                 |                                                                                                                       |
+|       |                        | - <https://peopleanalytics-regression-book.org/modeling-explicit-and-latent-hierarchy-in-data.html#mixed>             |
+|       | **Immersion Day**      |                                                                                                                       |
+|       |                        | - Guo & Zhao (2000). Multilevel modeling for binary data.                                                             |
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|       |                        |                                                                                                                       |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| 12/10 | Wrap-Up                | No readings                                                                                                           |
++-------+------------------------+-----------------------------------------------------------------------------------------------------------------------+
