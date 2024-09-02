@@ -8,7 +8,7 @@ format:
 <a class="prev-next" href="02-lecture-page.html">Next Week's Materials &raquo;</a>
 </div>
 
-## Lecture: Stats Bootcamp
+## Lecture: Review of Statistical Concepts
 
 <iframe src="01-lecture-slides.html" name="01-lecture-slides"></iframe>
 
