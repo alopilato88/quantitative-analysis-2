@@ -4,20 +4,9 @@ format:
     page-layout: custom
 ---
 <div class="page-readings">
-<h1 class="h1-reading"> The Basics of Data Analysis & R </h1>
-<h2 class="h2-reading">Required Readings:</h2>
-<ul class="ul-reading">
-<li>DBEP -- Chapter 3: Exploratory Data Analysis</li>
-<li>DBEP -- Chapter 4: Comparison & Correlation</li>
-<li>DBEP -- Chapter 5: Generalizing from Data</li>
-<li>DBEP -- Chapter 6: Testing Hypotheses</li>
-</ul>
+<h1 class="h1-reading"> Review of Statistical Concepts </h1>
+No readings this week.
 
-<h2 class="h2-reading">Supplemental Readings:</h2>
-<ul class="ul-reading">
-<li><a href="https://moderndive.com/1-getting-started.html">ModernDive -- Chapter 1: Getting Started with Data in R</a></li>
-<li><a href="https://r4ds.hadley.nz/intro.html">R for Data Science -- Chapter 1: Introduction</a></li>
-</ul>
 
 <div class = "prev-next-container">
 <a class="prev-next" href="reading-2.html">Next Weeks Readings &raquo;</a>
