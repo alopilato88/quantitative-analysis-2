@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "lectures/01-lecture-page.html",
-    "href": "lectures/01-lecture-page.html",
-    "title": "Quantitative Analysis 2",
-    "section": "",
-    "text": "Next Week’s Materials »"
-  },
-  {
-    "objectID": "lectures/01-lecture-page.html#lecture-review-of-statistical-concepts",
-    "href": "lectures/01-lecture-page.html#lecture-review-of-statistical-concepts",
-    "title": "Quantitative Analysis 2",
-    "section": "Lecture: Review of Statistical Concepts",
-    "text": "Lecture: Review of Statistical Concepts\n\n\nTo download a pdf version of these slides, click here.\nTo download the R script that follows the R portion of the lecture, click here."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quantitative Analysis 2",
-    "section": "",
-    "text": "Welcome to the homepage for Quantitative Analysis 2 (PHD1504-1)!"
-  },
-  {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
     "title": "Quantitative Analysis 2 (PHD1504-1)",
@@ -348,5 +327,117 @@
     "title": "Review of Statistical Concepts",
     "section": "Always Plot Interaction Effects",
     "text": "Always Plot Interaction Effects"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Welcome to the homepage for Quantitative Analysis 2 (PHD1504-1)!"
+  },
+  {
+    "objectID": "assignments/answer-template.html",
+    "href": "assignments/answer-template.html",
+    "title": "Answers to Assignment 1",
+    "section": "",
+    "text": "# Load required R packages\nlibrary(tibble)\nlibrary(readr)\n\n# Read in the data from the class site\ndata_ai &lt;- readr::read_csv(\"https://alopilato88.github.io/quantitative-analysis-1/assignments/01-assignment-data.csv\")\n\n# View our data frame \nhead(data_ai)\n\nThe code chunk above tells R to do three, broad tasks:\n\nLoad the packages we need for the code in the code chunks below using the library function (e.g. library(tibble))\nRead a .csv file using its URL using the read_csv function and save the .csv file in an object named data_ai\nUse the head function to print out the first 6 rows of our new object: data_ai (head(data_ai))\n\nWe told R to use a function to accomplish those three tasks. A function is a set of code that does one specific thing. For example, read_csv is a function that only reads .csv files. It does nothing else.\nNext, a package such as readr is a collection of functions that all share a similar goal. The package readr contains different functions such as read_csv, read_file, and write_csv, which are all functions that can be used to read or write different kinds of files."
+  },
+  {
+    "objectID": "assignments/answer-template.html#assignment-setup",
+    "href": "assignments/answer-template.html#assignment-setup",
+    "title": "Answers to Assignment 1",
+    "section": "",
+    "text": "# Load required R packages\nlibrary(tibble)\nlibrary(readr)\n\n# Read in the data from the class site\ndata_ai &lt;- readr::read_csv(\"https://alopilato88.github.io/quantitative-analysis-1/assignments/01-assignment-data.csv\")\n\n# View our data frame \nhead(data_ai)\n\nThe code chunk above tells R to do three, broad tasks:\n\nLoad the packages we need for the code in the code chunks below using the library function (e.g. library(tibble))\nRead a .csv file using its URL using the read_csv function and save the .csv file in an object named data_ai\nUse the head function to print out the first 6 rows of our new object: data_ai (head(data_ai))\n\nWe told R to use a function to accomplish those three tasks. A function is a set of code that does one specific thing. For example, read_csv is a function that only reads .csv files. It does nothing else.\nNext, a package such as readr is a collection of functions that all share a similar goal. The package readr contains different functions such as read_csv, read_file, and write_csv, which are all functions that can be used to read or write different kinds of files."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-1.",
+    "href": "assignments/answer-template.html#question-1.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 1.",
+    "text": "Question 1.\n\n# 1. What is the sample size of your dataset (hint: It's the number of rows)? \n\nnrow(data_ai)\n\n[1] 500\n\n\nThe sample size of our data is the number of observations in our dataset. This is equivalent to the number of rows in our dataset—one row for each observation. So we can use the R function nrow to tell us the number of row. In this case there are 500 rows in our dataset, which means our sample size is 500."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-2.",
+    "href": "assignments/answer-template.html#question-2.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 2.",
+    "text": "Question 2.\n\n# 2. How many variables are in your dataset (hint: It's the number of columns)? \n\nncol(data_ai)\n\n[1] 4\n\n\nIn general, we will store our data in a .csv file where each column is a different variable. We can use the R function ncol to count the number of columns in our dataset. In our dataset, there are 4 columns, so we have 4 variables in our dataset."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-3.",
+    "href": "assignments/answer-template.html#question-3.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 3.",
+    "text": "Question 3.\n\n# 3. What is the mean and standard deviation of perceived_ease_use?\n\nmean(data_ai$perceived_ease_use) # mean() is a function that calculates the mean of a rando variable.\n\n[1] 4.078\n\nsd(data_ai$perceived_ease_use) # sd() is a function that calculates the standard deviation of a random variable.\n\n[1] 1.661758\n\n\nWhen you start R and RStudio, a handful of packages are loaded automatically. These packages make a lot of different functions immediately available to you. Two such functions are mean and sd.\nThe function mean only needs one argument—something that the use inputs—to work: a numeric R object otherwise known as a collection of numbers. mean then returns the mean value for the provided numeric object. In our class, the only numeric objects we will be providing to mean are the quantitative variables from our dataset. So to get the mean of perceived_ease_use, we use it as the argument in mean: mean(data_ai$perceived_ease_use), which returns 4.078.\nThe $ symbol used in the mean function tells the mean function to “look for” the variable perceived_ease_use in the dataset data_ai. If we did not include data_ai$ before perceived_ease_use, then the mean function would not where to find perceived_ease_use and the function would return an error message.\nSimilarly, to calculate the standard deviation of perceived_ease_use, we can use the preloaded R function: sd. Like mean, sd only requires one numeric object as an argument and it returns the standard deviation of the numeric values stored in the object. In our assignment, our numeric objects will almost always be the quantitative varialbes in our dataset. So to get the standard deviation of perceived_ease_use, we use perceived_ease_use as the argument in sd: sd(data_ai$perceived_ease_use), which returns 1.6617578.\nAgain we have to use the $ to tell sd to find perceived_ease_use in our dataset data_ai."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-4.",
+    "href": "assignments/answer-template.html#question-4.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 4.",
+    "text": "Question 4.\n\n# 4. What is the mean and standard deviation for perceived_useful?\n\nmean(data_ai$perceived_useful)\n\n[1] 4.76\n\nsd(data_ai$perceived_useful)\n\n[1] 1.755153\n\n\nJust like question 3, we can use the mean function to calculate the mean of perceived_useful and the sd function to calculate its standard deviation. Again we have to tell R where to find the variable by using data_ai$."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-5.",
+    "href": "assignments/answer-template.html#question-5.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 5.",
+    "text": "Question 5.\n\n# 5. What is the mean and standard deviation for behavioral_intention?\n\nmean(data_ai$behavioral_intention)\n\n[1] 4.314\n\nsd(data_ai$behavioral_intention)\n\n[1] 1.563423\n\n\nJust like the previous two questions, we can use the mean function to calculate the mean of behvioral_intention and the sd function to calculate its standard deviation. Again we have to tell R where to find the variable by using data_ai$."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-6.",
+    "href": "assignments/answer-template.html#question-6.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 6.",
+    "text": "Question 6.\n\n# 6a. What is the correlation between perceived_useful and perceived_ease_of_use? \n\n# cor() is a function that calculates the correlation between two random variables\n# The cor() function requires two arguments: an x variable and a y variable.\n# Below we tell R the x variable = data$perceived_useful and y variable = data_ai$perceived_ease_use.\n# You can read the $ operator as go into the data frame: data_ai and select the variable to the right of the $ sign.\n# data_ai$perceived_useful means go into data_ai and select the column perceived_useful\n\ncor(x = data_ai$perceived_useful, y = data_ai$perceived_ease_use) \n\n[1] 0.5423654\n\n# 6b. In your own words, write out an interpretation of the correlation you calculated in 6a. \n\nTo determine the correlation between two or more variables, we can use the preloaded R function: cor. For this homework, we only need to provide cor with two arguments, which are the variables we are interested in calculating a correlation coefficient for: perceived_useful and perceived_ease_use.\ncor(x = data_ai$perceived_useful, y = data_ai$perceived_ease_use) will go into our dataset, data_ai, and use the formula for the correlation coefficient to caluclate the correlation between perceived_useful and perceived_ease_use.\nWe will get the same correlation coefficient if we switch the order of our variables in the cor function: cor(x = data_ai$perceived_ease_use, y = data_ai$perceived_useful) as the correlation is symmetric. This means that the correlation between perceived_ease_use and perceived_useful is identical to the correlation between perceived_useful and perceived_ease_use.\nAs for the interpretation of the correlation, we can interpret it as:\nIn our dataset, the correlation between percieved_useful and perceived_ease_use is 0.5423654. Because the correlation is positive, we know that values of percieved_ease_use above the mean occur with values of perceived_useful that are above its mean. Similary the size of the correlation coefficient tells us that the two variables are moderately related to one another."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-7.",
+    "href": "assignments/answer-template.html#question-7.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 7.",
+    "text": "Question 7.\n\n# 7a. What is the correlation between perceived_useful and behavioral_intention? \ncor(x = data_ai$perceived_useful, y = data_ai$behavioral_intention) \n\n[1] 0.3795281\n\n# 7b. In your own words, write out an interpretation of the correlation you calculated in 7a. \n\nAgain we can use the cor function. We determine that the correlation between perceived_useful and behavioral_intention is 0.3795281, which means that perceived_useful and behavioral_intention are positively and moderately correlated to one another. High values of perceived_useful will tend to occur with high values of behavioral_intention, on average."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-8.",
+    "href": "assignments/answer-template.html#question-8.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 8.",
+    "text": "Question 8.\n\n# 8a. What is the correlation between perceived_ease_use and behavioral_intention? \ncor(x = data_ai$perceived_ease_use, y = data_ai$behavioral_intention) \n\n[1] 0.412486\n\n# 8b. In your own words, write out an interpretation of the correlation you calculated in 8a. \n\nAgain we can use the cor function. We determine that the correlation between perceived_ease_use and behavioral_intention is 0.412486, which means that perceived_ease_use and behavioral_intention are positively and moderately correlated to one another. High values of perceived_ease_use will tend to occur with high values of behavioral_intention, on average."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-9.",
+    "href": "assignments/answer-template.html#question-9.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 9.",
+    "text": "Question 9.\n\n# 9a. Estimate a simple regression model that uses perceived_ease_use to predict behavioral_intention.\n\n# The lm() function used below fits a linear regression model. The lm() code translated to the following\n# regression model: behvioral_intention = B0 + B1*perceived_ease_use. \n# In general the structure of the lm() function will look like lm(outcome_variable ~ predictor_variable, data = your_data)\n# In R, everyhing to the left of the ~ sign is an outcome variable and everything to the right is a predictor variable.\n\nmodel_1 &lt;- lm(behavioral_intention ~ perceived_ease_use, data = data_ai)\n\n# 9b. Print out the results of your regression model and write out an interpretation of the effect of perceived_ease_use on\n#     behavioral_intentions.\n\nsummary(model_1)\n\n\nCall:\nlm(formula = behavioral_intention ~ perceived_ease_use, data = data_ai)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.6718 -1.0599 -0.0599  0.9401  3.4924 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)         2.73142    0.16910   16.15   &lt;2e-16 ***\nperceived_ease_use  0.38808    0.03841   10.11   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.426 on 498 degrees of freedom\nMultiple R-squared:  0.1701,    Adjusted R-squared:  0.1685 \nF-statistic: 102.1 on 1 and 498 DF,  p-value: &lt; 2.2e-16\n\n# 9c. What is the R-squared value for model_1? Write out an interpretation of the R-squared.\n\nTo estimate a linear regression model in R, we will use the lm function. The lm function is automatically made available to us when we start R and RStudio, so we do not need to tell R to load it.\nlm requires two main arguments: the lm regression formula and the dataset that contains the predictor and outcome variables for the regression model.\nFirst, the lm formula will always look like outcome_variable_name ~ predictor_variable_name_1, which we can read as estimate a linear regression model where the outcome variable is outcome_variable_name and the predictor variable is predictor_variable_name_1. In general, any variable to the left of ~ is treated as an outcome variable by lm and any variable to the right of lm is treated as a predictor variable.\nNext, the lm function needs to know to where to find the dataset that contains our outcome and predictor variables. We can tell lm where to find our dataset by providing it with its second argument: data = data_ai. Now lm knows that data_ai contains the outcome and predictor variables used in the lm formula.\nNow that we have provide lm with its two necessary arguments, we can estimate it and save it in an object we call model_1. This is all happening in the line of code: model_1 &lt;- lm(behavioral_intention ~ perceived_ease_use, data = data_ai. lm is estimating a regression model where behavioral_intention is the outcome variable and perceived_ease_use is the predictor variable, both of which it knows to find in data_ai. Then it is storing the results of that model in an object (think of it like a box) called model_1.\nWe know R is storing the results of the model into an object named model_1 because of this part of the code: model_1 &lt;-. The &lt;- is called the assignment operator and it creates an object named model_1 and assigns it the results of lm(behavioral_intention ~ perceived_ease_use, data = data_ai.\n\nModel Interpretation\nNow that we have estimated our model, we can use the function summary to display the detailed results of our model. You should see from the results above that summary provides the coefficient estimates (Estimate), there standard errors (Std. Error), and a p-value (Pr(&gt;|t|)) along with more results like the R-squared value.\nWe can interpret the results as follows. When comparing two groups who differ by one unit on their response to perceived_ease_use, the average response to behavioral_intetions for the group with the higher response to perceived_ease_use will be 0.39 units higher than the group with the lower response.\nWe could also say: For every one unit increase in an individual’s perceptions of how easy it is to use the AI tool (perceived_ease_use), we will see their intentions to use the AI tool increase by 0.39. I find that this interpretation is easier to understand when compared to the group comparison interpretation, but it is less accurate.\nThe R-squared value in our model is 0.1701447, which means that 17% of the variance in behavioral_intention can be explained by perceived_ease_use."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-10.",
+    "href": "assignments/answer-template.html#question-10.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 10.",
+    "text": "Question 10.\n\n# 10a. Estimate a simple regression model that uses perceived_useful to predict behavioral_intention. Name the model: model_2.\n\nmodel_2 &lt;- lm(behavioral_intention ~ perceived_useful, data = data_ai)\n\n# 10b. Print out the results of your regression model and write out an interpretation of the effect of perceived_useful on\n#     behavioral_intentions.\n\nsummary(model_2)\n\n\nCall:\nlm(formula = behavioral_intention ~ perceived_useful, data = data_ai)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.0713 -1.0571 -0.0571  0.9429  3.6191 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       2.70479    0.18733  14.439   &lt;2e-16 ***\nperceived_useful  0.33807    0.03693   9.154   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.448 on 498 degrees of freedom\nMultiple R-squared:  0.144, Adjusted R-squared:  0.1423 \nF-statistic:  83.8 on 1 and 498 DF,  p-value: &lt; 2.2e-16\n\n# 10c. What is the R-squared value for model_2? Write out an interpretation of the R-squared.\n\nThe steps used to answer this question are identical to those we used in question 9.\nWe can interpret the results as follows. When comparing two groups who differ by one unit on their response to perceived_useful, the average response to behavioral_intetions for the group with the higher response to perceived_useful will be 0.34 units higher than the group with the lower response.\nWe could also say: For every one unit increase in an individual’s perceptions of how useful the AI tool is (perceived_useful), we will see their intentions to use the AI tool increase by 0.34.\nThe R-squared value in our model is 0.1440416, which means that 14% of the variance in behavioral_intention can be explained by perceived_useful."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-11.",
+    "href": "assignments/answer-template.html#question-11.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 11.",
+    "text": "Question 11.\n\n# 11a. Estimate a multiple regression model that uses perceived_useful and perceived_ease_use to predict behavioral_intention.\n\nmodel_3 &lt;- lm(behavioral_intention ~ perceived_ease_use + perceived_useful, data = data_ai)\n\n# 11b. Print out the results of your multiple regression model and write out an interpretation of both partial regression \n#      coefficients.\n\n# 11c. What is the R-squared value for model_3? Write out an interpretation of the R-squared.\n\nThe steps used to answer this question are identical to those we used in questions 9 and 10. The only difference is that instead of estimating a model with one predictor variable, we are estimating a model with two predictor variables: perceived_ease_use + perceived_useful. To add more predictor variables to our model, we just write: + predictor_variable_name_1 + predictor_variable_name_2 + predictor_variable_name_3 for as many predictor variables as we would like to add. Nothing else about the lm function changes.\nWe can interpret the results as follows:\n\nWhen comparing two groups who differ by one unit on their response to perceived_useful, but who have the same response to perceived_ease_use, the average response to behavioral_intetions for the group with the higher response to perceived_useful will be 0.2 units higher than the group with the lower response.\nWhen comparing two groups who differ by one unit on their response to perceived_ease_use, but who have the same response to perceived_useful, the average response to behavioral_intetions for the group with the higher response to perceived_ease_of_use will be 0.28 units higher than the group with the lower response.\n\nWe could also say: While controlling for perceived_ease_use, for every one unit increase in an individual’s perceptions of how useful the AI tool is (perceived_useful), we will see their intentions to use the AI tool increase by 0.2.\nThe R-squared value in our model is 0.2045388, which means that 20% of the variance in behavioral_intention can be explained by perceived_useful and perceived_ease_use together."
+  },
+  {
+    "objectID": "lectures/01-lecture-page.html",
+    "href": "lectures/01-lecture-page.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Next Week’s Materials »"
+  },
+  {
+    "objectID": "lectures/01-lecture-page.html#lecture-review-of-statistical-concepts",
+    "href": "lectures/01-lecture-page.html#lecture-review-of-statistical-concepts",
+    "title": "Quantitative Analysis 2",
+    "section": "Lecture: Review of Statistical Concepts",
+    "text": "Lecture: Review of Statistical Concepts\n\n\nTo download a pdf version of these slides, click here.\nTo download the R script that follows the R portion of the lecture, click here."
   }
 ]

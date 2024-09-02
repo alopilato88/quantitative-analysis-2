@@ -1,0 +1,252 @@
+---
+title: "Answers to Assignment 1"
+format: 
+  html:
+    theme: [default, theme-lecture-slides.scss] 
+    css: styles-lecture-slides.css 
+    toc: true
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Assignment Setup
+
+```{r}
+#| label: setup
+#| output: false
+
+# Load required R packages
+library(tibble)
+library(readr)
+
+# Read in the data from the class site
+data_ai <- readr::read_csv("https://alopilato88.github.io/quantitative-analysis-1/assignments/01-assignment-data.csv")
+
+# View our data frame 
+head(data_ai)
+```
+
+The code chunk above tells R to do three, broad tasks:
+
+1. Load the packages we need for the code in the code chunks below using the `library` function (e.g. `library(tibble)`)
+2. Read a .csv file using its URL using the `read_csv` function and save the .csv file in an object named `data_ai`
+3. Use the `head` function to print out the first 6 rows of our new object: `data_ai` (`head(data_ai)`)
+
+We told R to use a function to accomplish those three tasks. A function is a set of code that does one specific thing. For example, `read_csv` is a function that only reads .csv files. It does nothing else. 
+
+Next, a package such as `readr` is a collection of functions that all share a similar goal. The package `readr` contains different functions such as `read_csv`, `read_file`, and `write_csv`, which are all functions that can be used to read or write different kinds of files. 
+
+## Question 1. 
+
+```{r}
+#| lablel: question-1
+# 1. What is the sample size of your dataset (hint: It's the number of rows)? 
+
+nrow(data_ai)
+```
+
+The sample size of our data is the number of observations in our dataset. This is equivalent to the number of rows in our dataset---one row for each observation. So we can use the R function `nrow` to tell us the number of row. In this case there are `r nrow(data_ai)` rows in our dataset, which means our sample size is `r nrow(data_ai)`.
+
+## Question 2.
+
+```{r}
+#| label: question-2
+# 2. How many variables are in your dataset (hint: It's the number of columns)? 
+
+ncol(data_ai)
+```
+
+In general, we will store our data in a .csv file where each column is a different variable. We can use the R function `ncol` to count the number of columns in our dataset. In our dataset, there are `r ncol(data_ai)` columns, so we have `r ncol(data_ai)` variables in our dataset.
+
+## Question 3.
+
+```{r}
+#| label: question-3
+# 3. What is the mean and standard deviation of perceived_ease_use?
+
+mean(data_ai$perceived_ease_use) # mean() is a function that calculates the mean of a rando variable.
+sd(data_ai$perceived_ease_use) # sd() is a function that calculates the standard deviation of a random variable.
+```
+
+When you start R and RStudio, a handful of packages are loaded automatically. These packages make a lot of different functions immediately available to you. Two such functions are `mean` and `sd`. 
+
+The function `mean` only needs one argument---something that the use inputs---to work: a numeric R object otherwise known as a collection of numbers. `mean` then returns the mean value for the provided numeric object. In our class, the only numeric objects we will be providing to `mean` are the quantitative variables from our dataset. So to get the mean of `perceived_ease_use`, we use it as the argument in `mean`: `mean(data_ai$perceived_ease_use)`, which returns `r (mean(data_ai$perceived_ease_use))`.
+
+The `$` symbol used in the `mean` function tells the `mean` function to "look for" the variable `perceived_ease_use` in the dataset `data_ai`. If we did not include `data_ai$` before `perceived_ease_use`, then the mean function would not where to find `perceived_ease_use` and the function would return an error message. 
+
+Similarly, to calculate the standard deviation of `perceived_ease_use`, we can use the preloaded R function: `sd`. Like `mean`, `sd` only requires one numeric object as an argument and it returns the standard deviation of the numeric values stored in the object. In our assignment, our numeric objects will almost always be the quantitative varialbes in our dataset. So to get the standard deviation of `perceived_ease_use`, we use `perceived_ease_use` as the argument in `sd`: `sd(data_ai$perceived_ease_use)`, which returns `r sd(data_ai$perceived_ease_use)`.
+
+Again we have to use the `$` to tell `sd` to find `perceived_ease_use` in our dataset `data_ai`. 
+
+## Question 4.
+```{r}
+#| label: question-4
+# 4. What is the mean and standard deviation for perceived_useful?
+
+mean(data_ai$perceived_useful)
+sd(data_ai$perceived_useful)
+```
+
+Just like question 3, we can use the `mean` function to calculate the mean of `perceived_useful` and the `sd` function to calculate its standard deviation. Again we have to tell R where to find the variable by using `data_ai$`. 
+
+## Question 5.
+
+```{r}
+#| label: question-5
+# 5. What is the mean and standard deviation for behavioral_intention?
+
+mean(data_ai$behavioral_intention)
+sd(data_ai$behavioral_intention)
+```
+
+Just like the previous two questions, we can use the `mean` function to calculate the mean of `behvioral_intention` and the `sd` function to calculate its standard deviation. Again we have to tell R where to find the variable by using `data_ai$`. 
+
+## Question 6.
+
+```{r}
+#| label: question-6
+# 6a. What is the correlation between perceived_useful and perceived_ease_of_use? 
+
+# cor() is a function that calculates the correlation between two random variables
+# The cor() function requires two arguments: an x variable and a y variable.
+# Below we tell R the x variable = data$perceived_useful and y variable = data_ai$perceived_ease_use.
+# You can read the $ operator as go into the data frame: data_ai and select the variable to the right of the $ sign.
+# data_ai$perceived_useful means go into data_ai and select the column perceived_useful
+
+cor(x = data_ai$perceived_useful, y = data_ai$perceived_ease_use) 
+
+# 6b. In your own words, write out an interpretation of the correlation you calculated in 6a. 
+```
+
+To determine the correlation between two or more variables, we can use the preloaded R function: `cor`. For this homework, we only need to provide `cor` with two arguments, which are the variables we are interested in calculating a correlation coefficient for: `perceived_useful` and `perceived_ease_use`.
+
+`cor(x = data_ai$perceived_useful, y = data_ai$perceived_ease_use)` will go into our dataset, `data_ai`, and use the formula for the correlation coefficient to caluclate the correlation between `perceived_useful` and `perceived_ease_use`. 
+
+We will get the same correlation coefficient if we switch the order of our variables in the `cor` function: `cor(x = data_ai$perceived_ease_use, y = data_ai$perceived_useful)` as the correlation is symmetric. This means that the correlation between `perceived_ease_use` and `perceived_useful` is identical to the correlation between `perceived_useful` and `perceived_ease_use`. 
+
+As for the interpretation of the correlation, we can interpret it as: 
+
+In our dataset, the correlation between `percieved_useful` and `perceived_ease_use` is `r cor(x = data_ai$perceived_useful, y = data_ai$perceived_ease_use)`. Because the correlation is positive, we know that values of `percieved_ease_use` above the mean occur with values of `perceived_useful` that are above its mean. Similary the size of the correlation coefficient tells us that the two variables are moderately related to one another. 
+
+## Question 7. 
+
+```{r}
+#| label: question-7
+# 7a. What is the correlation between perceived_useful and behavioral_intention? 
+cor(x = data_ai$perceived_useful, y = data_ai$behavioral_intention) 
+
+# 7b. In your own words, write out an interpretation of the correlation you calculated in 7a. 
+
+```
+
+Again we can use the `cor` function. We determine that the correlation between `perceived_useful` and `behavioral_intention` is `r cor(x = data_ai$perceived_useful, y = data_ai$behavioral_intention)`, which means that `perceived_useful` and `behavioral_intention` are positively and moderately correlated to one another. High values of `perceived_useful` will tend to occur with high values of `behavioral_intention`, on average. 
+
+## Question 8.
+
+```{r}
+#| label: question-8
+# 8a. What is the correlation between perceived_ease_use and behavioral_intention? 
+cor(x = data_ai$perceived_ease_use, y = data_ai$behavioral_intention) 
+
+# 8b. In your own words, write out an interpretation of the correlation you calculated in 8a. 
+```
+
+Again we can use the `cor` function. We determine that the correlation between `perceived_ease_use` and `behavioral_intention` is `r cor(x = data_ai$perceived_ease_use, y = data_ai$behavioral_intention)`, which means that `perceived_ease_use` and `behavioral_intention` are positively and moderately correlated to one another. High values of `perceived_ease_use` will tend to occur with high values of `behavioral_intention`, on average.
+
+## Question 9.
+
+```{r}
+#| label: question-9
+# 9a. Estimate a simple regression model that uses perceived_ease_use to predict behavioral_intention.
+
+# The lm() function used below fits a linear regression model. The lm() code translated to the following
+# regression model: behvioral_intention = B0 + B1*perceived_ease_use. 
+# In general the structure of the lm() function will look like lm(outcome_variable ~ predictor_variable, data = your_data)
+# In R, everyhing to the left of the ~ sign is an outcome variable and everything to the right is a predictor variable.
+
+model_1 <- lm(behavioral_intention ~ perceived_ease_use, data = data_ai)
+
+# 9b. Print out the results of your regression model and write out an interpretation of the effect of perceived_ease_use on
+#     behavioral_intentions.
+
+summary(model_1)
+
+# 9c. What is the R-squared value for model_1? Write out an interpretation of the R-squared.
+
+```
+
+To estimate a linear regression model in R, we will use the `lm` function. The `lm` function is automatically made available to us when we start R and RStudio, so we do not need to tell R to load it. 
+
+`lm` requires two main arguments: the `lm` regression formula and the dataset that contains the predictor and outcome variables for the regression model. 
+
+First, the `lm` formula will always look like `outcome_variable_name ~ predictor_variable_name_1`, which we can read as estimate a linear regression model where the outcome variable is `outcome_variable_name` and the predictor variable is `predictor_variable_name_1`. In general, any variable to the left of `~` is treated as an outcome variable by `lm` and any variable to the right of `lm` is treated as a predictor variable. 
+
+Next, the `lm` function needs to know to where to find the dataset that contains our outcome and predictor variables. We can tell `lm` where to find our dataset by providing it with its second argument: `data = data_ai`. Now `lm` knows that `data_ai` contains the outcome and predictor variables used in the `lm` formula. 
+
+Now that we have provide `lm` with its two necessary arguments, we can estimate it and save it in an object we call `model_1`. This is all happening in the line of code: `model_1 <- lm(behavioral_intention ~ perceived_ease_use, data = data_ai`. `lm` is estimating a regression model where `behavioral_intention` is the outcome variable and `perceived_ease_use` is the predictor variable, both of which it knows to find in `data_ai`. Then it is storing the results of that model in an object (think of it like a box) called `model_1`.
+
+We know R is storing the results of the model into an object named `model_1` because of this part of the code: `model_1 <-`. The `<-` is called the assignment operator and it creates an object named `model_1` and **assigns** it the results of `lm(behavioral_intention ~ perceived_ease_use, data = data_ai`.
+
+### Model Interpretation 
+
+Now that we have estimated our model, we can use the function `summary` to display the detailed results of our model. You should see from the results above that `summary` provides the coefficient estimates (`Estimate`), there standard errors (`Std. Error`), and a p-value (`Pr(>|t|)`) along with more results like the `R-squared` value.
+
+We can interpret the results as follows. When comparing two groups who differ by one unit on their response to `perceived_ease_use`, the average response to `behavioral_intetions` for the group with the higher response to `perceived_ease_use` will be `r round(model_1$coefficients[2], 2)` units higher than the group with the lower response. 
+
+We could also say: For every one unit increase in an individual's perceptions of how easy it is to use the AI tool (`perceived_ease_use`), we will see their intentions to use the AI tool increase by `r round(model_1$coefficients[2], 2)`. I find that this interpretation is easier to understand when compared to the group comparison interpretation, but it is less accurate.
+
+The `R-squared` value in our model is `r summary(model_1)$r.squared`, which means that `r paste0(100 * (round(summary(model_1)$r.squared, 2)), "%")` of the variance in `behavioral_intention` can be explained by `perceived_ease_use`. 
+
+## Question 10.
+
+```{r}
+#| label: question-10
+# 10a. Estimate a simple regression model that uses perceived_useful to predict behavioral_intention. Name the model: model_2.
+
+model_2 <- lm(behavioral_intention ~ perceived_useful, data = data_ai)
+
+# 10b. Print out the results of your regression model and write out an interpretation of the effect of perceived_useful on
+#     behavioral_intentions.
+
+summary(model_2)
+
+# 10c. What is the R-squared value for model_2? Write out an interpretation of the R-squared.
+
+```
+
+The steps used to answer this question are identical to those we used in question 9. 
+
+We can interpret the results as follows. When comparing two groups who differ by one unit on their response to `perceived_useful`, the average response to `behavioral_intetions` for the group with the higher response to `perceived_useful` will be `r round(model_2$coefficients[2], 2)` units higher than the group with the lower response. 
+
+We could also say: For every one unit increase in an individual's perceptions of how useful the AI tool is (`perceived_useful`), we will see their intentions to use the AI tool increase by `r round(model_2$coefficients[2], 2)`.
+
+The `R-squared` value in our model is `r summary(model_2)$r.squared`, which means that `r paste0(100 * (round(summary(model_2)$r.squared, 2)), "%")` of the variance in `behavioral_intention` can be explained by `perceived_useful`. 
+
+## Question 11. 
+
+```{r}
+#| label: question-11
+# 11a. Estimate a multiple regression model that uses perceived_useful and perceived_ease_use to predict behavioral_intention.
+
+model_3 <- lm(behavioral_intention ~ perceived_ease_use + perceived_useful, data = data_ai)
+
+# 11b. Print out the results of your multiple regression model and write out an interpretation of both partial regression 
+#      coefficients.
+
+# 11c. What is the R-squared value for model_3? Write out an interpretation of the R-squared.
+
+```
+
+The steps used to answer this question are identical to those we used in questions 9 and 10. The only difference is that instead of estimating a model with one predictor variable, we are estimating a model with two predictor variables: `perceived_ease_use + perceived_useful`. To add more predictor variables to our model, we just write: `+ predictor_variable_name_1 + predictor_variable_name_2 + predictor_variable_name_3` for as many predictor variables as we would like to add. Nothing else about the `lm` function changes. 
+
+We can interpret the results as follows: 
+
+* When comparing two groups who differ by one unit on their response to `perceived_useful`, but who have the same response to `perceived_ease_use`, the average response to `behavioral_intetions` for the group with the higher response to `perceived_useful` will be `r round(model_3$coefficients[3], 2)` units higher than the group with the lower response. 
+
+* When comparing two groups who differ by one unit on their response to `perceived_ease_use`, but who have the same response to `perceived_useful`, the average response to `behavioral_intetions` for the group with the higher response to `perceived_ease_of_use` will be `r round(model_3$coefficients[2], 2)` units higher than the group with the lower response. 
+
+We could also say: While controlling for `perceived_ease_use`, for every one unit increase in an individual's perceptions of how useful the AI tool is (`perceived_useful`), we will see their intentions to use the AI tool increase by `r round(model_3$coefficients[3], 2)`.
+
+The `R-squared` value in our model is `r summary(model_3)$r.squared`, which means that `r paste0(100 * (round(summary(model_3)$r.squared, 2)), "%")` of the variance in `behavioral_intention` can be explained by `perceived_useful` and `perceived_ease_use` together. 

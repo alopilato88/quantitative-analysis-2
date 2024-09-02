@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render: 
+    - "*.qmd"
+    - "!assignment_template*.qmd"
 
 website:
   title: "Quantitative Analysis 2"
