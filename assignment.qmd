@@ -19,7 +19,7 @@ The Fall 2024 assignment schedule for Quantiative Analysis 2. Use the links belo
   <tr>
     <td class="tassign-date">9/10</td>
     <td class="tassign-topic">Review of Statistical Concepts</td>
-    <td class="tassign-content"><a href="assignments/assignment_template_test.qmd" download target="_blank" rel="noopener noreferrer"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="tassign-content"><a href="assignments/assignment_template_1.qmd" download target="_blank" rel="noopener noreferrer"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="tassign-content"><a href="assignments/01-assignment-answers.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>

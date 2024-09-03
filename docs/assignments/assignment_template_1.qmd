@@ -1,0 +1,161 @@
+---
+title: "Assignment 1: A Review of Statistical Concepts"
+editor_options: 
+  chunk_output_type: console
+---
+
+Below are a set of packages you need in order to complete the assignment. If you have not already installed the packages please go ahead and install them using the `install()` function. For example, if you do not have `ggplot2` installed, then you will need to type `install("ggplot2")` into your R terminal window. 
+
+### Load Packages 
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tibble)
+library(tidyr)
+```
+
+### Excerise 1: Finish the code below to generate 1,000 observations of a Bernoulli random variable where the probability of a success is .25. 
+
+```{r}
+set.seed(42) # Do not change this
+var_bernoulli_25 <- rbinom() # Finish the code 
+```
+
+### Exercise 2: Finish the code below to create a histogram of the random variable you generated in Exercise 1. 
+
+```{r}
+data_histogram <- tibble::tibble(x = var_bernoulli_25)
+
+ggplot2::ggplot(data = data_histogram, ggplot2::aes(x = x)) + # Finish this code so it produces a histogram
+```
+
+### Exercise 3: Use the `sample` function to generate 1,000 rolls of a 20-sided die. Then use `table` and `prop.table` functions to calculate the probability of rolling each of the 20 different sides. Are the empirical probabilities close to their theoretical probabilities? 
+
+```{r}
+set.seed(54)
+var_rolls <- # Finish code
+table() |> prop.table() # Finish the code
+```
+
+### Exercise 4: Run the code below to simulate a linear regression model.
+
+```{r}
+set.seed(34)
+n <- 1000 # Sample Size
+b0 <- 3 # Regression intercept 
+b1 <- 2 # Regession coefficient for the first predictor x1
+error_sd <- 2 # Error standard deviation 
+
+x1 <- rnorm(n) # Generate a random normal variable with a mean of 0 and sd of 1 to be the predictor
+y <- rnorm(n, mean = b0 + b1*x1, sd = error_sd) # Generate the outcome 
+
+data_simple_reg <- 
+  tibble::tibble(
+    x1 = x1, 
+    y = y
+  )
+```
+
+### Excercise 5: Estimate a linear regression using the data you simulated. Interpret the model results. If you find it easier, feel free to make up names for the simulated variables that you use in your own reserach and then interpret the results. 
+
+### Exercise 6: Copy the code from Exercise 4 to generate a new outcome variable. Change the intercept and first regression coefficient to any number you choose. Estimate the model and interpret it. 
+
+```{r}
+set.seed(564)
+```
+
+### Excerise 7: Run the code below.
+
+```{r}
+set.seed(9798)
+
+n <- 1000
+b0 <- 3
+b1 <- 1 # Regression coefficient for x1
+b2 <- 2 # Regression coefficient for var_group
+error_sd <- 3
+
+x2 <- sample(c(0, 1), size = n, replace = TRUE, prob = c(.35, .65)) # Generaate group variable
+x1 <- rnorm(n, mean = 2 * x2, sd = 1) # Generate X1 so that it's related to var_group
+
+y <- rnorm(n, mean = b0 + b1*x1 + b2*x2, sd = error_sd)
+
+data_multiple_reg <- 
+  tibble::tibble(
+    x1 = x1, 
+    x2 = x2, 
+    y = y
+  ) |>
+  dplyr::mutate(
+    x2 = dplyr::if_else(x2 == 0, "group 1", "group 2")
+  )
+
+```
+
+### Exercise 8: Estimate two models. First, estimate a model with `y` as the outcome and `x2` as the only predictor (a categorical predictor). Interpret the results of the model. Next, estimate a model with `y` as the outcome and `x1` and `x2` as the predictors. Intepret the results of the model. Also, note what happens to `x2`'s regression coefficient.
+
+### Exercise 9: Run the code below to generate a model with an interaction. Then, estimate the model from the simulated data. Save the estimated model in an object called `mod_int`. 
+
+```{r}
+set.seed(47345) # Do not change
+
+n <- 1000
+b0 <- 3
+b1 <- 1 # Regression coefficient for x1
+b2 <- 2 # Regression coefficient for var_group
+b3 <- -2 # Regression coefficient for interaction term
+error_sd <- 3
+
+x2 <- sample(c(0, 1), size = n, replace = TRUE, prob = c(.35, .65)) # Generaate group variable
+x1 <- rnorm(n, mean = 2 * x2, sd = 1) # Generate X1 so that it's related to var_group
+
+y <- rnorm(n, mean = b0 + b1*x1 + b2*x2 + b3*x1*x2, sd = error_sd)
+
+data_interaction <- 
+  tibble::tibble(
+    x1 = x1, 
+    x2 = x2, 
+    y = y
+  ) |>
+  dplyr::mutate(
+    x2 = dplyr::if_else(x2 == 0, "group 1", "group 2")
+  )
+```
+
+### Exercise 10: Use the interaction plot below to interpret the interaction. 
+
+```{r}
+
+# Lines 132 to 142 pick low (10th percentile), average (50th percentile), and high (90th percentile) values of X1 to predict what Y would look like using your model, mod_int, for each group in X2.
+data_interaction_plot <- 
+  tibble::tibble(
+    x1_cat = rep(c("low", "med", "high"), each = 2), 
+    x2_cat = rep(c("group 1", "group 2"), 3), 
+    x1_val = dplyr::case_when(
+      x1_cat == "low" ~ quantile(data_interaction$x1, .10),
+      x1_cat == "med" ~ quantile(data_interaction$x1, .50), 
+      x1_cat == "high" ~ quantile(data_interaction$x1, .90)
+    ),
+    y_pred = predict(mod_int, data.frame(x1 = x1_val, x2 = x2_cat))
+  )
+
+ggplot2::ggplot( # Lines 143 to 150 sets up your plot area and defines the axes
+  data = data_interaction_plot,
+  ggplot2::aes(
+    x = x1_val,
+    y = y_pred,
+    shape = x2_cat
+  )
+) + 
+  ggplot2::geom_point() + # This code uses the data to create a scatter plot
+  ggplot2::geom_line() + # This code adds a line through the points
+  ggplot2::labs( # This code adds labels to the plot
+    x = "X1 Variable",
+    y = "Predicted Y Variable",
+    shape = "X2 Groups",
+    title = "Interaction Plot"
+  )
+
+```
+
