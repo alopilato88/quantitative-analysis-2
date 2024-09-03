@@ -14,7 +14,5 @@ format:
 
 To download a pdf version of these slides, click <a href="01-lecture-slides.pdf" download target="_blank" rel="noopener noreferrer"><strong>here</strong></a>.
 
-To download the R script that follows the R portion of the lecture, click <a href="01-lecture-script.R" download target="_blank" rel="noopener noreferrer"><strong>here</strong></a>.
-
 
 

@@ -21,7 +21,7 @@ The tentative Fall 2024 schedule for Quantitative Analysis 2. Use the reading li
     <td class="ts-date">9/3</td>
     <td class="ts-topic">Introduction & Stats Review</td>
     <td class="ts-content"><a href="readings/reading-1.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="assignments/assignment_template_1.qmd" download target="_blank" rel="noopener noreferrer"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="lectures/01-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
