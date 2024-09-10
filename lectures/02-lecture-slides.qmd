@@ -1,0 +1,441 @@
+---
+title: "Introduction to Categorical Data Analysis"
+format: 
+  revealjs:
+    theme: [default, theme-lecture-slides.scss] 
+    css: styles-lecture-slides.css
+    slide-number: true
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+source("packages-lecture.R")
+source("helper-functions-lecture.R")
+
+```
+
+## Overview for Today
+
+Today we will be learning about: 
+
+- Categorical data 
+- Maximum likelihood estimation
+- Statistical inference for proportions
+
+## What is a Categorical Variable?
+
+Categorical variable is a variable that consists of a set of two or more categories: 
+
+- Customer churn: Remained or Left 
+- Political ideology: Democrat, Republican, or Independent 
+- Medical diagnosis: Positive or Negative
+- Attitude measures: Satisfied or Not Satisfied
+
+## Categorical Variable as a Predictor 
+
+So far we have talked about categorical variables as predictors of some quantitative variable: 
+
+- How does an employees' work status (full-time or part-time) impact their job satisfaction? 
+
+Now we will start to talk about categorical variables as outcomes. 
+
+## Common Ways to Model Categorical Data
+
+We are going to cover three common ways to analyze categorical data: 
+
+- Comparing a single proportion to a null value
+- Comparing two proportions to one another
+- Comparing two or more proportions at once 
+
+## Common Probability Distributions for Categorical Data
+
+The two most common probability distributions used to model categorical data are the:
+
+- **Binomial distribution** for binary categorical variables 
+- **Multinomial distribution** for multicategorical variables
+
+## Understanding the Binomial Distribution 
+
+The binomial distribution tells us the probability of seeing **k** successes in a sequence of **n** trials: 
+
+$$P(X=k)=\binom{n}{k}\pi^k(1-\pi)^{n-k}$$
+
+- $\binom{n}{k}$: Tells us how many ways we can see k success in n trials
+- $\pi$: The probability of a success
+- $n$: The number of trials
+- $k$: The number of successes
+
+## The Mean and Variance of a Binomial Variable
+
+Much like we do with a quantitative variable, we will often want to describe a categorical variable with its mean and variance. For a binary variable (binomial distribution), we can calculate its mean and variance as: 
+
+$$\text{Mean}=\pi, \text{Variance}=\pi(1-\pi)$$
+
+## Modeling Two (Fair) Coin Flips 
+
+With two coin flips, there are four possible outcomes: 
+
+1. H, H - 2 Successes
+2. H, T - 1 Success
+3. T, H - 1 Success
+4. T, T - 0 Successes 
+
+The probability of 1 success: 
+
+$$P(X = 1) = \binom{2}{1}.50^1(1 - .50)^{2 - 1} = 2\times.50\times.50=.50$$
+
+## Probability Models, Parameters, and Estimates
+
+A **probability model** is a function (equation) that tells us how the **probability** of an event changes as a function of the **observed data** and the **parameters** of the probability model. Often, we need to use the data to **estimate** the parameters of the probability model.
+
+- The binomial distribution can be used as a probability model for categorical variables that take on two categories
+- The multinomial distribution can be used as a probability model for categorical variables that take on more than two categories
+- The normal distribution can be used as a probability model for quantitative variables
+
+
+## Using Data to Estimate Probability Model Parameters 
+
+We usually want to learn about the probability model by collecting data that could have been plausibly generated from our hypothesized probability model and then we use the data to estimate the unknown probability model parameters: 
+
+- In linear regression, we collect data in order to estimate and test the relationships (regression slops) between the outcome and predictor variables. 
+- In election years, pollsters collect data in order to estimate the chances of one candidate winning over another. 
+
+## Maximum Likelihood Estimation
+
+To estimate the parameters, we can use a method called **maximum likelihood estimation**. 
+
+You can think of ML estimation as answering the question: "What parameters of the probability model make my observed data most likely?"
+
+The parameter that answers this question is called the **maximum likelihood estimate or MLE**.
+
+## Guessing the MLE
+
+```{r}
+#| echo: false
+
+set.seed(453)
+coin_flip <- rbinom(100, 1, prob = .50)
+
+log_like <- numeric()
+for(i in seq(.01, .99, by = .01)) {
+  log_like <- c(log_like, dbinom(sum(coin_flip), length(coin_flip), prob = i, log = T))
+}
+
+data_like <- 
+  tibble::tibble(
+    log_like,
+    p_est = seq(.01, .99, by = .01),
+    scale_like = (log_like - min(log_like))/(max(log_like) - min(log_like)),
+    lab = as.character(p_est)
+  )
+
+data_max <- 
+  data_like |> 
+  dplyr::slice_max(scale_like)
+```
+
+You have flipped a coin `r length(coin_flip)` times and heads came up `r sum(coin_flip)` times (`r paste(round(mean(coin_flip), 2)*100, "%")`). You believe the data was generated from a binomial distribution, what value does the $\pi$ have to be to make your data most likely? 
+
+- $\pi$: .05, Likelihood = `r round(data_like$scale_like[data_like$p_est == .05], 2)`
+- $\pi$: .25, Likelihood = `r round(data_like$scale_like[data_like$p_est == .25], 2)`
+- $\pi$: .57, Likelihood = `r round(data_like$scale_like[round(data_like$p_est, 2) == .57], 2)`
+- $\pi$: .80, Likelihood = `r round(data_like$scale_like[data_like$p_est == .80], 2)`
+
+## How Does the MLE Relate to Statistical Inference?
+
+When estimated from "enough" data all MLE have some nice characteristics: 
+
+- Normally distributed sampling distribution 
+- Small standard errors
+- Estimates are usually very close to the parameter they are estimating
+
+When it comes time to make inferences about MLEs, these characteristics allow us to do the same thing we have been doing when we make inferences about linear regression coefficients -- calculate a test statistic and see how extreme it is given a normally distributed null distribution!   
+
+## The MLE of the Binomial Parameter: The Proportion
+
+It turns out that the value of $\pi$ that is always going to maximize the Likelihood function for a binomial probability model is: 
+
+$$\hat{\pi}=\frac{\text{# Successes}}{\text{# Trials}}$$
+
+This is just the proportion of successes to trials! 
+
+## Modeling Customer Churn from a Content Streaming Service  
+
+```{r}
+#| echo: false
+set.seed(3245)
+
+n <- 1000
+generation_cat <- sample(c("Baby Boomers", "Gen X", "Millenials", "Gen Z"),
+                         n, replace = TRUE, prob = c(.10, .30, .40, .20))
+data_churn <- tibble::tibble(
+  generation_cat = generation_cat,
+  gen_baby_boomer = dplyr::if_else(generation_cat == "Baby Boomers", 1, 0),
+  gen_x = dplyr::if_else(generation_cat == "Gen X", 1, 0), 
+  gen_z = dplyr::if_else(generation_cat == "Gen Z", 1, 0),
+  churn_propensity = -.12 + -.54*gen_z + -.98*gen_x + -2.08*gen_baby_boomer,
+  churn = rbinom(n, size = 1, prob = plogis(churn_propensity)),
+  churn_cat = dplyr::if_else(churn == 1, "Y", "N")
+) 
+```
+
+You are an analyst working at a content streaming provider who has been asked to make inferences about which customers are likely to cancel their subscriptions (churn):
+
+```{r}
+#| echo: false
+data_churn |> dplyr::select(generation_cat, churn_cat)
+```
+
+## Statistical Inference for One Proportion 
+
+To start this question, maybe we want to know if the proportion of customers who cancel their subscription is less than the industry proportion of .40. We could set up a hypothesis test: 
+
+$$H_0: \pi = .40$$
+$$H_a: \pi \neq.40$$
+
+## Setting Up the Statistical Test
+
+With hypothesis testing, we are asking the question: "How many standard errors is our estimate away from the null value, assuming that our null hypothesis is true?" 
+
+$$\frac{\hat{\pi}-.40}{SE_0}, \space SE_0=\sqrt{\frac{.40\times(1-.40)}{1000}}$$
+
+Typically, if our estimate is about 2 standard errors away from the null value (p-value a little less than .05), then we can reject our null hypothesis. 
+
+## Using R to Test a Proportion
+
+```{r}
+cust_churn <- sum(data_churn$churn)
+cust_total <- length(data_churn$churn)
+
+prop.test(x = cust_churn, n = cust_total, p = .40, alternative = "two.sided", conf.level = .95, correct = FALSE)
+```
+
+## Analyzing Relationships Between Variables with a Contigency Table 
+
+We are often interested in how the chances of success on an outcome variable change at different levels of a predictor variable: 
+
+- How do the chances of customer churn might change based on customer demographics?
+- How does one's political party identification relate to their sex?
+- How does the development of a disease relate to behaviors like smoking? 
+
+To answer these types of questions, it is helpful to build and analyze a contingency table (also known as a cross-tabulation or cross-tabs table).
+
+## Building a Contingency Table in R
+
+```{r}
+xtabs(~generation_cat + churn_cat, data = data_churn) |> addmargins()
+```
+
+## Joint, Marginal, and Conditional Probabilites
+
+From the contingency table, you can calculate joint, marginal, and conditional probabilities:
+
+- **Joint Probability**: The probability a customer belongs to the Gen Z generation **and** cancelled their subscription. 
+- **Marginal Probability**: The probability a customer belongs to the Gen Z generation. 
+- **Conditional Probability**: The probability a customer cancels their subscription **given** they belong to the Gen Z generation.
+
+## Joint, Maringal, and Conditional Probabilities in R
+
+```{r}
+xtabs(~generation_cat + churn_cat, data = data_churn) |> prop.table() |> round(2)
+xtabs(~generation_cat + churn_cat, data = data_churn) |> prop.table() |> rowSums() |> round(2)
+xtabs(~generation_cat + churn_cat, data = data_churn) |> prop.table(1) |> round(2)
+```
+
+## Statistical Inference for Two Proportions
+
+Is the proportion of Gen Z customers who cancel their subscription different from the proportion of Millennial customers who cancel their subscription? 
+
+$$H_0: \pi_{\text{Gen Z}} = \pi_{\text{Mill.}}$$
+$$H_a: \pi_{\text{Gen Z}} \neq \pi_{Mill.}$$
+
+## Setting Up the Statistical Test
+
+With hypothesis testing, we are asking the question: "How many standard errors is our estimate away from the null value, assuming that our null hypothesis is true?" 
+
+$$\frac{\hat{\pi}_{\text{Gen Z}}-\hat{\pi}_{\text{Mill.}}}{SE}$$
+
+Typically, if our estimate is about 2 standard errors away from the null value (p-value a little less than .05), then we can reject our null hypothesis. 
+
+## Using R to Compare Two Proportions 
+
+```{r}
+churn_z <- sum(data_churn$churn[data_churn$generation_cat == "Gen Z"])
+churn_mill <- sum(data_churn$churn[data_churn$generation_cat == "Millenials"])
+
+cust_z <- sum(data_churn$generation_cat == "Gen Z")
+cust_mill <- sum(data_churn$generation_cat == "Millenials")
+
+prop.test(x = c(churn_z, churn_mill), n = c(cust_z, cust_mill), alternative = "two.sided", correct = FALSE)
+```
+
+## Other Ways to Compare Two Proportions 
+
+There are multiple ways we can compare and communicate the differences between two proportions:
+
+- Absolute Risk: The simple difference between two proportions (useful when both proportions are far away form 0 or 1).
+- Relative Risk: The ratio of two proportions (useful when both proportions are close to 0 or 1). 
+- Odds Ratio: The ratio of the odds calculated from both proportions (used in logistic regression).  
+
+## Statistical Inference for Relative Risk Using R
+
+```{r}
+#| echo: false
+
+prop_mill <- mean(data_churn$churn[data_churn$generation_cat == "Millenials"])
+prop_z <- mean(data_churn$churn[data_churn$generation_cat == "Gen Z"])
+```
+
+The relative risk tells us that the probability that a customer categorized as a Millennial cancels their subscription is `r round(prop_mill / prop_z, 2)` times greater (or `r paste0(100*(round(prop_mill / prop_z, 2) - 1), "%")` greater) than the probability that a customer categorized as Generation Z cancels their subscription. 
+
+```{r}
+prop_mill <- mean(data_churn$churn[data_churn$generation_cat == "Millenials"])
+prop_z <- mean(data_churn$churn[data_churn$generation_cat == "Gen Z"])
+
+round(prop_mill / prop_z, 2)
+
+PropCIs::riskscoreci(x1 = churn_mill, n1 = cust_mill, x2 = churn_z, n2 = cust_z, conf.level = .95)
+```
+
+## What are Odds? What is an Odds Ratio?
+
+The **odds** of success are defined as:
+
+$$\text{odds} = \frac{\pi}{1-\pi}$$
+
+and the **odds ratio** is defined as: 
+
+$$\text{odds ratio} = \frac{\text{odds}_{\text{Mill.}}}{\text{odds}_{\text{Gen. Z}}}$$
+
+## Statistical Inference for the Odds Ratio Using R
+
+```{r}
+#| echo: false
+
+odds_ratio <- (prop_mill / (1-prop_mill)) / (prop_z / (1-prop_z))
+```
+
+The odds ratio tells us that the odds that a customer categorized as a Millennial cancels their subscription are `r round(odds_ratio, 2)` times greater than the odds that a customer categorized as Generation Z cancels their subscription. 
+
+```{r}
+(prop_mill / (1-prop_mill)) / (prop_z / (1-prop_z)) # Odds Ratio
+PropCIs::orscoreci(churn_mill, cust_mill, churn_z, cust_z, conf.level = .95)
+```
+
+## Chi-Squared Test: Statistical Inference for Two or More Proportions
+
+```{r}
+#| echo: false
+
+margin_churn <- 
+  data_churn |>
+  dplyr::summarize(
+    count = dplyr::n(),
+    .by = churn_cat
+  ) |>
+  dplyr::mutate(
+    prop_churn = count / sum(count)
+  )
+
+margin_gen <- 
+  data_churn |>
+  dplyr::summarize(
+    count = dplyr::n(),
+    .by = generation_cat
+  ) |>
+  dplyr::mutate(
+    prop_gen = count / sum(count)
+  )
+
+data_expected <- 
+  margin_churn |>
+  dplyr::select(
+    churn_cat
+  ) |>
+  tidyr::expand_grid(
+    margin_gen |>
+      dplyr::select(
+        generation_cat
+      )
+  ) |>
+  dplyr::left_join(
+    margin_churn |>
+      dplyr::select(
+        churn_cat,
+        prop_churn 
+      ),
+    dplyr::join_by(churn_cat)
+  ) |>
+  dplyr::left_join(
+    margin_gen |>
+      dplyr::select(
+        generation_cat,
+        prop_gen
+      ),
+    dplyr::join_by(generation_cat)
+  ) |>
+  dplyr::mutate(
+    prop_cell = prop_churn * prop_gen,
+    total_sample = 1000,
+    expected_cell = total_sample * prop_cell
+  ) |>
+  dplyr::left_join(
+    data_churn |>
+      dplyr::summarize(
+        obs_cell = dplyr::n(),
+        .by = c(churn_cat, generation_cat)
+      ),
+    dplyr::join_by(churn_cat, generation_cat)
+  ) |>
+  dplyr::mutate(
+    chi_squared = (obs_cell - expected_cell)^2 / expected_cell
+  )
+```
+
+A chi-squared test tests the extent to which the observed contingency table cells differ from what would be expected if the categorical variables were independent: 
+
+$$\chi^2 = \sum{\frac{{(n_{ij}-\mu_{ij})}^2}{\mu_{ij}}}$$
+$$n_{ij}=\text{Obs. cell count}$$
+$$\mu_{ij} = \text{Exp. cell count} = n\hat{\pi}_{i+}\hat{\pi}_{+j}$$
+
+## Calculating a Chi-Squared Test 
+
+The key thing to remember is that if two variables are independent, then their joint probability (cell proportion) is the product of their marginal probabilities:
+
+```{r}
+#| echo: false
+data_expected |> print(width = Inf)
+```
+
+## Statistical Inference with the Chi-Squared Test
+
+The Chi-Squared tests the following hypothesis: 
+
+$$H_0:\pi_{ij}=\pi_{i+}\pi_{+j} \space\text{ for all i and j}$$
+$$H_a: \pi_{ij} \neq \pi_{i+}\pi_{+j} \space\text{ for at least one cell}$$
+
+## Chi-Squared Test in R 
+
+The code below will create a contingency table and store it in an object named `contigency_table`. Then, it will conduct a chi-squared test using the `chisq.test` function. 
+
+```{r}
+contingency_table <- xtabs(~ generation_cat + churn_cat, data_churn)
+
+results_chisq <- chisq.test(contingency_table)
+
+results_chisq
+```
+
+## Chi-Squared Residuals
+
+The `chisq.test` function also provides us the residuals of the chi-squared test, which shows us whether our observed counts exceeded or fell below their expected counts. Absolute values greater than 3 represent cells that do not fit the null hypothesis. 
+
+```{r}
+results_chisq$stdres
+```
+
