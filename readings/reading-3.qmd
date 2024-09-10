@@ -7,15 +7,16 @@ format:
 <h1 class="h1-reading"> Simple & Multiple Logistic Regression Models</h1>
 <h2 class="h2-reading">Required Readings:</h2>
 <ul class="ul-reading">
-<li> <a href = "https://www.statisticshowto.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/">Binomial Distribution</a></li>
-</ul>
-
-<h2 class="h2-reading">Supplemental Readings:</h2>
-<ul class="ul-reading">
 <li>Hoetker (2007). The use of logit and probit models in strategic management research: Critical issues.</li>
 <li>Stolzfus (2011). Logistic regression: A brief primer.</li>
 <li>Sainani (2014). Logistic regression.</li>
 <li><a href = "https://peopleanalytics-regression-book.org/bin-log-reg.html">Logistic Regression in People Analytics</a></li>
+</ul>
+
+<h2 class="h2-reading">Supplemental Readings:</h2>
+No supplemnetal readings.
+<ul class="ul-reading">
+
 </ul>
 
 <div class = "prev-next-container">
