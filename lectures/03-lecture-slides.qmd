@@ -1,0 +1,1166 @@
+---
+title: "Introduction to Logistic Regression"
+format: 
+  revealjs:
+    theme: [default, theme-lecture-slides.scss] 
+    css: styles-lecture-slides.css
+    slide-number: true
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+source("packages-lecture.R")
+source("helper-functions-lecture.R")
+
+```
+
+## Overview for Today
+
+Today we will be learning about: 
+
+- All about simple and multiple logistic regression 
+- How to interpret the results of a logistic regression model
+
+## Generalized Linear Models: A Family of Statistical Models
+
+**Generalized linear models** (GLMs) are a family of statistical models that **generalize** the methods of linear regression to outcome variables that are neither continuous, nor normally distributed. 
+
+## The Components of a GLM
+
+GLMs are built from three separate components: 
+
+1. **Random component** that specifies the probability distribution of the outcome variable. 
+2. **Linear predictor** that describes how the predictor variables relate to the outcome variable. 
+3. **Link function** that **links** the linear predictor to the **mean** of the outcome variable's probability distribution.
+
+## Linear Regression as a Generalized Linear Model 
+
+When considered as a GLM, we can specify a simple linear regression model as: 
+
+1. **Random Component**: Normal distribution 
+2. **Linear Predictor**: $\beta_0 + \beta_1X_1$
+3. **Link Function**: $g(\mu)=\beta_0 + \beta_1X_1$
+
+## Linear Regression as a Generalized Linear Model 
+
+We can write the linear regression model as a generalized linear model where the mean of the normal distribution is just set equal to the linear predictor, $\beta_0 + \beta_1X_1$.
+
+$$Y|X \sim N(\text{mn.} = \mu = g^{-1}(x), \space\text{s.d.} = \sigma)$$
+
+$$Y|X \sim N(\text{mn.} =\beta_0 + \beta_1X_1, \space \text{s.d.} = \sigma)$$
+
+## Linear Regression: An Example with US Heights by Gender
+
+```{r}
+#| echo: false 
+
+set.seed(326)
+n <- 10000
+sex_male <- sample(0:1, size = n, replace = TRUE, prob = c(.48, .52))
+ht_male <- rnorm(sum(sex_male), 69.1, 2.9)
+ht_female <- rnorm(sum(1 - sex_male), 63.7, 2.7)
+ht <- c(ht_male, ht_female)
+
+data_ht <- 
+  tibble::tibble(
+    ht = c(ht_male, ht_female),
+    sex = c(rep("M", length(ht_male)), rep("F", length(ht_female)))
+  )
+
+ggplot2::ggplot(
+  data_ht,
+  ggplot2::aes(x = ht, fill = sex)
+) +
+  ggplot2::geom_histogram(
+    position = ggplot2::position_dodge(),
+    bins = 45,
+    color = plot_color
+  ) +
+  ggplot2::theme(
+    plot.background = element_rect(fill = "#F9F7F7", colour = "#F9F7F7"),
+    panel.background = element_rect(fill = "#F9F7F7"),
+    axis.line.x = element_line(colour = "#3D3C42"),
+    axis.line.y = ggplot2::element_blank(),
+    panel.grid.minor = element_line(colour = "#F9F7F7"),
+    panel.grid.major = element_line(colour = "#F9F7F7"),
+    axis.ticks.y = ggplot2::element_line(linewidth = 0),
+    axis.text.y = ggplot2::element_blank()
+  ) +
+  ggplot2::labs(
+    x = "Height (Inches)",
+    y = "",
+    fill = "Sex"
+  ) + 
+  ggplot2::geom_text(
+    ggplot2::aes(label = "Mean Male Ht: 69.1", x = 76, y = 400)
+  ) + 
+  ggplot2::geom_text(
+    ggplot2::aes(label = "SD Male Ht: 2.9", x = 76, y = 380)
+  ) + 
+  ggplot2::geom_text(
+    ggplot2::aes(label = "Mean Female Ht: 63.7", x = 76, y = 360)
+  ) + 
+  ggplot2::geom_text(
+    ggplot2::aes(label = "SD Female Ht: 2.7", x = 76, y = 340)
+  )
+```
+
+## Linear Regression: An Example with US Heights by Gender
+
+```{r}
+mod_height <- lm(ht ~ sex, data = data_ht)
+```
+
+```{r}
+#| echo: false
+
+summary(mod_height)
+```
+
+## Linear Regression: An Example with US Heights by Gender
+
+The probability model estimated by our regression is: 
+
+$$\text{US Ht.}|\text{Sex} \sim N(\text{mn.} =63.68 + 5.39 \times \text{Sex}, \space \text{s.d.} = 2.80)$$
+
+$$\text{US Ht.}|\text{Sex = Male} \sim N(\text{mn.} =63.68 + 5.39, \space \text{s.d.} = 2.80)$$
+
+$$\text{US Ht.}|\text{Sex =Female} \sim N(\text{mn.} =63.68, \space \text{s.d.} = 2.80)$$
+
+## Linear Regression: An Example with US Heights by Gender
+
+Simulating the data according to our model:
+
+```{r}
+ht_female <- rnorm(5000, mean = 63.68 + 5.39 * 0, sd = 2.80)
+ht_male <- rnorm(5000, mean = 63.68 + 5.39 * 1, sd = 2.80)
+```
+
+```{r}
+#| fig-align: center
+#| echo: false
+data_ht_sim <- 
+  tibble::tibble(
+    ht = c(ht_female, ht_male),
+    sex = c(rep("Female", length(ht_female)), rep("Male", length(ht_male)))
+  )
+
+ggplot2::ggplot(
+  data = data_ht_sim,
+  ggplot2::aes(
+    x = ht,
+    fill = sex
+  )
+) + 
+  ggplot2::geom_histogram(
+    position = ggplot2::position_dodge2(),
+    color = "black",
+    binwidth = .50
+  ) + 
+  ggplot2::labs(
+    x = "Height",
+    fill = "Sex",
+    y = "Count"
+  ) + 
+  lecture_ggplot_theme_barplot
+```
+
+## What Happens When Our Outcome Isn't Normal?
+
+The power of GLMs is that they open up a whole new world of probability distributions for us to specify when our outcome doesn't follow a normal distribution like:
+
+- Bernouli Distribution
+- Gamma Distribution
+- Poisson Distribution & more! 
+
+But how? 
+
+## Non-Profit Donation: An Example of a Bernouli Distribution
+
+```{r}
+#| echo: false
+
+set.seed(1065)
+n <- 2500
+x_csr <- sample(1:7, size = n, replace = TRUE,
+                prob = dnorm(1:7, mean = 3.5, sd = 2) / sum(dnorm(1:7, mean = 3.5, sd = 2)))
+
+x_cc <- sample(0:1, size = n, replace = TRUE, prob = c(.70, .30))
+
+x_csr_c <- x_csr - median(x_csr)
+donate_lin <- -1.50 + .8 * x_csr_c + 1.2 * x_cc
+
+donate <- rbinom(n, size = 1, prob = plogis(donate_lin))
+
+data_donate <- 
+  tibble::tibble(
+    donate,
+    x_cc, 
+    x_csr
+  )
+```
+
+Our outcome is whether or not a shopper decided to donate to a non-profit the store at which they were shopping supported. 
+
+- Donate: Yes/No 
+- Perceived Corporate Social Responsibility of corporation: 1-7
+- Does customer identify with the corporation: Yes/No
+
+## Non-Profit Donation: An Example of Simple Logistic Regression
+
+We can write our statistical model as: 
+
+$$\text{Donate} \sim Bern.(\text{mn.} = \pi, \space \text{s.d.} = \sqrt{\pi(1-\pi)})$$
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+data_donate_barplot <- 
+  data_donate |>
+  dplyr::summarize(
+    total = dplyr::n(),
+    .by = donate
+  ) |>
+  dplyr::mutate(
+    prop = total / sum(total),
+    prop = round(prop, 2),
+    donate_cat = dplyr::if_else(donate == 1, "Yes", "No")
+  )
+
+ggplot2::ggplot(
+  data = data_donate_barplot,
+  ggplot2::aes(
+    x = donate_cat,
+    y = prop
+  )
+) +
+  ggplot2::geom_bar(
+    fill = plot_fill,
+    color = plot_color,
+    stat = "identity"
+  ) +
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Shopper Donate",
+    y = "Proportion"
+  ) + 
+  ggplot2::geom_label(
+    ggplot2::aes(
+      label = prop
+    )
+  )
+
+```
+
+## Non-Profit Donation: Linking CSR to Donations
+
+We are interested in understanding if a shopper's perceptions of the corporation's corporate social responsibility is related to their decision to donate or not. How can we model this? 
+
+$$\text{Donate}|\text{CSR} \sim Bern.(\text{mn.} = g^{-1}(x), \space \text{s.d.} = \sqrt{\pi(1-\pi)})$$
+
+How should a good link function for $\pi$ behave? (Hint: the linear predictor can take on any negative or positive value.)
+
+## The Logistic Regression Link Function: The Logit
+
+It turns out there is a link function that works very well: the logit or log-odds. 
+
+$$g(\pi) = \ln(\frac{\pi}{1-\pi})$$
+
+## The Logistic Regression Link Function: The Logit
+
+Let's see what value the Logit function outputs at different values of $\pi$:
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+data_logit <- 
+  tibble::tibble(
+    pi = seq(0, 1, len = 2000),
+    logit = log(pi / (1 - pi))
+  )
+
+ggplot2::ggplot(
+  data = data.frame(x = seq(.00001, .99999, len = 2000)),
+  ggplot2::aes(x = x)
+) + 
+  ggplot2::geom_function(
+    fun = qlogis,
+    color = plot_fill,
+    linewidth = 1.10
+  ) + 
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Pi (Probability Value)",
+    y = "g(Pi) / Logit Output"
+  )
+```
+
+## The Relationship Between CSR and Donations
+
+```{r}
+#| echo: false
+#| fig-align: center
+plot_data_csr <- 
+  data_donate |>
+  dplyr::summarize(
+    count = dplyr::n(),
+    .by = x_csr
+  ) |>
+  dplyr::mutate(
+    prop = count / sum(count),
+    prop = round(prop, 2)
+  )
+
+plot_csr <- 
+  ggplot2::ggplot(
+    data = plot_data_csr,
+    ggplot2::aes(
+      x = x_csr,
+      y = prop
+    )
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity",
+    fill = plot_fill,
+    color = plot_color
+  ) +
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Perception of Corporation's Social Responsibility",
+    y = "Response Proportion"
+  )
+
+plot_data_donate_csr <-
+  data_donate |>
+  dplyr::summarize(
+    count = dplyr::n(),
+    .by = c(x_csr, donate)
+  ) |>
+  dplyr::arrange(
+    x_csr,
+    donate
+  ) |>
+  dplyr::group_by(x_csr) |>
+  dplyr::mutate(
+    total = sum(count),
+    prop = count / total,
+    prop = round(prop, 2)
+  ) |>
+  dplyr::ungroup() |>
+  dplyr::filter(
+    donate == 1
+  )
+
+plot_donate <- 
+  ggplot2::ggplot(
+  data = data_donate_barplot,
+  ggplot2::aes(
+    x = donate_cat,
+    y = prop
+  )
+) +
+  ggplot2::geom_bar(
+    fill = plot_fill,
+    color = plot_color,
+    stat = "identity"
+  ) +
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Shopper Donate",
+    y = "Proportion"
+  )
+
+plot_donate_csr <- 
+  ggplot2::ggplot(
+    data = plot_data_donate_csr,
+    ggplot2::aes(
+      x = x_csr,
+      y = prop
+    )
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity",
+    fill = plot_fill,
+    color = plot_color
+  ) + 
+  lecture_ggplot_theme_barplot +
+  ggplot2::labs(
+    x = "Perception of Corporation's Social Responsibility",
+    y = "Proportion Donate"
+  ) + 
+  ggplot2::geom_label(
+    ggplot2::aes(
+      label = prop
+    )
+  ) + 
+  ggplot2::lims(y = c(0, 1))
+
+patchwork_donate_csr <- (plot_donate_csr) / (plot_csr + plot_donate)
+patchwork_donate_csr & lecture_ggplot_theme_barplot
+
+```
+
+## Using a Chi-Square Test
+
+We could explore the relationship between Perceptions of CSR and donations by using a chi-squared test: 
+
+```{r}
+donate_csr_table <- xtabs(~x_csr + donate, data_donate)
+chisq.test(donate_csr_table)
+```
+
+## Modeling the Relationship Between CSR and Donations
+
+A better and more informative way to model the relationship between CSR and donations is by building and estimating a logistic regression equation:
+
+$$\ln{\frac{\pi_{Don.}}{1-\pi_{Don.}}}=\beta_0 + \beta_1\text{CSR}$$
+
+Note that the outcome we are modeling is now the log-odds (logit) of the probability of donating. 
+
+## Estimating a Simple Logistic Regression Model with `glm`
+
+```{r}
+mod_csr <- glm(donate ~ x_csr, family = binomial(link = "logit"),
+               data = data_donate)
+```
+
+<br>
+
+We can use the function `glm` to estimate a logistic regression model in `R`. We need to tell `glm`: 
+
+- the linear predictor: `donate ~ x_csr` 
+- the random component: `family = binomial`
+- the link function: `link = "logit"`. 
+
+## The Results of a Logistic Regression Model
+
+```{r}
+summary(mod_csr)
+```
+
+## What Do We Look for in the Results? 
+
+Here is a checklist of things to focus on in the model summary: 
+
+1. The sign and magnitude of the slope estimates
+2. The size of the standard error compared to the estimate
+3. The p-value
+
+## The Difficulty with Interpreting the Logistic Regression Parameters
+
+Because of the nonlinearity of the link function, it is difficult to interpret the estimated parameters of a logistic regression model. There are two things we can know immediately though: 
+
+1. A positive slope estimate means that increases in the predictor variable lead to increases in the probability of observing the event. 
+2. A Z-value greater than ~|2| signals that the slope is significantly different from 0 
+
+Thankfully, there are ways we can transform the slopes to make more sense of them!
+
+## The Slope as a Change in the Odds Ratio 
+
+Because thinking in logits is weird (and hard), let us transform the coefficients into something more interpretable: an odds ratio.
+
+$$\beta_1=\log{\frac{\text{Odds}_{X + 1}}{\text{Odds}_{X}}}$$
+
+$$\exp{(\beta_1)}=\frac{\text{Odds}_{X + 1}}{\text{Odds}_{X}}$$
+
+## The Slope as a Change in the Odds Ratio 
+
+A one unit increase in CSR results in a `r round(exp(mod_csr$coef[2]), 2)` (`r paste(100 * (round(exp(mod_csr$coef[2]), 2) - 1), "%")`) increase in the odds of donating to the corporation's charity of choice.
+
+```{r}
+#| eval: false
+exp(mod_csr$coefficients)
+```
+
+```{r}
+#| echo: false
+
+summ_coef <- summary(mod_csr)$coefficients
+
+table_coef <- 
+  summ_coef |> 
+  as.data.frame() |>
+  tibble::rownames_to_column() |>
+  dplyr::mutate(
+    exp_estimate = exp(Estimate),
+    exp_estimate = round(exp_estimate, 2),
+    Estimate = round(Estimate, 2),
+    se = round(`Std. Error`, 2),
+    z_value = round(`z value`, 2),
+    p_value = round(`Pr(>|z|)`, 2)
+  ) |>
+  dplyr::select(
+    `Coef. Name` = rowname,
+    Estimate,
+    `Exp. Estimate` = exp_estimate, 
+    SE = se,
+    Z = z_value,
+    p = p_value
+  ) |>
+  knitr::kable()
+
+table_coef
+```
+
+## Interpreting the Logistic Regression Slope: Predicted Probability {.smaller}
+
+Odds ratios are also kind of hard to interpret, so I prefer to interpret the logistic regression slope as a change in the predicted probability of the outcome occurring (donating, in our example).
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+```{r}
+predicted_probability <- predict(mod_csr, type = "response")
+```
+
+:::
+
+::: {.column width="40%"}
+
+```{r}
+#| echo: false
+
+dplyr::mutate(data_donate, pred_prob = predicted_probability) |>
+  dplyr::select(x_csr, pred_prob) |> 
+  dplyr::distinct() |> 
+  dplyr::arrange(x_csr) |>
+  dplyr::mutate(pred_prob = round(pred_prob, 2)) |>
+  dplyr::rename(CSR = x_csr, `Pred. Prob.` = pred_prob) |>
+  knitr::kable()
+```
+
+:::
+
+::::
+
+## Predicted Probability Curve
+
+```{r}
+#| echo: false
+#| fig-align: center
+set.seed(534)
+data_prob_plot <- 
+  data_donate |>
+  dplyr::mutate(
+    pred_prob = predict(mod_csr, type = "response")
+  )
+
+plot_pred_prob <- 
+  ggplot2::ggplot(
+    data = data_prob_plot,
+    ggplot2::aes(
+      x = x_csr,
+      y = donate
+    )
+  ) + 
+  ggplot2::geom_jitter(width = .75, height = .025,
+                       fill = plot_fill, color = plot_color,
+                       shape = 21) + 
+  ggplot2::geom_function(
+    fun = ~plogis(mod_csr$coefficients[1] + mod_csr$coefficients[2]*.x),
+    linewidth = 1.25,
+    color = plot_fill,
+    inherit.aes = FALSE
+  ) + 
+  ggplot2::labs(
+    x = "Perception of Corporation's Social Responsibility",
+    y = "Predicted Probability of Donation"
+  ) + 
+  lecture_ggplot_theme_barplot
+
+plot_pred_prob
+```
+
+## How Do We Interpret the Predicted Probability Plot? 
+
+The probability curve is nonlinear, so the effect that our predictor variable (corporate social responsibility) has on our outcome (donating or predicted probability of donating) differs depending on what the predicted probability is: 
+
+- The effect of of X on Y is low when the predicted probability is around ~.05.
+- The effect of X on Y is moderate when the predicted probability is around ~.50. 
+- The effect of X on Y begins to level off after predicted probability of ~.75. 
+
+So how do we provide a summary of these effects? 
+
+## Interpreting the Logistic Regression Slope: Marginal Effect
+
+One way to solve the interpretability solution is to calculate the effect of the predictor at a specific value of the predicted probability:
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+prob_0 <- c(.10, .50, .70)
+x0 <- (qlogis(prob_0) - mod_csr$coef[1])/mod_csr$coef[2]
+slope_par <- mod_csr$coef[2] * prob_0 * (1 - prob_0)
+int_par <- predict(mod_csr, data.frame(x_csr = x0), type = "response") - slope_par*x0
+
+
+plot_me_10 <- 
+  plot_pred_prob + 
+  ggplot2::geom_abline(
+    intercept = int_par[prob_0 == .10],
+    slope = slope_par[prob_0 == .10],
+    linewidth = 1,
+    color = plot_color
+  ) + 
+  ggplot2::labs(
+    title = paste0("Marginal Effect at .10: ", round(slope_par[prob_0 == .10], 2))
+  )
+
+plot_me_50 <- 
+  plot_pred_prob + 
+  ggplot2::geom_abline(
+    intercept = int_par[prob_0 == .50],
+    slope = slope_par[prob_0 == .50],
+    linewidth = 1,
+    color = plot_color
+  ) + 
+  ggplot2::labs(
+    title = paste0("Marginal Effect at .50: ", round(slope_par[prob_0 == .50], 2))
+  )
+
+plot_me_70 <- 
+  plot_pred_prob + 
+  ggplot2::geom_abline(
+    intercept = int_par[prob_0 == .70],
+    slope = slope_par[prob_0 == .70],
+    linewidth = 1,
+    color = plot_color
+  ) + 
+  ggplot2::labs(
+    title = paste0("Marginal Effect at .70: ", round(slope_par[prob_0 == .70], 2))
+  )
+
+plot_me_50 + lecture_ggplot_theme_barplot
+# pw_me_plot <- (plot_me_50) / (plot_me_10)
+# pw_me_plot & lecture_ggplot_theme_barplot
+```
+
+## Interpreting the Logistic Regression Slope: The Average & Max Marginal Effect
+
+Instead of calculating the marginal effect a single value of the predicted probability, it would be even better to calculate the **average marginal effect** and the **maximum marginal effect**:
+
+```{r}
+#| eval: false
+mfx::logitmfx(mod_csr, atmean = FALSE, data = data_donate) # Average ME
+mod_csr$coefficients[2] / 4 # Maximum ME 
+```
+
+```{r}
+#| echo: false
+avg_me <- mfx::logitmfx(mod_csr, atmean = FALSE, data = data_donate) # Average ME
+max_me <- mod_csr$coefficients[2] / 4 # Maximum ME 
+
+tibble::tibble(
+  `Avg. ME` = round(avg_me$mfxest[1,1], 2),
+  `Max ME` = round(max_me, 2)
+) |>
+  knitr::kable()
+```
+
+## So...What is the Effect of CSR on Donating? 
+
+Here is a summary of our different interpretations: 
+
+1. A one unit increase in CSR (predictor) leads to a `r round(exp(mod_csr$coef[2]), 2)` increase in the odds of donating.
+2. A one unit increase in CSR will lead to at most a `r 100*round(mod_csr$coef[2] / 4, 2)` point increase in the probability of donating and roughly a `r 100*round(avg_me$mfxest[1,1], 2)` point increase, on average. 
+
+## Simple Logistic Regression: Categorical Predictor
+
+Now we would like to know if customers' identification with the company (a categorical predictor---yes or no) is related to whether they donate to the company's preferred charity. 
+
+## A Quick Reminder on Indicator Coding 
+
+**Indicator coding** takes a categorical variable with K categories (2 in our case) and transforms them into K - 1 indicator variables (0 or 1).
+
+- An indicator variable for each category except the reference category. 
+- An indicator variable takes on a value of 1 if the observation is a member of the category else it takes on 0.
+- The reference category is identified by taking on 0s across all of the indicator variables.
+
+## Indicator Coding for Customer Identification
+
+In our data, why do we only need one indicator variable and which category is the reference group? 
+
+```{r}
+#| echo: false
+data_donate <- dplyr::mutate(data_donate, x_cust_id = dplyr::if_else(x_cc == 1, "Yes", "No"))
+
+model.matrix(~data_donate$x_cust_id) |> tibble::as_tibble() |>
+  dplyr::mutate(x_cust_id = data_donate$x_cust_id) |>
+  dplyr::select(x_cust_id_indicator = `data_donate$x_cust_idYes`,
+                x_cust_id)
+```
+
+## The Relationship Between Customer Identification and Donations
+
+```{r}
+#| echo: false
+#| fig-align: center
+plot_data_cid <- 
+  data_donate |>
+  dplyr::summarize(
+    count = dplyr::n(),
+    .by = x_cc
+  ) |>
+  dplyr::mutate(
+    prop = count / sum(count),
+    prop = round(prop, 2),
+    cid_fac = dplyr::if_else(x_cc == 1, "Yes", "No")
+  ) 
+
+plot_cid <- 
+  ggplot2::ggplot(
+    data = plot_data_cid,
+    ggplot2::aes(
+      x = cid_fac,
+      y = prop
+    )
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity",
+    fill = plot_fill,
+    color = plot_color
+  ) +
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Customer Identification with Company",
+    y = "Response Proportion"
+  ) + 
+  ggplot2::geom_label(
+    ggplot2::aes(
+      label = prop
+    )
+  ) + 
+  ggplot2::lims(y = c(0, 1))
+
+plot_data_donate_cid <-
+  data_donate |>
+  dplyr::summarize(
+    count = dplyr::n(),
+    .by = c(x_cc, donate)
+  ) |>
+  dplyr::arrange(
+    x_cc,
+    donate
+  ) |>
+  dplyr::group_by(x_cc) |>
+  dplyr::mutate(
+    total = sum(count),
+    prop = count / total,
+    prop = round(prop, 2),
+    cid_fac = dplyr::if_else(x_cc == 1, "Yes", "No")
+  ) |>
+  dplyr::ungroup() |>
+  dplyr::filter(
+    donate == 1
+  )
+
+plot_donate <- 
+  ggplot2::ggplot(
+  data = data_donate_barplot,
+  ggplot2::aes(
+    x = donate_cat,
+    y = prop
+  )
+) +
+  ggplot2::geom_bar(
+    fill = plot_fill,
+    color = plot_color,
+    stat = "identity"
+  ) +
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Shopper Donate",
+    y = "Proportion"
+  ) + 
+  ggplot2::geom_label(
+    ggplot2::aes(
+      label = prop
+    )
+  ) + 
+  ggplot2::lims(y = c(0, 1))
+
+plot_donate_cid <- 
+  ggplot2::ggplot(
+    data = plot_data_donate_cid,
+    ggplot2::aes(
+      x = cid_fac,
+      y = prop
+    )
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity",
+    fill = plot_fill,
+    color = plot_color
+  ) + 
+  lecture_ggplot_theme_barplot +
+  ggplot2::labs(
+    x = "Customer Identification with Company",
+    y = "Proportion Donate"
+  ) + 
+  ggplot2::geom_label(
+    ggplot2::aes(
+      label = prop
+    )
+  ) + 
+  ggplot2::lims(y = c(0, .75))
+
+patchwork_donate_cid <- (plot_donate_cid) / (plot_cid + plot_donate)
+patchwork_donate_cid & lecture_ggplot_theme_barplot
+
+```
+
+## Estimation & Interpretation with a Categorical Predictor 
+
+Estimating a logistic regression model with a categorical predictor is no different than estimating one with a quantitative predictor and interpretation is a little easier.  
+
+```{r}
+#| eval: false
+mod_cust_id <- glm(donate ~ x_cust_id, family = binomial(link = "logit"), 
+                   data = data_donate)
+summary(mod_cid)
+```
+
+```{r}
+#| echo: false
+mod_cust_id <- glm(donate ~ x_cust_id, family = binomial(link = "logit"), 
+                   data = data_donate)
+
+summary(mod_cust_id)
+```
+
+## Interpreting the Effect of a Categorical Predictor as an Odds Ratio
+
+When we exponentiate the slope for the categorical predictor, we can interpret it as an odds ratio where the numerator is the odds of an event for category K and the denominator is **always** the odds of an event for the reference category. 
+
+So, values greater than 1 indicate the odds of an event occurring for category K are greater than they are for the reference category. 
+
+```{r}
+#| eval: false
+exp(mod_cust_id$coefficients[2])
+```
+
+```{r}
+#| echo: false
+exp(mod_cust_id$coefficients[2]) |> round(2)
+```
+
+## Interpreting the Effect of a Categorical Predictor as a Predicted Probability
+
+Similarly, we can also calculate the predicted probability of the event (donating) for each category: 
+
+```{r}
+#| eval: false
+predict(mod_cust_id, type = "response")
+```
+
+```{r}
+#| echo: false
+
+data_donate |> dplyr::mutate(pred_prob = round(predict(mod_cust_id, type = "response"), 2)) |>
+  dplyr::select(x_cust_id, pred_prob) |> dplyr::distinct()
+```
+
+## The Marginal Effect of a Categorical Variable
+
+For a two category categorical variable (like ours), the marginal effect is the difference in the two predicted probabilities. For more than two categories, it is the average difference across the K-1 comparisons. 
+
+```{r}
+#| eval: false
+mfx::logitmfx(mod_cust_id, data = data_donate, atmean = FALSE)
+prop.test(c(donate_yes, donate_no), c(total_yes, total_no))
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+
+donate_yes <- sum(data_donate$donate[data_donate$x_cust_id == "Yes"])
+donate_no <- sum(data_donate$donate[data_donate$x_cust_id == "No"])
+
+total_yes <- sum(data_donate$x_cust_id == "Yes")
+total_no <- sum(data_donate$x_cust_id == "No")
+
+mfx::logitmfx(mod_cust_id, data = data_donate, atmean = FALSE)$mfxest |>
+  tibble::as_tibble() |> round(3)
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+
+prop.test(c(donate_yes, donate_no), c(total_yes, total_no))
+```
+
+:::
+
+::::
+
+## Multiple Logistic Regression: A Quantitative & Categorical Predictor 
+
+Simple logistic regression is great, but multiple logistic regression is better! 
+
+Like multiple linear regression, multiple logistic regression allows us to estimate the effect of one predictor variable while adjusting (controlling) for the effects of the other predictor variables in the model.
+
+## What it Means to Adjust for Another Variable
+
+```{r}
+#| echo: false
+set.seed(6535)
+
+# shark attack example 
+# 69 attacks/per year
+n_year <- 50
+n_seasons <- 4*n_year
+
+year_ind <- (2023 - 49):2023
+season_ind <- rep(c("Spring", "Summer", "Fall", "Winter"), length(year_ind))
+summer_ind <- dplyr::if_else(season_ind == "Summer", 1, 0)
+
+data_shark_att <- 
+  tibble::tibble(
+    year = rep(year_ind, each = 4),
+    season = season_ind
+  ) |>
+  dplyr::mutate(
+    season = dplyr::if_else(season == "Summer", "Summer", "Not Summer")
+  ) |>
+  dplyr::distinct() |>
+  dplyr::mutate(
+    summer = dplyr::if_else(season == "Summer", 1, 0),
+    y_shark_att = rpois(n_year*2, lambda = exp(2.20 + 1.9 * summer)),
+    ice_cream_sales_num = rbinom(n_year*2, 1, prob = plogis(-1 + 2 * summer)),
+    ice_cream_sales = dplyr::if_else(ice_cream_sales_num == 1, "High Sales Rev.", "Low Sales Rev.")
+  )
+
+mod_1 <- lm(y_shark_att ~ ice_cream_sales, data = data_shark_att)
+mod_2 <- lm(y_shark_att ~ ice_cream_sales + summer, data = data_shark_att)
+```
+
+Why are ice cream sales related to shark attacks? 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+
+data_shark_att |>
+  dplyr::summarize(
+    avg_shark_att = round(mean(y_shark_att), 2),
+    .by = ice_cream_sales
+  ) |>
+  dplyr::rename(
+    sales = ice_cream_sales
+  )
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+
+data_shark_att |>
+  dplyr::summarize(
+    avg_shark_att = round(mean(y_shark_att), 2),
+    .by = c(season, ice_cream_sales)
+  ) |>
+  dplyr::rename(
+    sales = ice_cream_sales
+  ) |>
+  dplyr::arrange(
+    season
+  )
+```
+
+:::
+
+::::
+
+## What it Means to Adjust for Another Variable {.smaller}
+
+Here is what adjusting looks like in a model: 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+summary(mod_1)$coef |> 
+  round(2) |> 
+  as.data.frame() |>
+  tibble::rownames_to_column() |>
+  dplyr::mutate(
+    rowname = c("Int.", "Low Sales")
+  ) |>
+  knitr::kable()
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+summary(mod_2)$coef |> 
+  round(2) |> 
+  as.data.frame() |>
+  tibble::rownames_to_column() |>
+  dplyr::mutate(
+    rowname = c("Int.", "Low Sales", "Summer")
+  ) |>
+  knitr::kable()
+```
+
+:::
+
+::::
+
+## Our Updated Example
+
+We now want to know what the impact of both a customer's perception of the corporation's social responsibility efforts and their identification with that corporation have on their willingness to donate to the corporation's preferred charity. 
+
+To answer these questions, we will need to use a **multiple logistic regression** model. 
+
+## Estimating A Multiple Logistic Regression 
+
+Estimating a multiple logistic regression is nearly identical to estimating the simple logistic regression equation: 
+
+```{r}
+mod_donate <- glm(donate ~ x_csr + x_cust_id, 
+                  family = binomial(link = "logit"),
+                  data = data_donate)
+```
+
+
+## Interpreting the Multiple Logistic Regression Estimates 
+
+We can interpret the estimates in a multiple logistic regression model just like we would the estimates in a simple logistic regression model with the added phrase of: 
+
+"while adjusting (or controlling) for the effects of the other predictor variables." 
+
+## Interpreting the Multiple Logistic Regression Estimates 
+
+The easiest way to interpret the effects is to plot the predicted probability curves. Below you will find two curves, one for the relationship between CSR and donation when a customer does not identify with the corporation and another curve for when the customer does identify. 
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+data_mlr_predict <- 
+  data_donate |>
+  dplyr::select(
+    x_csr,
+    x_cust_id
+  ) |>
+  dplyr::mutate(
+    pred_prob = predict(mod_donate, type = "response")
+  ) |>
+  dplyr::distinct()
+
+ggplot2::ggplot(
+  data = data_mlr_predict,
+  ggplot2::aes(
+    x = x_csr, 
+    y = pred_prob,
+    color = x_cust_id
+  )
+) + 
+  ggplot2::geom_smooth(se = FALSE) + 
+  ggplot2::labs(
+    x = "Customer Perceptions of CSR",
+    y = "Predicted Probability of Donating",
+    color = "Customer Ident."
+  ) +
+  lecture_ggplot_theme_moderation_plot
+```
+
+## Calculating the Average Marginal Effects
+
+We can also still use `mfx::logitmfx()` to calculate the average marginal effects for each predictor: 
+
+```{r}
+mfx::logitmfx(mod_donate, data = data_donate, atmean = FALSE)
+```
+
+## Writing Up Your Interpretation 
+
+```{r}
+#| echo: false 
+
+me_mlr <- mfx::logitmfx(mod_donate, data = data_donate, atmean = FALSE)
+me_effect <- me_mlr$mfxest
+```
+
+For every unit increase in a customer's perception of the corporation's social responsibility, we expect the probability of donating to the corporation's preferred charity to increase by `r 100 * round(me_effect[1, 1], 2)` points, on average, while adjusting for the customer's identification with the corporation. 
+
+## What About Statistical Inference? 
+
+We can make statistical inferences from the logistic regression model (and all GLMs) just like we did with the ordinary linear regression model: 
+
+- Null Hypothesis Significance Testing 
+- Confidence Intervals
+
+## Remember NHST
+
+We setup two hypotheses: Null & Alternative. The Null Hypothesis is a statement that our regression coefficient (slope) takes on a specific value, usually 0. Then we see how far away our actual estimate is from the null value. If it is *far enough away*, then we reject our null and claim that there is a **statistically significant** difference between our null value and estimate. 
+
+## Steps to NHST
+
+1. Setup your null & alternative hypotheses and your alpha level 
+2. Calculate your test statistics (Z Value in our output)
+3. Calculate the p-value (the probability of seeing a test statistics as extreme or more extreme than ours)
+4. If our p-value is less than our alpha level, then we rejoice! 
+
+## Building Confidence Intervals for Logistic Regression Estimates
+
+To build an approximate confidence interval around the logistic regression estimate, we can use the following formula:
+
+```{r}
+#| eval: false
+csr_se <- summary(mod_donate)$coefficients[2, 2]
+ci_95 <- mod_donate$coefficients[2] + c(-qnorm(.975) * csr_se, qnorm(.975) * csr_se)
+exp(ci_95)
+```
+
+Why do we exponentiate the confidence interval? 
+
+## Interpreting Confidence Intervals for Logistic Regression Estimates 
+
+```{r}
+#| echo: false
+csr_se <- summary(mod_donate)$coefficients[2, 2]
+ci_95 <- mod_donate$coefficients[2] + c(-qnorm(.975) * csr_se, qnorm(.975) * csr_se)
+```
+
+We are 95% confident that the true effect of CSR is between `r exp(ci_95)[1] |> round(2)` and `r exp(ci_95)[2] |> round(2)`. 
+
+So, at its smallest, a unit increase in CSR will increase the odds of donating by `r 100*(exp(ci_95)[1] |> round(2) - 1)`% and at its largest, a unit increase in CSR will increase the odds of donating by `r 100*(exp(ci_95)[2] |> round(2) - 1)`%, while adjusting for customer's identification with the corporation.
+
+```{r}
+exp(ci_95) |> round(2)
+```
+
+
+
+
+

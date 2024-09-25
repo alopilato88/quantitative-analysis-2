@@ -1,0 +1,18 @@
+---
+format: 
+  html:
+    page-layout: article
+---
+
+<div class = "prev-next-container">
+<a class="prev-next" href="04-lecture-page.html">Next Week's Materials &raquo;</a>
+</div>
+
+## Lecture: Introduction to Simple and Multiple Logistic Regression
+
+<iframe src="03-lecture-slides.html" name="03-lecture-slides"></iframe>
+
+To download a pdf version of these slides, click <a href="03-lecture-slides.pdf" download target="_blank" rel="noopener noreferrer"><strong>here</strong></a>.
+
+
+
