@@ -7,6 +7,20 @@
     "text": "To download a pdf version of this syllabus, click here.\nMeeting Time: Tuesdays, 5 PM to 7 PM ET\nLocation: Zoom Meeting and Smith 307 when in person\nEmail: alex.lopilato@gmail.com (for quick responses) or alopilato@bentley.edu (for discussions about grades, personal info, etc.)\nOffice Hours: By request (will likely be virtual as I do not have an office on campus)\nCourse Format: Hybrid Synchronous\n\nCourse Description\nThis course focuses on applications of categorical models and linear mixed-effects regression models to model data collected from observational, quasi-experimental, and experimental study designs. This course will introduce students to the basics of categorical data analysis and linear mixed-effects regression models.\n\n\nCourse Objectives\nBy the end of this course, you will:\n\nHave an understanding of how to model categorical data.\nHave an understanding of how to model clustered data.\nHave an understanding of how to use both categorical regression models and mixed-effects regression models in your own research.\nFeel comfortable using R to estimate categorical regression and mixed-effects regression models.\n\n\n\nTextbooks\nNo textbooks are required for this course, but I will be drawing heavily from the following books:\n\nIntroduction to Categorical Data Analysis. Alan Agressti. Third Edition.\nPractical Multievel Modeling using R. Francis Huang.\nMultilevel Analysis: An Introduction to Basic and Advanced Multilevel Modeling. Tom Snijders & Roel Bosker.\n\n\n\nCourse Technology\nThis course will use Brightspace to post important updates and Zoom recordings. Please do not use Brightspace to email me! Use either of the emails listed above.\n\nCourse Website\nThe website for the course is: https://alopilato88.github.io/quantitative-analysis-2/. All of the lectures can be found there and will be made publicly available on the day of the lecture.\n\n\nStatistical Computing\nThis course will rely solely on the R programming language for all statistical computing. At the very least, you will need to download R to your local machine (or use your lab computer), and I highly recommend also downloading RStudio, which is an Integrated Development Environment (IDE) that makes programming in R (and other programming languages) much easier. Please reach out to me if you are unable to install R.\nWhile you can use another statistical software program such as SPSS, SAS, or STATA, I will not be providing example code for those different programs. I will only be providing example R code.\n\n\n\nGrading Criteria\nA combination of homework and a final research project will be used to determine your grade for this course. Homework will account for 90% of your grade and the research project will account for 10%. While I encourage you to consult with your colleagues (your instructor, classmates, professors, etc.) when you are struggling with any of the homework assignments or the research project, your final products must be your own.\n\nHomework\nI will send out periodic homework assignments in order to give you students experience applying the methods we discuss in class. These assignments will be a mix of conceptual, statistical, and computational exercises. Please reach out to me if you find yourself struggling or overly stressing with these assignments. They are meant to be a learning tool not a major stressor!\n\n\nResearch Project\nOne of the more exciting things about being a graduate student is that you are able to explore the topics you find interesting. Use this research project to apply the methods we learn to any topic of your choice. Alternatively, I have fictitious data you can use if you do not have access to data of your own. Please talk to me by October 17th about your research project, even if your not 100% sure about it.\nYour final product should include four components:\n\nA brief introduction to your topic, the theory you are testing, and your hypotheses.\nA methods section write-up that parallels methods sections found in published articles.\nA results secection write-up that parallels methods sections found in published articles.\nThe code you used to analyze your data along with the dataset (assuming you are allowed to share the data).\n\n\n\n\nUniversity Honor Code, Academic Honesty Policy, Bentley Core Values\nThis class will be conducted in full accordance with The Bentley Core Values. Please reread the Values, which can be found at https://www.bentley.edu/about/mission-and-values.\nBentley College Honor Code: The Bentley College Honor Code formally recognized the responsibility of students to act in an ethical manner. It expects all students to maintain academic honesty in their own work, recognizing that most students will maintain academic honesty because of their own high standards. The Honor Code expects students to promote ethical behavior throughout the Bentley community and to take responsible action when there is a reason to suspect dishonesty.\nPersonal Academic Behavior: A student acknowledges that all submitted work (e.g., examination, papers, cases homework assignments) must be his or her own. The exception is the case in which an instructor permits or encourages students to work together on some or all assignments. When a student is in doubt, he or she should consult the instructor for clarification.\nResponsible Actions: Each student, as an integral member of the academic community, is expected to make a commitment to act honestly and to reject dishonesty on the part of other students. The students as a community are responsible for maintaining an ethical environment. Policies may be found at: http://www.bentley.edu/centers/alliance/academic-integrity\n\n\nBias Incident Reporting\nThe Bias Incident Response Team (BIRT) provides students affected by bias or bias-related incidents with access to appropriate resources. Where appropriate, BIRT assists the University in its response to situations that may impact the overall campus climate related to diversity and inclusion. Working closely with appropriate students, faculty, committees, organizations, and staff, BIRT plays an educational role in fostering an inclusive campus community and supporting targeted individuals when bias or bias-related incidents occur. More information about BIRT and how to file a bias incident report can be found at: https://www.bentley.edu/offices/student-affairs/birt.\n\n\nSpecial Accommodations\nStatement of Disabilities: Bentley University abides by Section 504 of the Rehabilitation Act of 1973 and the Americans with Disabilities Act of 1990 which stipulate no student shall be denied the benefits of an education solely by reason of a disability. If you have a hidden or visible disability which may require classroom accommodations, please call (if you are a residential student or on online student) Disability Services within the first 4 weeks of the semester to schedule an appointment. Disability Services is located in the Office of Academic Services (JEN 336, 781.891.2004). Disability Services is responsible for managing accommodations and services for all students with disabilities.\n\n\nWriting Center\nThe Writing Center offers one-on-one tutoring to students of all years and skill levels. Located on the lower level of the Bentley library (room 023), the Writing Center provides a welcoming and supportive environment in which students can work on writing from any class or discipline. Writers are encouraged to visit at all stages of the writing process; they can come with a draft, an outline, or just some initial thoughts and questions.\nStaffed by highly skilled student tutors, the Writing Center is open six days a week. Most conferences will be conducted online, but limited in-person hours will be held by appointment only. Appointments can be made at bentley.mywconline.net. For specific hours and additional information, please visit the Writing Center SharePoint site.\n\n\nESOL\nThe ESOL Center offers online appointments for helping undergraduate and graduate students strengthen their writing and English language skills. Our ESOL faculty tutors specialize in working with international and multilingual students to provide one-on-one support for all courses writing at any stage in the writing process. Along with individualized help for writing, the ESOL tutors provide guidance and feedback for documenting sources, oral presentation practice, and pronunciation/fluency enrichment.\nThe ESOL Center offers real-time video appointments Monday through Friday between 7:30 a.m. and 10:00 p.m. These can be reserved through our website: https://bentleyesol.mywconline.net. The complete information about booking appointments and uploading papers is clarified on the website’s announcement page.\n\n\nCourse Style\nI want this course to be an enjoyable and engaging experience for all, so although I will have lecture slides to talk through, I will also be using this course more as a discussion about statistical topics, not a lecture about them.\nIn order to meaningfully engage in this discussion, I encourage you to read through the required readings and skim through the supplemental readings (although I think they are all interesting reads!). I understand everyone is busy, so, despite being labeleled “Required Readings”, I will not make the readings required, but to make this course useful you will need to engage with the material and come with questions!\nTo be successful in this course, you will need to:\n\nDo the required readings and skim the supplemental readings\nCome to class and bring questions\nEngage in the course discussions\nMost importantly, ASK QUESTIONS\n\n\n\nTentative Course Schedule\nNOTE: The course syllabus is a general plan for the course and as such there may be deviations throughout the semester. Supplemental readings are any readings that are italicized or hyperlinked.\n\n\n\nDate\nTopic\nReadings\n\n\n\n\n9/3\nCourse Introduction & Review\nNo readings\n\n\n\n\n\n\n\n9/10\nIntroduction to Categorical Data Analysis\n\nhttps://www.statisticshowto.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/\nMyung (2003). Tutorial on Maximum Likelihood Estimation\n\n\n\n\n\n\n\n\n9/17\nNo Class\n\n\n\n\n\n\n\n\n9/27\nSimple & Multiple Logistic Regresssion Models\nImmersion Day\n\nHoetker (2007). The use of logit and probit models in strategic management research: Critical issues.\nStolzfus (2011). Logistic regression: A brief primer\nSainani (2014). Logistic regression.\nhttps://peopleanalytics-regression-book.org/bin-log-reg.html\n\n\n\n\n\n\n\n\n10/01\nInteractions & Model Building\n\nZelner (2009). Using simulation to interpret results from logit, probit, and other nonlinear models.\nJeong et al. (2020). A recentering approach for interpreting interaction effects from logit, probit, and other nonlinear models.\nHuang & Shields (2000). Interpretation of interaction effects in logit and probit analyses.\n\n\n\n\n\n\n\n\n10/08\nGoodness of fit & Predictive Power\n\nMittlbock & Schemper (1996). Explained variation for logistic regression.\nRoyston & Altman (2010). Visualizing and assessing discrimination in the logistic regression model.\n\n\n\n\n\n\n\n\n10/15\nFall Break - No Class\n\n\n\n\n\n\n\n\n10/22\nMulticategorical Outcome Models\n\nhttps://peopleanalytics-regression-book.org/multinomial-logistic-regression-for-nominal-category-outcomes.html\nhttps://peopleanalytics-regression-book.org/ord-reg.html\nLiddell & Kruschke (2018). Analyzing ordinal data with metric models: What could possibly go wrong?\n\n\n\n\n\n\n\n\n11/1\nGeneralized Linear Models & Intro to Analyzing Clustered Data\nImmersion Day\n\nRonkko et al. (2022). Eight simple guidelines for improved understanding of transformations and nonlinear effects.\nhttps://albert-rapp.de/posts/14_glms/14_glms\nBliese & Hanges (2004). Being both too liberal and too conservative: The perils of treating grouped data as though they were independent.\nHofmann (1997). An overview of the logic and rationale of hierarchical linear models.\n\n\n\n\n\n\n\n\n11/5\nThe LMER Model\n\nMathieu et al. (2012). Understanding and estimating the power to detect cross-level interaction effects in multilevel modeling.\nWoltman et al. (2012). An introduction to hierarchical linear modeling.\nHeisig & Schaeffer (2019). Why you should always include a random slope for the lower-level variables invovled in a cross-level interaction.\n\n\n\n\n\n\n\n\n11/12\nModel Specification & Centering Decisions\n\nBliese et al. (2018). Back to basics with mixed-effects models: Nine take-away points.\nEnders & Tofighi (2007). Centering predictor variables in cross-sectional multilevel models: A new look at an old issue.\n\n\n\n\n\n\n\n\n11/19\n\\(R^2\\) & LMER Model Assumptions\n\nLaHuis et al. (2014). Explained variance measures for multilevel models.\nHuang (2018). Multilevel modeling myths.\n\n\n\n\n\n\n\n\n11/26\nThanksgiving Break No Class\n\n\n\n\n\n\n\n\n12/6\nAdvanced uses of LMER Models\nImmersion Day\n\nBliese & Ployhart (2008). Growth modeling using random coefficient models.\nhttps://peopleanalytics-regression-book.org/modeling-explicit-and-latent-hierarchy-in-data.html#mixed\nGuo & Zhao (2000). Multilevel modeling for binary data.\n\n\n\n\n\n\n\n\n12/10\nWrap-Up\nNo readings"
   },
   {
+    "objectID": "lectures/03-lecture-page.html",
+    "href": "lectures/03-lecture-page.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Next Week’s Materials »"
+  },
+  {
+    "objectID": "lectures/03-lecture-page.html#lecture-introduction-to-simple-and-multiple-logistic-regression",
+    "href": "lectures/03-lecture-page.html#lecture-introduction-to-simple-and-multiple-logistic-regression",
+    "title": "Quantitative Analysis 2",
+    "section": "Lecture: Introduction to Simple and Multiple Logistic Regression",
+    "text": "Lecture: Introduction to Simple and Multiple Logistic Regression\n\n\nTo download a pdf version of these slides, click here."
+  },
+  {
     "objectID": "lectures/02-lecture-page.html",
     "href": "lectures/02-lecture-page.html",
     "title": "Quantitative Analysis 2",
@@ -700,258 +714,6 @@
     "text": "Overview for Today\nToday we will be learning about:\n\nAll about simple and multiple logistic regression\nHow to interpret the results of a logistic regression model"
   },
   {
-    "objectID": "lectures/03-lecture-slides.html#statistical-models-as-probability-models",
-    "href": "lectures/03-lecture-slides.html#statistical-models-as-probability-models",
-    "title": "Introduction to Logistic Regression",
-    "section": "Statistical Models as Probability Models",
-    "text": "Statistical Models as Probability Models"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#linear-regression-as-a-normal-probability-model",
-    "href": "lectures/03-lecture-slides.html#linear-regression-as-a-normal-probability-model",
-    "title": "Introduction to Logistic Regression",
-    "section": "Linear Regression as a Normal Probability Model",
-    "text": "Linear Regression as a Normal Probability Model"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#linking-predictors-to-the-mean-of-the-outcome",
-    "href": "lectures/03-lecture-slides.html#linking-predictors-to-the-mean-of-the-outcome",
-    "title": "Introduction to Logistic Regression",
-    "section": "Linking Predictors to the Mean of the Outcome",
-    "text": "Linking Predictors to the Mean of the Outcome"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#linear-regression-a-graphical-example",
-    "href": "lectures/03-lecture-slides.html#linear-regression-a-graphical-example",
-    "title": "Introduction to Logistic Regression",
-    "section": "Linear Regression: A Graphical Example",
-    "text": "Linear Regression: A Graphical Example"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#what-happens-when-our-outcome-isnt-normal",
-    "href": "lectures/03-lecture-slides.html#what-happens-when-our-outcome-isnt-normal",
-    "title": "Introduction to Logistic Regression",
-    "section": "What Happens When Our Outcome Isn’t Normal?",
-    "text": "What Happens When Our Outcome Isn’t Normal?\nThe power of GLMs is that they open up a whole new world of probability distributions for us to specify when our outcome doesn’t follow a normal distribution like:\n\nBernouli Distribution\nGamma Distribution\nPoisson Distribution & more!\n\nBut how?"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#generalized-linear-models",
-    "href": "lectures/03-lecture-slides.html#generalized-linear-models",
-    "title": "Introduction to Logistic Regression",
-    "section": "Generalized Linear Models",
-    "text": "Generalized Linear Models"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#binary-outcome-variables",
-    "href": "lectures/03-lecture-slides.html#binary-outcome-variables",
-    "title": "Introduction to Logistic Regression",
-    "section": "Binary Outcome Variables",
-    "text": "Binary Outcome Variables"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#the-linear-probability-model",
-    "href": "lectures/03-lecture-slides.html#the-linear-probability-model",
-    "title": "Introduction to Logistic Regression",
-    "section": "The Linear Probability Model",
-    "text": "The Linear Probability Model"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#an-issue-with-the-linear-probability-model",
-    "href": "lectures/03-lecture-slides.html#an-issue-with-the-linear-probability-model",
-    "title": "Introduction to Logistic Regression",
-    "section": "An Issue with the Linear Probability Model",
-    "text": "An Issue with the Linear Probability Model"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#binonmial-distribution-to-the-rescue",
-    "href": "lectures/03-lecture-slides.html#binonmial-distribution-to-the-rescue",
-    "title": "Introduction to Logistic Regression",
-    "section": "Binonmial Distribution to the Rescue",
-    "text": "Binonmial Distribution to the Rescue"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#the-mean-of-the-binomial-distribution",
-    "href": "lectures/03-lecture-slides.html#the-mean-of-the-binomial-distribution",
-    "title": "Introduction to Logistic Regression",
-    "section": "The Mean of the Binomial Distribution",
-    "text": "The Mean of the Binomial Distribution"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#logistic-regression-as-a-binomial-probability-model",
-    "href": "lectures/03-lecture-slides.html#logistic-regression-as-a-binomial-probability-model",
-    "title": "Introduction to Logistic Regression",
-    "section": "Logistic Regression as a Binomial Probability Model",
-    "text": "Logistic Regression as a Binomial Probability Model"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#linking-predictors-to-the-binomial-distribution-mean",
-    "href": "lectures/03-lecture-slides.html#linking-predictors-to-the-binomial-distribution-mean",
-    "title": "Introduction to Logistic Regression",
-    "section": "Linking Predictors to the Binomial Distribution Mean",
-    "text": "Linking Predictors to the Binomial Distribution Mean"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#the-logit-or-log-odds",
-    "href": "lectures/03-lecture-slides.html#the-logit-or-log-odds",
-    "title": "Introduction to Logistic Regression",
-    "section": "The Logit or Log Odds",
-    "text": "The Logit or Log Odds"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#the-logit-or-log-odds-1",
-    "href": "lectures/03-lecture-slides.html#the-logit-or-log-odds-1",
-    "title": "Introduction to Logistic Regression",
-    "section": "The Logit or Log Odds",
-    "text": "The Logit or Log Odds"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#a-logistic-regression-model-without-any-predictors",
-    "href": "lectures/03-lecture-slides.html#a-logistic-regression-model-without-any-predictors",
-    "title": "Introduction to Logistic Regression",
-    "section": "A Logistic Regression Model without any Predictors",
-    "text": "A Logistic Regression Model without any Predictors"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#interpreting-the-intercept",
-    "href": "lectures/03-lecture-slides.html#interpreting-the-intercept",
-    "title": "Introduction to Logistic Regression",
-    "section": "Interpreting the Intercept",
-    "text": "Interpreting the Intercept"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#simple-logistic-regression-quantitative-predictor",
-    "href": "lectures/03-lecture-slides.html#simple-logistic-regression-quantitative-predictor",
-    "title": "Introduction to Logistic Regression",
-    "section": "Simple Logistic Regression: Quantitative Predictor",
-    "text": "Simple Logistic Regression: Quantitative Predictor"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#estimating-a-simple-logistic-regression-model-with-glm",
-    "href": "lectures/03-lecture-slides.html#estimating-a-simple-logistic-regression-model-with-glm",
-    "title": "Introduction to Logistic Regression",
-    "section": "Estimating a Simple Logistic Regression Model with glm",
-    "text": "Estimating a Simple Logistic Regression Model with glm\n\nmod_csr &lt;- glm(donate ~ x_csr, family = binomial(link = \"logit\"),\n               data = data_donate)\n\n\nWe can use the function glm to estimate a logistic regression model in R. We need to tell glm:\n\nthe linear predictor: donate ~ x_csr\nthe random component: family = binomial\nthe link function: link = \"logit\"."
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#the-results-of-a-logistic-regression-model",
-    "href": "lectures/03-lecture-slides.html#the-results-of-a-logistic-regression-model",
-    "title": "Introduction to Logistic Regression",
-    "section": "The Results of a Logistic Regression Model",
-    "text": "The Results of a Logistic Regression Model\n\nsummary(mod_csr)\n\n\nCall:\nglm(formula = donate ~ x_csr, family = binomial(link = \"logit\"), \n    data = data_donate)\n\nCoefficients:\n            Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept) -4.03572    0.16903  -23.88   &lt;2e-16 ***\nx_csr        0.72472    0.03652   19.85   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 2837.7  on 2499  degrees of freedom\nResidual deviance: 2315.0  on 2498  degrees of freedom\nAIC: 2319\n\nNumber of Fisher Scoring iterations: 5"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#the-difficulty-with-interpreting-the-logistic-regression-slope",
-    "href": "lectures/03-lecture-slides.html#the-difficulty-with-interpreting-the-logistic-regression-slope",
-    "title": "Introduction to Logistic Regression",
-    "section": "The Difficulty with Interpreting the Logistic Regression Slope",
-    "text": "The Difficulty with Interpreting the Logistic Regression Slope"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-odds-ratio",
-    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-odds-ratio",
-    "title": "Introduction to Logistic Regression",
-    "section": "Interpreting the Logistic Regression Slope: Odds Ratio",
-    "text": "Interpreting the Logistic Regression Slope: Odds Ratio"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-odds-ratio-1",
-    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-odds-ratio-1",
-    "title": "Introduction to Logistic Regression",
-    "section": "Interpreting the Logistic Regression Slope: Odds Ratio",
-    "text": "Interpreting the Logistic Regression Slope: Odds Ratio"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-predicted-probability",
-    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-predicted-probability",
-    "title": "Introduction to Logistic Regression",
-    "section": "Interpreting the Logistic Regression Slope: Predicted Probability",
-    "text": "Interpreting the Logistic Regression Slope: Predicted Probability\nOdds ratios are also kind of hard to interpret, so I prefer to interpret the logistic regression slope as a change in the predicted probability of the outcome occurring (donating, in our example).\n\n\n\npredicted_probability &lt;- predict(mod_csr, type = \"response\")\n\n\n\n\n\n\n\nCSR\nPred. Prob.\n\n\n\n\n1\n0.04\n\n\n2\n0.07\n\n\n3\n0.13\n\n\n4\n0.24\n\n\n5\n0.40\n\n\n6\n0.58\n\n\n7\n0.74"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-predicted-probability-1",
-    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-predicted-probability-1",
-    "title": "Introduction to Logistic Regression",
-    "section": "Interpreting the Logistic Regression Slope: Predicted Probability",
-    "text": "Interpreting the Logistic Regression Slope: Predicted Probability"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-marginal-effect",
-    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-marginal-effect",
-    "title": "Introduction to Logistic Regression",
-    "section": "Interpreting the Logistic Regression Slope: Marginal Effect",
-    "text": "Interpreting the Logistic Regression Slope: Marginal Effect\nOne way to solve the interpretability solution is to calculate the effect of the predictor at a specific value of the predicted probability:"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-the-average-marginal-effect",
-    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-the-average-marginal-effect",
-    "title": "Introduction to Logistic Regression",
-    "section": "Interpreting the Logistic Regression Slope: The Average Marginal Effect",
-    "text": "Interpreting the Logistic Regression Slope: The Average Marginal Effect"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#simple-logistic-regression-categorical-predictor",
-    "href": "lectures/03-lecture-slides.html#simple-logistic-regression-categorical-predictor",
-    "title": "Introduction to Logistic Regression",
-    "section": "Simple Logistic Regression: Categorical Predictor",
-    "text": "Simple Logistic Regression: Categorical Predictor\nNow we would like to know if customers’ identification with the company (a categorical predictor—yes or no) is related to whether they donate to the company’s preferred charity."
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope",
-    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope",
-    "title": "Introduction to Logistic Regression",
-    "section": "Interpreting the Logistic Regression Slope",
-    "text": "Interpreting the Logistic Regression Slope"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#plotting-the-predicted-probability",
-    "href": "lectures/03-lecture-slides.html#plotting-the-predicted-probability",
-    "title": "Introduction to Logistic Regression",
-    "section": "Plotting the Predicted Probability",
-    "text": "Plotting the Predicted Probability"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-the-average-max-marginal-effect",
-    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-the-average-max-marginal-effect",
-    "title": "Introduction to Logistic Regression",
-    "section": "Interpreting the Logistic Regression Slope: The Average & Max Marginal Effect",
-    "text": "Interpreting the Logistic Regression Slope: The Average & Max Marginal Effect\nInstead of calculating the marginal effect a single value of the predicted probability, it would be even better to calculate the average marginal effect and the maximum marginal effect:\n\nmfx::logitmfx(mod_csr, atmean = FALSE, data = data_donate) # Average ME\nmod_csr$coefficients[2] / 4 # Maximum ME \n\n\n\n\n\n\nAvg. ME\nMax ME\n\n\n\n\n0.11\n0.18"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#multiple-logistic-regression-a-quantitative-categorical-predictor",
-    "href": "lectures/03-lecture-slides.html#multiple-logistic-regression-a-quantitative-categorical-predictor",
-    "title": "Introduction to Logistic Regression",
-    "section": "Multiple Logistic Regression: A Quantitative & Categorical Predictor",
-    "text": "Multiple Logistic Regression: A Quantitative & Categorical Predictor\nSimple logistic regression is great, but multiple logistic regression is better!\nLike multiple linear regression, multiple logistic regression allows us to estimate the effect of one predictor variable while adjusting (controlling) for the effects of the other predictor variables in the model."
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#a-reminder-on-what-it-means-to-adjust-for-another-variable",
-    "href": "lectures/03-lecture-slides.html#a-reminder-on-what-it-means-to-adjust-for-another-variable",
-    "title": "Introduction to Logistic Regression",
-    "section": "A Reminder on What it Means to Adjust for Another Variable",
-    "text": "A Reminder on What it Means to Adjust for Another Variable\nWhy are ice cream sales related to shark attacks?\n\n\n\n\n# A tibble: 2 × 2\n  ice_cream_sales avg_number_shark_att\n  &lt;chr&gt;                          &lt;dbl&gt;\n1 Low Sales Rev.                  20.9\n2 High Sales Rev.                 51.4\n\n\n\n\n\n# A tibble: 4 × 3\n  season     ice_cream_sales avg_number_shark_att\n  &lt;chr&gt;      &lt;chr&gt;                          &lt;dbl&gt;\n1 Not Summer Low Sales Rev.                  9.12\n2 Not Summer High Sales Rev.                 7.9 \n3 Summer     High Sales Rev.                62.5 \n4 Summer     Low Sales Rev.                 63.6"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#estimating-a-multiple-logistic-regression",
-    "href": "lectures/03-lecture-slides.html#estimating-a-multiple-logistic-regression",
-    "title": "Introduction to Logistic Regression",
-    "section": "Estimating A Multiple Logistic Regression",
-    "text": "Estimating A Multiple Logistic Regression\nEstimating a multiple logistic regression is nearly identical to estimating the simple logistic regression equation:\n\nmod_donate &lt;- glm(donate ~ x_csr + x_cust_id, \n                  family = binomial(link = \"logit\"),\n                  data = data_donate)"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-estimates",
-    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-estimates",
-    "title": "Introduction to Logistic Regression",
-    "section": "Interpreting the Logistic Regression Estimates",
-    "text": "Interpreting the Logistic Regression Estimates"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#standardizing-our-predictors-to-improve-comparison",
-    "href": "lectures/03-lecture-slides.html#standardizing-our-predictors-to-improve-comparison",
-    "title": "Introduction to Logistic Regression",
-    "section": "Standardizing our Predictors to Improve Comparison",
-    "text": "Standardizing our Predictors to Improve Comparison"
-  },
-  {
     "objectID": "lectures/03-lecture-slides.html#generalized-linear-models-a-family-of-statistical-models",
     "href": "lectures/03-lecture-slides.html#generalized-linear-models-a-family-of-statistical-models",
     "title": "Introduction to Logistic Regression",
@@ -959,18 +721,18 @@
     "text": "Generalized Linear Models: A Family of Statistical Models\nGeneralized linear models (GLMs) are a family of statistical models that generalize the methods of linear regression to outcome variables that are neither continuous, nor normally distributed."
   },
   {
+    "objectID": "lectures/03-lecture-slides.html#the-components-of-a-glm",
+    "href": "lectures/03-lecture-slides.html#the-components-of-a-glm",
+    "title": "Introduction to Logistic Regression",
+    "section": "The Components of a GLM",
+    "text": "The Components of a GLM\nGLMs are built from three separate components:\n\nRandom component that specifies the probability distribution of the outcome variable.\nLinear predictor that describes how the predictor variables relate to the outcome variable.\nLink function that links the linear predictor to the mean of the outcome variable’s probability distribution."
+  },
+  {
     "objectID": "lectures/03-lecture-slides.html#linear-regression-as-a-generalized-linear-model",
     "href": "lectures/03-lecture-slides.html#linear-regression-as-a-generalized-linear-model",
     "title": "Introduction to Logistic Regression",
     "section": "Linear Regression as a Generalized Linear Model",
     "text": "Linear Regression as a Generalized Linear Model\nWhen considered as a GLM, we can specify a simple linear regression model as:\n\nRandom Component: Normal distribution\nLinear Predictor: \\(\\beta_0 + \\beta_1X_1\\)\nLink Function: \\(g(\\mu)=\\beta_0 + \\beta_1X_1\\)"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#linear-regression-as-a-generalized-lienar-model",
-    "href": "lectures/03-lecture-slides.html#linear-regression-as-a-generalized-lienar-model",
-    "title": "Introduction to Logistic Regression",
-    "section": "Linear Regression as a Generalized Lienar Model",
-    "text": "Linear Regression as a Generalized Lienar Model\n\\[p(Y) = c \\times \\exp(-\\frac{(Y-\\mu)^2}{2\\sigma^2})\\]\n\\[=c \\times \\exp(-\\frac{(Y-[\\beta_0 + \\beta_1X_1])^2}{2\\sigma^2})\\]"
   },
   {
     "objectID": "lectures/03-lecture-slides.html#linear-regression-as-a-generalized-linear-model-1",
@@ -1001,18 +763,18 @@
     "text": "Linear Regression: An Example with US Heights by Gender\nThe probability model estimated by our regression is:\n\\[\\text{US Ht.}|\\text{Sex} \\sim N(\\text{mn.} =63.68 + 5.39 \\times \\text{Sex}, \\space \\text{s.d.} = 2.80)\\]\n\\[\\text{US Ht.}|\\text{Sex = Male} \\sim N(\\text{mn.} =63.68 + 5.39, \\space \\text{s.d.} = 2.80)\\]\n\\[\\text{US Ht.}|\\text{Sex =Female} \\sim N(\\text{mn.} =63.68, \\space \\text{s.d.} = 2.80)\\]"
   },
   {
-    "objectID": "lectures/03-lecture-slides.html#the-components-of-a-glm",
-    "href": "lectures/03-lecture-slides.html#the-components-of-a-glm",
-    "title": "Introduction to Logistic Regression",
-    "section": "The Components of a GLM",
-    "text": "The Components of a GLM\nGLMs are built from three separate components:\n\nRandom component that specifies the probability distribution of the outcome variable.\nLinear predictor that describes how the predictor variables relate to the outcome variable.\nLink function that links the linear predictor to the mean of the outcome variable’s probability distribution."
-  },
-  {
     "objectID": "lectures/03-lecture-slides.html#linear-regression-an-example-with-us-heights-by-gender-3",
     "href": "lectures/03-lecture-slides.html#linear-regression-an-example-with-us-heights-by-gender-3",
     "title": "Introduction to Logistic Regression",
     "section": "Linear Regression: An Example with US Heights by Gender",
     "text": "Linear Regression: An Example with US Heights by Gender\nSimulating the data according to our model:\n\nht_female &lt;- rnorm(5000, mean = 63.68 + 5.39 * 0, sd = 2.80)\nht_male &lt;- rnorm(5000, mean = 63.68 + 5.39 * 1, sd = 2.80)"
+  },
+  {
+    "objectID": "lectures/03-lecture-slides.html#what-happens-when-our-outcome-isnt-normal",
+    "href": "lectures/03-lecture-slides.html#what-happens-when-our-outcome-isnt-normal",
+    "title": "Introduction to Logistic Regression",
+    "section": "What Happens When Our Outcome Isn’t Normal?",
+    "text": "What Happens When Our Outcome Isn’t Normal?\nThe power of GLMs is that they open up a whole new world of probability distributions for us to specify when our outcome doesn’t follow a normal distribution like:\n\nBernouli Distribution\nGamma Distribution\nPoisson Distribution & more!\n\nBut how?"
   },
   {
     "objectID": "lectures/03-lecture-slides.html#non-profit-donation-an-example-of-a-bernouli-distribution",
@@ -1050,41 +812,6 @@
     "text": "The Logistic Regression Link Function: The Logit\nLet’s see what value the Logit function outputs at different values of \\(\\pi\\):"
   },
   {
-    "objectID": "lectures/03-lecture-slides.html#non-profit-donation-exploring-the-relationship-between-csr-and-donations",
-    "href": "lectures/03-lecture-slides.html#non-profit-donation-exploring-the-relationship-between-csr-and-donations",
-    "title": "Introduction to Logistic Regression",
-    "section": "Non-Profit Donation: Exploring the Relationship Between CSR and Donations",
-    "text": "Non-Profit Donation: Exploring the Relationship Between CSR and Donations"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#the-difficulty-with-interpreting-the-logistic-regression-parameters",
-    "href": "lectures/03-lecture-slides.html#the-difficulty-with-interpreting-the-logistic-regression-parameters",
-    "title": "Introduction to Logistic Regression",
-    "section": "The Difficulty with Interpreting the Logistic Regression Parameters",
-    "text": "The Difficulty with Interpreting the Logistic Regression Parameters\nBecause of the nonlinearity of the link function, it is difficult to interpret the estimated parameters of a logistic regression model. There are two things we can know immediately though:\n\nA positive slope estimate means that increases in the predictor variable lead to increases in the probability of observing the event.\nA Z-value greater than ~|2| signals that the slope is significantly different from 0\n\nThankfully, there are ways we can transform the slopes to make more sense of them!"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#the-inverse-logit",
-    "href": "lectures/03-lecture-slides.html#the-inverse-logit",
-    "title": "Introduction to Logistic Regression",
-    "section": "The Inverse Logit",
-    "text": "The Inverse Logit\nNow that we have decided to use the Logit as our link function. We need to calculate its inverse, which will be used to transform the linear predictor from a real number to a number that is bounded between 0 and 1:\n\\[g^{-1}(x)=\\frac{\\exp(\\beta_0 + \\beta_1X_1)}{1 + \\exp(\\beta_0+\\beta_1X_1)}\\]"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#plotting-the-inverse-logit",
-    "href": "lectures/03-lecture-slides.html#plotting-the-inverse-logit",
-    "title": "Introduction to Logistic Regression",
-    "section": "Plotting the Inverse Logit",
-    "text": "Plotting the Inverse Logit\nLet us see what the inverse Logit function outputs at different values of \\(X_1\\):"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#non-profit-donation-the-relationship-between-csr-and-donations",
-    "href": "lectures/03-lecture-slides.html#non-profit-donation-the-relationship-between-csr-and-donations",
-    "title": "Introduction to Logistic Regression",
-    "section": "Non-Profit Donation: The Relationship Between CSR and Donations",
-    "text": "Non-Profit Donation: The Relationship Between CSR and Donations"
-  },
-  {
     "objectID": "lectures/03-lecture-slides.html#the-relationship-between-csr-and-donations",
     "href": "lectures/03-lecture-slides.html#the-relationship-between-csr-and-donations",
     "title": "Introduction to Logistic Regression",
@@ -1106,6 +833,34 @@
     "text": "Modeling the Relationship Between CSR and Donations\nA better and more informative way to model the relationship between CSR and donations is by building and estimating a logistic regression equation:\n\\[\\ln{\\frac{\\pi_{Don.}}{1-\\pi_{Don.}}}=\\beta_0 + \\beta_1\\text{CSR}\\]\nNote that the outcome we are modeling is now the log-odds (logit) of the probability of donating."
   },
   {
+    "objectID": "lectures/03-lecture-slides.html#estimating-a-simple-logistic-regression-model-with-glm",
+    "href": "lectures/03-lecture-slides.html#estimating-a-simple-logistic-regression-model-with-glm",
+    "title": "Introduction to Logistic Regression",
+    "section": "Estimating a Simple Logistic Regression Model with glm",
+    "text": "Estimating a Simple Logistic Regression Model with glm\n\nmod_csr &lt;- glm(donate ~ x_csr, family = binomial(link = \"logit\"),\n               data = data_donate)\n\n\nWe can use the function glm to estimate a logistic regression model in R. We need to tell glm:\n\nthe linear predictor: donate ~ x_csr\nthe random component: family = binomial\nthe link function: link = \"logit\"."
+  },
+  {
+    "objectID": "lectures/03-lecture-slides.html#the-results-of-a-logistic-regression-model",
+    "href": "lectures/03-lecture-slides.html#the-results-of-a-logistic-regression-model",
+    "title": "Introduction to Logistic Regression",
+    "section": "The Results of a Logistic Regression Model",
+    "text": "The Results of a Logistic Regression Model\n\nsummary(mod_csr)\n\n\nCall:\nglm(formula = donate ~ x_csr, family = binomial(link = \"logit\"), \n    data = data_donate)\n\nCoefficients:\n            Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept) -4.03572    0.16903  -23.88   &lt;2e-16 ***\nx_csr        0.72472    0.03652   19.85   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 2837.7  on 2499  degrees of freedom\nResidual deviance: 2315.0  on 2498  degrees of freedom\nAIC: 2319\n\nNumber of Fisher Scoring iterations: 5"
+  },
+  {
+    "objectID": "lectures/03-lecture-slides.html#what-do-we-look-for-in-the-results",
+    "href": "lectures/03-lecture-slides.html#what-do-we-look-for-in-the-results",
+    "title": "Introduction to Logistic Regression",
+    "section": "What Do We Look for in the Results?",
+    "text": "What Do We Look for in the Results?\nHere is a checklist of things to focus on in the model summary:\n\nThe sign and magnitude of the slope estimates\nThe size of the standard error compared to the estimate\nThe p-value"
+  },
+  {
+    "objectID": "lectures/03-lecture-slides.html#the-difficulty-with-interpreting-the-logistic-regression-parameters",
+    "href": "lectures/03-lecture-slides.html#the-difficulty-with-interpreting-the-logistic-regression-parameters",
+    "title": "Introduction to Logistic Regression",
+    "section": "The Difficulty with Interpreting the Logistic Regression Parameters",
+    "text": "The Difficulty with Interpreting the Logistic Regression Parameters\nBecause of the nonlinearity of the link function, it is difficult to interpret the estimated parameters of a logistic regression model. There are two things we can know immediately though:\n\nA positive slope estimate means that increases in the predictor variable lead to increases in the probability of observing the event.\nA Z-value greater than ~|2| signals that the slope is significantly different from 0\n\nThankfully, there are ways we can transform the slopes to make more sense of them!"
+  },
+  {
     "objectID": "lectures/03-lecture-slides.html#the-slope-as-a-change-in-the-odds-ratio",
     "href": "lectures/03-lecture-slides.html#the-slope-as-a-change-in-the-odds-ratio",
     "title": "Introduction to Logistic Regression",
@@ -1120,11 +875,11 @@
     "text": "The Slope as a Change in the Odds Ratio\nA one unit increase in CSR results in a 2.06 (106 %) increase in the odds of donating to the corporation’s charity of choice.\n\nexp(mod_csr$coefficients)\n\n\n\n\n\n\nCoef. Name\nEstimate\nExp. Estimate\nSE\nZ\np\n\n\n\n\n(Intercept)\n-4.04\n0.02\n0.17\n-23.88\n0\n\n\nx_csr\n0.72\n2.06\n0.04\n19.85\n0"
   },
   {
-    "objectID": "lectures/03-lecture-slides.html#how-do-we-interpret-the-predicted-probability-plot",
-    "href": "lectures/03-lecture-slides.html#how-do-we-interpret-the-predicted-probability-plot",
+    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-predicted-probability",
+    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-predicted-probability",
     "title": "Introduction to Logistic Regression",
-    "section": "How Do We Interpret the Predicted Probability Plot?",
-    "text": "How Do We Interpret the Predicted Probability Plot?\nThe probability curve is nonlinear, so the effect that our predictor variable (corporate social responsibility) has on our outcome (donating or predicted probability of donating) differs depending on what the predicted probability is:\n\nThe effect of of X on Y is low when the predicted probability is around ~.05.\nThe effect of X on Y is moderate when the predicted probability is around ~.50.\nThe effect of X on Y begins to level off after predicted probability of ~.75.\n\nSo how do we provide a summary of these effects?"
+    "section": "Interpreting the Logistic Regression Slope: Predicted Probability",
+    "text": "Interpreting the Logistic Regression Slope: Predicted Probability\nOdds ratios are also kind of hard to interpret, so I prefer to interpret the logistic regression slope as a change in the predicted probability of the outcome occurring (donating, in our example).\n\n\n\npredicted_probability &lt;- predict(mod_csr, type = \"response\")\n\n\n\n\n\n\n\nCSR\nPred. Prob.\n\n\n\n\n1\n0.04\n\n\n2\n0.07\n\n\n3\n0.13\n\n\n4\n0.24\n\n\n5\n0.40\n\n\n6\n0.58\n\n\n7\n0.74"
   },
   {
     "objectID": "lectures/03-lecture-slides.html#predicted-probability-curve",
@@ -1134,11 +889,25 @@
     "text": "Predicted Probability Curve"
   },
   {
-    "objectID": "lectures/03-lecture-slides.html#what-do-we-look-for-in-the-results",
-    "href": "lectures/03-lecture-slides.html#what-do-we-look-for-in-the-results",
+    "objectID": "lectures/03-lecture-slides.html#how-do-we-interpret-the-predicted-probability-plot",
+    "href": "lectures/03-lecture-slides.html#how-do-we-interpret-the-predicted-probability-plot",
     "title": "Introduction to Logistic Regression",
-    "section": "What Do We Look for in the Results?",
-    "text": "What Do We Look for in the Results?\nHere is a checklist of things to focus on in the model summary:\n\nThe sign and magnitude of the slope estimates\nThe size of the standard error compared to the estimate\nThe p-value"
+    "section": "How Do We Interpret the Predicted Probability Plot?",
+    "text": "How Do We Interpret the Predicted Probability Plot?\nThe probability curve is nonlinear, so the effect that our predictor variable (corporate social responsibility) has on our outcome (donating or predicted probability of donating) differs depending on what the predicted probability is:\n\nThe effect of of X on Y is low when the predicted probability is around ~.05.\nThe effect of X on Y is moderate when the predicted probability is around ~.50.\nThe effect of X on Y begins to level off after predicted probability of ~.75.\n\nSo how do we provide a summary of these effects?"
+  },
+  {
+    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-marginal-effect",
+    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-marginal-effect",
+    "title": "Introduction to Logistic Regression",
+    "section": "Interpreting the Logistic Regression Slope: Marginal Effect",
+    "text": "Interpreting the Logistic Regression Slope: Marginal Effect\nOne way to solve the interpretability solution is to calculate the effect of the predictor at a specific value of the predicted probability:"
+  },
+  {
+    "objectID": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-the-average-max-marginal-effect",
+    "href": "lectures/03-lecture-slides.html#interpreting-the-logistic-regression-slope-the-average-max-marginal-effect",
+    "title": "Introduction to Logistic Regression",
+    "section": "Interpreting the Logistic Regression Slope: The Average & Max Marginal Effect",
+    "text": "Interpreting the Logistic Regression Slope: The Average & Max Marginal Effect\nInstead of calculating the marginal effect a single value of the predicted probability, it would be even better to calculate the average marginal effect and the maximum marginal effect:\n\nmfx::logitmfx(mod_csr, atmean = FALSE, data = data_donate) # Average ME\nmod_csr$coefficients[2] / 4 # Maximum ME \n\n\n\n\n\n\nAvg. ME\nMax ME\n\n\n\n\n0.11\n0.18"
   },
   {
     "objectID": "lectures/03-lecture-slides.html#sowhat-is-the-effect-of-csr-on-donating",
@@ -1148,32 +917,11 @@
     "text": "So…What is the Effect of CSR on Donating?\nHere is a summary of our different interpretations:\n\nA one unit increase in CSR (predictor) leads to a 2.06 increase in the odds of donating.\nA one unit increase in CSR will lead to at most a 18 point increase in the probability of donating and roughly a 11 point increase, on average."
   },
   {
-    "objectID": "lectures/03-lecture-slides.html#the-relationship-between-customer-identification-and-donations",
-    "href": "lectures/03-lecture-slides.html#the-relationship-between-customer-identification-and-donations",
+    "objectID": "lectures/03-lecture-slides.html#simple-logistic-regression-categorical-predictor",
+    "href": "lectures/03-lecture-slides.html#simple-logistic-regression-categorical-predictor",
     "title": "Introduction to Logistic Regression",
-    "section": "The Relationship Between Customer Identification and Donations",
-    "text": "The Relationship Between Customer Identification and Donations"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#what-about-statistical-inference",
-    "href": "lectures/03-lecture-slides.html#what-about-statistical-inference",
-    "title": "Introduction to Logistic Regression",
-    "section": "What About Statistical Inference?",
-    "text": "What About Statistical Inference?\nWe can make statistical inferences from the logistic regression model (and all GLMs) just like we did with the ordinary linear regression model:\n\nNull Hypothesis Significance Testing\nConfidence Intervals"
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#remember-nhst",
-    "href": "lectures/03-lecture-slides.html#remember-nhst",
-    "title": "Introduction to Logistic Regression",
-    "section": "Remember NHST",
-    "text": "Remember NHST\nWe setup two hypotheses: Null & Alternative. The Null Hypothesis is a statement that our regression coefficient (slope) takes on a specific value, usually 0. Then we see how far away our actual estimate is from the null value. If it is far enough away, then we reject our null and claim that there is a statistically significant difference between our null value and estimate."
-  },
-  {
-    "objectID": "lectures/03-lecture-slides.html#steps-to-nhst",
-    "href": "lectures/03-lecture-slides.html#steps-to-nhst",
-    "title": "Introduction to Logistic Regression",
-    "section": "Steps to NHST",
-    "text": "Steps to NHST\n\nSetup your null & alternative hypotheses and your alpha level\nCalculate your test statistics (Z Value in our output)\nCalculate the p-value (the probability of seeing a test statistics as extreme or more extreme than ours)\nIf our p-value is less than our alpha level, then we rejoice!"
+    "section": "Simple Logistic Regression: Categorical Predictor",
+    "text": "Simple Logistic Regression: Categorical Predictor\nNow we would like to know if customers’ identification with the company (a categorical predictor—yes or no) is related to whether they donate to the company’s preferred charity."
   },
   {
     "objectID": "lectures/03-lecture-slides.html#a-quick-reminder-on-indicator-coding",
@@ -1188,6 +936,13 @@
     "title": "Introduction to Logistic Regression",
     "section": "Indicator Coding for Customer Identification",
     "text": "Indicator Coding for Customer Identification\nIn our data, why do we only need one indicator variable and which category is the reference group?\n\n\n# A tibble: 2,500 × 2\n   x_cust_id_indicator x_cust_id\n                 &lt;dbl&gt; &lt;chr&gt;    \n 1                   0 No       \n 2                   0 No       \n 3                   1 Yes      \n 4                   1 Yes      \n 5                   1 Yes      \n 6                   1 Yes      \n 7                   1 Yes      \n 8                   0 No       \n 9                   1 Yes      \n10                   0 No       \n# ℹ 2,490 more rows"
+  },
+  {
+    "objectID": "lectures/03-lecture-slides.html#the-relationship-between-customer-identification-and-donations",
+    "href": "lectures/03-lecture-slides.html#the-relationship-between-customer-identification-and-donations",
+    "title": "Introduction to Logistic Regression",
+    "section": "The Relationship Between Customer Identification and Donations",
+    "text": "The Relationship Between Customer Identification and Donations"
   },
   {
     "objectID": "lectures/03-lecture-slides.html#estimation-interpretation-with-a-categorical-predictor",
@@ -1218,11 +973,11 @@
     "text": "The Marginal Effect of a Categorical Variable\nFor a two category categorical variable (like ours), the marginal effect is the difference in the two predicted probabilities. For more than two categories, it is the average difference across the K-1 comparisons.\n\nmfx::logitmfx(mod_cust_id, data = data_donate, atmean = FALSE)\nprop.test(c(donate_yes, donate_no), c(total_yes, total_no))\n\n\n\n\n\n# A tibble: 1 × 4\n  `dF/dx` `Std. Err.`     z `P&gt;|z|`\n    &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;\n1   0.199       0.021  9.68       0\n\n\n\n\n\n\n    2-sample test for equality of proportions with continuity correction\n\ndata:  c(donate_yes, donate_no) out of c(total_yes, total_no)\nX-squared = 105.51, df = 1, p-value &lt; 2.2e-16\nalternative hypothesis: two.sided\n95 percent confidence interval:\n 0.1575121 0.2399721\nsample estimates:\n   prop 1    prop 2 \n0.3963839 0.1976418"
   },
   {
-    "objectID": "lectures/03-lecture-slides.html#a-reminder-on-what-it-means-to-adjust-for-another-variable-1",
-    "href": "lectures/03-lecture-slides.html#a-reminder-on-what-it-means-to-adjust-for-another-variable-1",
+    "objectID": "lectures/03-lecture-slides.html#multiple-logistic-regression-a-quantitative-categorical-predictor",
+    "href": "lectures/03-lecture-slides.html#multiple-logistic-regression-a-quantitative-categorical-predictor",
     "title": "Introduction to Logistic Regression",
-    "section": "A Reminder on What it Means to Adjust for Another Variable",
-    "text": "A Reminder on What it Means to Adjust for Another Variable\nHere is what adjusting looks like in a model:\n\n\n\n\n\n\n\nrowname\nEstimate\nStd. Error\nt value\nPr(&gt;|t|)\n\n\n\n\nInt.\n51.35\n3.28\n15.66\n0\n\n\nLow Sales\n-30.46\n4.59\n-6.64\n0\n\n\n\n\n\n\n\n\n\n\n\nrowname\nEstimate\nStd. Error\nt value\nPr(&gt;|t|)\n\n\n\n\nInt.\n7.93\n1.17\n6.79\n0.00\n\n\nLow Sales\n1.19\n1.18\n1.00\n0.32\n\n\nSummer\n54.55\n1.18\n46.07\n0.00"
+    "section": "Multiple Logistic Regression: A Quantitative & Categorical Predictor",
+    "text": "Multiple Logistic Regression: A Quantitative & Categorical Predictor\nSimple logistic regression is great, but multiple logistic regression is better!\nLike multiple linear regression, multiple logistic regression allows us to estimate the effect of one predictor variable while adjusting (controlling) for the effects of the other predictor variables in the model."
   },
   {
     "objectID": "lectures/03-lecture-slides.html#what-it-means-to-adjust-for-another-variable",
@@ -1244,6 +999,13 @@
     "title": "Introduction to Logistic Regression",
     "section": "Our Updated Example",
     "text": "Our Updated Example\nWe now want to know what the impact of both a customer’s perception of the corporation’s social responsibility efforts and their identification with that corporation have on their willingness to donate to the corporation’s preferred charity.\nTo answer these questions, we will need to use a multiple logistic regression model."
+  },
+  {
+    "objectID": "lectures/03-lecture-slides.html#estimating-a-multiple-logistic-regression",
+    "href": "lectures/03-lecture-slides.html#estimating-a-multiple-logistic-regression",
+    "title": "Introduction to Logistic Regression",
+    "section": "Estimating A Multiple Logistic Regression",
+    "text": "Estimating A Multiple Logistic Regression\nEstimating a multiple logistic regression is nearly identical to estimating the simple logistic regression equation:\n\nmod_donate &lt;- glm(donate ~ x_csr + x_cust_id, \n                  family = binomial(link = \"logit\"),\n                  data = data_donate)"
   },
   {
     "objectID": "lectures/03-lecture-slides.html#interpreting-the-multiple-logistic-regression-estimates",
@@ -1274,6 +1036,27 @@
     "text": "Writing Up Your Interpretation\nFor every unit increase in a customer’s perception of the corporation’s social responsibility, we expect the probability of donating to the corporation’s preferred charity to increase by 11 points, on average, while adjusting for the customer’s identification with the corporation."
   },
   {
+    "objectID": "lectures/03-lecture-slides.html#what-about-statistical-inference",
+    "href": "lectures/03-lecture-slides.html#what-about-statistical-inference",
+    "title": "Introduction to Logistic Regression",
+    "section": "What About Statistical Inference?",
+    "text": "What About Statistical Inference?\nWe can make statistical inferences from the logistic regression model (and all GLMs) just like we did with the ordinary linear regression model:\n\nNull Hypothesis Significance Testing\nConfidence Intervals"
+  },
+  {
+    "objectID": "lectures/03-lecture-slides.html#remember-nhst",
+    "href": "lectures/03-lecture-slides.html#remember-nhst",
+    "title": "Introduction to Logistic Regression",
+    "section": "Remember NHST",
+    "text": "Remember NHST\nWe setup two hypotheses: Null & Alternative. The Null Hypothesis is a statement that our regression coefficient (slope) takes on a specific value, usually 0. Then we see how far away our actual estimate is from the null value. If it is far enough away, then we reject our null and claim that there is a statistically significant difference between our null value and estimate."
+  },
+  {
+    "objectID": "lectures/03-lecture-slides.html#steps-to-nhst",
+    "href": "lectures/03-lecture-slides.html#steps-to-nhst",
+    "title": "Introduction to Logistic Regression",
+    "section": "Steps to NHST",
+    "text": "Steps to NHST\n\nSetup your null & alternative hypotheses and your alpha level\nCalculate your test statistics (Z Value in our output)\nCalculate the p-value (the probability of seeing a test statistics as extreme or more extreme than ours)\nIf our p-value is less than our alpha level, then we rejoice!"
+  },
+  {
     "objectID": "lectures/03-lecture-slides.html#building-confidence-intervals-for-logistic-regression-estimates",
     "href": "lectures/03-lecture-slides.html#building-confidence-intervals-for-logistic-regression-estimates",
     "title": "Introduction to Logistic Regression",
@@ -1286,54 +1069,5 @@
     "title": "Introduction to Logistic Regression",
     "section": "Interpreting Confidence Intervals for Logistic Regression Estimates",
     "text": "Interpreting Confidence Intervals for Logistic Regression Estimates\nWe are 95% confident that the true effect of CSR is between 1.98 and 2.3.\nSo, at its smallest, a unit increase in CSR will increase the odds of donating by 98% and at its largest, a unit increase in CSR will increase the odds of donating by 130%, while adjusting for customer’s identification with the corporation.\n\nexp(ci_95) |&gt; round(2)\n\n[1] 1.98 2.30"
-  },
-  {
-    "objectID": "lectures/03-lecture-page.html",
-    "href": "lectures/03-lecture-page.html",
-    "title": "Quantitative Analysis 2",
-    "section": "",
-    "text": "Next Week’s Materials »"
-  },
-  {
-    "objectID": "lectures/03-lecture-page.html#lecture-introduction-to-simple-and-multiple-logistic-regression",
-    "href": "lectures/03-lecture-page.html#lecture-introduction-to-simple-and-multiple-logistic-regression",
-    "title": "Quantitative Analysis 2",
-    "section": "Lecture: Introduction to Simple and Multiple Logistic Regression",
-    "text": "Lecture: Introduction to Simple and Multiple Logistic Regression\n\n\nTo download a pdf version of these slides, click here."
-  },
-  {
-    "objectID": "primers/linear-regression-primer.html",
-    "href": "primers/linear-regression-primer.html",
-    "title": "Primer on Simple Linear Regression",
-    "section": "",
-    "text": "Many research questions focus on understanding how changes in one variable, an outcome variable, are related to changes in one or more other variables, predictor variables. To answer these questions–even if just approximately–it is important to first specify the kind of relationship believed (or assumed) to exist between the outcome variable and the predictor variables. This is generally referred to as mathematical modeling or modeling, for short—you are modeling the relationship between an outcome variable and one or more predictor variables. As the researcher, you decide which form the relationship takes, but a very common form to select is the linear function:\n\\[Y = \\beta_0 + \\beta_1X_1.\\]\nThe linear function states that changes in the outcome variable, \\(Y\\), are linearly related to changes in the predictor variable, \\(X_1\\). The linear relationship between the two variables is described by the slope coefficient, \\(\\beta_1\\). The slope coefficient tells us the amount of change we expect to see in the outcome variable as we increase the predictor variable by one unit.\nA very simple example of a linear relationship is the relationship between the amount of gas you put in your car and the amount you pay. If gas costs $4 per gallon, then we can model the relationship as:\n\\[\\text{Dollars Owed}=0 + 4\\frac{dollars}{gallon}\\text{Gallon}.\\]\nUsing the above function, we know that if we put 10 gallons of gas into our car, our cost will be 40 dollars. This also means that for every gallon of gas we put into our car (a single unit increase), our cost will increase by 4 dollars—at no point will an additional gallon of gas cost us more or less than 4 dollars. Further, the 0 coefficient, or regression intercept, in our model gives us additional information: how much our cost will be when we do not put in any gas, 0 dollars. In general, the regression intercept tells us the value of our outcome variable when the values of all of our predictor variables equal 0.\nThe cost of gas example is useful when it comes to explaining what a linear relationship is, but it is a bit misleading when it comes to the research questions you will be tackling. Specifically, the example above is a deterministic function—a function where there is no uncertainty in the relationship between the outcome variable and the predictor variables. In your own research, there is going to be a lot of uncertainty in the relationship between the outcome variable and the predictor variables. This is why statistical models, like linear regression, are so useful for researchers—statistical models allows us to model uncertainty, which is what we will discuss next, but first we need to revise our example and generate some data to model."
-  },
-  {
-    "objectID": "primers/linear-regression-primer.html#introduction-to-mathematical-modeling",
-    "href": "primers/linear-regression-primer.html#introduction-to-mathematical-modeling",
-    "title": "Primer on Simple Linear Regression",
-    "section": "",
-    "text": "Many research questions focus on understanding how changes in one variable, an outcome variable, are related to changes in one or more other variables, predictor variables. To answer these questions–even if just approximately–it is important to first specify the kind of relationship believed (or assumed) to exist between the outcome variable and the predictor variables. This is generally referred to as mathematical modeling or modeling, for short—you are modeling the relationship between an outcome variable and one or more predictor variables. As the researcher, you decide which form the relationship takes, but a very common form to select is the linear function:\n\\[Y = \\beta_0 + \\beta_1X_1.\\]\nThe linear function states that changes in the outcome variable, \\(Y\\), are linearly related to changes in the predictor variable, \\(X_1\\). The linear relationship between the two variables is described by the slope coefficient, \\(\\beta_1\\). The slope coefficient tells us the amount of change we expect to see in the outcome variable as we increase the predictor variable by one unit.\nA very simple example of a linear relationship is the relationship between the amount of gas you put in your car and the amount you pay. If gas costs $4 per gallon, then we can model the relationship as:\n\\[\\text{Dollars Owed}=0 + 4\\frac{dollars}{gallon}\\text{Gallon}.\\]\nUsing the above function, we know that if we put 10 gallons of gas into our car, our cost will be 40 dollars. This also means that for every gallon of gas we put into our car (a single unit increase), our cost will increase by 4 dollars—at no point will an additional gallon of gas cost us more or less than 4 dollars. Further, the 0 coefficient, or regression intercept, in our model gives us additional information: how much our cost will be when we do not put in any gas, 0 dollars. In general, the regression intercept tells us the value of our outcome variable when the values of all of our predictor variables equal 0.\nThe cost of gas example is useful when it comes to explaining what a linear relationship is, but it is a bit misleading when it comes to the research questions you will be tackling. Specifically, the example above is a deterministic function—a function where there is no uncertainty in the relationship between the outcome variable and the predictor variables. In your own research, there is going to be a lot of uncertainty in the relationship between the outcome variable and the predictor variables. This is why statistical models, like linear regression, are so useful for researchers—statistical models allows us to model uncertainty, which is what we will discuss next, but first we need to revise our example and generate some data to model."
-  },
-  {
-    "objectID": "primers/linear-regression-primer.html#introduction-to-statistical-modeling",
-    "href": "primers/linear-regression-primer.html#introduction-to-statistical-modeling",
-    "title": "Primer on Simple Linear Regression",
-    "section": "Introduction to Statistical Modeling",
-    "text": "Introduction to Statistical Modeling\nStatistical modeling, like mathematical modeling, involves specifying a relationship between an outcome variable and a set of predictor variables. Unlike mathematical modeling, however, statistical modeling also involves specifying a probability distribution that models the uncertainty in your data. Like choosing the form the relationship between your variables takes, you also have to choose the probability distribution that best describes the uncertainty in your data, and there are many different probability distributions from which to choose. More often than not, however, researchers choose to model the uncertainty in their data with a normal distribution.\nTo apply a statistical model to our earlier gas example, we need to revise the example by adding in some uncertainty. Pretend you live in a town with only two gas pumps: one that has been around for at least 10 years—the old pump—and one that was just built—the new pump. For both pumps, the cost per gallon of gas is still 4 dollars, but you believe the old pump is malfunctioning and will sometimes charge you a little under 4 dollars per gallon and sometimes it will charge you a little over. Importantly, you believe that these errors tend to be small and are roughly symmetric around a mean of 0 dollars per gallon. This means that small negative errors are as likely to occur as small positive errors and small errors, regardless of being positive or negative, are more likely to occur than large errors. Thus, you decide the errors occurring in the old pump are best modeled by a normal distribution.\nNow that we have specified both the functional relationship between our variables and the probability distribution that generates the uncertainty in our data—a linear relationship and normal distribution, respectively—we can write down our statistical model in two equivalent ways. The first way places more emphasis on the functional form between the variables, whereas the second way places more emphasis on the probability distribution that generates the uncertainty:\n\\[\\text{Dollars Owed}=0 + 4\\frac{Dollars}{Gallon}\\text{Gallon} \\space+\\space \\epsilon, \\space \\epsilon\\space|\\space \\text{Gallon} \\sim N(0, \\sigma)\\] \\[\\text{Dollars Owed}\\space|\\space \\text{Gallon} \\sim N(\\mu=0 + 4\\frac{Dollars}{Gallon}\\text{Gallon},\\sigma).\\]\nIn general, I believe it is better to write down your statistical model using the second way as it more clearly states the assumptions you are making with your model:\n\nThe amount I pay at the pump is conditional (due to) the amount of gas I pump: \\(\\text{Dollars Owed}\\space|\\space \\text{Gallon}.\\)\nOn average, the amount I pay at the pump is equal to: \\(\\mu=0 + 4\\frac{Dollars}{Gallon}\\text{Gallon}.\\)\nConditional on how much gas I pump, the amount I actually pay should follow a normal distribution with a mean of \\(\\mu=0 + 4\\frac{Dollars}{Gallon}\\text{Gallon}\\) and a standard deviation of \\(\\sigma.\\)\nThe variation in cost, \\(\\sigma\\), is the same regardless of the amount of gas I pumped.\n\nWith our model specified, let us now generate some data to go along with our example.\n\nGenerating the Gas Pump Data\nBuilding on our example, let us say that in this pretend town you have a friend who hates change and will only use the old pump, whereas you will only use the new pump because you believe the old pump is defective. To determine what is going on with the old pump, for the last 100 visits to the old pump, you have your friend record the gallons they pumped and the cost. You do the same for your last 100 visits to the new pump.\nThe code below generates gas pump data that would follow from our statistical model.\n\nlibrary(tibble)\nlibrary(dplyr)\n\nset.seed(906)\nn_visits &lt;- 100 # Pump vista \npump_id &lt;- c(\"old\", \"new\") # Identify the pump used\n\n# Simulate the gallons pumped to be only integer values between 4 and 15\n# but we adjust the probabilities so that they mirror a normal dist.\ngallons_pumped &lt;- sample(\n  4:15, n_visits*2, replace = TRUE, \n  prob = dnorm(4:15, mean = 10, sd = 2)/sum(dnorm(4:15, mean = 10, sd = 2)))\n\n# Simulate the noise/uncertainty for the old pump so that it comes from \n# a normal distribution with a sd of 1.50, which means that errors should \n# mostly fall between -3*1.50 (reduce the cost by 4.50) and 3*1.50 \n# (increase cost by 4.50)\nnoise &lt;- rnorm(n_visits, mean = 0, sd = 1.50)\n\n# Use the first 100 observations in gallons_pumped to simulate the cost from\n# the old pump. There are several things to notice: \n# Cost/Gallon = $4 and we added the random noise\ncost_old &lt;- 4 * gallons_pumped[1:n_visits] + noise\n\n# Use the last 100 observations in gallons_pumped to generate a deterministic\n# function --- i.e. no noise is added\ncost_new &lt;- 4 * gallons_pumped[(n_visits + 1):(2 * n_visits)]\n\n# Create a dataset that contains all of our simulated data\ndata_cost &lt;- \n  tibble::tibble(\n    pump_id = rep(pump_id, each = n_visits),\n    gallons_pumped = gallons_pumped,\n    noise = c(noise, rep(0, n_visits)), \n    cost = c(cost_old, cost_new)\n  )\n\n\n\nExploring Your Data\nLet us look at the data we generated and collected into a data frame object named: data_cost.\n\ndata_cost\n\n# A tibble: 200 × 4\n   pump_id gallons_pumped   noise  cost\n   &lt;chr&gt;            &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt;\n 1 old                 12 -0.0393  48.0\n 2 old                 13 -0.962   51.0\n 3 old                  9 -1.16    34.8\n 4 old                 10 -0.531   39.5\n 5 old                 10 -1.66    38.3\n 6 old                 12 -0.560   47.4\n 7 old                 10  3.20    43.2\n 8 old                  8  0.679   32.7\n 9 old                 10 -2.70    37.3\n10 old                  9  1.81    37.8\n# ℹ 190 more rows\n\n\nWe see four columns:\n\npump_id: Identifies the pump from which the gas was pumped.\ngallons_pumped: The amount of gas pumped\nnoise: The size and direction of the error from the old pump.\ncost: The dollar amount owed from the pump.\n\nTo get a better sense of our data, it is always useful to explore our data with plots. We will start by plotting the variables in our data frame separately and then, where it makes sense, together. To build our plots we will rely heavily on ggplot2.\nFirst, we will look at the distribution of our cost in dollars variable, cost.\n\nlibrary(ggplot2)\n\nggplot2::ggplot(\n  data = data_cost, \n  ggplot2::aes(\n    x = cost\n  )\n) + \n  ggplot2::geom_histogram(\n    fill = \"lightblue\",\n    color = \"black\",\n    binwidth = 4\n  ) + \n  ggplot2::labs(\n    x = \"Cost in Dollars\",\n    y = \"Count\"\n  )\n\n\n\n\n\n\n\nFigure 1: Distribution of Cost in Dollars\n\n\n\n\n\nIn Figure 1, you can see the distribution of cost in dollars across both pumps. The distribution looks roughly normal and symmetric around a mean of 41.27. Further, the lowest amount paid was 21.49 and the highest amount paid was 60.31.\nHistograms like Figure 1 are a great plot to use when you want to visualize the distribution of your variables. Importantly, if you believe the distribution of your variable is better displayed for subsets of your data like by the pump being used, then you should view each distribution separately like in Figure 2.\n\nggplot2::ggplot(\n  data = data_cost, \n  ggplot2::aes(\n    x = cost\n  )\n) + \n  ggplot2::geom_histogram(\n    fill = \"lightblue\",\n    color = \"black\",\n    binwidth = 4\n  ) + \n  ggplot2::facet_wrap(\n    ~ pump_id\n  ) + \n  ggplot2::labs(\n    x = \"Cost in Dollars\",\n    y = \"Count\"\n  )\n\n\n\n\n\n\n\nFigure 2: Distribution of Cost in Dollars by Pump\n\n\n\n\n\nAs we will talk about later on, the assumptions most statistical models make about the probability distribution that generates your data are focused on the outcome variable, cost in dollars in our example. So it is important that you plot the distribution of your outcome variable using an appropriate plot like a histogram. Although not as important, it is still useful to visualize the distributions of your predictor variables, which we do for gallons pumped in Figure 3.\n\nggplot2::ggplot(\n  data = data_cost, \n  ggplot2::aes(\n    x = gallons_pumped\n  )\n) + \n  ggplot2::geom_histogram(\n    fill = \"lightblue\",\n    color = \"black\",\n    binwidth = 1\n  ) + \n  ggplot2::labs(\n    x = \"Gallons Pumped\",\n    y = \"Count\"\n  )\n\n\n\n\n\n\n\nFigure 3: Distribution of Gallons Pumped\n\n\n\n\n\nBecause our gallons_pumped variable only takes on discrete values (by design of our simulation), we could also use a barplot to visualize its distribution (see Figure 4).\n\n# First we need to restructure our data to work with \n# a barplot.\ndata_barplot &lt;- \n  data_cost |&gt;\n  dplyr::select(\n    gallons_pumped\n  ) |&gt;\n  dplyr::summarize(\n    count = dplyr::n(),\n    .by = gallons_pumped\n  ) |&gt;\n  dplyr::mutate(\n    total = sum(count),\n    prop = count / total\n  )\n\n# Notice that we are specifying a new data frame for the \"data =\" argument.\nggplot2::ggplot(\n  data = data_barplot, \n  ggplot2::aes(\n    x = gallons_pumped,\n    y = prop\n  )\n) + \n  ggplot2::geom_bar(\n    fill = \"lightblue\",\n    color = \"black\",\n    stat = \"identity\"\n  ) +\n  ggplot2::labs(\n    x = \"Gallons Pumped\",\n    y = \"Proportion\"\n  )\n\n\n\n\n\n\n\nFigure 4: Distribution of Gallons Pumped\n\n\n\n\n\nBoth Figure 3 and Figure 4 are providing the same information—the distribution of the gallons_pumped variable. From these figures, we can see that gallons_pumped closely follows a normal distribution with observations falling around the mean of 10.32 and a standard deviation of 2.02. That is, on average, you and your friend pumped around 10.32 gallons of gas per visit and across all of your visits you were likely to pump somewhere between 6.28 and 14.36 gallons of gas (two standard deviations above and below the mean).\nNow that we have looked at univariate (single variable) plots for each of our variables, it is time to examine some bivariate (two variable) plots using a scatter plot—a plot that allows us to visualize the relationship between two variables. Given that we are interested in the relationship between the outcome variable, cost, and the predictor variable, gallons_pumped, that is the first bivariate plot on which we will focus.\n\nggplot2::ggplot(\n  data = data_cost,\n  ggplot2::aes(\n    x = gallons_pumped,\n    y = cost\n  )\n) + \n  ggplot2::geom_point(\n    color = \"lightblue\"\n  ) + \n  ggplot2::labs(\n    x = \"Gallons Pumped\", \n    y = \"Cost in Dollars\"\n  )\n\n\n\n\n\n\n\nFigure 5: Relationship between Gallons Pumped and Cost in Dollars\n\n\n\n\n\nThe first thing that you may notice in Figure 5 is that the points do not seem to “scatter” across the x-axis rather they only scatter across the y-axis. This is because the variable plotted on our x-axis, gallons_pumped, only takes on integer values (ranging from 5 to 15). If our x-axis variable was continuous—meaning it took on fractional values like 8.543—, then we would see the points scatter across the x-axis.\nAnother thing you may notice is that as you pump more gas (x-axis) you pay more in cost (y-axis). That is, there appears to be a positive relationship between gallons_pumped and cost.\nNow the final thing you may notice is that at any value of gallons_pumped the amount you pay (cost) takes on a range of values. To better understand this, let us create two new scatter plots: one for the data collected from the old pump and one for the data collected from the new pump (see Figure 6).\n\nggplot2::ggplot(\n  data = data_cost |&gt; \n    dplyr::mutate(\n      label = dplyr::if_else(pump_id == \"new\", \"New Pump\", \"Old Pump\")\n      ),\n  ggplot2::aes(\n    x = gallons_pumped,\n    y = cost\n  )\n) + \n  ggplot2::geom_point(\n    color = \"lightblue\"\n  ) + \n  ggplot2::facet_wrap(\n    ~ label\n  ) + \n  ggplot2::labs(\n    x = \"Gallons Pumped\", \n    y = \"Cost in Dollars\"\n  )\n\n\n\n\n\n\n\nFigure 6: Relationship between Gallons Pumped and Cost in Dollars\n\n\n\n\n\nLooking at Figure 6, you likely see an immediate difference between the two plots. At the new pump, you always owe the same amount of money when you pump the same amount of gas—if you pump five gallons you will always owe 20 dollars and if you pump 10 gallons you will always owe 40 gallons. That is, your outcome variable, cost, does not vary when we fix the value of our predictor variable, gallons_pumped. This is because in our simulation we generated the new pump data from a deterministic model—a model with no uncertainty/noise.\nNow things get a bit more interesting when we look at the relationship between gallons_pumped and cost from the data collected from the old pump. Here the amount you owe tends to vary when you pump the same amount of gas—if you pump 10 gallons you could end up paying anywhere between 36.98 dollars and 43.2 dollars. This is what we mean by uncertainty and it is the reason why we need statistical models like linear regression, which is what we turn to next."
-  },
-  {
-    "objectID": "primers/linear-regression-primer.html#understanding-linear-regression",
-    "href": "primers/linear-regression-primer.html#understanding-linear-regression",
-    "title": "Primer on Simple Linear Regression",
-    "section": "Understanding Linear Regression",
-    "text": "Understanding Linear Regression\nAt this point, we have a good descriptive understanding of our variables (e.g. their means, standard deviations, and general shape of their distributions) and their relationships with one another, so now it is time to start modeling the relationships among the variables with a statistical model like linear regression.\nLinear regression is a statistical model that makes two defining assumptions:\n\nA linear function can be used to describe the relationship between the predictor variables and the outcome variable.\nThe uncertainty in our outcome variable that remains once we adjust for our predictor variables can be modeled with a normal distribution.\n\nIt is unlikely that your data will perfectly satisfy those two assumptions, but linear regression can still be effective even when those assumptions are only approximately satisfied. You can think of this like using a straight line to approximate the distance between your house and a family member’s house in a different state—the distance will not be exactly right, but it will be close enough to be useful.\nGiven that we believe the relationship between cost and gallons pumped should be linear and that the uncertainty in our data is likely to have been generated by a normal distribution (an assumption we can assess), we will proceed with analyzing our pump data using a linear regression model.\n\nEstimating & Interpreting a Linear Regression Model with R\nThe first thing we will do is use the lm() function in R to estimate our linear regression models. For comparison, we will estimate one model using only the data from the new pump (mod_new) and one model using only data from the old pump (mod_old).\nAs you can see in the code below, to estimate a linear regression model using the lm() function, you have to provide it a model formula, which defines the outcome variable and the predictor variables. For two predictor variables, the model formula is written as: outcome variable ~ predictor 1 + predictor 2. Everything to the left of the ~ will be used as an outcome variable and everything to the right of the ~ will be used as a predictor variable. The ~ sign itself can be interpreted as “regress the outcome variable onto the predictor variables.” After the model formula, the next argument you should provide the lm() function is the name of the data frame that contains your data. In mod_new, you will see we specify data = data_cost |&gt; dplyr::filter(pump_id == \"new). This tells the lm() function that our data is contained in the data frame data_cost, which has been filtered to only contain observations from the new pump (data_cost |&gt; dplyr::filter(pump_id == \"new)).\n\nmod_new &lt;- lm(cost ~ gallons_pumped, \n              data = data_cost |&gt; dplyr::filter(pump_id == \"new\"))\n\nmod_old &lt;- lm(cost ~ gallons_pumped, \n              data = data_cost |&gt; dplyr::filter(pump_id == \"old\"))\n\nNow that the we have created our models, we can use the summary() function to display the model results. We will first interpret the output from mod_new.\n\nsummary(mod_new)\n\nWarning in summary.lm(mod_new): essentially perfect fit: summary may be\nunreliable\n\n\n\nCall:\nlm(formula = cost ~ gallons_pumped, data = dplyr::filter(data_cost, \n    pump_id == \"new\"))\n\nResiduals:\n       Min         1Q     Median         3Q        Max \n-2.731e-14 -1.492e-16  1.839e-16  7.876e-16  1.842e-15 \n\nCoefficients:\n                 Estimate Std. Error    t value Pr(&gt;|t|)    \n(Intercept)    -1.705e-14  1.567e-15 -1.088e+01   &lt;2e-16 ***\ngallons_pumped  4.000e+00  1.467e-16  2.727e+16   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.84e-15 on 98 degrees of freedom\nMultiple R-squared:      1, Adjusted R-squared:      1 \nF-statistic: 7.438e+32 on 1 and 98 DF,  p-value: &lt; 2.2e-16\n\n\nThe first piece of information the summary() function provides you with is the minimum, first quartile (25th percentile), median (50th percentile), third quartile (75th percentile), and maximum of the model residuals or errors. We will have more to say about this in the section on linear regression diagnostics, but model residuals, or residuals, can be thought of as estimates of the noise inherent your data. Residuals are calculated as:\n\\[e_i = \\text{Actual Cost}_i \\space - \\space \\text{Model Predicted Cost}_i. \\]\nWhen we say a particular statistical model fits the data well what we mean is that the predictions the model makes about the observed outcome are not far away from what the outcome actually is. Because the data from the new pump was generated from a deterministic model, we see that each residual value is equal to 0 meaning that we are able to exactly predict the observed outcome from our model—there is no uncertainty!\nNow let us look at the same output for mod_old.\n\nsummary(mod_old)\n\n\nCall:\nlm(formula = cost ~ gallons_pumped, data = dplyr::filter(data_cost, \n    pump_id == \"old\"))\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.0010 -0.9547 -0.0588  0.8986  4.3534 \n\nCoefficients:\n               Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     0.10219    0.66925   0.153    0.879    \ngallons_pumped  3.98797    0.06471  61.624   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.347 on 98 degrees of freedom\nMultiple R-squared:  0.9748,    Adjusted R-squared:  0.9746 \nF-statistic:  3798 on 1 and 98 DF,  p-value: &lt; 2.2e-16\n\n\nThe residuals output from the summary() function tells us that our worst over prediction is by 3 dollars (the minimum residual) and our worst under prediction is by 4.35 dollars (the maximum residual). From the residual summary, we can also see that in general the residuals seem to fall symetrically around the median where the first and thrid quartiles are similar distances from the median.\nThe next thing we see from the summary() output is a table of numbers labeled: “Coefficients.” This table is going to be our main focus as it contains the estimates of our model parameters (Estimate), the precision of our estimates called their standard error (Std. Error), a test statistic we can use for hypothesis tests (t value), and the probability value or p-value we can use to inform our decision on whether to reject our null hypothesis or not (Pr(&gt;|t|)).\n\nInterpreting Regression Estimates\nBefore we begin interpreting the regression estimates, let us save create a more readable coefficient table using the code below.\n\ntable_new &lt;- summary(mod_new)$coef |&gt; round(2)\n\nWarning in summary.lm(mod_new): essentially perfect fit: summary may be\nunreliable\n\ncolnames(table_new) &lt;- c(\"Estimate\", \"Std. Error\", \"Test Stat.\", \"P-Value\")\ntable_new[, 3] &lt;- c(Inf, Inf)\n \ntable_old &lt;- summary(mod_old)$coef |&gt; round(2)\ncolnames(table_old) &lt;- c(\"Estimate\", \"Std. Error\", \"Test Stat.\", \"P-Value\")\n\ncoef_table &lt;- \n  rbind(table_new, table_old) |&gt; \n  round(3) |&gt;\n  as.data.frame() |&gt;\n  tibble::rownames_to_column() |&gt;\n  dplyr::mutate(\n    `Coef. Name` = c(rownames(table_new), rownames(table_old)),\n    `Model ID` = c(rep(\"New\", nrow(table_new)), rep(\"Old\", nrow(table_old)))\n  ) |&gt;\n  dplyr::select(\n    `Model ID`, `Coef. Name`, Estimate, \n    `Std. Error`, `Test Stat.`, `P-Value`\n  )\n\n\nknitr::kable(coef_table)\n\n\n\nTable 1: Model Coefficients\n\n\n\n\n\n\nModel ID\nCoef. Name\nEstimate\nStd. Error\nTest Stat.\nP-Value\n\n\n\n\nNew\n(Intercept)\n0.00\n0.00\nInf\n0.00\n\n\nNew\ngallons_pumped\n4.00\n0.00\nInf\n0.00\n\n\nOld\n(Intercept)\n0.10\n0.67\n0.15\n0.88\n\n\nOld\ngallons_pumped\n3.99\n0.06\n61.62\n0.00\n\n\n\n\n\n\n\n\nTable 1 combines the coefficient tables from mod_new and mod_old into one single table.\nThe first column we will focus on in Table 1 is the Estimate column. Before we do that, however, it is important to know the difference between a parameter and an estimate. Think back to the “true” regression model we used to generate our gas pump data. The linear model we used for both the deterministic and statistical models contained two parameters: the regression intercept, \\(\\beta_0\\) and the regression slope, \\(\\beta_1\\). We decided to set these parameters equal to 0 and 4, respectively, so we consider 0 and 4 to be the true values of the intercept and slope parameters. If we were not using simulated data, we would not know the “true” values of those parameters. We would need to collect data and estimate those parameters by fitting a statistical model to the data, which is exactly what the Estimate column in Table 1 contains.\nThe first difference we see between the estimates from the new model and those from the old model is that the estimates for the new model are exactly equal to the parameters we used to generate the data whereas the estimates from the old model are close to the values of the model parameters, but not identical—this is due to the uncertainty in our data from the old pump, which is not present in the new pump data.\nNow, focusing on the old pump estimates, we can provide the following interpretation for the regression intercept and slope. The regression intercept is the average amount we would pay if we pumped 0 gallons of gas. So, if we pumped 0 gallons of gas, we would owe .10 cents, on average. This, of course, does not make any sense. If we did not pump any gas, we should not owe any money. To understand this awkward interpretation, we need to take a step back and think about what the intercept is telling us: what is the predicted value of the outcome variable when the values of all the predictor variables in our model are equal to 0. Looking at this prediction only makes sense if all of your predictor variables can take on a value of 0. If they cannot, then we do not need to worry about intepreting the intercept. Moving back to our example, it does not make sense for our predictor variable, gallons_pumped, to take on a value of 0 as we know that means we did not interact with the pump and would owe nothing. Thus, we do not need to worry about its awkard intepretation.\nTo interpret the regression slope, it is helpful to recreate our earlier scatter plot. This time, however, we can add a line using our estimated regression coefficients as well as two different colored points: one to indicate what the mean of the outcome variable is at a set level of the predictor variable (e.g. how much are you paying, on average, when you pump 10 gallons of gas) and one to indicate the predicted value of the outcome variable at a set level of the predictor (e.g. what does the model predict you will pay when you pump 10 gallons of gas).\n\ndata_mean_labels &lt;- \n  data_cost |&gt;\n  dplyr::filter(\n    pump_id == \"old\"\n  ) |&gt;\n  dplyr::summarize(\n    mean_cost = mean(cost),\n    .by = gallons_pumped\n  ) |&gt;\n  dplyr::mutate(\n    label = round(mean_cost, 2)\n  ) |&gt;\n  dplyr::arrange(gallons_pumped)\n\ndata_pred_labels &lt;- \n  data_cost |&gt;\n  dplyr::filter(\n    pump_id == \"old\"\n  ) |&gt;\n  dplyr::select(gallons_pumped) |&gt;\n  dplyr::distinct() |&gt;\n  dplyr::mutate(\n    pred = mod_old$coefficients[1] + mod_old$coefficients[2] * gallons_pumped,\n    label = as.character(round(pred, 2))\n  ) |&gt;\n  dplyr::arrange(gallons_pumped)\n\ndata_labels &lt;- \n  data_mean_labels |&gt;\n  dplyr::select(\n    gallons_pumped,\n    value = mean_cost\n  ) |&gt;\n  dplyr::mutate(\n    id = \"Outcome Mean\"\n  ) |&gt;\n  dplyr::bind_rows(\n    data_pred_labels |&gt;\n      dplyr::select(\n        gallons_pumped,\n        value = pred\n      ) |&gt;\n      dplyr::mutate(\n        id = \"Model Prediction\"\n      )\n  )\n\nggplot2::ggplot(\n  data = data_cost |&gt; dplyr::filter(pump_id == \"old\"),\n  ggplot2::aes(\n    x = gallons_pumped,\n    y = cost\n  )\n) + \n  ggplot2::geom_point(color = \"lightblue\") + \n  ggplot2::geom_smooth(method = \"lm\", se = FALSE, formula = y ~ x,\n                       color = \"black\", linewidth = .75) + \n  ggplot2::geom_point(\n    data = data_labels,\n    ggplot2::aes(\n      x = gallons_pumped,\n      y = value,\n      color = id\n    ),\n    size = 3\n  ) +\n  ggplot2::labs(\n    x = \"Gallons Pumped\",\n    y = \"Cost in Dollars\",\n    color = \"Type\"\n  ) \n\n\n\n\n\n\n\nFigure 7: Estimated Relationship between Gallons Pumped and Cost in Dollars\n\n\n\n\n\nAs you can see in Figure 7, you end up paying slightly different amounts of money at any set amount of gas pumped—we saw this in Figure 6. Because we have different values of the outcome variable at fixed levels of the predictor variable, no single line will fit every point perfectly—we have to choose what line will best fit our data. For instance, we could decide that our line should be close to the maximum value of the outcome variable at each level of the predictor variable. Alternatively, we could decide that our line should be close to the minimum value of the outcome variable at each level of the predictor.\nIt turns out that if we want a line the least amount of prediction error (i.e. small residuals), then we should choose a line that is close to the mean of the outcome variable at each level of the predictor variable. This is exactly what the linear regression does. Looking at Figure 7, we can see that at a fixed value of the predictor variable (e.g. 10 gallons), the regression line goes as close as possible to the mean of the outcome variable. In effect, the regression slope is a single number summary of how the average value of the outcome variable changes as we move up one unit on the predictor variable.\nIn the context of our gas example, the estimated regression slope tells us that for every additional gallon pumped (a one unit increase on the predictor variable), we will pay 3.99 dollars more, on average. For example, if our pretend friend pumps 10 gallons of gas at the old pump, our model predicts they will pay 39.98 and if they pump 11 gallons, a one unit increase, our model predicts they will pay 43.97, which is a difference of 3.99 dollars—the value of our estimated regression coefficient.\nOf course, if we look at the actual values of our data, moving up a single gallon of gas pumped does not always result in an increase of 3.99 dollars. For example,"
-  },
-  {
-    "objectID": "primers/linear-regression-primer.html#linear-regression-with-an-example-from-the-socialbehavioral-sciences",
-    "href": "primers/linear-regression-primer.html#linear-regression-with-an-example-from-the-socialbehavioral-sciences",
-    "title": "Primer on Simple Linear Regression",
-    "section": "Linear Regression with an Example from the Social/Behavioral Sciences",
-    "text": "Linear Regression with an Example from the Social/Behavioral Sciences\n\nUsing Categorical Predictors\n\n\nModeling Interactions in Linear Regression\n\n\nLinear Regression Diagnostics\n\n\nAssumptions Underlying Linear Regression"
   }
 ]
