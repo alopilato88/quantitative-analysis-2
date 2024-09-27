@@ -16,9 +16,9 @@ To download a pdf version of these slides, click <a href="03-lecture-slides.pdf"
 
 For today, we will also be completing the following assignments: 
 
-<a href="assignments/assignment_template_2a.qmd" download target="_blank" rel="noopener noreferrer"><strong>Assignment 2a</strong></a>
+<a href="lecture-assignments/assignment_template_2a.qmd" download target="_blank" rel="noopener noreferrer"><strong>Assignment 2a</strong></a>
 
-<a href="assignments/assignment_template_2b.qmd" download target="_blank" rel="noopener noreferrer"><strong>Assignment 2b</strong></a>
+<a href="lecture-assignments/assignment_template_2b.qmd" download target="_blank" rel="noopener noreferrer"><strong>Assignment 2b</strong></a>
 
-<a href="assignments/assignment_template_3.qmd" download target="_blank" rel="noopener noreferrer"><strong>Assignment 3</strong></a>
+<a href="lecture-assignments/assignment_template_3.qmd" download target="_blank" rel="noopener noreferrer"><strong>Assignment 3</strong></a>
 
