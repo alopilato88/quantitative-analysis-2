@@ -1,0 +1,155 @@
+---
+title: "Assignment 1: A Review of Statistical Concepts"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Setup 
+
+Load the following packages: `tibble`, `dplyr`, `tidyr`, `ggplot2`, and `peopleanalytics`.
+
+## Problem 1.
+
+Run the code in the code chunk below to read in the Starwars data frame.
+
+```{r}
+starwars <- dplyr::starwars
+```
+
+Now using the `summarize` function create a new data frame that contains the proportions of characters of a given `species` that live in a given homeworld (i.e. the grouping varibles are: `species` and `homeworld`). Name the data frame: `data_sw_sp_hw_summ`. Name the proportion column `prop`.
+
+```{r}
+data_sw_sp_hw_summ <- starwars |> dplyr::summarize(count = dplyr::n(), .by = c(species, homeworld)) |>
+  dplyr::mutate(total = sum(count), prop = count / total)
+```
+
+## Problem 2. 
+
+Using the data frame that you created in `Problem 1`, `data_sw_sp_hw_summ`, finish the code below to create a bar plot with `species` on the x-axis, `prop` on the y-axis, and use `homeworld` as the fill variable. 
+
+```{r}
+ggplot2::ggplot(
+  data = data_sw_sp_hw_summ,
+  ggplot2::aes(
+     x = # Finish code here
+     y = # Finish code here
+     fill = # Finish code here
+  )
+) + 
+  ggplot2::geom_bar(stat = "identity", position = ggplot2::position_dodge2()) + 
+  ggplot2::coord_flip()
+```
+
+Now use `filter` to filter out any homeworld/species combinations with a `prop` values less than .02 and recreate the bar plot from the code chunk above. 
+
+```{r}
+
+```
+
+Finally, plot your filtered data frame again, but remove the `position` argument from the `geom_bar` function to see what happens.
+
+```{r}
+
+```
+
+## Problem 3. 
+
+Finish the code below to determine which species is the tallest, on average. 
+
+```{r}
+data_ht <- 
+  starwars |>
+  dplyr::summarize(
+    mean_ht = # Finish code,
+    .by = # Finish code
+  ) |>
+  dplyr::arrange(
+    dplyr::desc(# Finish code)
+  )
+```
+
+Using `filter`, filter the `data_ht` data frame so that it only contains the human species. Notice that the average height column, `mean_ht`, has a value of `NA`. Recreate the `data_ht` data frame, but this time use the `na.rm = TRUE` argument in the `mean` function to remove any missing values. 
+
+```{r}
+
+```
+
+Create a bar plot using your summarized data frame with `species` on the x-axis and your average height variable on the y-axis. In this plot, however, we want to order `species` by their `mean_ht`, so instead of using `mean_ht` for `x` in the `aes` function use `reorder(species, mean_ht)`.
+
+```{r}
+
+```
+
+## Problem 4.
+
+Using the `starwars` data frame, create your own plot using any of the `starwars` variables. Use the `color` and `fill` arguments to stylize your plot and use the `ggplot2::labs` function to add axis labels and a title (e.g. `ggplot2::labs(x = "x-axis title")`).
+
+```{r}
+
+```
+
+## Problem 5.
+
+You will now be using a new data frame: `storms`. Run the code below to view this data frame. 
+
+```{r}
+View(storms)
+```
+
+Create a summarized data frame named `data_status` that contains the average storm `pressure` by storm `status`. Remember to remove any `NA` values from the mean calculation. 
+
+```{r}
+data_status <- 
+  storms |>
+  dplyr::summarize(
+    mean_pressure = mean(pressure, na.rm = T),
+    .by = status
+  )
+```
+
+Use `geom_bar` to plot the data in `data_status`. You decide what the x- and y- axes are. 
+
+```{r}
+
+```
+
+## Problem 6. 
+
+Using `geom_histogram`, create a histogram of the `wind` variable. Below your code (and not in the code chunk area), write a description of the `wind` distribution.
+
+```{r}
+
+```
+
+**Write description here**
+
+## Problem 7. 
+
+Estimate a linear regression model with `wind` as the dependent variable and `pressure` and `status` as the independent variables. Below your code chunk, write an interpretation of your model results. 
+
+```{r}
+
+```
+
+**Write interpretation here**
+
+## Problem 8. 
+
+Using `ggplot`, create a histogram of your model residuals. Do the residuals look normally distributed to you? Why or why not? 
+
+```{r}
+
+```
+
+**Write explanation here**
+
+## Problem 9.
+
+Using `ggplot`, create a scatter plot with your model predicted values on the x-axis and your model residuals on the y-axis. Do you see a pattern? 
+
+```{r}
+
+```
+
+**Write explantion here**
+
