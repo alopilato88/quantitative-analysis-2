@@ -36,7 +36,7 @@ Categorical variable is a variable that consists of a set of two or more categor
 - Medical diagnosis: Positive or Negative
 - Attitude measures: Satisfied or Not Satisfied
 
-## Categorical Variable as a Predictor 
+## Categorical Variable as an Outcome 
 
 So far we have talked about categorical variables as predictors of some quantitative variable: 
 
@@ -74,7 +74,7 @@ $$P(X=k)=\binom{n}{k}\pi^k(1-\pi)^{n-k}$$
 
 Much like we do with a quantitative variable, we will often want to describe a categorical variable with its mean and variance. For a binary variable (binomial distribution), we can calculate its mean and variance as: 
 
-$$\text{Mean}=\pi, \text{Variance}=\pi(1-\pi)$$
+$$\text{Mean}=n\pi, \text{Variance}=n\pi(1-\pi)$$
 
 ## Modeling Two (Fair) Coin Flips 
 

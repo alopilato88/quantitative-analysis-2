@@ -515,7 +515,7 @@
     "href": "lectures/02-lecture-slides.html#the-mean-and-variance-of-a-binomial-variable",
     "title": "Introduction to Categorical Data Analysis",
     "section": "The Mean and Variance of a Binomial Variable",
-    "text": "The Mean and Variance of a Binomial Variable\nMuch like we do with a quantitative variable, we will often want to describe a categorical variable with its mean and variance. For a binary variable (binomial distribution), we can calculate its mean and variance as:\n\\[\\text{Mean}=\\pi, \\text{Variance}=\\pi(1-\\pi)\\]"
+    "text": "The Mean and Variance of a Binomial Variable\nMuch like we do with a quantitative variable, we will often want to describe a categorical variable with its mean and variance. For a binary variable (binomial distribution), we can calculate its mean and variance as:\n\\[\\text{Mean}=n\\pi, \\text{Variance}=n\\pi(1-\\pi)\\]"
   },
   {
     "objectID": "lectures/02-lecture-slides.html#modeling-two-fair-coin-flips",
@@ -1069,5 +1069,12 @@
     "title": "Introduction to Logistic Regression",
     "section": "Interpreting Confidence Intervals for Logistic Regression Estimates",
     "text": "Interpreting Confidence Intervals for Logistic Regression Estimates\nWe are 95% confident that the true effect of CSR is between 1.98 and 2.3.\nSo, at its smallest, a unit increase in CSR will increase the odds of donating by 98% and at its largest, a unit increase in CSR will increase the odds of donating by 130%, while adjusting for customer’s identification with the corporation.\n\nexp(ci_95) |&gt; round(2)\n\n[1] 1.98 2.30"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#categorical-variable-as-an-outcome",
+    "href": "lectures/02-lecture-slides.html#categorical-variable-as-an-outcome",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Categorical Variable as an Outcome",
+    "text": "Categorical Variable as an Outcome\nSo far we have talked about categorical variables as predictors of some quantitative variable:\n\nHow does an employees’ work status (full-time or part-time) impact their job satisfaction?\n\nNow we will start to talk about categorical variables as outcomes."
   }
 ]
