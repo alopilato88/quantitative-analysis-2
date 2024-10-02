@@ -1,0 +1,28 @@
+---
+format: 
+  html:
+    page-layout: custom
+---
+<div class="page-assignment">
+Use the links below to download the statistics primers.
+
+<table class="table-assignment">
+<thead>
+  <tr>
+    <th class="tassign-topic">Topic</th>
+    <th class="tassign-content">Primer</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tassign-topic">Simple Regression</td>
+    <td class="tassign-content"><a href="primers/simple-linear-regression-primer.pdf" download target="_blank" rel="noopener noreferrer"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+  </tr>
+  <tr>
+    <td class="tassign-topic">Logistic Regression -- Coming Soon</td>
+    <td class="tassign-content"><a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+  </tr>
+</tbody>
+</table>
+
+</div>

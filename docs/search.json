@@ -7,706 +7,6 @@
     "text": "To download a pdf version of this syllabus, click here.\nMeeting Time: Tuesdays, 5 PM to 7 PM ET\nLocation: Zoom Meeting and Smith 307 when in person\nEmail: alex.lopilato@gmail.com (for quick responses) or alopilato@bentley.edu (for discussions about grades, personal info, etc.)\nOffice Hours: By request (will likely be virtual as I do not have an office on campus)\nCourse Format: Hybrid Synchronous\n\nCourse Description\nThis course focuses on applications of categorical models and linear mixed-effects regression models to model data collected from observational, quasi-experimental, and experimental study designs. This course will introduce students to the basics of categorical data analysis and linear mixed-effects regression models.\n\n\nCourse Objectives\nBy the end of this course, you will:\n\nHave an understanding of how to model categorical data.\nHave an understanding of how to model clustered data.\nHave an understanding of how to use both categorical regression models and mixed-effects regression models in your own research.\nFeel comfortable using R to estimate categorical regression and mixed-effects regression models.\n\n\n\nTextbooks\nNo textbooks are required for this course, but I will be drawing heavily from the following books:\n\nIntroduction to Categorical Data Analysis. Alan Agressti. Third Edition.\nPractical Multievel Modeling using R. Francis Huang.\nMultilevel Analysis: An Introduction to Basic and Advanced Multilevel Modeling. Tom Snijders & Roel Bosker.\n\n\n\nCourse Technology\nThis course will use Brightspace to post important updates and Zoom recordings. Please do not use Brightspace to email me! Use either of the emails listed above.\n\nCourse Website\nThe website for the course is: https://alopilato88.github.io/quantitative-analysis-2/. All of the lectures can be found there and will be made publicly available on the day of the lecture.\n\n\nStatistical Computing\nThis course will rely solely on the R programming language for all statistical computing. At the very least, you will need to download R to your local machine (or use your lab computer), and I highly recommend also downloading RStudio, which is an Integrated Development Environment (IDE) that makes programming in R (and other programming languages) much easier. Please reach out to me if you are unable to install R.\nWhile you can use another statistical software program such as SPSS, SAS, or STATA, I will not be providing example code for those different programs. I will only be providing example R code.\n\n\n\nGrading Criteria\nA combination of homework and a final research project will be used to determine your grade for this course. Homework will account for 90% of your grade and the research project will account for 10%. While I encourage you to consult with your colleagues (your instructor, classmates, professors, etc.) when you are struggling with any of the homework assignments or the research project, your final products must be your own.\n\nHomework\nI will send out periodic homework assignments in order to give you students experience applying the methods we discuss in class. These assignments will be a mix of conceptual, statistical, and computational exercises. Please reach out to me if you find yourself struggling or overly stressing with these assignments. They are meant to be a learning tool not a major stressor!\n\n\nResearch Project\nOne of the more exciting things about being a graduate student is that you are able to explore the topics you find interesting. Use this research project to apply the methods we learn to any topic of your choice. Alternatively, I have fictitious data you can use if you do not have access to data of your own. Please talk to me by October 17th about your research project, even if your not 100% sure about it.\nYour final product should include four components:\n\nA brief introduction to your topic, the theory you are testing, and your hypotheses.\nA methods section write-up that parallels methods sections found in published articles.\nA results secection write-up that parallels methods sections found in published articles.\nThe code you used to analyze your data along with the dataset (assuming you are allowed to share the data).\n\n\n\n\nUniversity Honor Code, Academic Honesty Policy, Bentley Core Values\nThis class will be conducted in full accordance with The Bentley Core Values. Please reread the Values, which can be found at https://www.bentley.edu/about/mission-and-values.\nBentley College Honor Code: The Bentley College Honor Code formally recognized the responsibility of students to act in an ethical manner. It expects all students to maintain academic honesty in their own work, recognizing that most students will maintain academic honesty because of their own high standards. The Honor Code expects students to promote ethical behavior throughout the Bentley community and to take responsible action when there is a reason to suspect dishonesty.\nPersonal Academic Behavior: A student acknowledges that all submitted work (e.g., examination, papers, cases homework assignments) must be his or her own. The exception is the case in which an instructor permits or encourages students to work together on some or all assignments. When a student is in doubt, he or she should consult the instructor for clarification.\nResponsible Actions: Each student, as an integral member of the academic community, is expected to make a commitment to act honestly and to reject dishonesty on the part of other students. The students as a community are responsible for maintaining an ethical environment. Policies may be found at: http://www.bentley.edu/centers/alliance/academic-integrity\n\n\nBias Incident Reporting\nThe Bias Incident Response Team (BIRT) provides students affected by bias or bias-related incidents with access to appropriate resources. Where appropriate, BIRT assists the University in its response to situations that may impact the overall campus climate related to diversity and inclusion. Working closely with appropriate students, faculty, committees, organizations, and staff, BIRT plays an educational role in fostering an inclusive campus community and supporting targeted individuals when bias or bias-related incidents occur. More information about BIRT and how to file a bias incident report can be found at: https://www.bentley.edu/offices/student-affairs/birt.\n\n\nSpecial Accommodations\nStatement of Disabilities: Bentley University abides by Section 504 of the Rehabilitation Act of 1973 and the Americans with Disabilities Act of 1990 which stipulate no student shall be denied the benefits of an education solely by reason of a disability. If you have a hidden or visible disability which may require classroom accommodations, please call (if you are a residential student or on online student) Disability Services within the first 4 weeks of the semester to schedule an appointment. Disability Services is located in the Office of Academic Services (JEN 336, 781.891.2004). Disability Services is responsible for managing accommodations and services for all students with disabilities.\n\n\nWriting Center\nThe Writing Center offers one-on-one tutoring to students of all years and skill levels. Located on the lower level of the Bentley library (room 023), the Writing Center provides a welcoming and supportive environment in which students can work on writing from any class or discipline. Writers are encouraged to visit at all stages of the writing process; they can come with a draft, an outline, or just some initial thoughts and questions.\nStaffed by highly skilled student tutors, the Writing Center is open six days a week. Most conferences will be conducted online, but limited in-person hours will be held by appointment only. Appointments can be made at bentley.mywconline.net. For specific hours and additional information, please visit the Writing Center SharePoint site.\n\n\nESOL\nThe ESOL Center offers online appointments for helping undergraduate and graduate students strengthen their writing and English language skills. Our ESOL faculty tutors specialize in working with international and multilingual students to provide one-on-one support for all courses writing at any stage in the writing process. Along with individualized help for writing, the ESOL tutors provide guidance and feedback for documenting sources, oral presentation practice, and pronunciation/fluency enrichment.\nThe ESOL Center offers real-time video appointments Monday through Friday between 7:30 a.m. and 10:00 p.m. These can be reserved through our website: https://bentleyesol.mywconline.net. The complete information about booking appointments and uploading papers is clarified on the website’s announcement page.\n\n\nCourse Style\nI want this course to be an enjoyable and engaging experience for all, so although I will have lecture slides to talk through, I will also be using this course more as a discussion about statistical topics, not a lecture about them.\nIn order to meaningfully engage in this discussion, I encourage you to read through the required readings and skim through the supplemental readings (although I think they are all interesting reads!). I understand everyone is busy, so, despite being labeleled “Required Readings”, I will not make the readings required, but to make this course useful you will need to engage with the material and come with questions!\nTo be successful in this course, you will need to:\n\nDo the required readings and skim the supplemental readings\nCome to class and bring questions\nEngage in the course discussions\nMost importantly, ASK QUESTIONS\n\n\n\nTentative Course Schedule\nNOTE: The course syllabus is a general plan for the course and as such there may be deviations throughout the semester. Supplemental readings are any readings that are italicized or hyperlinked.\n\n\n\nDate\nTopic\nReadings\n\n\n\n\n9/3\nCourse Introduction & Review\nNo readings\n\n\n\n\n\n\n\n9/10\nIntroduction to Categorical Data Analysis\n\nhttps://www.statisticshowto.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/\nMyung (2003). Tutorial on Maximum Likelihood Estimation\n\n\n\n\n\n\n\n\n9/17\nNo Class\n\n\n\n\n\n\n\n\n9/27\nSimple & Multiple Logistic Regresssion Models\nImmersion Day\n\nHoetker (2007). The use of logit and probit models in strategic management research: Critical issues.\nStolzfus (2011). Logistic regression: A brief primer\nSainani (2014). Logistic regression.\nhttps://peopleanalytics-regression-book.org/bin-log-reg.html\n\n\n\n\n\n\n\n\n10/01\nInteractions & Model Building\n\nZelner (2009). Using simulation to interpret results from logit, probit, and other nonlinear models.\nJeong et al. (2020). A recentering approach for interpreting interaction effects from logit, probit, and other nonlinear models.\nHuang & Shields (2000). Interpretation of interaction effects in logit and probit analyses.\n\n\n\n\n\n\n\n\n10/08\nGoodness of fit & Predictive Power\n\nMittlbock & Schemper (1996). Explained variation for logistic regression.\nRoyston & Altman (2010). Visualizing and assessing discrimination in the logistic regression model.\n\n\n\n\n\n\n\n\n10/15\nFall Break - No Class\n\n\n\n\n\n\n\n\n10/22\nMulticategorical Outcome Models\n\nhttps://peopleanalytics-regression-book.org/multinomial-logistic-regression-for-nominal-category-outcomes.html\nhttps://peopleanalytics-regression-book.org/ord-reg.html\nLiddell & Kruschke (2018). Analyzing ordinal data with metric models: What could possibly go wrong?\n\n\n\n\n\n\n\n\n11/1\nGeneralized Linear Models & Intro to Analyzing Clustered Data\nImmersion Day\n\nRonkko et al. (2022). Eight simple guidelines for improved understanding of transformations and nonlinear effects.\nhttps://albert-rapp.de/posts/14_glms/14_glms\nBliese & Hanges (2004). Being both too liberal and too conservative: The perils of treating grouped data as though they were independent.\nHofmann (1997). An overview of the logic and rationale of hierarchical linear models.\n\n\n\n\n\n\n\n\n11/5\nThe LMER Model\n\nMathieu et al. (2012). Understanding and estimating the power to detect cross-level interaction effects in multilevel modeling.\nWoltman et al. (2012). An introduction to hierarchical linear modeling.\nHeisig & Schaeffer (2019). Why you should always include a random slope for the lower-level variables invovled in a cross-level interaction.\n\n\n\n\n\n\n\n\n11/12\nModel Specification & Centering Decisions\n\nBliese et al. (2018). Back to basics with mixed-effects models: Nine take-away points.\nEnders & Tofighi (2007). Centering predictor variables in cross-sectional multilevel models: A new look at an old issue.\n\n\n\n\n\n\n\n\n11/19\n\\(R^2\\) & LMER Model Assumptions\n\nLaHuis et al. (2014). Explained variance measures for multilevel models.\nHuang (2018). Multilevel modeling myths.\n\n\n\n\n\n\n\n\n11/26\nThanksgiving Break No Class\n\n\n\n\n\n\n\n\n12/6\nAdvanced uses of LMER Models\nImmersion Day\n\nBliese & Ployhart (2008). Growth modeling using random coefficient models.\nhttps://peopleanalytics-regression-book.org/modeling-explicit-and-latent-hierarchy-in-data.html#mixed\nGuo & Zhao (2000). Multilevel modeling for binary data.\n\n\n\n\n\n\n\n\n12/10\nWrap-Up\nNo readings"
   },
   {
-    "objectID": "lectures/03-lecture-page.html",
-    "href": "lectures/03-lecture-page.html",
-    "title": "Quantitative Analysis 2",
-    "section": "",
-    "text": "Next Week’s Materials »"
-  },
-  {
-    "objectID": "lectures/03-lecture-page.html#lecture-introduction-to-simple-and-multiple-logistic-regression",
-    "href": "lectures/03-lecture-page.html#lecture-introduction-to-simple-and-multiple-logistic-regression",
-    "title": "Quantitative Analysis 2",
-    "section": "Lecture: Introduction to Simple and Multiple Logistic Regression",
-    "text": "Lecture: Introduction to Simple and Multiple Logistic Regression\n\n\nTo download a pdf version of these slides, click here.\nFor today, we will also be completing the following assignments:\nAssignment 2a\nAssignment 2b\nAssignment 3"
-  },
-  {
-    "objectID": "lectures/02-lecture-page.html",
-    "href": "lectures/02-lecture-page.html",
-    "title": "Quantitative Analysis 2",
-    "section": "",
-    "text": "Next Week’s Materials »"
-  },
-  {
-    "objectID": "lectures/02-lecture-page.html#lecture-introduction-to-categorical-data",
-    "href": "lectures/02-lecture-page.html#lecture-introduction-to-categorical-data",
-    "title": "Quantitative Analysis 2",
-    "section": "Lecture: Introduction to Categorical Data",
-    "text": "Lecture: Introduction to Categorical Data\n\n\nTo download a pdf version of these slides, click here."
-  },
-  {
-    "objectID": "lectures/01-lecture-page.html",
-    "href": "lectures/01-lecture-page.html",
-    "title": "Quantitative Analysis 2",
-    "section": "",
-    "text": "Next Week’s Materials »"
-  },
-  {
-    "objectID": "lectures/01-lecture-page.html#lecture-review-of-statistical-concepts",
-    "href": "lectures/01-lecture-page.html#lecture-review-of-statistical-concepts",
-    "title": "Quantitative Analysis 2",
-    "section": "Lecture: Review of Statistical Concepts",
-    "text": "Lecture: Review of Statistical Concepts\n\n\nTo download a pdf version of these slides, click here."
-  },
-  {
-    "objectID": "assignments/answer-template.html",
-    "href": "assignments/answer-template.html",
-    "title": "Answers to Assignment 1",
-    "section": "",
-    "text": "# Load required R packages\nlibrary(tibble)\nlibrary(readr)\n\n# Read in the data from the class site\ndata_ai &lt;- readr::read_csv(\"https://alopilato88.github.io/quantitative-analysis-1/assignments/01-assignment-data.csv\")\n\n# View our data frame \nhead(data_ai)\n\nThe code chunk above tells R to do three, broad tasks:\n\nLoad the packages we need for the code in the code chunks below using the library function (e.g. library(tibble))\nRead a .csv file using its URL using the read_csv function and save the .csv file in an object named data_ai\nUse the head function to print out the first 6 rows of our new object: data_ai (head(data_ai))\n\nWe told R to use a function to accomplish those three tasks. A function is a set of code that does one specific thing. For example, read_csv is a function that only reads .csv files. It does nothing else.\nNext, a package such as readr is a collection of functions that all share a similar goal. The package readr contains different functions such as read_csv, read_file, and write_csv, which are all functions that can be used to read or write different kinds of files."
-  },
-  {
-    "objectID": "assignments/answer-template.html#assignment-setup",
-    "href": "assignments/answer-template.html#assignment-setup",
-    "title": "Answers to Assignment 1",
-    "section": "",
-    "text": "# Load required R packages\nlibrary(tibble)\nlibrary(readr)\n\n# Read in the data from the class site\ndata_ai &lt;- readr::read_csv(\"https://alopilato88.github.io/quantitative-analysis-1/assignments/01-assignment-data.csv\")\n\n# View our data frame \nhead(data_ai)\n\nThe code chunk above tells R to do three, broad tasks:\n\nLoad the packages we need for the code in the code chunks below using the library function (e.g. library(tibble))\nRead a .csv file using its URL using the read_csv function and save the .csv file in an object named data_ai\nUse the head function to print out the first 6 rows of our new object: data_ai (head(data_ai))\n\nWe told R to use a function to accomplish those three tasks. A function is a set of code that does one specific thing. For example, read_csv is a function that only reads .csv files. It does nothing else.\nNext, a package such as readr is a collection of functions that all share a similar goal. The package readr contains different functions such as read_csv, read_file, and write_csv, which are all functions that can be used to read or write different kinds of files."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-1.",
-    "href": "assignments/answer-template.html#question-1.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 1.",
-    "text": "Question 1.\n\n# 1. What is the sample size of your dataset (hint: It's the number of rows)? \n\nnrow(data_ai)\n\n[1] 500\n\n\nThe sample size of our data is the number of observations in our dataset. This is equivalent to the number of rows in our dataset—one row for each observation. So we can use the R function nrow to tell us the number of row. In this case there are 500 rows in our dataset, which means our sample size is 500."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-2.",
-    "href": "assignments/answer-template.html#question-2.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 2.",
-    "text": "Question 2.\n\n# 2. How many variables are in your dataset (hint: It's the number of columns)? \n\nncol(data_ai)\n\n[1] 4\n\n\nIn general, we will store our data in a .csv file where each column is a different variable. We can use the R function ncol to count the number of columns in our dataset. In our dataset, there are 4 columns, so we have 4 variables in our dataset."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-3.",
-    "href": "assignments/answer-template.html#question-3.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 3.",
-    "text": "Question 3.\n\n# 3. What is the mean and standard deviation of perceived_ease_use?\n\nmean(data_ai$perceived_ease_use) # mean() is a function that calculates the mean of a rando variable.\n\n[1] 4.078\n\nsd(data_ai$perceived_ease_use) # sd() is a function that calculates the standard deviation of a random variable.\n\n[1] 1.661758\n\n\nWhen you start R and RStudio, a handful of packages are loaded automatically. These packages make a lot of different functions immediately available to you. Two such functions are mean and sd.\nThe function mean only needs one argument—something that the use inputs—to work: a numeric R object otherwise known as a collection of numbers. mean then returns the mean value for the provided numeric object. In our class, the only numeric objects we will be providing to mean are the quantitative variables from our dataset. So to get the mean of perceived_ease_use, we use it as the argument in mean: mean(data_ai$perceived_ease_use), which returns 4.078.\nThe $ symbol used in the mean function tells the mean function to “look for” the variable perceived_ease_use in the dataset data_ai. If we did not include data_ai$ before perceived_ease_use, then the mean function would not where to find perceived_ease_use and the function would return an error message.\nSimilarly, to calculate the standard deviation of perceived_ease_use, we can use the preloaded R function: sd. Like mean, sd only requires one numeric object as an argument and it returns the standard deviation of the numeric values stored in the object. In our assignment, our numeric objects will almost always be the quantitative varialbes in our dataset. So to get the standard deviation of perceived_ease_use, we use perceived_ease_use as the argument in sd: sd(data_ai$perceived_ease_use), which returns 1.6617578.\nAgain we have to use the $ to tell sd to find perceived_ease_use in our dataset data_ai."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-4.",
-    "href": "assignments/answer-template.html#question-4.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 4.",
-    "text": "Question 4.\n\n# 4. What is the mean and standard deviation for perceived_useful?\n\nmean(data_ai$perceived_useful)\n\n[1] 4.76\n\nsd(data_ai$perceived_useful)\n\n[1] 1.755153\n\n\nJust like question 3, we can use the mean function to calculate the mean of perceived_useful and the sd function to calculate its standard deviation. Again we have to tell R where to find the variable by using data_ai$."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-5.",
-    "href": "assignments/answer-template.html#question-5.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 5.",
-    "text": "Question 5.\n\n# 5. What is the mean and standard deviation for behavioral_intention?\n\nmean(data_ai$behavioral_intention)\n\n[1] 4.314\n\nsd(data_ai$behavioral_intention)\n\n[1] 1.563423\n\n\nJust like the previous two questions, we can use the mean function to calculate the mean of behvioral_intention and the sd function to calculate its standard deviation. Again we have to tell R where to find the variable by using data_ai$."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-6.",
-    "href": "assignments/answer-template.html#question-6.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 6.",
-    "text": "Question 6.\n\n# 6a. What is the correlation between perceived_useful and perceived_ease_of_use? \n\n# cor() is a function that calculates the correlation between two random variables\n# The cor() function requires two arguments: an x variable and a y variable.\n# Below we tell R the x variable = data$perceived_useful and y variable = data_ai$perceived_ease_use.\n# You can read the $ operator as go into the data frame: data_ai and select the variable to the right of the $ sign.\n# data_ai$perceived_useful means go into data_ai and select the column perceived_useful\n\ncor(x = data_ai$perceived_useful, y = data_ai$perceived_ease_use) \n\n[1] 0.5423654\n\n# 6b. In your own words, write out an interpretation of the correlation you calculated in 6a. \n\nTo determine the correlation between two or more variables, we can use the preloaded R function: cor. For this homework, we only need to provide cor with two arguments, which are the variables we are interested in calculating a correlation coefficient for: perceived_useful and perceived_ease_use.\ncor(x = data_ai$perceived_useful, y = data_ai$perceived_ease_use) will go into our dataset, data_ai, and use the formula for the correlation coefficient to caluclate the correlation between perceived_useful and perceived_ease_use.\nWe will get the same correlation coefficient if we switch the order of our variables in the cor function: cor(x = data_ai$perceived_ease_use, y = data_ai$perceived_useful) as the correlation is symmetric. This means that the correlation between perceived_ease_use and perceived_useful is identical to the correlation between perceived_useful and perceived_ease_use.\nAs for the interpretation of the correlation, we can interpret it as:\nIn our dataset, the correlation between percieved_useful and perceived_ease_use is 0.5423654. Because the correlation is positive, we know that values of percieved_ease_use above the mean occur with values of perceived_useful that are above its mean. Similary the size of the correlation coefficient tells us that the two variables are moderately related to one another."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-7.",
-    "href": "assignments/answer-template.html#question-7.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 7.",
-    "text": "Question 7.\n\n# 7a. What is the correlation between perceived_useful and behavioral_intention? \ncor(x = data_ai$perceived_useful, y = data_ai$behavioral_intention) \n\n[1] 0.3795281\n\n# 7b. In your own words, write out an interpretation of the correlation you calculated in 7a. \n\nAgain we can use the cor function. We determine that the correlation between perceived_useful and behavioral_intention is 0.3795281, which means that perceived_useful and behavioral_intention are positively and moderately correlated to one another. High values of perceived_useful will tend to occur with high values of behavioral_intention, on average."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-8.",
-    "href": "assignments/answer-template.html#question-8.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 8.",
-    "text": "Question 8.\n\n# 8a. What is the correlation between perceived_ease_use and behavioral_intention? \ncor(x = data_ai$perceived_ease_use, y = data_ai$behavioral_intention) \n\n[1] 0.412486\n\n# 8b. In your own words, write out an interpretation of the correlation you calculated in 8a. \n\nAgain we can use the cor function. We determine that the correlation between perceived_ease_use and behavioral_intention is 0.412486, which means that perceived_ease_use and behavioral_intention are positively and moderately correlated to one another. High values of perceived_ease_use will tend to occur with high values of behavioral_intention, on average."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-9.",
-    "href": "assignments/answer-template.html#question-9.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 9.",
-    "text": "Question 9.\n\n# 9a. Estimate a simple regression model that uses perceived_ease_use to predict behavioral_intention.\n\n# The lm() function used below fits a linear regression model. The lm() code translated to the following\n# regression model: behvioral_intention = B0 + B1*perceived_ease_use. \n# In general the structure of the lm() function will look like lm(outcome_variable ~ predictor_variable, data = your_data)\n# In R, everyhing to the left of the ~ sign is an outcome variable and everything to the right is a predictor variable.\n\nmodel_1 &lt;- lm(behavioral_intention ~ perceived_ease_use, data = data_ai)\n\n# 9b. Print out the results of your regression model and write out an interpretation of the effect of perceived_ease_use on\n#     behavioral_intentions.\n\nsummary(model_1)\n\n\nCall:\nlm(formula = behavioral_intention ~ perceived_ease_use, data = data_ai)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.6718 -1.0599 -0.0599  0.9401  3.4924 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)         2.73142    0.16910   16.15   &lt;2e-16 ***\nperceived_ease_use  0.38808    0.03841   10.11   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.426 on 498 degrees of freedom\nMultiple R-squared:  0.1701,    Adjusted R-squared:  0.1685 \nF-statistic: 102.1 on 1 and 498 DF,  p-value: &lt; 2.2e-16\n\n# 9c. What is the R-squared value for model_1? Write out an interpretation of the R-squared.\n\nTo estimate a linear regression model in R, we will use the lm function. The lm function is automatically made available to us when we start R and RStudio, so we do not need to tell R to load it.\nlm requires two main arguments: the lm regression formula and the dataset that contains the predictor and outcome variables for the regression model.\nFirst, the lm formula will always look like outcome_variable_name ~ predictor_variable_name_1, which we can read as estimate a linear regression model where the outcome variable is outcome_variable_name and the predictor variable is predictor_variable_name_1. In general, any variable to the left of ~ is treated as an outcome variable by lm and any variable to the right of lm is treated as a predictor variable.\nNext, the lm function needs to know to where to find the dataset that contains our outcome and predictor variables. We can tell lm where to find our dataset by providing it with its second argument: data = data_ai. Now lm knows that data_ai contains the outcome and predictor variables used in the lm formula.\nNow that we have provide lm with its two necessary arguments, we can estimate it and save it in an object we call model_1. This is all happening in the line of code: model_1 &lt;- lm(behavioral_intention ~ perceived_ease_use, data = data_ai. lm is estimating a regression model where behavioral_intention is the outcome variable and perceived_ease_use is the predictor variable, both of which it knows to find in data_ai. Then it is storing the results of that model in an object (think of it like a box) called model_1.\nWe know R is storing the results of the model into an object named model_1 because of this part of the code: model_1 &lt;-. The &lt;- is called the assignment operator and it creates an object named model_1 and assigns it the results of lm(behavioral_intention ~ perceived_ease_use, data = data_ai.\n\nModel Interpretation\nNow that we have estimated our model, we can use the function summary to display the detailed results of our model. You should see from the results above that summary provides the coefficient estimates (Estimate), there standard errors (Std. Error), and a p-value (Pr(&gt;|t|)) along with more results like the R-squared value.\nWe can interpret the results as follows. When comparing two groups who differ by one unit on their response to perceived_ease_use, the average response to behavioral_intetions for the group with the higher response to perceived_ease_use will be 0.39 units higher than the group with the lower response.\nWe could also say: For every one unit increase in an individual’s perceptions of how easy it is to use the AI tool (perceived_ease_use), we will see their intentions to use the AI tool increase by 0.39. I find that this interpretation is easier to understand when compared to the group comparison interpretation, but it is less accurate.\nThe R-squared value in our model is 0.1701447, which means that 17% of the variance in behavioral_intention can be explained by perceived_ease_use."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-10.",
-    "href": "assignments/answer-template.html#question-10.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 10.",
-    "text": "Question 10.\n\n# 10a. Estimate a simple regression model that uses perceived_useful to predict behavioral_intention. Name the model: model_2.\n\nmodel_2 &lt;- lm(behavioral_intention ~ perceived_useful, data = data_ai)\n\n# 10b. Print out the results of your regression model and write out an interpretation of the effect of perceived_useful on\n#     behavioral_intentions.\n\nsummary(model_2)\n\n\nCall:\nlm(formula = behavioral_intention ~ perceived_useful, data = data_ai)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.0713 -1.0571 -0.0571  0.9429  3.6191 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       2.70479    0.18733  14.439   &lt;2e-16 ***\nperceived_useful  0.33807    0.03693   9.154   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.448 on 498 degrees of freedom\nMultiple R-squared:  0.144, Adjusted R-squared:  0.1423 \nF-statistic:  83.8 on 1 and 498 DF,  p-value: &lt; 2.2e-16\n\n# 10c. What is the R-squared value for model_2? Write out an interpretation of the R-squared.\n\nThe steps used to answer this question are identical to those we used in question 9.\nWe can interpret the results as follows. When comparing two groups who differ by one unit on their response to perceived_useful, the average response to behavioral_intetions for the group with the higher response to perceived_useful will be 0.34 units higher than the group with the lower response.\nWe could also say: For every one unit increase in an individual’s perceptions of how useful the AI tool is (perceived_useful), we will see their intentions to use the AI tool increase by 0.34.\nThe R-squared value in our model is 0.1440416, which means that 14% of the variance in behavioral_intention can be explained by perceived_useful."
-  },
-  {
-    "objectID": "assignments/answer-template.html#question-11.",
-    "href": "assignments/answer-template.html#question-11.",
-    "title": "Answers to Assignment 1",
-    "section": "Question 11.",
-    "text": "Question 11.\n\n# 11a. Estimate a multiple regression model that uses perceived_useful and perceived_ease_use to predict behavioral_intention.\n\nmodel_3 &lt;- lm(behavioral_intention ~ perceived_ease_use + perceived_useful, data = data_ai)\n\n# 11b. Print out the results of your multiple regression model and write out an interpretation of both partial regression \n#      coefficients.\n\n# 11c. What is the R-squared value for model_3? Write out an interpretation of the R-squared.\n\nThe steps used to answer this question are identical to those we used in questions 9 and 10. The only difference is that instead of estimating a model with one predictor variable, we are estimating a model with two predictor variables: perceived_ease_use + perceived_useful. To add more predictor variables to our model, we just write: + predictor_variable_name_1 + predictor_variable_name_2 + predictor_variable_name_3 for as many predictor variables as we would like to add. Nothing else about the lm function changes.\nWe can interpret the results as follows:\n\nWhen comparing two groups who differ by one unit on their response to perceived_useful, but who have the same response to perceived_ease_use, the average response to behavioral_intetions for the group with the higher response to perceived_useful will be 0.2 units higher than the group with the lower response.\nWhen comparing two groups who differ by one unit on their response to perceived_ease_use, but who have the same response to perceived_useful, the average response to behavioral_intetions for the group with the higher response to perceived_ease_of_use will be 0.28 units higher than the group with the lower response.\n\nWe could also say: While controlling for perceived_ease_use, for every one unit increase in an individual’s perceptions of how useful the AI tool is (perceived_useful), we will see their intentions to use the AI tool increase by 0.2.\nThe R-squared value in our model is 0.2045388, which means that 20% of the variance in behavioral_intention can be explained by perceived_useful and perceived_ease_use together."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quantitative Analysis 2",
-    "section": "",
-    "text": "Welcome to the homepage for Quantitative Analysis 2 (PHD1504-1)!"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#welcome-back-everyone",
-    "href": "lectures/01-lecture-slides.html#welcome-back-everyone",
-    "title": "Review of Statistical Concepts",
-    "section": "Welcome Back Everyone!",
-    "text": "Welcome Back Everyone!\nHope you all had a refreshing summer!"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#what-are-we-doing-this-semester",
-    "href": "lectures/01-lecture-slides.html#what-are-we-doing-this-semester",
-    "title": "Review of Statistical Concepts",
-    "section": "What Are We Doing this Semester?",
-    "text": "What Are We Doing this Semester?\nExtend the regression model in two ways:\n\nRelax the normality assumption: Logistic Regression (GLMs)\nRelax the independent residuals assumption: Mixed-effects regression models"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#semester-assignments",
-    "href": "lectures/01-lecture-slides.html#semester-assignments",
-    "title": "Review of Statistical Concepts",
-    "section": "Semester Assignments",
-    "text": "Semester Assignments\n\nHomework (~5-6 over the course)\nIn-Class Projects (For immersion days)\nProject"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#overview-for-today",
-    "href": "lectures/01-lecture-slides.html#overview-for-today",
-    "title": "Review of Statistical Concepts",
-    "section": "Overview for Today",
-    "text": "Overview for Today\n\nProbability & Statistics Review\nR/RStudio Review"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#what-is-probability",
-    "href": "lectures/01-lecture-slides.html#what-is-probability",
-    "title": "Review of Statistical Concepts",
-    "section": "What is Probability?",
-    "text": "What is Probability?\nProbability is the language of uncertainty.\nAnytime we are dealing with random events such as the outcome of a coin toss or the response to a survey question, we rely on probability to talk about these events."
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#axioms-rules-of-probability",
-    "href": "lectures/01-lecture-slides.html#axioms-rules-of-probability",
-    "title": "Review of Statistical Concepts",
-    "section": "Axioms (Rules) of Probability",
-    "text": "Axioms (Rules) of Probability\nProbability theory is built on three rules:\n\n\\(P(\\text{Event}) \\ge 0\\)\n\\(P(\\text{Any Event} = 1\\)\n\\(P(\\text{A or B}) = P(\\text{A}) + P(\\text{B})\\) for Mutually Exclusive events"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#joint-conditional-probabilities",
-    "href": "lectures/01-lecture-slides.html#joint-conditional-probabilities",
-    "title": "Review of Statistical Concepts",
-    "section": "Joint & Conditional Probabilities",
-    "text": "Joint & Conditional Probabilities\nWhen dealing with two or more random variables, we can describe the probability of multiple events happening using joint probabilities and conditional probabilities:\n\nJoint Probability: Probability of rolling a 1 and a 2\nConditional Probability: Probability of rolling a 1 given (conditional on) your first roll was a 1"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice",
-    "href": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice",
-    "title": "Review of Statistical Concepts",
-    "section": "Simulating a Roll of Two Dice",
-    "text": "Simulating a Roll of Two Dice\n\nset.seed(435)\nroll_1 &lt;- sample(1:6, size = 20000, replace = TRUE)\nroll_2 &lt;- sample(1:6, size = 20000, replace = TRUE)\nxtabs(~roll_1 + roll_2) |&gt; prop.table() |&gt; round(2)"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice-1",
-    "href": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice-1",
-    "title": "Review of Statistical Concepts",
-    "section": "Simulating a Roll of Two Dice",
-    "text": "Simulating a Roll of Two Dice\n\n\n      roll_2\nroll_1    1    2    3    4    5    6\n     1 0.03 0.03 0.03 0.03 0.03 0.03\n     2 0.03 0.03 0.03 0.03 0.03 0.03\n     3 0.03 0.03 0.03 0.03 0.03 0.03\n     4 0.03 0.03 0.03 0.03 0.03 0.03\n     5 0.03 0.03 0.03 0.03 0.03 0.03\n     6 0.03 0.03 0.03 0.03 0.03 0.03"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#independent-events",
-    "href": "lectures/01-lecture-slides.html#independent-events",
-    "title": "Review of Statistical Concepts",
-    "section": "Independent Events",
-    "text": "Independent Events\nTwo or more events are independent when the occurrence of one event has no impact on the occurrence of the other events:\n\\(P(A|B) = P(A)\\)"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#are-die-rolls-independent",
-    "href": "lectures/01-lecture-slides.html#are-die-rolls-independent",
-    "title": "Review of Statistical Concepts",
-    "section": "Are Die Rolls Independent?",
-    "text": "Are Die Rolls Independent?\nIf you roll a pair of dice, is the first roll independent of the second?"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#calculating-conditional-independence",
-    "href": "lectures/01-lecture-slides.html#calculating-conditional-independence",
-    "title": "Review of Statistical Concepts",
-    "section": "Calculating Conditional Independence",
-    "text": "Calculating Conditional Independence\n\nxtabs(~roll_1 + roll_2) |&gt; prop.table(1) |&gt; round(2)"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#calculating-conditional-independence-1",
-    "href": "lectures/01-lecture-slides.html#calculating-conditional-independence-1",
-    "title": "Review of Statistical Concepts",
-    "section": "Calculating Conditional Independence",
-    "text": "Calculating Conditional Independence\n\n\n      roll_2\nroll_1    1    2    3    4    5    6\n     1 0.17 0.17 0.16 0.16 0.17 0.17\n     2 0.17 0.18 0.18 0.16 0.17 0.16\n     3 0.17 0.17 0.17 0.16 0.16 0.18\n     4 0.15 0.18 0.17 0.16 0.17 0.17\n     5 0.16 0.17 0.16 0.18 0.16 0.17\n     6 0.16 0.17 0.16 0.17 0.17 0.18"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#probability-massdistribution-function",
-    "href": "lectures/01-lecture-slides.html#probability-massdistribution-function",
-    "title": "Review of Statistical Concepts",
-    "section": "Probability Mass/Distribution Function",
-    "text": "Probability Mass/Distribution Function\nProbability Mass and Density Functions (PMF & PDF, respectively) are functions that take the value of a random variable as an input and output the probability of that value occurring. Every statistical model we will use will assume a certain PMF or PDF.\n\nPMF is a probability distribution function for discrete random variables\nPDF is a probability distribution function for continuous random variables"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#bernouli-distribution",
-    "href": "lectures/01-lecture-slides.html#bernouli-distribution",
-    "title": "Review of Statistical Concepts",
-    "section": "Bernouli Distribution",
-    "text": "Bernouli Distribution\nThe Bernoulli Distribution is a PMF used for a random variable that takes on two different values:\n\nCoin toss: Heads or Tails\nFootball game: Win or Loss\nClicked on an ad: Yes or No"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#pmf-for-uga-winning-the-college-football-national-championship",
-    "href": "lectures/01-lecture-slides.html#pmf-for-uga-winning-the-college-football-national-championship",
-    "title": "Review of Statistical Concepts",
-    "section": "PMF for UGA Winning the College Football National Championship",
-    "text": "PMF for UGA Winning the College Football National Championship\n\\[p(\\text{Win}) = \\pi^{Y}(1-\\pi)^{1 - Y}\\] \\[\\pi = \\text{Probability UGA Wins}\\] \\[Y = \\text{1 if they win, 0 if they lose}\\]"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#using-pmfs-in-r",
-    "href": "lectures/01-lecture-slides.html#using-pmfs-in-r",
-    "title": "Review of Statistical Concepts",
-    "section": "Using PMFs in R",
-    "text": "Using PMFs in R\n\\[p(\\text{Win}) = .25^{Y}(1-.25)^{1 - Y}\\]\n\ndbinom(1, 1, prob = .25)\n\n[1] 0.25\n\ndbinom(0, 1, prob = .25)\n\n[1] 0.75"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#binomial-distribution",
-    "href": "lectures/01-lecture-slides.html#binomial-distribution",
-    "title": "Review of Statistical Concepts",
-    "section": "Binomial Distribution",
-    "text": "Binomial Distribution\nThe binomial distribution is a PMF used for a random variable that is the count of successes of n independent experiments/trials (multiple, independent Bernoulli variables):\n\nProbability of 10 heads out of 15 tosses (head = success)\nProbability a college football team wins 10 of its 12 games\nProbability a user clicks on 3 of the 5 ads presented to them"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record",
-    "href": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record",
-    "title": "Review of Statistical Concepts",
-    "section": "The Probability Distribution of UGA’s Regular Season Record",
-    "text": "The Probability Distribution of UGA’s Regular Season Record\nUGA’s record under their current head coach: 94-16 (94%). So let’s say they have a 94% chance of winning each game – what does the probability distribution of their 12 game season win-loss record look like?\n\ndata_record &lt;- \n  tibble::tibble(\n    record = 0:12,\n    prob = dbinom(record, 12, .94)\n  )\n\nggplot2::ggplot(\n  data = data_record, \n  ggplot2::aes(x = as.factor(record), y = prob)\n) + \n  ggplot2::geom_bar(stat = \"identity\") + \n  ggplot2::ylim(c(0, 1))"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record-1",
-    "href": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record-1",
-    "title": "Review of Statistical Concepts",
-    "section": "The Probability Distribution of UGA’s Regular Season Record",
-    "text": "The Probability Distribution of UGA’s Regular Season Record"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#cumulative-distribution-function",
-    "href": "lectures/01-lecture-slides.html#cumulative-distribution-function",
-    "title": "Review of Statistical Concepts",
-    "section": "Cumulative Distribution Function",
-    "text": "Cumulative Distribution Function\nThe Cumulative Distribution Function (CDF) specifies the probability that a random variable takes a value, Y, or any value less than Y (think of percentiles)."
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#probability-uga-wins-10-or-less-games",
-    "href": "lectures/01-lecture-slides.html#probability-uga-wins-10-or-less-games",
-    "title": "Review of Statistical Concepts",
-    "section": "Probability UGA Wins 10 or Less Games",
-    "text": "Probability UGA Wins 10 or Less Games\n\\[F(\\text{UGA Record = 10}) = P(\\text{UGA Record} \\le 10)\\]"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#how-does-regression-connect-to-probability",
-    "href": "lectures/01-lecture-slides.html#how-does-regression-connect-to-probability",
-    "title": "Review of Statistical Concepts",
-    "section": "How Does Regression Connect to Probability?",
-    "text": "How Does Regression Connect to Probability?\nThe simple linear regression model we’ve seen before:\n\\[Y_i = \\beta_0 + \\beta_1X_{i1} + \\epsilon_i\\] \\[\\epsilon_i \\sim N(0, \\sigma)\\]"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#regression-as-a-probability-model",
-    "href": "lectures/01-lecture-slides.html#regression-as-a-probability-model",
-    "title": "Review of Statistical Concepts",
-    "section": "Regression as a Probability Model",
-    "text": "Regression as a Probability Model\nRewriting linear regression as a probability model:\n\\[P(Y_i|X_{i1})=N(\\beta_0 + \\beta_1X_{i1}, \\sigma)\\]"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#us-heights-by-sex",
-    "href": "lectures/01-lecture-slides.html#us-heights-by-sex",
-    "title": "Review of Statistical Concepts",
-    "section": "US Heights by Sex",
-    "text": "US Heights by Sex"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#using-linear-regression-to-describe-heights",
-    "href": "lectures/01-lecture-slides.html#using-linear-regression-to-describe-heights",
-    "title": "Review of Statistical Concepts",
-    "section": "Using Linear Regression to Describe Heights",
-    "text": "Using Linear Regression to Describe Heights\n\nmod_ht &lt;- lm(ht ~ sex, data = data_ht)\n\n\n\n# A tibble: 10,000 × 2\n      ht sex  \n   &lt;dbl&gt; &lt;chr&gt;\n 1  70.7 M    \n 2  67.9 M    \n 3  73.6 M    \n 4  68.4 M    \n 5  67.0 M    \n 6  71.2 M    \n 7  67.5 M    \n 8  68.8 M    \n 9  63.9 M    \n10  69.9 M    \n# ℹ 9,990 more rows"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#what-does-the-model-tell-us",
-    "href": "lectures/01-lecture-slides.html#what-does-the-model-tell-us",
-    "title": "Review of Statistical Concepts",
-    "section": "What Does the Model Tell Us?",
-    "text": "What Does the Model Tell Us?\nHow do we translate our model results into a probability model?\n\n\n\nCall:\nlm(formula = ht ~ sex, data = data_ht)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-11.1388  -1.8635   0.0065   1.8557  11.6430 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 63.68069    0.04038 1576.85   &lt;2e-16 ***\nsexM         5.39268    0.05610   96.13   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.803 on 9998 degrees of freedom\nMultiple R-squared:  0.4803,    Adjusted R-squared:  0.4803 \nF-statistic:  9242 on 1 and 9998 DF,  p-value: &lt; 2.2e-16"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#why-its-important-to-think-of-regression-as-a-probability-model",
-    "href": "lectures/01-lecture-slides.html#why-its-important-to-think-of-regression-as-a-probability-model",
-    "title": "Review of Statistical Concepts",
-    "section": "Why It’s Important to Think of Regression as a Probability Model",
-    "text": "Why It’s Important to Think of Regression as a Probability Model\nConceptualizing linear regression as a probability model allows us to generalize the ideas of linear regression to a larger number of probability distributions than just the normal distribution.\nIt opens up the world of Generalized Linear Models, which we will become more familiar with throughout the semester."
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#regression-question",
-    "href": "lectures/01-lecture-slides.html#regression-question",
-    "title": "Review of Statistical Concepts",
-    "section": "Regression Question",
-    "text": "Regression Question\nYou want to understand the impact that an employee’s job demands and resources have on their work engagement."
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#a-look-at-our-simulated-data",
-    "href": "lectures/01-lecture-slides.html#a-look-at-our-simulated-data",
-    "title": "Review of Statistical Concepts",
-    "section": "A Look at Our Simulated Data",
-    "text": "A Look at Our Simulated Data\n\n\n# A tibble: 6 × 4\n  job_demand job_res part_time   eng\n       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;\n1      0.341 -1.14   no         1.30\n2     -0.703 -1.02   no         3.39\n3     -0.380 -0.575  no         1.38\n4     -0.746 -0.0909 yes        6.44\n5     -0.898 -0.0192 no         4.52\n6     -0.335 -1.51   no         3.20"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#estimating-a-regression-model-with-r",
-    "href": "lectures/01-lecture-slides.html#estimating-a-regression-model-with-r",
-    "title": "Review of Statistical Concepts",
-    "section": "Estimating a Regression Model with R",
-    "text": "Estimating a Regression Model with R\n\nmod_engage &lt;- lm(eng ~ job_demand + job_res, data = data_jdr)"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#interpreting-the-model-output",
-    "href": "lectures/01-lecture-slides.html#interpreting-the-model-output",
-    "title": "Review of Statistical Concepts",
-    "section": "Interpreting the Model Output",
-    "text": "Interpreting the Model Output\nWhat does the output below tell us about the relationships between engagement and job demands and job resources?\n\nsummary(mod_engage)\n\n\nCall:\nlm(formula = eng ~ job_demand + job_res, data = data_jdr)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-10.5697  -1.7671   0.0077   1.6561  10.1450 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  3.80444    0.05883   64.67   &lt;2e-16 ***\njob_demand  -0.98796    0.05832  -16.94   &lt;2e-16 ***\njob_res      0.91971    0.06021   15.28   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.631 on 1997 degrees of freedom\nMultiple R-squared:  0.2053,    Adjusted R-squared:  0.2045 \nF-statistic:   258 on 2 and 1997 DF,  p-value: &lt; 2.2e-16"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#communicating-the-model-results",
-    "href": "lectures/01-lecture-slides.html#communicating-the-model-results",
-    "title": "Review of Statistical Concepts",
-    "section": "Communicating the Model Results",
-    "text": "Communicating the Model Results\n\nWhile adjusting for a worker’s level of job resources, for every one unit increase in job demands, worker engagement should decrease by .99 units, on average.\nWhile adjusting for a worker’s level of job demands, for every one unit increase in job resources, worker engagement should increase by .92 units, on average.\nOverall, our model accounts (or explains) 20% of the variance in worker engagement."
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#statistical-significance-and-regression",
-    "href": "lectures/01-lecture-slides.html#statistical-significance-and-regression",
-    "title": "Review of Statistical Concepts",
-    "section": "Statistical Significance and Regression",
-    "text": "Statistical Significance and Regression\nStatistical significance asks the question: “If I believe the null hypothesis is true (usually no effect), what is the probability that my estimate would be this large or larger?”\nThe p-value (probability value) tells us this probability and it is up to us to decide if the probability is small enough for us to reject the null hypothesis (usually if the probability is less than .05)."
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#standard-errors-test-statistics-and-null-distributions",
-    "href": "lectures/01-lecture-slides.html#standard-errors-test-statistics-and-null-distributions",
-    "title": "Review of Statistical Concepts",
-    "section": "Standard Errors, Test Statistics, and Null Distributions",
-    "text": "Standard Errors, Test Statistics, and Null Distributions\nSignificance testing relies heavily on the concepts of standard errors, test statistics, and null distributions:\n\nStandard Errors: Amount of uncertainty in our estimate.\nTest Statistics: The number of standard deviations the estimate is away from the null value.\nNull Distributions: The probability distribution specified by the null hypothesis."
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#visualizing-the-significance-test",
-    "href": "lectures/01-lecture-slides.html#visualizing-the-significance-test",
-    "title": "Review of Statistical Concepts",
-    "section": "Visualizing the Significance Test",
-    "text": "Visualizing the Significance Test"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#understanding-model-predictions-and-errors-residuals",
-    "href": "lectures/01-lecture-slides.html#understanding-model-predictions-and-errors-residuals",
-    "title": "Review of Statistical Concepts",
-    "section": "Understanding Model Predictions and Errors (Residuals)",
-    "text": "Understanding Model Predictions and Errors (Residuals)\n\nModel Prediction: \\(3.80 + -.99*.341 + .92*-1.14 = 2.41\\)\nModel Error: Observed - Predicted"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#calculating-model-predictions-and-errors",
-    "href": "lectures/01-lecture-slides.html#calculating-model-predictions-and-errors",
-    "title": "Review of Statistical Concepts",
-    "section": "Calculating Model Predictions and Errors",
-    "text": "Calculating Model Predictions and Errors\n\ndata_jdr |&gt; \n  dplyr::select(job_demand, job_res, eng) |&gt;\n  dplyr::mutate(\n    prediction = predict(mod_engage),\n    error = mod_engage$residuals\n  )\n\n# A tibble: 2,000 × 5\n   job_demand job_res   eng prediction  error\n        &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;\n 1      0.341 -1.14    1.30       2.42 -1.12 \n 2     -0.703 -1.02    3.39       3.56 -0.172\n 3     -0.380 -0.575   1.38       3.65 -2.28 \n 4     -0.746 -0.0909  6.44       4.46  1.98 \n 5     -0.898 -0.0192  4.52       4.67 -0.156\n 6     -0.335 -1.51    3.20       2.75  0.452\n 7     -0.501 -0.585   7.61       3.76  3.85 \n 8     -0.175 -1.76    1.13       2.36 -1.23 \n 9      1.81   1.39    4.99       3.30  1.70 \n10     -0.230  0.545   7.03       4.53  2.49 \n# ℹ 1,990 more rows"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#assessing-model-fit-with-r-squared",
-    "href": "lectures/01-lecture-slides.html#assessing-model-fit-with-r-squared",
-    "title": "Review of Statistical Concepts",
-    "section": "Assessing Model Fit with R-Squared",
-    "text": "Assessing Model Fit with R-Squared\nThe \\(R^2\\) can be calculated by squaring the correlation between our model predictions of the outcome variable and the actual values of the outcome variable.\nAlthough it was developed for normal linear models, the \\(R^2\\) can still be a helpful measure of fit for generalized linear models."
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#assessing-model-diagnostics-using-residuals",
-    "href": "lectures/01-lecture-slides.html#assessing-model-diagnostics-using-residuals",
-    "title": "Review of Statistical Concepts",
-    "section": "Assessing Model Diagnostics Using Residuals",
-    "text": "Assessing Model Diagnostics Using Residuals"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#categorical-predictors-and-indicator-coding",
-    "href": "lectures/01-lecture-slides.html#categorical-predictors-and-indicator-coding",
-    "title": "Review of Statistical Concepts",
-    "section": "Categorical Predictors and Indicator Coding",
-    "text": "Categorical Predictors and Indicator Coding\nTo use a categorical predictor with K groups in a regression model, you have to transform the variable into K - 1 indicator variables (variables that only take on 0 and 1 values), where the group coded as 0 is referred to as the reference group:\n\nx3\n\n# A tibble: 3 × 3\n  Group         `Did Not Start` Incomplete\n  &lt;chr&gt;         &lt;chr&gt;           &lt;chr&gt;     \n1 Completed     0               0         \n2 Incomplete    0               1         \n3 Did Not Start 1               0"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#interpreting-the-effects-of-indicator-variables",
-    "href": "lectures/01-lecture-slides.html#interpreting-the-effects-of-indicator-variables",
-    "title": "Review of Statistical Concepts",
-    "section": "Interpreting the Effects of Indicator Variables",
-    "text": "Interpreting the Effects of Indicator Variables\nFor a model where the only predictor is the indicator variable:\n\nIntercept is the mean of the outcome variable for the reference group\nThe remaining K - 1 coefficients compare the outcome variable mean for the K - 1 groups to the outcome variable mean for the reference group"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#impact-part-time-status-has-on-engagement",
-    "href": "lectures/01-lecture-slides.html#impact-part-time-status-has-on-engagement",
-    "title": "Review of Statistical Concepts",
-    "section": "Impact Part-Time Status has on Engagement",
-    "text": "Impact Part-Time Status has on Engagement\n\nmod_engage_cat &lt;- lm(eng ~ part_time, data = data_jdr)\nsummary(mod_engage_cat)\n\n\nCall:\nlm(formula = eng ~ part_time, data = data_jdr)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-12.6198  -1.8585   0.0857   1.9740   9.7262 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   3.99385    0.07345  54.372  &lt; 2e-16 ***\npart_timeyes -0.95968    0.16125  -5.951 3.13e-09 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.924 on 1998 degrees of freedom\nMultiple R-squared:  0.01742,   Adjusted R-squared:  0.01693 \nF-statistic: 35.42 on 1 and 1998 DF,  p-value: 3.13e-09"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#interaction-moderation-effects",
-    "href": "lectures/01-lecture-slides.html#interaction-moderation-effects",
-    "title": "Review of Statistical Concepts",
-    "section": "Interaction (Moderation) Effects",
-    "text": "Interaction (Moderation) Effects\nAn interaction effect allows us to test if the impact of a predictor variable on an outcome variable changes at different levels of another predictor variable:\n\nThe relationship between job demands and engagement is strong and negative when job resources are low, but weak, and likely non-significant, when job resources are high.\nToo Much of a Good Thing Effect (Vitamins are good for you unless you take a lot at once!)"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#estimating-interpreting-interaction-effects",
-    "href": "lectures/01-lecture-slides.html#estimating-interpreting-interaction-effects",
-    "title": "Review of Statistical Concepts",
-    "section": "Estimating & Interpreting Interaction Effects",
-    "text": "Estimating & Interpreting Interaction Effects\n\nmod_engage_int &lt;- lm(eng ~ job_demand * job_res, data = data_jdr)\nsummary(mod_engage_int)\n\n\nCall:\nlm(formula = eng ~ job_demand * job_res, data = data_jdr)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-9.6683 -1.7158  0.0427  1.6745 10.3648 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)         3.80063    0.05794  65.591  &lt; 2e-16 ***\njob_demand         -0.96718    0.05750 -16.821  &lt; 2e-16 ***\njob_res             0.92433    0.05930  15.588  &lt; 2e-16 ***\njob_demand:job_res  0.47113    0.05949   7.919 3.94e-15 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.591 on 1996 degrees of freedom\nMultiple R-squared:  0.2295,    Adjusted R-squared:  0.2284 \nF-statistic: 198.2 on 3 and 1996 DF,  p-value: &lt; 2.2e-16"
-  },
-  {
-    "objectID": "lectures/01-lecture-slides.html#always-plot-interaction-effects",
-    "href": "lectures/01-lecture-slides.html#always-plot-interaction-effects",
-    "title": "Review of Statistical Concepts",
-    "section": "Always Plot Interaction Effects",
-    "text": "Always Plot Interaction Effects"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#overview-for-today",
-    "href": "lectures/02-lecture-slides.html#overview-for-today",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Overview for Today",
-    "text": "Overview for Today\nToday we will be learning about:\n\nCategorical data\nMaximum likelihood estimation\nStatistical inference for proportions"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#what-is-a-categorical-variable",
-    "href": "lectures/02-lecture-slides.html#what-is-a-categorical-variable",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "What is a Categorical Variable?",
-    "text": "What is a Categorical Variable?\nCategorical variable is a variable that consists of a set of two or more categories:\n\nCustomer churn: Remained or Left\nPolitical ideology: Democrat, Republican, or Independent\nMedical diagnosis: Positive or Negative\nAttitude measures: Satisfied or Not Satisfied"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#categorical-variable-as-a-predictor",
-    "href": "lectures/02-lecture-slides.html#categorical-variable-as-a-predictor",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Categorical Variable as a Predictor",
-    "text": "Categorical Variable as a Predictor\nSo far we have talked about categorical variables as predictors of some quantitative variable:\n\nHow does an employees’ work status (full-time or part-time) impact their job satisfaction?\n\nNow we will start to talk about categorical variables as outcomes."
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#common-ways-to-model-categorical-data",
-    "href": "lectures/02-lecture-slides.html#common-ways-to-model-categorical-data",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Common Ways to Model Categorical Data",
-    "text": "Common Ways to Model Categorical Data\nWe are going to cover three common ways to analyze categorical data:\n\nComparing a single proportion to a null value\nComparing two proportions to one another\nComparing two or more proportions at once"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#common-probability-distributions-for-categorical-data",
-    "href": "lectures/02-lecture-slides.html#common-probability-distributions-for-categorical-data",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Common Probability Distributions for Categorical Data",
-    "text": "Common Probability Distributions for Categorical Data\nThe two most common probability distributions used to model categorical data are the:\n\nBinomial distribution for binary categorical variables\nMultinomial distribution for multicategorical variables"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#understanding-the-binomial-distribution",
-    "href": "lectures/02-lecture-slides.html#understanding-the-binomial-distribution",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Understanding the Binomial Distribution",
-    "text": "Understanding the Binomial Distribution\nThe binomial distribution tells us the probability of seeing k successes in a sequence of n trials:\n\\[P(X=k)=\\binom{n}{k}\\pi^k(1-\\pi)^{n-k}\\]\n\n\\(\\binom{n}{k}\\): Tells us how many ways we can see k success in n trials\n\\(\\pi\\): The probability of a success\n\\(n\\): The number of trials\n\\(k\\): The number of successes"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#the-mean-and-variance-of-a-binomial-variable",
-    "href": "lectures/02-lecture-slides.html#the-mean-and-variance-of-a-binomial-variable",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "The Mean and Variance of a Binomial Variable",
-    "text": "The Mean and Variance of a Binomial Variable\nMuch like we do with a quantitative variable, we will often want to describe a categorical variable with its mean and variance. For a binary variable (binomial distribution), we can calculate its mean and variance as:\n\\[\\text{Mean}=n\\pi, \\text{Variance}=n\\pi(1-\\pi)\\]"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#modeling-two-fair-coin-flips",
-    "href": "lectures/02-lecture-slides.html#modeling-two-fair-coin-flips",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Modeling Two (Fair) Coin Flips",
-    "text": "Modeling Two (Fair) Coin Flips\nWith two coin flips, there are four possible outcomes:\n\nH, H - 2 Successes\nH, T - 1 Success\nT, H - 1 Success\nT, T - 0 Successes\n\nThe probability of 1 success:\n\\[P(X = 1) = \\binom{2}{1}.50^1(1 - .50)^{2 - 1} = 2\\times.50\\times.50=.50\\]"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#probability-models-parameters-and-estimates",
-    "href": "lectures/02-lecture-slides.html#probability-models-parameters-and-estimates",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Probability Models, Parameters, and Estimates",
-    "text": "Probability Models, Parameters, and Estimates\nA probability model is a function (equation) that tells us how the probability of an event changes as a function of the observed data and the parameters of the probability model. Often, we need to use the data to estimate the parameters of the probability model.\n\nThe binomial distribution can be used as a probability model for categorical variables that take on two categories\nThe multinomial distribution can be used as a probability model for categorical variables that take on more than two categories\nThe normal distribution can be used as a probability model for quantitative variables"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#using-data-to-estimate-probability-model-parameters",
-    "href": "lectures/02-lecture-slides.html#using-data-to-estimate-probability-model-parameters",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Using Data to Estimate Probability Model Parameters",
-    "text": "Using Data to Estimate Probability Model Parameters\nWe usually want to learn about the probability model by collecting data that could have been plausibly generated from our hypothesized probability model and then we use the data to estimate the unknown probability model parameters:\n\nIn linear regression, we collect data in order to estimate and test the relationships (regression slops) between the outcome and predictor variables.\nIn election years, pollsters collect data in order to estimate the chances of one candidate winning over another."
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#maximum-likelihood-estimation",
-    "href": "lectures/02-lecture-slides.html#maximum-likelihood-estimation",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Maximum Likelihood Estimation",
-    "text": "Maximum Likelihood Estimation\nTo estimate the parameters, we can use a method called maximum likelihood estimation.\nYou can think of ML estimation as answering the question: “What parameters of the probability model make my observed data most likely?”\nThe parameter that answers this question is called the maximum likelihood estimate or MLE."
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#guessing-the-mle",
-    "href": "lectures/02-lecture-slides.html#guessing-the-mle",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Guessing the MLE",
-    "text": "Guessing the MLE\nYou have flipped a coin 100 times and heads came up 57 times (57 %). You believe the data was generated from a binomial distribution, what value does the \\(\\pi\\) have to be to make your data most likely?\n\n\\(\\pi\\): .05, Likelihood = 0.46\n\\(\\pi\\): .25, Likelihood = 0.88\n\\(\\pi\\): .57, Likelihood = 1\n\\(\\pi\\): .80, Likelihood = 0.93"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#how-does-the-mle-relate-to-statistical-inference",
-    "href": "lectures/02-lecture-slides.html#how-does-the-mle-relate-to-statistical-inference",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "How Does the MLE Relate to Statistical Inference?",
-    "text": "How Does the MLE Relate to Statistical Inference?\nWhen estimated from “enough” data all MLE have some nice characteristics:\n\nNormally distributed sampling distribution\nSmall standard errors\nEstimates are usually very close to the parameter they are estimating\n\nWhen it comes time to make inferences about MLEs, these characteristics allow us to do the same thing we have been doing when we make inferences about linear regression coefficients – calculate a test statistic and see how extreme it is given a normally distributed null distribution!"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#the-mle-of-the-binomial-parameter-the-proportion",
-    "href": "lectures/02-lecture-slides.html#the-mle-of-the-binomial-parameter-the-proportion",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "The MLE of the Binomial Parameter: The Proportion",
-    "text": "The MLE of the Binomial Parameter: The Proportion\nIt turns out that the value of \\(\\pi\\) that is always going to maximize the Likelihood function for a binomial probability model is:\n\\[\\hat{\\pi}=\\frac{\\text{# Successes}}{\\text{# Trials}}\\]\nThis is just the proportion of successes to trials!"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#modeling-customer-churn-from-a-content-streaming-service",
-    "href": "lectures/02-lecture-slides.html#modeling-customer-churn-from-a-content-streaming-service",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Modeling Customer Churn from a Content Streaming Service",
-    "text": "Modeling Customer Churn from a Content Streaming Service\nYou are an analyst working at a content streaming provider who has been asked to make inferences about which customers are likely to cancel their subscriptions (churn):\n\n\n# A tibble: 1,000 × 2\n   generation_cat churn_cat\n   &lt;chr&gt;          &lt;chr&gt;    \n 1 Millenials     Y        \n 2 Millenials     Y        \n 3 Baby Boomers   N        \n 4 Gen X          N        \n 5 Millenials     N        \n 6 Millenials     N        \n 7 Gen Z          N        \n 8 Gen Z          N        \n 9 Millenials     N        \n10 Millenials     Y        \n# ℹ 990 more rows"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#statistical-inference-for-one-proportion",
-    "href": "lectures/02-lecture-slides.html#statistical-inference-for-one-proportion",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Statistical Inference for One Proportion",
-    "text": "Statistical Inference for One Proportion\nTo start this question, maybe we want to know if the proportion of customers who cancel their subscription is less than the industry proportion of .40. We could set up a hypothesis test:\n\\[H_0: \\pi = .40\\] \\[H_a: \\pi \\neq.40\\]"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#setting-up-the-statistical-test",
-    "href": "lectures/02-lecture-slides.html#setting-up-the-statistical-test",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Setting Up the Statistical Test",
-    "text": "Setting Up the Statistical Test\nWith hypothesis testing, we are asking the question: “How many standard errors is our estimate away from the null value, assuming that our null hypothesis is true?”\n\\[\\frac{\\hat{\\pi}-.40}{SE_0}, \\space SE_0=\\sqrt{\\frac{.40\\times(1-.40)}{1000}}\\]\nTypically, if our estimate is about 2 standard errors away from the null value (p-value a little less than .05), then we can reject our null hypothesis."
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#using-r-to-test-a-proportion",
-    "href": "lectures/02-lecture-slides.html#using-r-to-test-a-proportion",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Using R to Test a Proportion",
-    "text": "Using R to Test a Proportion\n\ncust_churn &lt;- sum(data_churn$churn)\ncust_total &lt;- length(data_churn$churn)\n\nprop.test(x = cust_churn, n = cust_total, p = .40, alternative = \"two.sided\", conf.level = .95, correct = FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  cust_churn out of cust_total, null probability 0.4\nX-squared = 10.838, df = 1, p-value = 0.0009946\nalternative hypothesis: true p is not equal to 0.4\n95 percent confidence interval:\n 0.3200860 0.3790697\nsample estimates:\n    p \n0.349"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#analyzing-relationships-between-variables-with-a-contigency-table",
-    "href": "lectures/02-lecture-slides.html#analyzing-relationships-between-variables-with-a-contigency-table",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Analyzing Relationships Between Variables with a Contigency Table",
-    "text": "Analyzing Relationships Between Variables with a Contigency Table\nWe are often interested in how the chances of success on an outcome variable change at different levels of a predictor variable:\n\nHow do the chances of customer churn might change based on customer demographics?\nHow does one’s political party identification relate to their sex?\nHow does the development of a disease relate to behaviors like smoking?\n\nTo answer these types of questions, it is helpful to build and analyze a contingency table (also known as a cross-tabulation or cross-tabs table)."
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#building-a-contingency-table-in-r",
-    "href": "lectures/02-lecture-slides.html#building-a-contingency-table-in-r",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Building a Contingency Table in R",
-    "text": "Building a Contingency Table in R\n\nxtabs(~generation_cat + churn_cat, data = data_churn) |&gt; addmargins()\n\n              churn_cat\ngeneration_cat    N    Y  Sum\n  Baby Boomers   88   11   99\n  Gen X         244   86  330\n  Gen Z         110   62  172\n  Millenials    209  190  399\n  Sum           651  349 1000"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#joint-marginal-and-conditional-probabilites",
-    "href": "lectures/02-lecture-slides.html#joint-marginal-and-conditional-probabilites",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Joint, Marginal, and Conditional Probabilites",
-    "text": "Joint, Marginal, and Conditional Probabilites\nFrom the contingency table, you can calculate joint, marginal, and conditional probabilities:\n\nJoint Probability: The probability a customer belongs to the Gen Z generation and cancelled their subscription.\nMarginal Probability: The probability a customer belongs to the Gen Z generation.\nConditional Probability: The probability a customer cancels their subscription given they belong to the Gen Z generation."
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#joint-maringal-and-conditional-probabilities-in-r",
-    "href": "lectures/02-lecture-slides.html#joint-maringal-and-conditional-probabilities-in-r",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Joint, Maringal, and Conditional Probabilities in R",
-    "text": "Joint, Maringal, and Conditional Probabilities in R\n\nxtabs(~generation_cat + churn_cat, data = data_churn) |&gt; prop.table() |&gt; round(2)\n\n              churn_cat\ngeneration_cat    N    Y\n  Baby Boomers 0.09 0.01\n  Gen X        0.24 0.09\n  Gen Z        0.11 0.06\n  Millenials   0.21 0.19\n\nxtabs(~generation_cat + churn_cat, data = data_churn) |&gt; prop.table() |&gt; rowSums() |&gt; round(2)\n\nBaby Boomers        Gen X        Gen Z   Millenials \n        0.10         0.33         0.17         0.40 \n\nxtabs(~generation_cat + churn_cat, data = data_churn) |&gt; prop.table(1) |&gt; round(2)\n\n              churn_cat\ngeneration_cat    N    Y\n  Baby Boomers 0.89 0.11\n  Gen X        0.74 0.26\n  Gen Z        0.64 0.36\n  Millenials   0.52 0.48"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#statistical-inference-for-two-proportions",
-    "href": "lectures/02-lecture-slides.html#statistical-inference-for-two-proportions",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Statistical Inference for Two Proportions",
-    "text": "Statistical Inference for Two Proportions\nIs the proportion of Gen Z customers who cancel their subscription different from the proportion of Millennial customers who cancel their subscription?\n\\[H_0: \\pi_{\\text{Gen Z}} = \\pi_{\\text{Mill.}}\\] \\[H_a: \\pi_{\\text{Gen Z}} \\neq \\pi_{Mill.}\\]"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#setting-up-the-statistical-test-1",
-    "href": "lectures/02-lecture-slides.html#setting-up-the-statistical-test-1",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Setting Up the Statistical Test",
-    "text": "Setting Up the Statistical Test\nWith hypothesis testing, we are asking the question: “How many standard errors is our estimate away from the null value, assuming that our null hypothesis is true?”\n\\[\\frac{\\hat{\\pi}_{\\text{Gen Z}}-\\hat{\\pi}_{\\text{Mill.}}}{SE}\\]\nTypically, if our estimate is about 2 standard errors away from the null value (p-value a little less than .05), then we can reject our null hypothesis."
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#using-r-to-compare-two-proportions",
-    "href": "lectures/02-lecture-slides.html#using-r-to-compare-two-proportions",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Using R to Compare Two Proportions",
-    "text": "Using R to Compare Two Proportions\n\nchurn_z &lt;- sum(data_churn$churn[data_churn$generation_cat == \"Gen Z\"])\nchurn_mill &lt;- sum(data_churn$churn[data_churn$generation_cat == \"Millenials\"])\n\ncust_z &lt;- sum(data_churn$generation_cat == \"Gen Z\")\ncust_mill &lt;- sum(data_churn$generation_cat == \"Millenials\")\n\nprop.test(x = c(churn_z, churn_mill), n = c(cust_z, cust_mill), alternative = \"two.sided\", correct = FALSE)\n\n\n    2-sample test for equality of proportions without continuity correction\n\ndata:  c(churn_z, churn_mill) out of c(cust_z, cust_mill)\nX-squared = 6.5283, df = 1, p-value = 0.01062\nalternative hypothesis: two.sided\n95 percent confidence interval:\n -0.2026169 -0.0288338\nsample estimates:\n   prop 1    prop 2 \n0.3604651 0.4761905"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#other-ways-to-compare-two-proportions",
-    "href": "lectures/02-lecture-slides.html#other-ways-to-compare-two-proportions",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Other Ways to Compare Two Proportions",
-    "text": "Other Ways to Compare Two Proportions\nThere are multiple ways we can compare and communicate the differences between two proportions:\n\nAbsolute Risk: The simple difference between two proportions (useful when both proportions are far away form 0 or 1).\nRelative Risk: The ratio of two proportions (useful when both proportions are close to 0 or 1).\nOdds Ratio: The ratio of the odds calculated from both proportions (used in logistic regression)."
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#statistical-inference-for-relative-risk-using-r",
-    "href": "lectures/02-lecture-slides.html#statistical-inference-for-relative-risk-using-r",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Statistical Inference for Relative Risk Using R",
-    "text": "Statistical Inference for Relative Risk Using R\nThe relative risk tells us that the probability that a customer categorized as a Millennial cancels their subscription is 1.32 times greater (or 32% greater) than the probability that a customer categorized as Generation Z cancels their subscription.\n\nprop_mill &lt;- mean(data_churn$churn[data_churn$generation_cat == \"Millenials\"])\nprop_z &lt;- mean(data_churn$churn[data_churn$generation_cat == \"Gen Z\"])\n\nround(prop_mill / prop_z, 2)\n\n[1] 1.32\n\nPropCIs::riskscoreci(x1 = churn_mill, n1 = cust_mill, x2 = churn_z, n2 = cust_z, conf.level = .95)\n\n\n\n\ndata:  \n\n95 percent confidence interval:\n 1.064382 1.664729"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#what-are-odds-what-is-an-odds-ratio",
-    "href": "lectures/02-lecture-slides.html#what-are-odds-what-is-an-odds-ratio",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "What are Odds? What is an Odds Ratio?",
-    "text": "What are Odds? What is an Odds Ratio?\nThe odds of success are defined as:\n\\[\\text{odds} = \\frac{\\pi}{1-\\pi}\\]\nand the odds ratio is defined as:\n\\[\\text{odds ratio} = \\frac{\\text{odds}_{\\text{Mill.}}}{\\text{odds}_{\\text{Gen. Z}}}\\]"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#statistical-inference-for-the-odds-ratio-using-r",
-    "href": "lectures/02-lecture-slides.html#statistical-inference-for-the-odds-ratio-using-r",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Statistical Inference for the Odds Ratio Using R",
-    "text": "Statistical Inference for the Odds Ratio Using R\nThe odds ratio tells us that the odds that a customer categorized as a Millennial cancels their subscription are 1.61 times greater than the odds that a customer categorized as Generation Z cancels their subscription.\n\n(prop_mill / (1-prop_mill)) / (prop_z / (1-prop_z)) # Odds Ratio\n\n[1] 1.612903\n\nPropCIs::orscoreci(churn_mill, cust_mill, churn_z, cust_z, conf.level = .95)\n\n\n\n\ndata:  \n\n95 percent confidence interval:\n 1.116124 2.330795"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#chi-squared-test-statistical-inference-for-two-or-more-proportions",
-    "href": "lectures/02-lecture-slides.html#chi-squared-test-statistical-inference-for-two-or-more-proportions",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Chi-Squared Test: Statistical Inference for Two or More Proportions",
-    "text": "Chi-Squared Test: Statistical Inference for Two or More Proportions\nA chi-squared test tests the extent to which the observed contingency table cells differ from what would be expected if the categorical variables were independent:\n\\[\\chi^2 = \\sum{\\frac{{(n_{ij}-\\mu_{ij})}^2}{\\mu_{ij}}}\\] \\[n_{ij}=\\text{Obs. cell count}\\] \\[\\mu_{ij} = \\text{Exp. cell count} = n\\hat{\\pi}_{i+}\\hat{\\pi}_{+j}\\]"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#calculating-a-chi-squared-test",
-    "href": "lectures/02-lecture-slides.html#calculating-a-chi-squared-test",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Calculating a Chi-Squared Test",
-    "text": "Calculating a Chi-Squared Test\nThe key thing to remember is that if two variables are independent, then their joint probability (cell proportion) is the product of their marginal probabilities:\n\n\n# A tibble: 8 × 9\n  churn_cat generation_cat prop_churn prop_gen prop_cell total_sample\n  &lt;chr&gt;     &lt;chr&gt;               &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;\n1 Y         Millenials          0.349    0.399    0.139          1000\n2 Y         Baby Boomers        0.349    0.099    0.0346         1000\n3 Y         Gen X               0.349    0.33     0.115          1000\n4 Y         Gen Z               0.349    0.172    0.0600         1000\n5 N         Millenials          0.651    0.399    0.260          1000\n6 N         Baby Boomers        0.651    0.099    0.0644         1000\n7 N         Gen X               0.651    0.33     0.215          1000\n8 N         Gen Z               0.651    0.172    0.112          1000\n  expected_cell obs_cell chi_squared\n          &lt;dbl&gt;    &lt;int&gt;       &lt;dbl&gt;\n1         139.       190     18.5   \n2          34.6       11     16.1   \n3         115.        86      7.39  \n4          60.0       62      0.0648\n5         260.       209      9.92  \n6          64.4       88      8.61  \n7         215.       244      3.96  \n8         112.       110      0.0347"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#statistical-inference-with-the-chi-squared-test",
-    "href": "lectures/02-lecture-slides.html#statistical-inference-with-the-chi-squared-test",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Statistical Inference with the Chi-Squared Test",
-    "text": "Statistical Inference with the Chi-Squared Test\nThe Chi-Squared tests the following hypothesis:\n\\[H_0:\\pi_{ij}=\\pi_{i+}\\pi_{+j} \\space\\text{ for all i and j}\\] \\[H_a: \\pi_{ij} \\neq \\pi_{i+}\\pi_{+j} \\space\\text{ for at least one cell}\\]"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#chi-squared-test-in-r",
-    "href": "lectures/02-lecture-slides.html#chi-squared-test-in-r",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Chi-Squared Test in R",
-    "text": "Chi-Squared Test in R\nThe code below will create a contingency table and store it in an object named contigency_table. Then, it will conduct a chi-squared test using the chisq.test function.\n\ncontingency_table &lt;- xtabs(~ generation_cat + churn_cat, data_churn)\n\nresults_chisq &lt;- chisq.test(contingency_table)\n\nresults_chisq\n\n\n    Pearson's Chi-squared test\n\ndata:  contingency_table\nX-squared = 64.518, df = 3, p-value = 6.361e-14"
-  },
-  {
-    "objectID": "lectures/02-lecture-slides.html#chi-squared-residuals",
-    "href": "lectures/02-lecture-slides.html#chi-squared-residuals",
-    "title": "Introduction to Categorical Data Analysis",
-    "section": "Chi-Squared Residuals",
-    "text": "Chi-Squared Residuals\nThe chisq.test function also provides us the residuals of the chi-squared test, which shows us whether our observed counts exceeded or fell below their expected counts. Absolute values greater than 3 represent cells that do not fit the null hypothesis.\n\nresults_chisq$stdres\n\n              churn_cat\ngeneration_cat          N          Y\n  Baby Boomers  5.2314991 -5.2314991\n  Gen X         4.1156539 -4.1156539\n  Gen Z        -0.3466764  0.3466764\n  Millenials   -6.8754416  6.8754416"
-  },
-  {
     "objectID": "lectures/03-lecture-slides.html#overview-for-today",
     "href": "lectures/03-lecture-slides.html#overview-for-today",
     "title": "Introduction to Logistic Regression",
@@ -1071,10 +371,703 @@
     "text": "Interpreting Confidence Intervals for Logistic Regression Estimates\nWe are 95% confident that the true effect of CSR is between 1.98 and 2.3.\nSo, at its smallest, a unit increase in CSR will increase the odds of donating by 98% and at its largest, a unit increase in CSR will increase the odds of donating by 130%, while adjusting for customer’s identification with the corporation.\n\nexp(ci_95) |&gt; round(2)\n\n[1] 1.98 2.30"
   },
   {
+    "objectID": "lectures/02-lecture-slides.html#overview-for-today",
+    "href": "lectures/02-lecture-slides.html#overview-for-today",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Overview for Today",
+    "text": "Overview for Today\nToday we will be learning about:\n\nCategorical data\nMaximum likelihood estimation\nStatistical inference for proportions"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#what-is-a-categorical-variable",
+    "href": "lectures/02-lecture-slides.html#what-is-a-categorical-variable",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "What is a Categorical Variable?",
+    "text": "What is a Categorical Variable?\nCategorical variable is a variable that consists of a set of two or more categories:\n\nCustomer churn: Remained or Left\nPolitical ideology: Democrat, Republican, or Independent\nMedical diagnosis: Positive or Negative\nAttitude measures: Satisfied or Not Satisfied"
+  },
+  {
     "objectID": "lectures/02-lecture-slides.html#categorical-variable-as-an-outcome",
     "href": "lectures/02-lecture-slides.html#categorical-variable-as-an-outcome",
     "title": "Introduction to Categorical Data Analysis",
     "section": "Categorical Variable as an Outcome",
     "text": "Categorical Variable as an Outcome\nSo far we have talked about categorical variables as predictors of some quantitative variable:\n\nHow does an employees’ work status (full-time or part-time) impact their job satisfaction?\n\nNow we will start to talk about categorical variables as outcomes."
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#common-ways-to-model-categorical-data",
+    "href": "lectures/02-lecture-slides.html#common-ways-to-model-categorical-data",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Common Ways to Model Categorical Data",
+    "text": "Common Ways to Model Categorical Data\nWe are going to cover three common ways to analyze categorical data:\n\nComparing a single proportion to a null value\nComparing two proportions to one another\nComparing two or more proportions at once"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#common-probability-distributions-for-categorical-data",
+    "href": "lectures/02-lecture-slides.html#common-probability-distributions-for-categorical-data",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Common Probability Distributions for Categorical Data",
+    "text": "Common Probability Distributions for Categorical Data\nThe two most common probability distributions used to model categorical data are the:\n\nBinomial distribution for binary categorical variables\nMultinomial distribution for multicategorical variables"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#understanding-the-binomial-distribution",
+    "href": "lectures/02-lecture-slides.html#understanding-the-binomial-distribution",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Understanding the Binomial Distribution",
+    "text": "Understanding the Binomial Distribution\nThe binomial distribution tells us the probability of seeing k successes in a sequence of n trials:\n\\[P(X=k)=\\binom{n}{k}\\pi^k(1-\\pi)^{n-k}\\]\n\n\\(\\binom{n}{k}\\): Tells us how many ways we can see k success in n trials\n\\(\\pi\\): The probability of a success\n\\(n\\): The number of trials\n\\(k\\): The number of successes"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#the-mean-and-variance-of-a-binomial-variable",
+    "href": "lectures/02-lecture-slides.html#the-mean-and-variance-of-a-binomial-variable",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "The Mean and Variance of a Binomial Variable",
+    "text": "The Mean and Variance of a Binomial Variable\nMuch like we do with a quantitative variable, we will often want to describe a categorical variable with its mean and variance. For a binary variable (binomial distribution), we can calculate its mean and variance as:\n\\[\\text{Mean}=n\\pi, \\text{Variance}=n\\pi(1-\\pi)\\]"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#modeling-two-fair-coin-flips",
+    "href": "lectures/02-lecture-slides.html#modeling-two-fair-coin-flips",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Modeling Two (Fair) Coin Flips",
+    "text": "Modeling Two (Fair) Coin Flips\nWith two coin flips, there are four possible outcomes:\n\nH, H - 2 Successes\nH, T - 1 Success\nT, H - 1 Success\nT, T - 0 Successes\n\nThe probability of 1 success:\n\\[P(X = 1) = \\binom{2}{1}.50^1(1 - .50)^{2 - 1} = 2\\times.50\\times.50=.50\\]"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#probability-models-parameters-and-estimates",
+    "href": "lectures/02-lecture-slides.html#probability-models-parameters-and-estimates",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Probability Models, Parameters, and Estimates",
+    "text": "Probability Models, Parameters, and Estimates\nA probability model is a function (equation) that tells us how the probability of an event changes as a function of the observed data and the parameters of the probability model. Often, we need to use the data to estimate the parameters of the probability model.\n\nThe binomial distribution can be used as a probability model for categorical variables that take on two categories\nThe multinomial distribution can be used as a probability model for categorical variables that take on more than two categories\nThe normal distribution can be used as a probability model for quantitative variables"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#using-data-to-estimate-probability-model-parameters",
+    "href": "lectures/02-lecture-slides.html#using-data-to-estimate-probability-model-parameters",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Using Data to Estimate Probability Model Parameters",
+    "text": "Using Data to Estimate Probability Model Parameters\nWe usually want to learn about the probability model by collecting data that could have been plausibly generated from our hypothesized probability model and then we use the data to estimate the unknown probability model parameters:\n\nIn linear regression, we collect data in order to estimate and test the relationships (regression slops) between the outcome and predictor variables.\nIn election years, pollsters collect data in order to estimate the chances of one candidate winning over another."
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#maximum-likelihood-estimation",
+    "href": "lectures/02-lecture-slides.html#maximum-likelihood-estimation",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Maximum Likelihood Estimation",
+    "text": "Maximum Likelihood Estimation\nTo estimate the parameters, we can use a method called maximum likelihood estimation.\nYou can think of ML estimation as answering the question: “What parameters of the probability model make my observed data most likely?”\nThe parameter that answers this question is called the maximum likelihood estimate or MLE."
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#guessing-the-mle",
+    "href": "lectures/02-lecture-slides.html#guessing-the-mle",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Guessing the MLE",
+    "text": "Guessing the MLE\nYou have flipped a coin 100 times and heads came up 57 times (57 %). You believe the data was generated from a binomial distribution, what value does the \\(\\pi\\) have to be to make your data most likely?\n\n\\(\\pi\\): .05, Likelihood = 0.46\n\\(\\pi\\): .25, Likelihood = 0.88\n\\(\\pi\\): .57, Likelihood = 1\n\\(\\pi\\): .80, Likelihood = 0.93"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#how-does-the-mle-relate-to-statistical-inference",
+    "href": "lectures/02-lecture-slides.html#how-does-the-mle-relate-to-statistical-inference",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "How Does the MLE Relate to Statistical Inference?",
+    "text": "How Does the MLE Relate to Statistical Inference?\nWhen estimated from “enough” data all MLE have some nice characteristics:\n\nNormally distributed sampling distribution\nSmall standard errors\nEstimates are usually very close to the parameter they are estimating\n\nWhen it comes time to make inferences about MLEs, these characteristics allow us to do the same thing we have been doing when we make inferences about linear regression coefficients – calculate a test statistic and see how extreme it is given a normally distributed null distribution!"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#the-mle-of-the-binomial-parameter-the-proportion",
+    "href": "lectures/02-lecture-slides.html#the-mle-of-the-binomial-parameter-the-proportion",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "The MLE of the Binomial Parameter: The Proportion",
+    "text": "The MLE of the Binomial Parameter: The Proportion\nIt turns out that the value of \\(\\pi\\) that is always going to maximize the Likelihood function for a binomial probability model is:\n\\[\\hat{\\pi}=\\frac{\\text{# Successes}}{\\text{# Trials}}\\]\nThis is just the proportion of successes to trials!"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#modeling-customer-churn-from-a-content-streaming-service",
+    "href": "lectures/02-lecture-slides.html#modeling-customer-churn-from-a-content-streaming-service",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Modeling Customer Churn from a Content Streaming Service",
+    "text": "Modeling Customer Churn from a Content Streaming Service\nYou are an analyst working at a content streaming provider who has been asked to make inferences about which customers are likely to cancel their subscriptions (churn):\n\n\n# A tibble: 1,000 × 2\n   generation_cat churn_cat\n   &lt;chr&gt;          &lt;chr&gt;    \n 1 Millenials     Y        \n 2 Millenials     Y        \n 3 Baby Boomers   N        \n 4 Gen X          N        \n 5 Millenials     N        \n 6 Millenials     N        \n 7 Gen Z          N        \n 8 Gen Z          N        \n 9 Millenials     N        \n10 Millenials     Y        \n# ℹ 990 more rows"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#statistical-inference-for-one-proportion",
+    "href": "lectures/02-lecture-slides.html#statistical-inference-for-one-proportion",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Statistical Inference for One Proportion",
+    "text": "Statistical Inference for One Proportion\nTo start this question, maybe we want to know if the proportion of customers who cancel their subscription is less than the industry proportion of .40. We could set up a hypothesis test:\n\\[H_0: \\pi = .40\\] \\[H_a: \\pi \\neq.40\\]"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#setting-up-the-statistical-test",
+    "href": "lectures/02-lecture-slides.html#setting-up-the-statistical-test",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Setting Up the Statistical Test",
+    "text": "Setting Up the Statistical Test\nWith hypothesis testing, we are asking the question: “How many standard errors is our estimate away from the null value, assuming that our null hypothesis is true?”\n\\[\\frac{\\hat{\\pi}-.40}{SE_0}, \\space SE_0=\\sqrt{\\frac{.40\\times(1-.40)}{1000}}\\]\nTypically, if our estimate is about 2 standard errors away from the null value (p-value a little less than .05), then we can reject our null hypothesis."
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#using-r-to-test-a-proportion",
+    "href": "lectures/02-lecture-slides.html#using-r-to-test-a-proportion",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Using R to Test a Proportion",
+    "text": "Using R to Test a Proportion\n\ncust_churn &lt;- sum(data_churn$churn)\ncust_total &lt;- length(data_churn$churn)\n\nprop.test(x = cust_churn, n = cust_total, p = .40, alternative = \"two.sided\", conf.level = .95, correct = FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  cust_churn out of cust_total, null probability 0.4\nX-squared = 10.838, df = 1, p-value = 0.0009946\nalternative hypothesis: true p is not equal to 0.4\n95 percent confidence interval:\n 0.3200860 0.3790697\nsample estimates:\n    p \n0.349"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#analyzing-relationships-between-variables-with-a-contigency-table",
+    "href": "lectures/02-lecture-slides.html#analyzing-relationships-between-variables-with-a-contigency-table",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Analyzing Relationships Between Variables with a Contigency Table",
+    "text": "Analyzing Relationships Between Variables with a Contigency Table\nWe are often interested in how the chances of success on an outcome variable change at different levels of a predictor variable:\n\nHow do the chances of customer churn might change based on customer demographics?\nHow does one’s political party identification relate to their sex?\nHow does the development of a disease relate to behaviors like smoking?\n\nTo answer these types of questions, it is helpful to build and analyze a contingency table (also known as a cross-tabulation or cross-tabs table)."
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#building-a-contingency-table-in-r",
+    "href": "lectures/02-lecture-slides.html#building-a-contingency-table-in-r",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Building a Contingency Table in R",
+    "text": "Building a Contingency Table in R\n\nxtabs(~generation_cat + churn_cat, data = data_churn) |&gt; addmargins()\n\n              churn_cat\ngeneration_cat    N    Y  Sum\n  Baby Boomers   88   11   99\n  Gen X         244   86  330\n  Gen Z         110   62  172\n  Millenials    209  190  399\n  Sum           651  349 1000"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#joint-marginal-and-conditional-probabilites",
+    "href": "lectures/02-lecture-slides.html#joint-marginal-and-conditional-probabilites",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Joint, Marginal, and Conditional Probabilites",
+    "text": "Joint, Marginal, and Conditional Probabilites\nFrom the contingency table, you can calculate joint, marginal, and conditional probabilities:\n\nJoint Probability: The probability a customer belongs to the Gen Z generation and cancelled their subscription.\nMarginal Probability: The probability a customer belongs to the Gen Z generation.\nConditional Probability: The probability a customer cancels their subscription given they belong to the Gen Z generation."
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#joint-maringal-and-conditional-probabilities-in-r",
+    "href": "lectures/02-lecture-slides.html#joint-maringal-and-conditional-probabilities-in-r",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Joint, Maringal, and Conditional Probabilities in R",
+    "text": "Joint, Maringal, and Conditional Probabilities in R\n\nxtabs(~generation_cat + churn_cat, data = data_churn) |&gt; prop.table() |&gt; round(2)\n\n              churn_cat\ngeneration_cat    N    Y\n  Baby Boomers 0.09 0.01\n  Gen X        0.24 0.09\n  Gen Z        0.11 0.06\n  Millenials   0.21 0.19\n\nxtabs(~generation_cat + churn_cat, data = data_churn) |&gt; prop.table() |&gt; rowSums() |&gt; round(2)\n\nBaby Boomers        Gen X        Gen Z   Millenials \n        0.10         0.33         0.17         0.40 \n\nxtabs(~generation_cat + churn_cat, data = data_churn) |&gt; prop.table(1) |&gt; round(2)\n\n              churn_cat\ngeneration_cat    N    Y\n  Baby Boomers 0.89 0.11\n  Gen X        0.74 0.26\n  Gen Z        0.64 0.36\n  Millenials   0.52 0.48"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#statistical-inference-for-two-proportions",
+    "href": "lectures/02-lecture-slides.html#statistical-inference-for-two-proportions",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Statistical Inference for Two Proportions",
+    "text": "Statistical Inference for Two Proportions\nIs the proportion of Gen Z customers who cancel their subscription different from the proportion of Millennial customers who cancel their subscription?\n\\[H_0: \\pi_{\\text{Gen Z}} = \\pi_{\\text{Mill.}}\\] \\[H_a: \\pi_{\\text{Gen Z}} \\neq \\pi_{Mill.}\\]"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#setting-up-the-statistical-test-1",
+    "href": "lectures/02-lecture-slides.html#setting-up-the-statistical-test-1",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Setting Up the Statistical Test",
+    "text": "Setting Up the Statistical Test\nWith hypothesis testing, we are asking the question: “How many standard errors is our estimate away from the null value, assuming that our null hypothesis is true?”\n\\[\\frac{\\hat{\\pi}_{\\text{Gen Z}}-\\hat{\\pi}_{\\text{Mill.}}}{SE}\\]\nTypically, if our estimate is about 2 standard errors away from the null value (p-value a little less than .05), then we can reject our null hypothesis."
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#using-r-to-compare-two-proportions",
+    "href": "lectures/02-lecture-slides.html#using-r-to-compare-two-proportions",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Using R to Compare Two Proportions",
+    "text": "Using R to Compare Two Proportions\n\nchurn_z &lt;- sum(data_churn$churn[data_churn$generation_cat == \"Gen Z\"])\nchurn_mill &lt;- sum(data_churn$churn[data_churn$generation_cat == \"Millenials\"])\n\ncust_z &lt;- sum(data_churn$generation_cat == \"Gen Z\")\ncust_mill &lt;- sum(data_churn$generation_cat == \"Millenials\")\n\nprop.test(x = c(churn_z, churn_mill), n = c(cust_z, cust_mill), alternative = \"two.sided\", correct = FALSE)\n\n\n    2-sample test for equality of proportions without continuity correction\n\ndata:  c(churn_z, churn_mill) out of c(cust_z, cust_mill)\nX-squared = 6.5283, df = 1, p-value = 0.01062\nalternative hypothesis: two.sided\n95 percent confidence interval:\n -0.2026169 -0.0288338\nsample estimates:\n   prop 1    prop 2 \n0.3604651 0.4761905"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#other-ways-to-compare-two-proportions",
+    "href": "lectures/02-lecture-slides.html#other-ways-to-compare-two-proportions",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Other Ways to Compare Two Proportions",
+    "text": "Other Ways to Compare Two Proportions\nThere are multiple ways we can compare and communicate the differences between two proportions:\n\nAbsolute Risk: The simple difference between two proportions (useful when both proportions are far away form 0 or 1).\nRelative Risk: The ratio of two proportions (useful when both proportions are close to 0 or 1).\nOdds Ratio: The ratio of the odds calculated from both proportions (used in logistic regression)."
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#statistical-inference-for-relative-risk-using-r",
+    "href": "lectures/02-lecture-slides.html#statistical-inference-for-relative-risk-using-r",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Statistical Inference for Relative Risk Using R",
+    "text": "Statistical Inference for Relative Risk Using R\nThe relative risk tells us that the probability that a customer categorized as a Millennial cancels their subscription is 1.32 times greater (or 32% greater) than the probability that a customer categorized as Generation Z cancels their subscription.\n\nprop_mill &lt;- mean(data_churn$churn[data_churn$generation_cat == \"Millenials\"])\nprop_z &lt;- mean(data_churn$churn[data_churn$generation_cat == \"Gen Z\"])\n\nround(prop_mill / prop_z, 2)\n\n[1] 1.32\n\nPropCIs::riskscoreci(x1 = churn_mill, n1 = cust_mill, x2 = churn_z, n2 = cust_z, conf.level = .95)\n\n\n\n\ndata:  \n\n95 percent confidence interval:\n 1.064382 1.664729"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#what-are-odds-what-is-an-odds-ratio",
+    "href": "lectures/02-lecture-slides.html#what-are-odds-what-is-an-odds-ratio",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "What are Odds? What is an Odds Ratio?",
+    "text": "What are Odds? What is an Odds Ratio?\nThe odds of success are defined as:\n\\[\\text{odds} = \\frac{\\pi}{1-\\pi}\\]\nand the odds ratio is defined as:\n\\[\\text{odds ratio} = \\frac{\\text{odds}_{\\text{Mill.}}}{\\text{odds}_{\\text{Gen. Z}}}\\]"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#statistical-inference-for-the-odds-ratio-using-r",
+    "href": "lectures/02-lecture-slides.html#statistical-inference-for-the-odds-ratio-using-r",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Statistical Inference for the Odds Ratio Using R",
+    "text": "Statistical Inference for the Odds Ratio Using R\nThe odds ratio tells us that the odds that a customer categorized as a Millennial cancels their subscription are 1.61 times greater than the odds that a customer categorized as Generation Z cancels their subscription.\n\n(prop_mill / (1-prop_mill)) / (prop_z / (1-prop_z)) # Odds Ratio\n\n[1] 1.612903\n\nPropCIs::orscoreci(churn_mill, cust_mill, churn_z, cust_z, conf.level = .95)\n\n\n\n\ndata:  \n\n95 percent confidence interval:\n 1.116124 2.330795"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#chi-squared-test-statistical-inference-for-two-or-more-proportions",
+    "href": "lectures/02-lecture-slides.html#chi-squared-test-statistical-inference-for-two-or-more-proportions",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Chi-Squared Test: Statistical Inference for Two or More Proportions",
+    "text": "Chi-Squared Test: Statistical Inference for Two or More Proportions\nA chi-squared test tests the extent to which the observed contingency table cells differ from what would be expected if the categorical variables were independent:\n\\[\\chi^2 = \\sum{\\frac{{(n_{ij}-\\mu_{ij})}^2}{\\mu_{ij}}}\\] \\[n_{ij}=\\text{Obs. cell count}\\] \\[\\mu_{ij} = \\text{Exp. cell count} = n\\hat{\\pi}_{i+}\\hat{\\pi}_{+j}\\]"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#calculating-a-chi-squared-test",
+    "href": "lectures/02-lecture-slides.html#calculating-a-chi-squared-test",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Calculating a Chi-Squared Test",
+    "text": "Calculating a Chi-Squared Test\nThe key thing to remember is that if two variables are independent, then their joint probability (cell proportion) is the product of their marginal probabilities:\n\n\n# A tibble: 8 × 9\n  churn_cat generation_cat prop_churn prop_gen prop_cell total_sample\n  &lt;chr&gt;     &lt;chr&gt;               &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;\n1 Y         Millenials          0.349    0.399    0.139          1000\n2 Y         Baby Boomers        0.349    0.099    0.0346         1000\n3 Y         Gen X               0.349    0.33     0.115          1000\n4 Y         Gen Z               0.349    0.172    0.0600         1000\n5 N         Millenials          0.651    0.399    0.260          1000\n6 N         Baby Boomers        0.651    0.099    0.0644         1000\n7 N         Gen X               0.651    0.33     0.215          1000\n8 N         Gen Z               0.651    0.172    0.112          1000\n  expected_cell obs_cell chi_squared\n          &lt;dbl&gt;    &lt;int&gt;       &lt;dbl&gt;\n1         139.       190     18.5   \n2          34.6       11     16.1   \n3         115.        86      7.39  \n4          60.0       62      0.0648\n5         260.       209      9.92  \n6          64.4       88      8.61  \n7         215.       244      3.96  \n8         112.       110      0.0347"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#statistical-inference-with-the-chi-squared-test",
+    "href": "lectures/02-lecture-slides.html#statistical-inference-with-the-chi-squared-test",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Statistical Inference with the Chi-Squared Test",
+    "text": "Statistical Inference with the Chi-Squared Test\nThe Chi-Squared tests the following hypothesis:\n\\[H_0:\\pi_{ij}=\\pi_{i+}\\pi_{+j} \\space\\text{ for all i and j}\\] \\[H_a: \\pi_{ij} \\neq \\pi_{i+}\\pi_{+j} \\space\\text{ for at least one cell}\\]"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#chi-squared-test-in-r",
+    "href": "lectures/02-lecture-slides.html#chi-squared-test-in-r",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Chi-Squared Test in R",
+    "text": "Chi-Squared Test in R\nThe code below will create a contingency table and store it in an object named contigency_table. Then, it will conduct a chi-squared test using the chisq.test function.\n\ncontingency_table &lt;- xtabs(~ generation_cat + churn_cat, data_churn)\n\nresults_chisq &lt;- chisq.test(contingency_table)\n\nresults_chisq\n\n\n    Pearson's Chi-squared test\n\ndata:  contingency_table\nX-squared = 64.518, df = 3, p-value = 6.361e-14"
+  },
+  {
+    "objectID": "lectures/02-lecture-slides.html#chi-squared-residuals",
+    "href": "lectures/02-lecture-slides.html#chi-squared-residuals",
+    "title": "Introduction to Categorical Data Analysis",
+    "section": "Chi-Squared Residuals",
+    "text": "Chi-Squared Residuals\nThe chisq.test function also provides us the residuals of the chi-squared test, which shows us whether our observed counts exceeded or fell below their expected counts. Absolute values greater than 3 represent cells that do not fit the null hypothesis.\n\nresults_chisq$stdres\n\n              churn_cat\ngeneration_cat          N          Y\n  Baby Boomers  5.2314991 -5.2314991\n  Gen X         4.1156539 -4.1156539\n  Gen Z        -0.3466764  0.3466764\n  Millenials   -6.8754416  6.8754416"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#welcome-back-everyone",
+    "href": "lectures/01-lecture-slides.html#welcome-back-everyone",
+    "title": "Review of Statistical Concepts",
+    "section": "Welcome Back Everyone!",
+    "text": "Welcome Back Everyone!\nHope you all had a refreshing summer!"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#what-are-we-doing-this-semester",
+    "href": "lectures/01-lecture-slides.html#what-are-we-doing-this-semester",
+    "title": "Review of Statistical Concepts",
+    "section": "What Are We Doing this Semester?",
+    "text": "What Are We Doing this Semester?\nExtend the regression model in two ways:\n\nRelax the normality assumption: Logistic Regression (GLMs)\nRelax the independent residuals assumption: Mixed-effects regression models"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#semester-assignments",
+    "href": "lectures/01-lecture-slides.html#semester-assignments",
+    "title": "Review of Statistical Concepts",
+    "section": "Semester Assignments",
+    "text": "Semester Assignments\n\nHomework (~5-6 over the course)\nIn-Class Projects (For immersion days)\nProject"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#overview-for-today",
+    "href": "lectures/01-lecture-slides.html#overview-for-today",
+    "title": "Review of Statistical Concepts",
+    "section": "Overview for Today",
+    "text": "Overview for Today\n\nProbability & Statistics Review\nR/RStudio Review"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#what-is-probability",
+    "href": "lectures/01-lecture-slides.html#what-is-probability",
+    "title": "Review of Statistical Concepts",
+    "section": "What is Probability?",
+    "text": "What is Probability?\nProbability is the language of uncertainty.\nAnytime we are dealing with random events such as the outcome of a coin toss or the response to a survey question, we rely on probability to talk about these events."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#axioms-rules-of-probability",
+    "href": "lectures/01-lecture-slides.html#axioms-rules-of-probability",
+    "title": "Review of Statistical Concepts",
+    "section": "Axioms (Rules) of Probability",
+    "text": "Axioms (Rules) of Probability\nProbability theory is built on three rules:\n\n\\(P(\\text{Event}) \\ge 0\\)\n\\(P(\\text{Any Event} = 1\\)\n\\(P(\\text{A or B}) = P(\\text{A}) + P(\\text{B})\\) for Mutually Exclusive events"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#joint-conditional-probabilities",
+    "href": "lectures/01-lecture-slides.html#joint-conditional-probabilities",
+    "title": "Review of Statistical Concepts",
+    "section": "Joint & Conditional Probabilities",
+    "text": "Joint & Conditional Probabilities\nWhen dealing with two or more random variables, we can describe the probability of multiple events happening using joint probabilities and conditional probabilities:\n\nJoint Probability: Probability of rolling a 1 and a 2\nConditional Probability: Probability of rolling a 1 given (conditional on) your first roll was a 1"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice",
+    "href": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice",
+    "title": "Review of Statistical Concepts",
+    "section": "Simulating a Roll of Two Dice",
+    "text": "Simulating a Roll of Two Dice\n\nset.seed(435)\nroll_1 &lt;- sample(1:6, size = 20000, replace = TRUE)\nroll_2 &lt;- sample(1:6, size = 20000, replace = TRUE)\nxtabs(~roll_1 + roll_2) |&gt; prop.table() |&gt; round(2)"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice-1",
+    "href": "lectures/01-lecture-slides.html#simulating-a-roll-of-two-dice-1",
+    "title": "Review of Statistical Concepts",
+    "section": "Simulating a Roll of Two Dice",
+    "text": "Simulating a Roll of Two Dice\n\n\n      roll_2\nroll_1    1    2    3    4    5    6\n     1 0.03 0.03 0.03 0.03 0.03 0.03\n     2 0.03 0.03 0.03 0.03 0.03 0.03\n     3 0.03 0.03 0.03 0.03 0.03 0.03\n     4 0.03 0.03 0.03 0.03 0.03 0.03\n     5 0.03 0.03 0.03 0.03 0.03 0.03\n     6 0.03 0.03 0.03 0.03 0.03 0.03"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#independent-events",
+    "href": "lectures/01-lecture-slides.html#independent-events",
+    "title": "Review of Statistical Concepts",
+    "section": "Independent Events",
+    "text": "Independent Events\nTwo or more events are independent when the occurrence of one event has no impact on the occurrence of the other events:\n\\(P(A|B) = P(A)\\)"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#are-die-rolls-independent",
+    "href": "lectures/01-lecture-slides.html#are-die-rolls-independent",
+    "title": "Review of Statistical Concepts",
+    "section": "Are Die Rolls Independent?",
+    "text": "Are Die Rolls Independent?\nIf you roll a pair of dice, is the first roll independent of the second?"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#calculating-conditional-independence",
+    "href": "lectures/01-lecture-slides.html#calculating-conditional-independence",
+    "title": "Review of Statistical Concepts",
+    "section": "Calculating Conditional Independence",
+    "text": "Calculating Conditional Independence\n\nxtabs(~roll_1 + roll_2) |&gt; prop.table(1) |&gt; round(2)"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#calculating-conditional-independence-1",
+    "href": "lectures/01-lecture-slides.html#calculating-conditional-independence-1",
+    "title": "Review of Statistical Concepts",
+    "section": "Calculating Conditional Independence",
+    "text": "Calculating Conditional Independence\n\n\n      roll_2\nroll_1    1    2    3    4    5    6\n     1 0.17 0.17 0.16 0.16 0.17 0.17\n     2 0.17 0.18 0.18 0.16 0.17 0.16\n     3 0.17 0.17 0.17 0.16 0.16 0.18\n     4 0.15 0.18 0.17 0.16 0.17 0.17\n     5 0.16 0.17 0.16 0.18 0.16 0.17\n     6 0.16 0.17 0.16 0.17 0.17 0.18"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#probability-massdistribution-function",
+    "href": "lectures/01-lecture-slides.html#probability-massdistribution-function",
+    "title": "Review of Statistical Concepts",
+    "section": "Probability Mass/Distribution Function",
+    "text": "Probability Mass/Distribution Function\nProbability Mass and Density Functions (PMF & PDF, respectively) are functions that take the value of a random variable as an input and output the probability of that value occurring. Every statistical model we will use will assume a certain PMF or PDF.\n\nPMF is a probability distribution function for discrete random variables\nPDF is a probability distribution function for continuous random variables"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#bernouli-distribution",
+    "href": "lectures/01-lecture-slides.html#bernouli-distribution",
+    "title": "Review of Statistical Concepts",
+    "section": "Bernouli Distribution",
+    "text": "Bernouli Distribution\nThe Bernoulli Distribution is a PMF used for a random variable that takes on two different values:\n\nCoin toss: Heads or Tails\nFootball game: Win or Loss\nClicked on an ad: Yes or No"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#pmf-for-uga-winning-the-college-football-national-championship",
+    "href": "lectures/01-lecture-slides.html#pmf-for-uga-winning-the-college-football-national-championship",
+    "title": "Review of Statistical Concepts",
+    "section": "PMF for UGA Winning the College Football National Championship",
+    "text": "PMF for UGA Winning the College Football National Championship\n\\[p(\\text{Win}) = \\pi^{Y}(1-\\pi)^{1 - Y}\\] \\[\\pi = \\text{Probability UGA Wins}\\] \\[Y = \\text{1 if they win, 0 if they lose}\\]"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#using-pmfs-in-r",
+    "href": "lectures/01-lecture-slides.html#using-pmfs-in-r",
+    "title": "Review of Statistical Concepts",
+    "section": "Using PMFs in R",
+    "text": "Using PMFs in R\n\\[p(\\text{Win}) = .25^{Y}(1-.25)^{1 - Y}\\]\n\ndbinom(1, 1, prob = .25)\n\n[1] 0.25\n\ndbinom(0, 1, prob = .25)\n\n[1] 0.75"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#binomial-distribution",
+    "href": "lectures/01-lecture-slides.html#binomial-distribution",
+    "title": "Review of Statistical Concepts",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\nThe binomial distribution is a PMF used for a random variable that is the count of successes of n independent experiments/trials (multiple, independent Bernoulli variables):\n\nProbability of 10 heads out of 15 tosses (head = success)\nProbability a college football team wins 10 of its 12 games\nProbability a user clicks on 3 of the 5 ads presented to them"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record",
+    "href": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record",
+    "title": "Review of Statistical Concepts",
+    "section": "The Probability Distribution of UGA’s Regular Season Record",
+    "text": "The Probability Distribution of UGA’s Regular Season Record\nUGA’s record under their current head coach: 94-16 (94%). So let’s say they have a 94% chance of winning each game – what does the probability distribution of their 12 game season win-loss record look like?\n\ndata_record &lt;- \n  tibble::tibble(\n    record = 0:12,\n    prob = dbinom(record, 12, .94)\n  )\n\nggplot2::ggplot(\n  data = data_record, \n  ggplot2::aes(x = as.factor(record), y = prob)\n) + \n  ggplot2::geom_bar(stat = \"identity\") + \n  ggplot2::ylim(c(0, 1))"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record-1",
+    "href": "lectures/01-lecture-slides.html#the-probability-distribution-of-ugas-regular-season-record-1",
+    "title": "Review of Statistical Concepts",
+    "section": "The Probability Distribution of UGA’s Regular Season Record",
+    "text": "The Probability Distribution of UGA’s Regular Season Record"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#cumulative-distribution-function",
+    "href": "lectures/01-lecture-slides.html#cumulative-distribution-function",
+    "title": "Review of Statistical Concepts",
+    "section": "Cumulative Distribution Function",
+    "text": "Cumulative Distribution Function\nThe Cumulative Distribution Function (CDF) specifies the probability that a random variable takes a value, Y, or any value less than Y (think of percentiles)."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#probability-uga-wins-10-or-less-games",
+    "href": "lectures/01-lecture-slides.html#probability-uga-wins-10-or-less-games",
+    "title": "Review of Statistical Concepts",
+    "section": "Probability UGA Wins 10 or Less Games",
+    "text": "Probability UGA Wins 10 or Less Games\n\\[F(\\text{UGA Record = 10}) = P(\\text{UGA Record} \\le 10)\\]"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#how-does-regression-connect-to-probability",
+    "href": "lectures/01-lecture-slides.html#how-does-regression-connect-to-probability",
+    "title": "Review of Statistical Concepts",
+    "section": "How Does Regression Connect to Probability?",
+    "text": "How Does Regression Connect to Probability?\nThe simple linear regression model we’ve seen before:\n\\[Y_i = \\beta_0 + \\beta_1X_{i1} + \\epsilon_i\\] \\[\\epsilon_i \\sim N(0, \\sigma)\\]"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#regression-as-a-probability-model",
+    "href": "lectures/01-lecture-slides.html#regression-as-a-probability-model",
+    "title": "Review of Statistical Concepts",
+    "section": "Regression as a Probability Model",
+    "text": "Regression as a Probability Model\nRewriting linear regression as a probability model:\n\\[P(Y_i|X_{i1})=N(\\beta_0 + \\beta_1X_{i1}, \\sigma)\\]"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#us-heights-by-sex",
+    "href": "lectures/01-lecture-slides.html#us-heights-by-sex",
+    "title": "Review of Statistical Concepts",
+    "section": "US Heights by Sex",
+    "text": "US Heights by Sex"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#using-linear-regression-to-describe-heights",
+    "href": "lectures/01-lecture-slides.html#using-linear-regression-to-describe-heights",
+    "title": "Review of Statistical Concepts",
+    "section": "Using Linear Regression to Describe Heights",
+    "text": "Using Linear Regression to Describe Heights\n\nmod_ht &lt;- lm(ht ~ sex, data = data_ht)\n\n\n\n# A tibble: 10,000 × 2\n      ht sex  \n   &lt;dbl&gt; &lt;chr&gt;\n 1  70.7 M    \n 2  67.9 M    \n 3  73.6 M    \n 4  68.4 M    \n 5  67.0 M    \n 6  71.2 M    \n 7  67.5 M    \n 8  68.8 M    \n 9  63.9 M    \n10  69.9 M    \n# ℹ 9,990 more rows"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#what-does-the-model-tell-us",
+    "href": "lectures/01-lecture-slides.html#what-does-the-model-tell-us",
+    "title": "Review of Statistical Concepts",
+    "section": "What Does the Model Tell Us?",
+    "text": "What Does the Model Tell Us?\nHow do we translate our model results into a probability model?\n\n\n\nCall:\nlm(formula = ht ~ sex, data = data_ht)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-11.1388  -1.8635   0.0065   1.8557  11.6430 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 63.68069    0.04038 1576.85   &lt;2e-16 ***\nsexM         5.39268    0.05610   96.13   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.803 on 9998 degrees of freedom\nMultiple R-squared:  0.4803,    Adjusted R-squared:  0.4803 \nF-statistic:  9242 on 1 and 9998 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#why-its-important-to-think-of-regression-as-a-probability-model",
+    "href": "lectures/01-lecture-slides.html#why-its-important-to-think-of-regression-as-a-probability-model",
+    "title": "Review of Statistical Concepts",
+    "section": "Why It’s Important to Think of Regression as a Probability Model",
+    "text": "Why It’s Important to Think of Regression as a Probability Model\nConceptualizing linear regression as a probability model allows us to generalize the ideas of linear regression to a larger number of probability distributions than just the normal distribution.\nIt opens up the world of Generalized Linear Models, which we will become more familiar with throughout the semester."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#regression-question",
+    "href": "lectures/01-lecture-slides.html#regression-question",
+    "title": "Review of Statistical Concepts",
+    "section": "Regression Question",
+    "text": "Regression Question\nYou want to understand the impact that an employee’s job demands and resources have on their work engagement."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#a-look-at-our-simulated-data",
+    "href": "lectures/01-lecture-slides.html#a-look-at-our-simulated-data",
+    "title": "Review of Statistical Concepts",
+    "section": "A Look at Our Simulated Data",
+    "text": "A Look at Our Simulated Data\n\n\n# A tibble: 6 × 4\n  job_demand job_res part_time   eng\n       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;\n1      0.341 -1.14   no         1.30\n2     -0.703 -1.02   no         3.39\n3     -0.380 -0.575  no         1.38\n4     -0.746 -0.0909 yes        6.44\n5     -0.898 -0.0192 no         4.52\n6     -0.335 -1.51   no         3.20"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#estimating-a-regression-model-with-r",
+    "href": "lectures/01-lecture-slides.html#estimating-a-regression-model-with-r",
+    "title": "Review of Statistical Concepts",
+    "section": "Estimating a Regression Model with R",
+    "text": "Estimating a Regression Model with R\n\nmod_engage &lt;- lm(eng ~ job_demand + job_res, data = data_jdr)"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#interpreting-the-model-output",
+    "href": "lectures/01-lecture-slides.html#interpreting-the-model-output",
+    "title": "Review of Statistical Concepts",
+    "section": "Interpreting the Model Output",
+    "text": "Interpreting the Model Output\nWhat does the output below tell us about the relationships between engagement and job demands and job resources?\n\nsummary(mod_engage)\n\n\nCall:\nlm(formula = eng ~ job_demand + job_res, data = data_jdr)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-10.5697  -1.7671   0.0077   1.6561  10.1450 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  3.80444    0.05883   64.67   &lt;2e-16 ***\njob_demand  -0.98796    0.05832  -16.94   &lt;2e-16 ***\njob_res      0.91971    0.06021   15.28   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.631 on 1997 degrees of freedom\nMultiple R-squared:  0.2053,    Adjusted R-squared:  0.2045 \nF-statistic:   258 on 2 and 1997 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#communicating-the-model-results",
+    "href": "lectures/01-lecture-slides.html#communicating-the-model-results",
+    "title": "Review of Statistical Concepts",
+    "section": "Communicating the Model Results",
+    "text": "Communicating the Model Results\n\nWhile adjusting for a worker’s level of job resources, for every one unit increase in job demands, worker engagement should decrease by .99 units, on average.\nWhile adjusting for a worker’s level of job demands, for every one unit increase in job resources, worker engagement should increase by .92 units, on average.\nOverall, our model accounts (or explains) 20% of the variance in worker engagement."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#statistical-significance-and-regression",
+    "href": "lectures/01-lecture-slides.html#statistical-significance-and-regression",
+    "title": "Review of Statistical Concepts",
+    "section": "Statistical Significance and Regression",
+    "text": "Statistical Significance and Regression\nStatistical significance asks the question: “If I believe the null hypothesis is true (usually no effect), what is the probability that my estimate would be this large or larger?”\nThe p-value (probability value) tells us this probability and it is up to us to decide if the probability is small enough for us to reject the null hypothesis (usually if the probability is less than .05)."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#standard-errors-test-statistics-and-null-distributions",
+    "href": "lectures/01-lecture-slides.html#standard-errors-test-statistics-and-null-distributions",
+    "title": "Review of Statistical Concepts",
+    "section": "Standard Errors, Test Statistics, and Null Distributions",
+    "text": "Standard Errors, Test Statistics, and Null Distributions\nSignificance testing relies heavily on the concepts of standard errors, test statistics, and null distributions:\n\nStandard Errors: Amount of uncertainty in our estimate.\nTest Statistics: The number of standard deviations the estimate is away from the null value.\nNull Distributions: The probability distribution specified by the null hypothesis."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#visualizing-the-significance-test",
+    "href": "lectures/01-lecture-slides.html#visualizing-the-significance-test",
+    "title": "Review of Statistical Concepts",
+    "section": "Visualizing the Significance Test",
+    "text": "Visualizing the Significance Test"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#understanding-model-predictions-and-errors-residuals",
+    "href": "lectures/01-lecture-slides.html#understanding-model-predictions-and-errors-residuals",
+    "title": "Review of Statistical Concepts",
+    "section": "Understanding Model Predictions and Errors (Residuals)",
+    "text": "Understanding Model Predictions and Errors (Residuals)\n\nModel Prediction: \\(3.80 + -.99*.341 + .92*-1.14 = 2.41\\)\nModel Error: Observed - Predicted"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#calculating-model-predictions-and-errors",
+    "href": "lectures/01-lecture-slides.html#calculating-model-predictions-and-errors",
+    "title": "Review of Statistical Concepts",
+    "section": "Calculating Model Predictions and Errors",
+    "text": "Calculating Model Predictions and Errors\n\ndata_jdr |&gt; \n  dplyr::select(job_demand, job_res, eng) |&gt;\n  dplyr::mutate(\n    prediction = predict(mod_engage),\n    error = mod_engage$residuals\n  )\n\n# A tibble: 2,000 × 5\n   job_demand job_res   eng prediction  error\n        &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;\n 1      0.341 -1.14    1.30       2.42 -1.12 \n 2     -0.703 -1.02    3.39       3.56 -0.172\n 3     -0.380 -0.575   1.38       3.65 -2.28 \n 4     -0.746 -0.0909  6.44       4.46  1.98 \n 5     -0.898 -0.0192  4.52       4.67 -0.156\n 6     -0.335 -1.51    3.20       2.75  0.452\n 7     -0.501 -0.585   7.61       3.76  3.85 \n 8     -0.175 -1.76    1.13       2.36 -1.23 \n 9      1.81   1.39    4.99       3.30  1.70 \n10     -0.230  0.545   7.03       4.53  2.49 \n# ℹ 1,990 more rows"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#assessing-model-fit-with-r-squared",
+    "href": "lectures/01-lecture-slides.html#assessing-model-fit-with-r-squared",
+    "title": "Review of Statistical Concepts",
+    "section": "Assessing Model Fit with R-Squared",
+    "text": "Assessing Model Fit with R-Squared\nThe \\(R^2\\) can be calculated by squaring the correlation between our model predictions of the outcome variable and the actual values of the outcome variable.\nAlthough it was developed for normal linear models, the \\(R^2\\) can still be a helpful measure of fit for generalized linear models."
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#assessing-model-diagnostics-using-residuals",
+    "href": "lectures/01-lecture-slides.html#assessing-model-diagnostics-using-residuals",
+    "title": "Review of Statistical Concepts",
+    "section": "Assessing Model Diagnostics Using Residuals",
+    "text": "Assessing Model Diagnostics Using Residuals"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#categorical-predictors-and-indicator-coding",
+    "href": "lectures/01-lecture-slides.html#categorical-predictors-and-indicator-coding",
+    "title": "Review of Statistical Concepts",
+    "section": "Categorical Predictors and Indicator Coding",
+    "text": "Categorical Predictors and Indicator Coding\nTo use a categorical predictor with K groups in a regression model, you have to transform the variable into K - 1 indicator variables (variables that only take on 0 and 1 values), where the group coded as 0 is referred to as the reference group:\n\nx3\n\n# A tibble: 3 × 3\n  Group         `Did Not Start` Incomplete\n  &lt;chr&gt;         &lt;chr&gt;           &lt;chr&gt;     \n1 Completed     0               0         \n2 Incomplete    0               1         \n3 Did Not Start 1               0"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#interpreting-the-effects-of-indicator-variables",
+    "href": "lectures/01-lecture-slides.html#interpreting-the-effects-of-indicator-variables",
+    "title": "Review of Statistical Concepts",
+    "section": "Interpreting the Effects of Indicator Variables",
+    "text": "Interpreting the Effects of Indicator Variables\nFor a model where the only predictor is the indicator variable:\n\nIntercept is the mean of the outcome variable for the reference group\nThe remaining K - 1 coefficients compare the outcome variable mean for the K - 1 groups to the outcome variable mean for the reference group"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#impact-part-time-status-has-on-engagement",
+    "href": "lectures/01-lecture-slides.html#impact-part-time-status-has-on-engagement",
+    "title": "Review of Statistical Concepts",
+    "section": "Impact Part-Time Status has on Engagement",
+    "text": "Impact Part-Time Status has on Engagement\n\nmod_engage_cat &lt;- lm(eng ~ part_time, data = data_jdr)\nsummary(mod_engage_cat)\n\n\nCall:\nlm(formula = eng ~ part_time, data = data_jdr)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-12.6198  -1.8585   0.0857   1.9740   9.7262 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   3.99385    0.07345  54.372  &lt; 2e-16 ***\npart_timeyes -0.95968    0.16125  -5.951 3.13e-09 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.924 on 1998 degrees of freedom\nMultiple R-squared:  0.01742,   Adjusted R-squared:  0.01693 \nF-statistic: 35.42 on 1 and 1998 DF,  p-value: 3.13e-09"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#interaction-moderation-effects",
+    "href": "lectures/01-lecture-slides.html#interaction-moderation-effects",
+    "title": "Review of Statistical Concepts",
+    "section": "Interaction (Moderation) Effects",
+    "text": "Interaction (Moderation) Effects\nAn interaction effect allows us to test if the impact of a predictor variable on an outcome variable changes at different levels of another predictor variable:\n\nThe relationship between job demands and engagement is strong and negative when job resources are low, but weak, and likely non-significant, when job resources are high.\nToo Much of a Good Thing Effect (Vitamins are good for you unless you take a lot at once!)"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#estimating-interpreting-interaction-effects",
+    "href": "lectures/01-lecture-slides.html#estimating-interpreting-interaction-effects",
+    "title": "Review of Statistical Concepts",
+    "section": "Estimating & Interpreting Interaction Effects",
+    "text": "Estimating & Interpreting Interaction Effects\n\nmod_engage_int &lt;- lm(eng ~ job_demand * job_res, data = data_jdr)\nsummary(mod_engage_int)\n\n\nCall:\nlm(formula = eng ~ job_demand * job_res, data = data_jdr)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-9.6683 -1.7158  0.0427  1.6745 10.3648 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)         3.80063    0.05794  65.591  &lt; 2e-16 ***\njob_demand         -0.96718    0.05750 -16.821  &lt; 2e-16 ***\njob_res             0.92433    0.05930  15.588  &lt; 2e-16 ***\njob_demand:job_res  0.47113    0.05949   7.919 3.94e-15 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.591 on 1996 degrees of freedom\nMultiple R-squared:  0.2295,    Adjusted R-squared:  0.2284 \nF-statistic: 198.2 on 3 and 1996 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "lectures/01-lecture-slides.html#always-plot-interaction-effects",
+    "href": "lectures/01-lecture-slides.html#always-plot-interaction-effects",
+    "title": "Review of Statistical Concepts",
+    "section": "Always Plot Interaction Effects",
+    "text": "Always Plot Interaction Effects"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Welcome to the homepage for Quantitative Analysis 2 (PHD1504-1)!"
+  },
+  {
+    "objectID": "assignments/answer-template.html",
+    "href": "assignments/answer-template.html",
+    "title": "Answers to Assignment 1",
+    "section": "",
+    "text": "# Load required R packages\nlibrary(tibble)\nlibrary(readr)\n\n# Read in the data from the class site\ndata_ai &lt;- readr::read_csv(\"https://alopilato88.github.io/quantitative-analysis-1/assignments/01-assignment-data.csv\")\n\n# View our data frame \nhead(data_ai)\n\nThe code chunk above tells R to do three, broad tasks:\n\nLoad the packages we need for the code in the code chunks below using the library function (e.g. library(tibble))\nRead a .csv file using its URL using the read_csv function and save the .csv file in an object named data_ai\nUse the head function to print out the first 6 rows of our new object: data_ai (head(data_ai))\n\nWe told R to use a function to accomplish those three tasks. A function is a set of code that does one specific thing. For example, read_csv is a function that only reads .csv files. It does nothing else.\nNext, a package such as readr is a collection of functions that all share a similar goal. The package readr contains different functions such as read_csv, read_file, and write_csv, which are all functions that can be used to read or write different kinds of files."
+  },
+  {
+    "objectID": "assignments/answer-template.html#assignment-setup",
+    "href": "assignments/answer-template.html#assignment-setup",
+    "title": "Answers to Assignment 1",
+    "section": "",
+    "text": "# Load required R packages\nlibrary(tibble)\nlibrary(readr)\n\n# Read in the data from the class site\ndata_ai &lt;- readr::read_csv(\"https://alopilato88.github.io/quantitative-analysis-1/assignments/01-assignment-data.csv\")\n\n# View our data frame \nhead(data_ai)\n\nThe code chunk above tells R to do three, broad tasks:\n\nLoad the packages we need for the code in the code chunks below using the library function (e.g. library(tibble))\nRead a .csv file using its URL using the read_csv function and save the .csv file in an object named data_ai\nUse the head function to print out the first 6 rows of our new object: data_ai (head(data_ai))\n\nWe told R to use a function to accomplish those three tasks. A function is a set of code that does one specific thing. For example, read_csv is a function that only reads .csv files. It does nothing else.\nNext, a package such as readr is a collection of functions that all share a similar goal. The package readr contains different functions such as read_csv, read_file, and write_csv, which are all functions that can be used to read or write different kinds of files."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-1.",
+    "href": "assignments/answer-template.html#question-1.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 1.",
+    "text": "Question 1.\n\n# 1. What is the sample size of your dataset (hint: It's the number of rows)? \n\nnrow(data_ai)\n\n[1] 500\n\n\nThe sample size of our data is the number of observations in our dataset. This is equivalent to the number of rows in our dataset—one row for each observation. So we can use the R function nrow to tell us the number of row. In this case there are 500 rows in our dataset, which means our sample size is 500."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-2.",
+    "href": "assignments/answer-template.html#question-2.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 2.",
+    "text": "Question 2.\n\n# 2. How many variables are in your dataset (hint: It's the number of columns)? \n\nncol(data_ai)\n\n[1] 4\n\n\nIn general, we will store our data in a .csv file where each column is a different variable. We can use the R function ncol to count the number of columns in our dataset. In our dataset, there are 4 columns, so we have 4 variables in our dataset."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-3.",
+    "href": "assignments/answer-template.html#question-3.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 3.",
+    "text": "Question 3.\n\n# 3. What is the mean and standard deviation of perceived_ease_use?\n\nmean(data_ai$perceived_ease_use) # mean() is a function that calculates the mean of a rando variable.\n\n[1] 4.078\n\nsd(data_ai$perceived_ease_use) # sd() is a function that calculates the standard deviation of a random variable.\n\n[1] 1.661758\n\n\nWhen you start R and RStudio, a handful of packages are loaded automatically. These packages make a lot of different functions immediately available to you. Two such functions are mean and sd.\nThe function mean only needs one argument—something that the use inputs—to work: a numeric R object otherwise known as a collection of numbers. mean then returns the mean value for the provided numeric object. In our class, the only numeric objects we will be providing to mean are the quantitative variables from our dataset. So to get the mean of perceived_ease_use, we use it as the argument in mean: mean(data_ai$perceived_ease_use), which returns 4.078.\nThe $ symbol used in the mean function tells the mean function to “look for” the variable perceived_ease_use in the dataset data_ai. If we did not include data_ai$ before perceived_ease_use, then the mean function would not where to find perceived_ease_use and the function would return an error message.\nSimilarly, to calculate the standard deviation of perceived_ease_use, we can use the preloaded R function: sd. Like mean, sd only requires one numeric object as an argument and it returns the standard deviation of the numeric values stored in the object. In our assignment, our numeric objects will almost always be the quantitative varialbes in our dataset. So to get the standard deviation of perceived_ease_use, we use perceived_ease_use as the argument in sd: sd(data_ai$perceived_ease_use), which returns 1.6617578.\nAgain we have to use the $ to tell sd to find perceived_ease_use in our dataset data_ai."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-4.",
+    "href": "assignments/answer-template.html#question-4.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 4.",
+    "text": "Question 4.\n\n# 4. What is the mean and standard deviation for perceived_useful?\n\nmean(data_ai$perceived_useful)\n\n[1] 4.76\n\nsd(data_ai$perceived_useful)\n\n[1] 1.755153\n\n\nJust like question 3, we can use the mean function to calculate the mean of perceived_useful and the sd function to calculate its standard deviation. Again we have to tell R where to find the variable by using data_ai$."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-5.",
+    "href": "assignments/answer-template.html#question-5.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 5.",
+    "text": "Question 5.\n\n# 5. What is the mean and standard deviation for behavioral_intention?\n\nmean(data_ai$behavioral_intention)\n\n[1] 4.314\n\nsd(data_ai$behavioral_intention)\n\n[1] 1.563423\n\n\nJust like the previous two questions, we can use the mean function to calculate the mean of behvioral_intention and the sd function to calculate its standard deviation. Again we have to tell R where to find the variable by using data_ai$."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-6.",
+    "href": "assignments/answer-template.html#question-6.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 6.",
+    "text": "Question 6.\n\n# 6a. What is the correlation between perceived_useful and perceived_ease_of_use? \n\n# cor() is a function that calculates the correlation between two random variables\n# The cor() function requires two arguments: an x variable and a y variable.\n# Below we tell R the x variable = data$perceived_useful and y variable = data_ai$perceived_ease_use.\n# You can read the $ operator as go into the data frame: data_ai and select the variable to the right of the $ sign.\n# data_ai$perceived_useful means go into data_ai and select the column perceived_useful\n\ncor(x = data_ai$perceived_useful, y = data_ai$perceived_ease_use) \n\n[1] 0.5423654\n\n# 6b. In your own words, write out an interpretation of the correlation you calculated in 6a. \n\nTo determine the correlation between two or more variables, we can use the preloaded R function: cor. For this homework, we only need to provide cor with two arguments, which are the variables we are interested in calculating a correlation coefficient for: perceived_useful and perceived_ease_use.\ncor(x = data_ai$perceived_useful, y = data_ai$perceived_ease_use) will go into our dataset, data_ai, and use the formula for the correlation coefficient to caluclate the correlation between perceived_useful and perceived_ease_use.\nWe will get the same correlation coefficient if we switch the order of our variables in the cor function: cor(x = data_ai$perceived_ease_use, y = data_ai$perceived_useful) as the correlation is symmetric. This means that the correlation between perceived_ease_use and perceived_useful is identical to the correlation between perceived_useful and perceived_ease_use.\nAs for the interpretation of the correlation, we can interpret it as:\nIn our dataset, the correlation between percieved_useful and perceived_ease_use is 0.5423654. Because the correlation is positive, we know that values of percieved_ease_use above the mean occur with values of perceived_useful that are above its mean. Similary the size of the correlation coefficient tells us that the two variables are moderately related to one another."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-7.",
+    "href": "assignments/answer-template.html#question-7.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 7.",
+    "text": "Question 7.\n\n# 7a. What is the correlation between perceived_useful and behavioral_intention? \ncor(x = data_ai$perceived_useful, y = data_ai$behavioral_intention) \n\n[1] 0.3795281\n\n# 7b. In your own words, write out an interpretation of the correlation you calculated in 7a. \n\nAgain we can use the cor function. We determine that the correlation between perceived_useful and behavioral_intention is 0.3795281, which means that perceived_useful and behavioral_intention are positively and moderately correlated to one another. High values of perceived_useful will tend to occur with high values of behavioral_intention, on average."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-8.",
+    "href": "assignments/answer-template.html#question-8.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 8.",
+    "text": "Question 8.\n\n# 8a. What is the correlation between perceived_ease_use and behavioral_intention? \ncor(x = data_ai$perceived_ease_use, y = data_ai$behavioral_intention) \n\n[1] 0.412486\n\n# 8b. In your own words, write out an interpretation of the correlation you calculated in 8a. \n\nAgain we can use the cor function. We determine that the correlation between perceived_ease_use and behavioral_intention is 0.412486, which means that perceived_ease_use and behavioral_intention are positively and moderately correlated to one another. High values of perceived_ease_use will tend to occur with high values of behavioral_intention, on average."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-9.",
+    "href": "assignments/answer-template.html#question-9.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 9.",
+    "text": "Question 9.\n\n# 9a. Estimate a simple regression model that uses perceived_ease_use to predict behavioral_intention.\n\n# The lm() function used below fits a linear regression model. The lm() code translated to the following\n# regression model: behvioral_intention = B0 + B1*perceived_ease_use. \n# In general the structure of the lm() function will look like lm(outcome_variable ~ predictor_variable, data = your_data)\n# In R, everyhing to the left of the ~ sign is an outcome variable and everything to the right is a predictor variable.\n\nmodel_1 &lt;- lm(behavioral_intention ~ perceived_ease_use, data = data_ai)\n\n# 9b. Print out the results of your regression model and write out an interpretation of the effect of perceived_ease_use on\n#     behavioral_intentions.\n\nsummary(model_1)\n\n\nCall:\nlm(formula = behavioral_intention ~ perceived_ease_use, data = data_ai)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.6718 -1.0599 -0.0599  0.9401  3.4924 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)         2.73142    0.16910   16.15   &lt;2e-16 ***\nperceived_ease_use  0.38808    0.03841   10.11   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.426 on 498 degrees of freedom\nMultiple R-squared:  0.1701,    Adjusted R-squared:  0.1685 \nF-statistic: 102.1 on 1 and 498 DF,  p-value: &lt; 2.2e-16\n\n# 9c. What is the R-squared value for model_1? Write out an interpretation of the R-squared.\n\nTo estimate a linear regression model in R, we will use the lm function. The lm function is automatically made available to us when we start R and RStudio, so we do not need to tell R to load it.\nlm requires two main arguments: the lm regression formula and the dataset that contains the predictor and outcome variables for the regression model.\nFirst, the lm formula will always look like outcome_variable_name ~ predictor_variable_name_1, which we can read as estimate a linear regression model where the outcome variable is outcome_variable_name and the predictor variable is predictor_variable_name_1. In general, any variable to the left of ~ is treated as an outcome variable by lm and any variable to the right of lm is treated as a predictor variable.\nNext, the lm function needs to know to where to find the dataset that contains our outcome and predictor variables. We can tell lm where to find our dataset by providing it with its second argument: data = data_ai. Now lm knows that data_ai contains the outcome and predictor variables used in the lm formula.\nNow that we have provide lm with its two necessary arguments, we can estimate it and save it in an object we call model_1. This is all happening in the line of code: model_1 &lt;- lm(behavioral_intention ~ perceived_ease_use, data = data_ai. lm is estimating a regression model where behavioral_intention is the outcome variable and perceived_ease_use is the predictor variable, both of which it knows to find in data_ai. Then it is storing the results of that model in an object (think of it like a box) called model_1.\nWe know R is storing the results of the model into an object named model_1 because of this part of the code: model_1 &lt;-. The &lt;- is called the assignment operator and it creates an object named model_1 and assigns it the results of lm(behavioral_intention ~ perceived_ease_use, data = data_ai.\n\nModel Interpretation\nNow that we have estimated our model, we can use the function summary to display the detailed results of our model. You should see from the results above that summary provides the coefficient estimates (Estimate), there standard errors (Std. Error), and a p-value (Pr(&gt;|t|)) along with more results like the R-squared value.\nWe can interpret the results as follows. When comparing two groups who differ by one unit on their response to perceived_ease_use, the average response to behavioral_intetions for the group with the higher response to perceived_ease_use will be 0.39 units higher than the group with the lower response.\nWe could also say: For every one unit increase in an individual’s perceptions of how easy it is to use the AI tool (perceived_ease_use), we will see their intentions to use the AI tool increase by 0.39. I find that this interpretation is easier to understand when compared to the group comparison interpretation, but it is less accurate.\nThe R-squared value in our model is 0.1701447, which means that 17% of the variance in behavioral_intention can be explained by perceived_ease_use."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-10.",
+    "href": "assignments/answer-template.html#question-10.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 10.",
+    "text": "Question 10.\n\n# 10a. Estimate a simple regression model that uses perceived_useful to predict behavioral_intention. Name the model: model_2.\n\nmodel_2 &lt;- lm(behavioral_intention ~ perceived_useful, data = data_ai)\n\n# 10b. Print out the results of your regression model and write out an interpretation of the effect of perceived_useful on\n#     behavioral_intentions.\n\nsummary(model_2)\n\n\nCall:\nlm(formula = behavioral_intention ~ perceived_useful, data = data_ai)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-4.0713 -1.0571 -0.0571  0.9429  3.6191 \n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       2.70479    0.18733  14.439   &lt;2e-16 ***\nperceived_useful  0.33807    0.03693   9.154   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.448 on 498 degrees of freedom\nMultiple R-squared:  0.144, Adjusted R-squared:  0.1423 \nF-statistic:  83.8 on 1 and 498 DF,  p-value: &lt; 2.2e-16\n\n# 10c. What is the R-squared value for model_2? Write out an interpretation of the R-squared.\n\nThe steps used to answer this question are identical to those we used in question 9.\nWe can interpret the results as follows. When comparing two groups who differ by one unit on their response to perceived_useful, the average response to behavioral_intetions for the group with the higher response to perceived_useful will be 0.34 units higher than the group with the lower response.\nWe could also say: For every one unit increase in an individual’s perceptions of how useful the AI tool is (perceived_useful), we will see their intentions to use the AI tool increase by 0.34.\nThe R-squared value in our model is 0.1440416, which means that 14% of the variance in behavioral_intention can be explained by perceived_useful."
+  },
+  {
+    "objectID": "assignments/answer-template.html#question-11.",
+    "href": "assignments/answer-template.html#question-11.",
+    "title": "Answers to Assignment 1",
+    "section": "Question 11.",
+    "text": "Question 11.\n\n# 11a. Estimate a multiple regression model that uses perceived_useful and perceived_ease_use to predict behavioral_intention.\n\nmodel_3 &lt;- lm(behavioral_intention ~ perceived_ease_use + perceived_useful, data = data_ai)\n\n# 11b. Print out the results of your multiple regression model and write out an interpretation of both partial regression \n#      coefficients.\n\n# 11c. What is the R-squared value for model_3? Write out an interpretation of the R-squared.\n\nThe steps used to answer this question are identical to those we used in questions 9 and 10. The only difference is that instead of estimating a model with one predictor variable, we are estimating a model with two predictor variables: perceived_ease_use + perceived_useful. To add more predictor variables to our model, we just write: + predictor_variable_name_1 + predictor_variable_name_2 + predictor_variable_name_3 for as many predictor variables as we would like to add. Nothing else about the lm function changes.\nWe can interpret the results as follows:\n\nWhen comparing two groups who differ by one unit on their response to perceived_useful, but who have the same response to perceived_ease_use, the average response to behavioral_intetions for the group with the higher response to perceived_useful will be 0.2 units higher than the group with the lower response.\nWhen comparing two groups who differ by one unit on their response to perceived_ease_use, but who have the same response to perceived_useful, the average response to behavioral_intetions for the group with the higher response to perceived_ease_of_use will be 0.28 units higher than the group with the lower response.\n\nWe could also say: While controlling for perceived_ease_use, for every one unit increase in an individual’s perceptions of how useful the AI tool is (perceived_useful), we will see their intentions to use the AI tool increase by 0.2.\nThe R-squared value in our model is 0.2045388, which means that 20% of the variance in behavioral_intention can be explained by perceived_useful and perceived_ease_use together."
+  },
+  {
+    "objectID": "lectures/01-lecture-page.html",
+    "href": "lectures/01-lecture-page.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Next Week’s Materials »"
+  },
+  {
+    "objectID": "lectures/01-lecture-page.html#lecture-review-of-statistical-concepts",
+    "href": "lectures/01-lecture-page.html#lecture-review-of-statistical-concepts",
+    "title": "Quantitative Analysis 2",
+    "section": "Lecture: Review of Statistical Concepts",
+    "text": "Lecture: Review of Statistical Concepts\n\n\nTo download a pdf version of these slides, click here."
+  },
+  {
+    "objectID": "lectures/02-lecture-page.html",
+    "href": "lectures/02-lecture-page.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Next Week’s Materials »"
+  },
+  {
+    "objectID": "lectures/02-lecture-page.html#lecture-introduction-to-categorical-data",
+    "href": "lectures/02-lecture-page.html#lecture-introduction-to-categorical-data",
+    "title": "Quantitative Analysis 2",
+    "section": "Lecture: Introduction to Categorical Data",
+    "text": "Lecture: Introduction to Categorical Data\n\n\nTo download a pdf version of these slides, click here."
+  },
+  {
+    "objectID": "lectures/03-lecture-page.html",
+    "href": "lectures/03-lecture-page.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Next Week’s Materials »"
+  },
+  {
+    "objectID": "lectures/03-lecture-page.html#lecture-introduction-to-simple-and-multiple-logistic-regression",
+    "href": "lectures/03-lecture-page.html#lecture-introduction-to-simple-and-multiple-logistic-regression",
+    "title": "Quantitative Analysis 2",
+    "section": "Lecture: Introduction to Simple and Multiple Logistic Regression",
+    "text": "Lecture: Introduction to Simple and Multiple Logistic Regression\n\n\nTo download a pdf version of these slides, click here.\nFor today, we will also be completing the following assignments:\nAssignment 2a\nAssignment 2b\nAssignment 3"
   }
 ]
