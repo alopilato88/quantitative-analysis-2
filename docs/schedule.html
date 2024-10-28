@@ -51,35 +51,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -177,6 +148,40 @@ Introduction &amp; Stats Review
 9/10
 </td>
 <td class="ts-topic">
+Stats Review
+</td>
+<td class="ts-content">
+<a href="readings/reading-1.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
+</td>
+<td class="ts-content">
+<a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
+</td>
+<td class="ts-content">
+<a href="lectures/01-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
+</td>
+</tr>
+<tr>
+<td class="ts-date">
+9/17
+</td>
+<td class="ts-topic">
+No Class
+</td>
+<td class="ts-content">
+<a href=""><img src="assets/reading-icon-1.png" width="50" height="54"></a>
+</td>
+<td class="ts-content">
+<a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
+</td>
+<td class="ts-content">
+<a href=""><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
+</td>
+</tr>
+<tr>
+<td class="ts-date">
+9/27 - Immersion Day
+</td>
+<td class="ts-topic">
 Introduction to Categorical Data Analysis
 </td>
 <td class="ts-content">
@@ -191,27 +196,27 @@ Introduction to Categorical Data Analysis
 </tr>
 <tr>
 <td class="ts-date">
-9/17
+10/1
 </td>
 <td class="ts-topic">
-No Class
+Introduction to Categorical Data Analysis
 </td>
 <td class="ts-content">
-<a href="readings/reading-3.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
+<a href="readings/reading-2.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
 </td>
 <td class="ts-content">
-<a href="assignments/01-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
+<a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
 </td>
 <td class="ts-content">
-<a href=""><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
+<a href="lectures/02-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
 </td>
 </tr>
 <tr>
 <td class="ts-date">
-9/27 - Immersion Day
+10/8
 </td>
 <td class="ts-topic">
-Simple &amp; Multiple Logistic Regression Models
+Simple Logistic Regression
 </td>
 <td class="ts-content">
 <a href="readings/reading-3.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
@@ -225,7 +230,41 @@ Simple &amp; Multiple Logistic Regression Models
 </tr>
 <tr>
 <td class="ts-date">
-10/1
+10/15
+</td>
+<td class="ts-topic">
+Fall Break - No Class
+</td>
+<td class="ts-content">
+<a href=""><img src="assets/reading-icon-1.png" width="50" height="54"></a>
+</td>
+<td class="ts-content">
+<a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
+</td>
+<td class="ts-content">
+<a href=""><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
+</td>
+</tr>
+<tr>
+<td class="ts-date">
+10/22
+</td>
+<td class="ts-topic">
+Multiple Logistic Regression
+</td>
+<td class="ts-content">
+<a href="readings/reading-3.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
+</td>
+<td class="ts-content">
+<a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
+</td>
+<td class="ts-content">
+<a href="lectures/03-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
+</td>
+</tr>
+<tr>
+<td class="ts-date">
+11/1 - Immersion Day
 </td>
 <td class="ts-topic">
 Interactions &amp; Model Building
@@ -234,7 +273,7 @@ Interactions &amp; Model Building
 <a href="readings/reading-4.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
 </td>
 <td class="ts-content">
-<a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
+<a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
 </td>
 <td class="ts-content">
 <a href="lectures/04-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
@@ -242,7 +281,7 @@ Interactions &amp; Model Building
 </tr>
 <tr>
 <td class="ts-date">
-10/8
+11/5
 </td>
 <td class="ts-topic">
 Goodness of Fit &amp; Predictive Power
@@ -259,27 +298,10 @@ Goodness of Fit &amp; Predictive Power
 </tr>
 <tr>
 <td class="ts-date">
-10/15
+11/12
 </td>
 <td class="ts-topic">
-Fall Break - No Class
-</td>
-<td class="ts-content">
-<a href="readings/reading-6.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
-</td>
-<td class="ts-content">
-<a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
-</td>
-<td class="ts-content">
-<a href="index.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
-</td>
-</tr>
-<tr>
-<td class="ts-date">
-10/22
-</td>
-<td class="ts-topic">
-Multicategorical Outcome Models
+Clustered Data &amp; The LMER Mode
 </td>
 <td class="ts-content">
 <a href="readings/reading-6.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
@@ -293,10 +315,10 @@ Multicategorical Outcome Models
 </tr>
 <tr>
 <td class="ts-date">
-11/1 - Immersion Day
+11/19
 </td>
 <td class="ts-topic">
-Generalized Linear Models &amp; Intro to Analyzing Clustered Data
+The LMER Model &amp; Centering Decisions
 </td>
 <td class="ts-content">
 <a href="readings/reading-7.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
@@ -310,67 +332,16 @@ Generalized Linear Models &amp; Intro to Analyzing Clustered Data
 </tr>
 <tr>
 <td class="ts-date">
-11/5
-</td>
-<td class="ts-topic">
-The LMER Model
-</td>
-<td class="ts-content">
-<a href="readings/reading-8.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
-</td>
-<td class="ts-content">
-<a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
-</td>
-<td class="ts-content">
-<a href="lectures/08-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
-</td>
-</tr>
-<tr>
-<td class="ts-date">
-11/12
-</td>
-<td class="ts-topic">
-Model Specification &amp; Centering Decisions
-</td>
-<td class="ts-content">
-<a href="readings/reading-9.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
-</td>
-<td class="ts-content">
-<a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
-</td>
-<td class="ts-content">
-<a href="lectures/09-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
-</td>
-</tr>
-<tr>
-<td class="ts-date">
-11/19
-</td>
-<td class="ts-topic">
-<span class="math inline">\(R^2\)</span> &amp; LMER Model Assumptions
-</td>
-<td class="ts-content">
-<a href="readings/reading-10.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
-</td>
-<td class="ts-content">
-<a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
-</td>
-<td class="ts-content">
-<a href="lectures/10-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
-</td>
-</tr>
-<tr>
-<td class="ts-date">
 11/26
 </td>
 <td class="ts-topic">
 No Class - Thanksgiving Break
 </td>
 <td class="ts-content">
-<a href="readings/reading-11.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
+<a href=""><img src="assets/reading-icon-1.png" width="50" height="54"></a>
 </td>
 <td class="ts-content">
-<a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
+<a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
 </td>
 <td class="ts-content">
 <a href=""><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
@@ -384,13 +355,13 @@ No Class - Thanksgiving Break
 Advanced Uses of LMER Models
 </td>
 <td class="ts-content">
-<a href="readings/reading-11.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
+<a href="readings/reading-8.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
 </td>
 <td class="ts-content">
-<a href="assignments/04-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
+<a href="assignments/08-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
 </td>
 <td class="ts-content">
-<a href="lectures/11-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
+<a href="lectures/08-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
 </td>
 </tr>
 <tr>
@@ -401,13 +372,13 @@ Advanced Uses of LMER Models
 Wrap-Up
 </td>
 <td class="ts-content">
-<a href="readings/reading-12.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
+<a href="readings/reading-9.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a>
 </td>
 <td class="ts-content">
 <a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a>
 </td>
 <td class="ts-content">
-<a href=""><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
+<a href="lectures/09-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a>
 </td>
 </tr>
 </tbody>

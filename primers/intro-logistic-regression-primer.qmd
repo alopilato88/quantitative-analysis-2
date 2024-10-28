@@ -1,0 +1,56 @@
+---
+title: "Introduction to Logistic Regression"
+format:
+  pdf:
+    toc: true
+    toc-depth: 3
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| include: false
+
+library(tibble)
+library(dplyr)
+library(patchwork)
+library(lme4)
+library(car)
+```
+
+## What is Logistic Regression? 
+
+## Understanding Logistic Regression 
+
+### Modeling Purchases at an E-Commerce Company
+
+```{r}
+# Simulating our magazine subscription data
+
+set.seed(54643) # Set seed for replication 
+
+n <- 10000 # Number of customers 
+
+
+```
+
+
+### Logistic Regression with a Quantitative Predictor 
+
+#### Estimating Our Model
+
+#### Interpreting Our Model
+
+### Logistic Regression with a Categorical Predictor
+
+#### Estimating Our Model
+
+#### Interpreting Our Model
+
+### Multiple Logistic Regression
+
+#### Estimating Our Model
+
+#### Interpreting Our Model
+
+### Multiple Logistic Regression with an Interaction 

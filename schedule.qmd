@@ -26,101 +26,101 @@ The tentative Fall 2024 schedule for Quantitative Analysis 2. Use the reading li
   </tr>
   <tr>
     <td class="ts-date">9/10</td>
+    <td class="ts-topic">Stats Review</td>
+    <td class="ts-content"><a href="readings/reading-1.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="lectures/01-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
+  </tr>
+  <tr>
+    <td class="ts-date">9/17</td>
+    <td class="ts-topic">No Class</td>
+    <td class="ts-content"><a href=""><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href=""><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
+  </tr>
+  <tr>
+    <td class="ts-date">9/27 - Immersion Day</td>
     <td class="ts-topic">Introduction to Categorical Data Analysis</td>
     <td class="ts-content"><a href="readings/reading-2.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="lectures/02-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
-    <td class="ts-date">9/17</td>
-    <td class="ts-topic">No Class</td>
-    <td class="ts-content"><a href="readings/reading-3.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="assignments/01-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href=""><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-date">10/1</td>
+    <td class="ts-topic">Introduction to Categorical Data Analysis</td>
+    <td class="ts-content"><a href="readings/reading-2.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="lectures/02-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
-    <td class="ts-date">9/27 - Immersion Day</td>
-    <td class="ts-topic">Simple & Multiple Logistic Regression Models</td>
+    <td class="ts-date">10/8</td>
+    <td class="ts-topic">Simple Logistic Regression</td>
     <td class="ts-content"><a href="readings/reading-3.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="lectures/03-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
-    <td class="ts-date">10/1</td>
+    <td class="ts-date">10/15</td>
+    <td class="ts-topic">Fall Break - No Class</td>
+    <td class="ts-content"><a href=""><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href=""><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
+  </tr>
+  <tr>
+    <td class="ts-date">10/22</td>
+    <td class="ts-topic">Multiple Logistic Regression</td>
+    <td class="ts-content"><a href="readings/reading-3.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="lectures/03-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
+  </tr>
+  <tr>
+    <td class="ts-date">11/1 - Immersion Day</td>
     <td class="ts-topic">Interactions & Model Building</td>
     <td class="ts-content"><a href="readings/reading-4.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="lectures/04-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
-    <td class="ts-date">10/8</td>
+    <td class="ts-date">11/5</td>
     <td class="ts-topic">Goodness of Fit & Predictive Power</td>
     <td class="ts-content"><a href="readings/reading-5.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="lectures/05-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
-    <td class="ts-date">10/15</td>
-    <td class="ts-topic">Fall Break - No Class</td>
-    <td class="ts-content"><a href="readings/reading-6.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="index.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
-  </tr>
-  <tr>
-    <td class="ts-date">10/22</td>
-    <td class="ts-topic">Multicategorical Outcome Models</td>
+    <td class="ts-date">11/12</td>
+    <td class="ts-topic">Clustered Data & The LMER Mode</td>
     <td class="ts-content"><a href="readings/reading-6.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="lectures/06-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
-    <td class="ts-date">11/1 - Immersion Day</td>
-    <td class="ts-topic">Generalized Linear Models & Intro to Analyzing Clustered Data</td>
+    <td class="ts-date">11/19</td>
+    <td class="ts-topic">The LMER Model & Centering Decisions</td>
     <td class="ts-content"><a href="readings/reading-7.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="lectures/07-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
-    <td class="ts-date">11/5</td>
-    <td class="ts-topic">The LMER Model</td>
-    <td class="ts-content"><a href="readings/reading-8.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="lectures/08-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
-  </tr>
-  <tr>
-    <td class="ts-date">11/12</td>
-    <td class="ts-topic">Model Specification & Centering Decisions</td>
-    <td class="ts-content"><a href="readings/reading-9.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="lectures/09-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
-  </tr>
-  <tr>
-    <td class="ts-date">11/19</td>
-    <td class="ts-topic">$R^2$ & LMER Model Assumptions</td>
-    <td class="ts-content"><a href="readings/reading-10.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="lectures/10-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
-  </tr>
-  <tr>
     <td class="ts-date">11/26</td>
     <td class="ts-topic">No Class - Thanksgiving Break</td>
-    <td class="ts-content"><a href="readings/reading-11.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href=""><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href=""><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href=""><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
     <td class="ts-date">12/6 - Immersion Day</td>
     <td class="ts-topic">Advanced Uses of LMER Models</td>
-    <td class="ts-content"><a href="readings/reading-11.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="assignments/04-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="lectures/11-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="readings/reading-8.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="assignments/08-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="lectures/08-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
     <td class="ts-date">12/10</td>
     <td class="ts-topic">Wrap-Up</td>
-    <td class="ts-content"><a href="readings/reading-12.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="readings/reading-9.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href=""><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="lectures/09-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
 </tbody>
 </table>

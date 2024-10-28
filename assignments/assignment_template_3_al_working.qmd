@@ -1,0 +1,231 @@
+---
+title: "Assignment 1: A Review of Statistical Concepts"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Setup 
+
+Load the following packages: `readr`, `tibble`, `dplyr`, `tidyr`, `ggplot2`, and `PropCIs`.
+
+```{r}
+library(readr)
+library(tibble)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(PropCIs)
+```
+
+## Problem 1. 
+
+Download `values_data.csv` from OneDrive. Create a folder named `data` and move `values_data.csv` there. Then finish the code to read in the data.
+
+```{r}
+data_values <- readr::read_csv("data/values_data.csv") # Finish the code
+```
+
+## Problem 2. 
+
+Finish the code below to recode responses to Q46 and Q47. Responses to Q46 will now be 0 and 1; 0 when the respondent is "Not very happy" or "Not at all happy" and 1 when the respondent is "Very happy" or "Rather happy." Responses to Q47 will now be 0 and 1; 0 when the respondent is "Fair", "Poor", or "Very Poor" and 1 when the respondent is "Very Good" or "Good."
+
+```{r}
+data_values <- 
+  data_values |>
+  dplyr::mutate(
+    Q46_binary = dplyr::if_else(Q46 %in% 3:4, 0, 1), # Finish code
+    Q47_binary = dplyr::if_else(Q47 %in% 3:5, 0, 1) # Finish code
+  )
+```
+
+What proportion of respondents respondend "Very happy" or "Rather happy" to `Q46_binary`? What proportion of respondents responded `Very good` or `Good` to `Q47_binary`? 
+
+```{r}
+mean( data_values$Q46_binary, na.rm = TRUE) # Finish the code
+mean( data_values$Q47_binary, na.rm = TRUE) # Finish the code
+```
+
+**Write response here**
+
+## Problem 3. 
+
+Use the `prop.test` function to determine if the proportion of "happy" (1) responses to `Q46_binary` is different than .50.
+
+```{r}
+total_happy <- sum(data_values$Q46_binary , na.rm = TRUE) # Finish the code
+total_responses <- sum(!is.na(data_values$Q46_binary)) # Total non-missing responses
+
+prop.test(total_happy, total_responses , p = .50, alternative = "two.sided", correct = FALSE) # Finish the code
+```
+
+Now use `prop.test` to determine if the proportion of "happy" responses to `Q46_binary` is different than .70.
+
+```{r}
+prop.test(total_happy, total_responses, p = , alternative = "two.sided", correct = FALSE)
+```
+
+## Problem 4. 
+
+Now finish the code below to create a new data frame that only contains responses from the USA and Canada. The column `B_COUNTRY_ALPHA` contains country codes to filter on. The US is coded `USA` and Canada is coded `CAN`. 
+
+```{r}
+data_values_us_can <- 
+  data_values |>
+  dplyr::filter(
+    B_COUNTRY_ALPHA %in% c("USA", "CAN") # Finish code here
+  )
+```
+
+Use the `summarize` function below to calculate the data you need to determine if the proportion of American respondents who respond "happy" to question `Q46_binary` is significantly different from the proportion of Canadian respondents who respond "happy".
+
+```{r}
+data_usa_can_summ <- 
+  data_values_us_can |>
+  dplyr::summarize(
+    count_wellbeing_responses = sum(Q46_binary, na.rm = TRUE),
+    total_responses = sum(!is.na(Q46_binary)),
+    .by = B_COUNTRY_ALPHA # Finish code
+  )
+```
+
+Using your summarized data frame,`data_us_can_summ`, finish the code below to determine if the proportion of American respondents who respond "happy" to question Q46_binary is significantly different from the proportion of Canadian respondents who respond "happy". Write up an interpretation of the `prop.test` results below. 
+
+```{r}
+prop.test(data_usa_can_summ$count_wellbeing_responses, data_usa_can_summ$total_responses, alternative = "two.sided", correct = FALSE)
+```
+
+**Write interpretation here**
+
+## Problem 5. 
+
+Using `data_values_us_can`, determine if the proportion of American respondents who respond "good" or "very good" to `Q47_binary` is significantly different from the proportion of Canadian respondents who responded "good" or "very good".
+
+```{r}
+data_usa_can_summ <- 
+  data_values_us_can |>
+  dplyr::summarize(
+    count_health_responses = sum(Q47_binary, na.rm = TRUE),
+    total_responses = sum(!is.na(Q46_binary)),
+    .by = B_COUNTRY_ALPHA # Finish code
+  )
+
+prop.test(data_usa_can_summ$count_health_responses, data_usa_can_summ$total_responses, alternative = "two.sided", correct = FALSE)
+```
+
+## Problem 6. 
+
+To better understand if Americans differ in their wellbeing and their health compared to Canadians calculate the absolute difference between the proportions, the relative difference, and the odds ratio.  
+
+```{r}
+data_us_can_summ <- 
+  data_values_us_can |>
+  dplyr::summarize(
+    count_wellbeing_responses = sum(Q46_binary, na.rm = TRUE),
+    total_wellbeing_responses = sum(!is.na(Q46_binary)),
+    count_health_responses = sum( , na.rm = TRUE), # Finish code
+    total_health_responses = sum(!is.na( )), # Finish code
+    .by = B_COUNTRY_ALPHA # Finish code
+  ) |>
+  dplyr::mutate(
+    prop_wellbeing = count_wellbeing_responses / total_wellbeing_responses,
+    prop_health = # Finish code
+  )
+
+wellbeing_absolute_diff <- 
+  data_usa_can_summ$prop_wellbeing[data_usa_can_summ$B_COUNTRY_ALPHA == "USA"] - data_usa_can_summ$prop_wellbeing[data_use_can_summ$B_COUNTRY_ALPHA == "CAN"]
+
+wellbeing_relative_diff <- 
+  data_usa_can_summ$prop_wellbeing[data_usa_can_summ$B_COUNTRY_ALPHA == "USA"] / # Finish code
+  
+wellbeing_odds_usa <- data_usa_can_summ$prop_wellbeing[data_usa_can_summ$B_COUNTRY_ALPHA == "USA"] / (1 - data_usa_can_summ$prop_wellbeing[data_usa_can_summ$B_COUNTRY_ALPHA == "USA"])
+
+wellbeing_odds_can <- data_usa_can_summ$prop_wellbeing[data_usa_can_summ$B_COUNTRY_ALPHA == "CAN"] / # Finish code
+  
+wellbeing_odds_ratio <- wellbeing_odds_usa / wellbeing_odds_can
+
+health_absolute_diff <- # Finish code
+  
+health_relative_diff <- # Finish code
+
+health_odds_usa <- # Finish code
+  
+health_odds_can <- # Finish code
+
+health_odds_ratio <- # Finish code
+
+```
+
+For the relative difference and odds ratios for wellbeing responses, calculate the confidence intervals using the `PropCIs` package. How do the confidence intervals support the significance test you conducted in `Problem 4`.
+
+```{r}
+count_wellbeing_usa <- data_us_can_summ$count_wellbeing_responses[data_us_can_summ$B_COUNTRY_ALPHA == "USA"]
+total_wellbeing_usa <- data_us_can_summ$total_wellbeing_responses[data_us_can_summ$B_COUNTRY_ALPHA == "USA"]
+
+count_wellbeing_can <- # Finish code
+total_wellbeing_can <- # Finish code
+
+# Relative risk confidence interval
+PropCIs::riskscoreci(x1 = count_wellbeing_usa, n1 = total_wellbeing_usa,
+                     x2 = , n2 = ,
+                     conf.level = .95)
+
+# Odds ratio confidence interval
+PropCIs::orscoreci(x1 = count_wellbeing_usa, n1 = total_wellbeing_usa,
+                     x2 = , n2 = ,
+                     conf.level = .95)
+```
+
+**Write interpretation here**
+
+## Problem 7. 
+
+You want to understand if wellbeing as measured by the happiness question (`Q46_binary`) is related to the respondent's health as measured by the health question (`Q47`).
+
+Finish the code below to analyze the relationship between `Q46_binary` and `Q47` by building a contingency table where `Q47` is the row variable and `Q46_binary` is the column variable. 
+```{r}
+xtabs( , data = data_values) # Finish the code
+```
+
+Finish the code below to calculate the joint, marginal, and conditional probabilities (probability of being happy given the respondent feels healthy) using the `prop.table` function. 
+
+```{r}
+contingency_table <- xtabs( , data = data_values) # Finish the code
+contingency_table |> prop.table() |> addmargins() # Finish the code
+contingency_table |> prop.table(1)
+```
+
+Using the conditional probabilities above, do you think there is a relationship between wellbeing and health? Write your response below.
+
+**Write your response here**
+
+## Problem 8. 
+
+Use the `chisq.test` function to test if health and wellbeing are statistically related to one another. Using the conditional probabilities and the results of the chi-squared test, write a quick summary of the relationship between health and wellbeing.
+
+```{r}
+
+```
+
+**Write interpretation here**
+
+## Problem 9.
+
+Use the `glm` function to estimate a simple logistic regression model where wellbeing (`Q46_binary`) is the outcome and health (`Q76`) is the predictor variable.
+
+```{r}
+
+```
+
+Write a brief summary of your results. 
+
+**Write a brief summary here**
+
+## Problem 10.
+
+Use the `glm` function to estimate a simple logistic regression model where wellbeing (`Q46_binary`) is the outcome and how the respondent compares to their parents standard of living  (`Q56`) is the predictor variable. Treat `Q56` as a categorical predictor. 
+
+```{r}
+
+```
+
+**Write a brief summary here**

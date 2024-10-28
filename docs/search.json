@@ -1069,5 +1069,12 @@
     "title": "Quantitative Analysis 2",
     "section": "Lecture: Introduction to Simple and Multiple Logistic Regression",
     "text": "Lecture: Introduction to Simple and Multiple Logistic Regression\n\n\nTo download a pdf version of these slides, click here.\nFor today, we will also be completing the following assignments:\nAssignment 2a\nAssignment 2b\nAssignment 3"
+  },
+  {
+    "objectID": "primers/intro-logistic-regression-primer.html#understanding-logistic-regression",
+    "href": "primers/intro-logistic-regression-primer.html#understanding-logistic-regression",
+    "title": "Introduction to Logistic Regression",
+    "section": "Understanding Logistic Regression",
+    "text": "Understanding Logistic Regression\n\nModeling Purchases at an E-Commerce Company\n\n# Simulating our magazine subscription data\n\nset.seed(54643) # Set seed for replication \n\nn &lt;- 10000 # Number of customers \n\n\n\nLogistic Regression with a Quantitative Predictor\n\nEstimating Our Model\n\n\nInterpreting Our Model\n\n\n\nLogistic Regression with a Categorical Predictor\n\nEstimating Our Model\n\n\nInterpreting Our Model\n\n\n\nMultiple Logistic Regression\n\nEstimating Our Model\n\n\nInterpreting Our Model\n\n\n\nMultiple Logistic Regression with an Interaction"
   }
 ]
