@@ -1,0 +1,21 @@
+---
+format: 
+  html:
+    page-layout: article
+---
+
+<div class = "prev-next-container">
+<a class="prev-next" href="05-lecture-page.html">Next Week's Materials &raquo;</a>
+</div>
+
+## Lecture: Interactions and Model Building
+
+<iframe src="04-lecture-slides.html" name="04-lecture-slides"></iframe>
+
+To download a pdf version of these slides, click <a href="04-lecture-slides.pdf" download target="_blank" rel="noopener noreferrer"><strong>here</strong></a>.
+
+For today, we will also be completing the following assignments: 
+
+<a href="lecture-assignments/assignment_template_4.qmd" download target="_blank" rel="noopener noreferrer"><strong>Assignment 4</strong></a>
+
+<a href="" download target="_blank" rel="noopener noreferrer"><strong>Assignment 5</strong></a>

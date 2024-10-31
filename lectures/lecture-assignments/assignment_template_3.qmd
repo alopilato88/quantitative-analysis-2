@@ -1,5 +1,5 @@
 ---
-title: "Assignment 1: A Review of Statistical Concepts"
+title: "Assignment 3: Introduction to Categorical Data"
 editor_options: 
   chunk_output_type: console
 ---

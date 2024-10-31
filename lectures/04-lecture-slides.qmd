@@ -1,0 +1,566 @@
+---
+title: "Interactions & Model Building in Logistic Regression"
+format: 
+  revealjs:
+    theme: [default, theme-lecture-slides.scss] 
+    css: styles-lecture-slides.css
+    slide-number: true
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+source("packages-lecture.R")
+source("helper-functions-lecture.R")
+
+```
+
+## Overview for Today
+
+Today we will be learning about: 
+
+- Interpreting & testing interactions using logistic regression
+- Testing competing models 
+
+## Review of Logistic Regression 
+
+A few things to keep in mind: 
+
+- Use logistic regression when your outcome is binary.
+- Transform your regression coefficients using the exponential function before interpreting.
+- Transformed regression coefficients are **odds ratios**. 
+- Statistical testing is identical to linear regression 
+
+## Who Votes?
+
+You're a policy analyst trying to predict voter turnout for a given region. You have the following information on voters for the previous election: 
+
+- Did they vote in the previous election [Outcome]
+- Age
+- Gender
+- Are they a lifetime voter (voted in multiple previous elections)
+- Proximity to voting location 
+
+## Look at Our Data 
+
+First, let's look at our dataset:
+
+```{r}
+#| echo: false
+
+set.seed(43278)
+n <- 5000
+age_dist <- dnorm(18:100, mean = 45, sd = 15) / sum(dnorm(18:100, mean = 55, sd = 10))
+
+# Distance: 0: Walkable - close
+#           1: Walkable - moderate 
+#           2: Drive - moderate 
+#           3: Drive - far
+data_vote <- 
+  tibble::tibble(
+    age = sample(18:100, n, prob = age_dist, replace = TRUE),
+    age_scale = as.numeric(scale(age)), 
+    gender = sample(0:1, size = n, replace = TRUE, prob = c(.45, .55)),
+    life_vote = sample(0:1, size = n, replace = TRUE, prob = c(.20, .80)),
+    vote_dist_num = sample(0:3, size = n, replace = TRUE, prob = c(.10, .25, .60, .15)),
+    vote_propensity = -.50 + .30*age_scale - .20*age_scale^2 + life_vote + -.50*vote_dist_num + .50*life_vote*vote_dist_num,
+    vote = rbinom(n, 1, prob = plogis(vote_propensity))
+  ) |>
+  dplyr::mutate(
+    gender = dplyr::if_else(gender == 1, "M", "F"), 
+    life_vote = dplyr::if_else(life_vote == 1, "Y", "N"),
+    vote_dist = dplyr::case_when(
+      vote_dist_num == 0 ~ "Walkable - Close",
+      vote_dist_num == 1 ~ "Walkable - Moderate", 
+      vote_dist_num == 2 ~ "Drive - Moderate", 
+      TRUE ~ "Drive - Far"
+    ), 
+    vote = dplyr::if_else(vote == 1, "Y", "N"),
+    age_std = as.numeric(scale(age))
+  ) |>
+  dplyr::select(
+    vote, 
+    gender,
+    age, 
+    age_std,
+    life_vote,
+    vote_dist,
+    vote_dist_num
+  )
+
+data_vote
+```
+
+## Plotting Our Data
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+p1 <- 
+  data_vote |> 
+  dplyr::mutate(
+    age_cat = stringr::str_sub(age, 1, 1), 
+    age_cat = paste0(age_cat, "0s"),
+    age_cat = dplyr::if_else(age_cat == "10s", "Late Teens", age_cat),
+    age_cat = factor(age_cat, levels = c("Late Teens", paste0(2:9, "0s")))
+  ) |> 
+  dplyr::summarize(
+    prop = mean(vote == "Y"), 
+    .by = age_cat
+  ) |>
+  ggplot2::ggplot(
+    ggplot2::aes(x = age_cat, y = prop)
+  ) + 
+  ggplot2::geom_bar(stat = "identity", fill = plot_fill, 
+                    color = plot_color) + 
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Age Group",
+    y = "Propotion Voted"
+  )
+
+p2 <- 
+  data_vote |>
+  dplyr::summarize(
+    prop = mean(vote == "Y"), 
+    .by = gender
+  ) |>
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = gender, y = prop
+    )
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity", 
+    color = plot_color, 
+    fill = plot_fill
+  ) + 
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Gender", 
+    y = "Proportion Voted"
+  )
+
+p3 <- 
+  data_vote |> 
+  dplyr::summarize(
+    prop = mean(vote == "Y"), 
+    .by = life_vote
+  ) |>
+  ggplot2::ggplot(
+    ggplot2::aes(x = life_vote, y = prop)
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity", 
+    fill = plot_fill, 
+    color = plot_color
+  ) + 
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Lifetime Voter",
+    y = "Proportion Voted"
+  )
+
+p4 <- 
+  data_vote |>
+  dplyr::mutate(
+    dist_fact = factor(vote_dist, 
+                       levels = c("Walkable - Close", "Walkable - Moderate", 
+                                  "Drive - Moderate", "Drive - Far"))
+  ) |>
+  dplyr::summarize(
+    prop = mean(vote == "Y"), 
+    .by = dist_fact
+  ) |>
+  ggplot2::ggplot(
+    ggplot2::aes(x = dist_fact, y = prop)
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity", 
+    fill = plot_fill, 
+    color = plot_color
+  ) + 
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Poll Distance",
+    y = "Proportion Voted"
+  )
+
+((p1 + p2) / (p3 + p4)) + lecture_ggplot_theme_barplot
+```
+
+## A Main Effects Model 
+
+```{r}
+#| echo: false 
+#| include: false 
+
+data_vote <- 
+  data_vote |>
+  dplyr::mutate(
+    vote = dplyr::if_else(vote == "Y", 1, 0)
+  )
+```
+
+```{r}
+mod_vote_me <- glm(vote ~ age_std + gender + life_vote + vote_dist_num, 
+                   family = binomial(link = "logit"),
+                   data = data_vote)
+```
+
+```{r}
+#| echo: false
+
+summary(mod_vote_me)$coef |> 
+  as.data.frame() |> 
+  dplyr::mutate(`Estimate Transf.` = exp(Estimate)) |> 
+  round(2) |>
+  dplyr::relocate(`Estimate Transf.`, .after = Estimate) |>
+  knitr::kable()
+```
+
+## What About Interactions? 
+
+Interactions are conditional effects---the effect of a focal predictor may change based on the value of another predictor (moderator variable):
+
+- The effect of ability [**P**] on performance [**O**] conditional on motivation [**M**]
+- The effect of a personality trait [**P**] on a behavior [**O**] conditional on the setting [**M**]
+- The effect of formal planning behaviors [**P**] on new venture success conditional on the level of formal planning behaviors [**M**]
+
+## Interaction (Moderation) Jargon from Quant 1 
+
+When reading about moderation, you will likely come across several of these terms:
+
+- **Focal Predictor**: Predictor who’s relationship with the outcome is changing because of the moderator.
+- **Moderating Variable**: Predictor that is altering (moderating) the relationship between the focal predictor and outcome.
+- **Conditional Effects**: The effect of the focal predictor at a specific value of the moderator.
+
+## Interactions in Our Example
+
+We want to know if the effect of polling distance on voting changes based on whether a voter is a lifetime voter or not. Does lifetime voting status interact with polling distance to predict voting behavior? 
+
+## Modeling an Interaction as a Cross-Product 
+
+To estimate an interaction effect, we create a new variable that is the product of the focal predictor and the moderator:
+
+$$Logit = \beta_0 + \beta_1\text{PD}+\beta_2\text{LV} + \beta_3\text{PD} \times \text{LV}$$
+
+## Steps to Build an Interaction Variable 
+
+Steps for building an interaction term with at least one **quantitative variable**: 
+
+1. If your **quantitative** variable does not have a meaningful 0 point, then mean center the variable. 
+2. If your **quantitative** variables does not have a meaningful scale, then divide it by its standard deviation.
+3. Create a cross-product variable by multiplying the values of your focal predictor and moderator variable.
+
+## Building a Cross-Product Variable in Our Voting Data
+
+```{r}
+data_vote <- 
+  data_vote |> 
+  dplyr::mutate(
+    life_vote_num = dplyr::if_else(life_vote == "Y", 1, 0),
+    cp_pd_lv = vote_dist_num * life_vote_num
+  )
+```
+
+```{r}
+#| echo: false
+data_vote |> dplyr::select(!age_std)
+```
+
+## Steps to Build a Conditional Effects (Moderation/Interaction) Model
+
+1. Include the variables from which the cross-product is created.
+2. Include the cross-product term.
+3. Interpret the significance of the cross-product term to determine if an interaction exists.
+4. If an interaction exists, then interpret the effects of your focal predictor conditional on specific values of the moderator. 
+5. **Plot your interaction to help with interpretation!**
+
+## Building a Conditional Effects (Moderation/Interaction) Model
+
+```{r}
+mod_vote_ce <- glm(vote ~ age_std + gender + life_vote + vote_dist_num + cp_pd_lv, 
+                   family = binomial(link = "logit"),
+                   data = data_vote)
+```
+
+```{r}
+#| echo: false
+
+summary(mod_vote_ce)$coef |> 
+  as.data.frame() |> 
+  dplyr::mutate(`Estimate Transf.` = exp(Estimate)) |> 
+  round(2) |>
+  dplyr::relocate(`Estimate Transf.`, .after = Estimate) |>
+  knitr::kable()
+```
+
+## Checking the Significance of the Interaction 
+
+Is the z-value (test statistic) of the cross-product term larger than `r round(qnorm(.975), 2)`? If yes, then the interaction is significant. 
+
+## Plotting the Interaction
+
+```{r}
+#| echo: false
+data_interaction <- 
+  tibble::tibble(
+    vote_dist = rep(c("Walkable - Close", "Walkable - Moderate", 
+                      "Drive - Moderate", "Drive - Far"), 2),
+    life_vote = rep(c("Y", "N"), each = 4),
+    vote_dist_num = dplyr::case_when(
+      vote_dist == "Walkable - Close" ~ 0,
+      vote_dist == "Walkable - Moderate" ~ 1,
+      vote_dist == "Drive - Moderate" ~ 2, 
+      vote_dist == "Drive - Far" ~ 3
+    ), 
+    life_vote_num = dplyr::if_else(life_vote == "Y", 1, 0),
+    cp_pd_lv = vote_dist_num * life_vote_num, 
+    gender = "M",
+    age_std = 0
+  ) |>
+  dplyr::mutate(
+    vote_dist = factor(vote_dist, 
+                       levels = c("Walkable - Close", "Walkable - Moderate", 
+                                  "Drive - Moderate", "Drive - Far"))
+  )
+
+data_interaction <- 
+  data_interaction |>
+  dplyr::mutate(
+    pred_vote = predict(mod_vote_ce, data_interaction, type = "response")
+  )
+
+ggplot2::ggplot(
+  data_interaction, 
+  ggplot2::aes(
+    x = vote_dist,
+    y = pred_vote,
+    fill = life_vote
+  )
+) + 
+  ggplot2::geom_bar(stat = "identity",
+                    position = ggplot2::position_dodge2()) + 
+  ggplot2::labs(
+    x = "Poll Distance", 
+    y = "Predicted Probability of Voting", 
+    fill = "Lifetime Voter"
+  ) +
+  ggplot2::geom_label(
+    ggplot2::aes(label = round(pred_vote, 2),
+                 group = life_vote),
+    position = ggplot2::position_dodge2(width = 1)
+  ) +
+  lecture_ggplot_theme_moderation_plot
+```
+
+## Interpreting the Interaction (the Difficult Part)
+
+Because the effects of the predictor change based on the levels of the moderator, we have to calculate the odds ratio at different levels of the moderator to get a clear understanding of the effect of the predictor.
+
+$$\text{OR}=\exp(\beta_1 + \beta_2\times Z)$$
+
+## Interpreting the Interaction (the Difficult Part)
+
+For lifetime voters, the odds of voting stay roughly the same regardless of polling distance, adjusting for gender and age---the odds decrease by ~`r paste0(100 * (1 - ((-.386 + 1 * .366) |> exp() |> round(2))), "%") ` for evey unit increase in polling distance. For non-lifetime voters, the odds of voting decrease by ~`r paste0(100 * (1 - ((-.386 + 0 * .366) |> exp() |> round(2))), "%") ` for each unit increase in polling distance, adjusting for gender and age. 
+
+```{r}
+#| eval: false
+# Calculating conditional effect of polling distance for Lifetime Voter = 1
+(-.386 + .366 * 1) |> exp()
+
+# Calculating conditional effect of polling distance for Lifetime Voter = 0 
+(-.386 + .366 * 0) |> exp()
+```
+
+```{r}
+#| echo: false
+# Calculating conditional effect of polling distance for Lifetime Voter = 1
+(-.386 + 1 * .366) |> exp() |> round(2)
+# Calculating conditional effect of polling distance for Lifetime Voter = 0 
+(-.386 + 0 * .366) |> exp() |> round(2)
+```
+
+## Modeling a Nonlinear Effect as a Cross-Product
+
+To estimate the nonlinear effect of a predictor, you need to create a new variable that is the cross-product (or squared term) of the predictor with itself. Think of this as a variable interacting with itself---its effect on the outcome changes depending on the levels of the predictor variable.
+
+```{r}
+data_vote <- 
+  data_vote |>
+  dplyr::mutate(
+    age_std_sq = age_std * age_std 
+  )
+```
+
+## Building a Nonlinear Model
+
+```{r}
+mod_vote_nl <- glm(vote ~ age_std + age_std_sq + gender + life_vote + vote_dist_num, 
+                   data = data_vote,
+                   family = binomial(link = "logit"))
+```
+
+```{r}
+#| echo: false
+
+summary(mod_vote_nl)$coef |> 
+  as.data.frame() |> 
+  dplyr::mutate(`Estimate Transf.` = exp(Estimate)) |> 
+  round(2) |>
+  dplyr::relocate(`Estimate Transf.`, .after = Estimate) |>
+  knitr::kable()
+```
+
+## Plotting Nonlinear Effects 
+
+```{r}
+#| echo: false
+
+data_nl <- 
+  tibble::tibble(
+    age = unique(data_vote$age),
+    age_std = unique(data_vote$age_std),
+    age_std_sq = age_std^2,
+    gender = "F",
+    life_vote = "N",
+    vote_dist_num = 0
+  )
+
+data_nl <- 
+  data_nl |>
+  dplyr::mutate(
+    pred_prob = predict(mod_vote_nl, data_nl, type = "response")
+  )
+
+ggplot2::ggplot(
+  data = data_nl, 
+  ggplot2::aes(
+    x = age, 
+    y = pred_prob
+  )
+) + 
+  ggplot2::geom_point(
+    shape = 21,
+    size = 2.5,
+    fill = plot_fill,
+    color = plot_color
+  ) + 
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Voter Age", 
+    y = "Predicted Probability of Voting"
+  )
+```
+
+## Interpreting Nonlinear Effects
+
+Interpreting nonlinear effects in a logistic regression model is hard! Because the odds ratio changes at different levels of the predictor, you need to calculate it at these different levels using the following formula: 
+
+$$\text{OR}=\exp(\beta_1 + \beta_2 + 2\times\beta_2\times X)$$
+
+## Interpreting Nonlinear Effects 
+
+In the late teens (1.62 sds below the mean of `r round(mean(data_vote$age), 2)`), a standard deviation increase in age increases the odds of voting by `r paste0(100*((.28 + -.24 + 2 * -.24 * -1.62) |> exp() |> round(2) - 1), "%")`. At average age, a standard deviation increase in age increases the odds of voting by `r paste0(100*((.28 + -.24 + 2 * -.24 * -.02) |> exp() |> round(2) - 1), "%")`. At older ages (1.71 sds above the mean), a standard deviation increase in age decreases the odds of voting by `r paste0(100*(1 - ((.28 + -.24 + 2 * -.24 * 1.71) |> exp()) |> round(2)), "%")`. While adjusting for gender, lifetime voter status, and distance from the polls. 
+
+```{r}
+#| eval: false
+# Low Value of Standardized Age: - 1.62
+(.28 + -.24 + 2 * -.24 * -1.62) |> exp()
+
+# Median Value of Standardized Age: -.02
+(.28 + -.24 + -.24 * -.02) |> exp()
+
+# High Value of Standardized Age: 1.71
+(.28 + -.24 + 2 * -.24 * 1.71) |> exp()
+```
+
+```{r}
+#| echo: false
+# Low Value of Standardized Age: - 1.62
+(.28 + -.24 + 2 * -.24 * -1.62) |> exp() |> round(2)
+
+# Median Value of Standardized Age: -.02
+(.28 + -.24 + -.24 * -.02) |> exp() |> round(2)
+
+# High Value of Standardized Age: 1.71
+(.28 + -.24 + 2 * -.24 * 1.71) |> exp() |> round(2)
+```
+
+## Model Building with Logistic Regression 
+
+Model building is more art than science. 
+
+You decide which predictors to include or drop from your logistic regression model based on a combination of theory and statistical evidence.
+
+You should use your theory to decide the universe of variables you are interested in and statistical evidence to determine which of those variables truly have an effect on your outcome variable. 
+
+## Algorithmic Selection vs Purposeful Selection
+
+Once you have decided on the universe of variables you are interested in, there are two broad ways you can use statistical models to determine which of those variables are significant: 
+
+- Algorithmic Selection like stepwise variable selection 
+- Purposeful Selection: A systematic and thoughtful approach to variable selection
+
+Algorithmic selection can result in a final model that does not make a lot of sense, so we will focus on purposeful selection. 
+
+## Steps to Purposeful Selection
+
+Do this for each outcome variable you are investigating: 
+
+1. List all the hypotheses you have that relate to that outcome variable.
+2. Build a model that includes all the predictor variables and interactions needed to test each hypothesis and all the necessary control variables. 
+3. If you have any non-significant interaction and/or nonlinear variables, drop them. 
+4. Drop any non-significant main effects that are not a part of significant interactions or nonlinear variables. This is your final model that tells you which hypotheses were supported. 
+5. Follow-up with model diagnostics to ensure your model fits your data well enough. 
+
+## A Note on Purposeful Selection
+
+Remember, model building is more art than science! The steps on the last slide should serve as a guide for you, especially early on in your model building career, but as you get more experience building models, you can deviate from these steps.
+
+## Pruposeful Selection with Our Models
+
+Our hypotheses: 
+
+H1. Age is nonlinearly related to voting behavior such that there is a positive relationship between age and voting behavior when voters are younger and a negative relationship when voters are older. 
+
+H2. For first time voters, there is a negative relationship between poll distance and voting behavior such that the further away their voting poll is, the less likely they are to vote. For lifetime voters, there is no relationship between poll distance and voting behavior. 
+
+## Model Building with Purposeful Selection
+
+```{r}
+# Build a model that contains all of our hypothesized effects and controls
+mod_1 <- glm(vote ~ gender + age_std + age_std_sq + vote_dist_num * life_vote,
+             data = data_vote, family = binomial(link = "logit"))
+```
+
+```{r}
+#| echo: false
+summary(mod_1)
+```
+
+
+## Model Building with Purposeful Selection
+
+```{r}
+# If we had non-significant interactions or nonlinear terms we would drop them.
+
+# Drop any non-significant main effects that are not a part of significant 
+# interactions. 
+mod_2 <- glm(vote ~ age_std + age_std_sq + vote_dist_num * life_vote, 
+             data = data_vote, family = binomial(link = "logit"))
+
+# Use your model to determine which of your hypotheses are supported. 
+```
+
+```{r}
+#| echo: false
+summary(mod_2)
+```
+

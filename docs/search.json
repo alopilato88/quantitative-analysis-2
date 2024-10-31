@@ -1076,5 +1076,229 @@
     "title": "Introduction to Logistic Regression",
     "section": "Understanding Logistic Regression",
     "text": "Understanding Logistic Regression\n\nModeling Purchases at an E-Commerce Company\n\n# Simulating our magazine subscription data\n\nset.seed(54643) # Set seed for replication \n\nn &lt;- 10000 # Number of customers \n\n\n\nLogistic Regression with a Quantitative Predictor\n\nEstimating Our Model\n\n\nInterpreting Our Model\n\n\n\nLogistic Regression with a Categorical Predictor\n\nEstimating Our Model\n\n\nInterpreting Our Model\n\n\n\nMultiple Logistic Regression\n\nEstimating Our Model\n\n\nInterpreting Our Model\n\n\n\nMultiple Logistic Regression with an Interaction"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#overview-for-today",
+    "href": "lectures/04-lecture-slides.html#overview-for-today",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Overview for Today",
+    "text": "Overview for Today\nToday we will be learning about:\n\nInterpreting & testing interactions using logistic regression\nTesting competing models"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#review-of-logistic-regression",
+    "href": "lectures/04-lecture-slides.html#review-of-logistic-regression",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Review of Logistic Regression",
+    "text": "Review of Logistic Regression\nA few things to keep in mind:\n\nUse logistic regression when your outcome is binary.\nTransform your regression coefficients using the exponential function before interpreting.\nTransformed regression coefficients are odds ratios.\nStatistical testing is identical to linear regression"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#who-votes",
+    "href": "lectures/04-lecture-slides.html#who-votes",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Who Votes?",
+    "text": "Who Votes?\nYou’re a policy analyst trying to predict voter turnout for a given region. You have the following information on voters for the previous election:\n\nDid they vote in the previous election [Outcome]\nAge\nGender\nAre they a lifetime voter (voted in multiple previous elections)\nProximity to voting location"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#look-at-our-data",
+    "href": "lectures/04-lecture-slides.html#look-at-our-data",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Look at Our Data",
+    "text": "Look at Our Data\nFirst, let’s look at our dataset:\n\n\n# A tibble: 5,000 × 7\n   vote  gender   age age_std life_vote vote_dist           vote_dist_num\n   &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;                       &lt;int&gt;\n 1 Y     M         71  1.79   N         Walkable - Moderate             1\n 2 Y     M         46 -0.0243 Y         Drive - Moderate                2\n 3 Y     M         48  0.120  Y         Walkable - Moderate             1\n 4 N     M         62  1.13   Y         Walkable - Moderate             1\n 5 Y     M         51  0.338  Y         Drive - Moderate                2\n 6 N     M         18 -2.05   Y         Drive - Moderate                2\n 7 N     F         35 -0.821  Y         Drive - Far                     3\n 8 N     F         59  0.917  N         Drive - Moderate                2\n 9 N     F         32 -1.04   N         Drive - Moderate                2\n10 N     F         26 -1.47   Y         Drive - Moderate                2\n# ℹ 4,990 more rows"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#plotting-our-data",
+    "href": "lectures/04-lecture-slides.html#plotting-our-data",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Plotting Our Data",
+    "text": "Plotting Our Data"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#a-main-effects-model",
+    "href": "lectures/04-lecture-slides.html#a-main-effects-model",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "A Main Effects Model",
+    "text": "A Main Effects Model\n\nmod_vote_me &lt;- glm(vote ~ age_std + gender + life_vote + vote_dist_num, \n                   family = binomial(link = \"logit\"),\n                   data = data_vote)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEstimate\nEstimate Transf.\nStd. Error\nz value\nPr(&gt;|z|)\n\n\n\n\n(Intercept)\n-1.38\n0.25\n0.11\n-12.53\n0.00\n\n\nage_std\n0.20\n1.23\n0.03\n6.76\n0.00\n\n\ngenderM\n-0.04\n0.96\n0.06\n-0.75\n0.45\n\n\nlife_voteY\n1.85\n6.37\n0.09\n20.41\n0.00\n\n\nvote_dist_num\n-0.07\n0.94\n0.04\n-1.81\n0.07"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#what-about-interactions",
+    "href": "lectures/04-lecture-slides.html#what-about-interactions",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "What About Interactions?",
+    "text": "What About Interactions?\nInteractions are conditional effects—the effect of a focal predictor may change based on the value of another predictor (moderator variable):\n\nThe effect of ability [P] on performance [O] conditional on motivation [M]\nThe effect of a personality trait [P] on a behavior [O] conditional on the setting [M]\nThe effect of formal planning behaviors [P] on new venture success conditional on the level of formal planning behaviors [M]"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#interaction-moderation-jargon-from-quant-1",
+    "href": "lectures/04-lecture-slides.html#interaction-moderation-jargon-from-quant-1",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Interaction (Moderation) Jargon from Quant 1",
+    "text": "Interaction (Moderation) Jargon from Quant 1\nWhen reading about moderation, you will likely come across several of these terms:\n\nFocal Predictor: Predictor who’s relationship with the outcome is changing because of the moderator.\nModerating Variable: Predictor that is altering (moderating) the relationship between the focal predictor and outcome.\nConditional Effects: The effect of the focal predictor at a specific value of the moderator."
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#interactions-in-our-example",
+    "href": "lectures/04-lecture-slides.html#interactions-in-our-example",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Interactions in Our Example",
+    "text": "Interactions in Our Example\nWe want to know if the effect of polling distance on voting changes based on whether a voter is a lifetime voter or not. Does lifetime voting status interact with polling distance to predict voting behavior?"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#modeling-an-interaction-as-a-cross-product",
+    "href": "lectures/04-lecture-slides.html#modeling-an-interaction-as-a-cross-product",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Modeling an Interaction as a Cross-Product",
+    "text": "Modeling an Interaction as a Cross-Product\nTo estimate an interaction effect, we create a new variable that is the product of the focal predictor and the moderator:\n\\[Logit = \\beta_0 + \\beta_1\\text{PD}+\\beta_2\\text{LV} + \\beta_3\\text{PD} \\times \\text{LV}\\]"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#steps-to-build-an-interaction-variable",
+    "href": "lectures/04-lecture-slides.html#steps-to-build-an-interaction-variable",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Steps to Build an Interaction Variable",
+    "text": "Steps to Build an Interaction Variable\nSteps for building an interaction term with at least one quantitative variable:\n\nIf your quantitative variable does not have a meaningful 0 point, then mean center the variable.\nIf your quantitative variables does not have a meaningful scale, then divide it by its standard deviation.\nCreate a cross-product variable by multiplying the values of your focal predictor and moderator variable."
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#building-a-cross-product-variable-in-our-voting-data",
+    "href": "lectures/04-lecture-slides.html#building-a-cross-product-variable-in-our-voting-data",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Building a Cross-Product Variable in Our Voting Data",
+    "text": "Building a Cross-Product Variable in Our Voting Data\n\ndata_vote &lt;- \n  data_vote |&gt; \n  dplyr::mutate(\n    life_vote_num = dplyr::if_else(life_vote == \"Y\", 1, 0),\n    cp_pd_lv = vote_dist_num * life_vote_num\n  )\n\n\n\n# A tibble: 5,000 × 8\n    vote gender   age life_vote vote_dist   vote_dist_num life_vote_num cp_pd_lv\n   &lt;dbl&gt; &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;               &lt;int&gt;         &lt;dbl&gt;    &lt;dbl&gt;\n 1     1 M         71 N         Walkable -…             1             0        0\n 2     1 M         46 Y         Drive - Mo…             2             1        2\n 3     1 M         48 Y         Walkable -…             1             1        1\n 4     0 M         62 Y         Walkable -…             1             1        1\n 5     1 M         51 Y         Drive - Mo…             2             1        2\n 6     0 M         18 Y         Drive - Mo…             2             1        2\n 7     0 F         35 Y         Drive - Far             3             1        3\n 8     0 F         59 N         Drive - Mo…             2             0        0\n 9     0 F         32 N         Drive - Mo…             2             0        0\n10     0 F         26 Y         Drive - Mo…             2             1        2\n# ℹ 4,990 more rows"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#steps-to-build-a-conditional-effects-moderationinteraction-model",
+    "href": "lectures/04-lecture-slides.html#steps-to-build-a-conditional-effects-moderationinteraction-model",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Steps to Build a Conditional Effects (Moderation/Interaction) Model",
+    "text": "Steps to Build a Conditional Effects (Moderation/Interaction) Model\n\nInclude the variables from which the cross-product is created.\nInclude the cross-product term.\nInterpret the significance of the cross-product term to determine if an interaction exists.\nIf an interaction exists, then interpret the effects of your focal predictor conditional on specific values of the moderator.\nPlot your interaction to help with interpretation!"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#building-a-conditional-effects-moderationinteraction-model",
+    "href": "lectures/04-lecture-slides.html#building-a-conditional-effects-moderationinteraction-model",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Building a Conditional Effects (Moderation/Interaction) Model",
+    "text": "Building a Conditional Effects (Moderation/Interaction) Model\n\nmod_vote_ce &lt;- glm(vote ~ age_std + gender + life_vote + vote_dist_num + cp_pd_lv, \n                   family = binomial(link = \"logit\"),\n                   data = data_vote)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEstimate\nEstimate Transf.\nStd. Error\nz value\nPr(&gt;|z|)\n\n\n\n\n(Intercept)\n-0.87\n0.42\n0.18\n-4.72\n0.00\n\n\nage_std\n0.20\n1.23\n0.03\n6.74\n0.00\n\n\ngenderM\n-0.04\n0.96\n0.06\n-0.75\n0.46\n\n\nlife_voteY\n1.25\n3.51\n0.20\n6.41\n0.00\n\n\nvote_dist_num\n-0.39\n0.68\n0.10\n-3.76\n0.00\n\n\ncp_pd_lv\n0.37\n1.44\n0.11\n3.33\n0.00"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#checking-the-significance-of-the-interaction",
+    "href": "lectures/04-lecture-slides.html#checking-the-significance-of-the-interaction",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Checking the Significance of the Interaction",
+    "text": "Checking the Significance of the Interaction\nIs the z-value (test statistic) of the cross-product term larger than 1.96? If yes, then the interaction is significant."
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#interpreting-the-interaction-the-difficult-part",
+    "href": "lectures/04-lecture-slides.html#interpreting-the-interaction-the-difficult-part",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Interpreting the Interaction (the Difficult Part)",
+    "text": "Interpreting the Interaction (the Difficult Part)\nBecause the effects of the predictor change based on the levels of the moderator, we have to calculate the odds ratio at different levels of the moderator to get a clear understanding of the effect of the predictor.\n\\[\\text{OR}=\\exp(\\beta_1 + \\beta_2\\times Z)\\]"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#interpreting-the-interaction-the-difficult-part-1",
+    "href": "lectures/04-lecture-slides.html#interpreting-the-interaction-the-difficult-part-1",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Interpreting the Interaction (the Difficult Part)",
+    "text": "Interpreting the Interaction (the Difficult Part)\nFor lifetime voters, the odds of voting stay roughly the same regardless of polling distance, adjusting for gender and age—the odds decrease by ~2% for evey unit increase in polling distance. For non-lifetime voters, the odds of voting decrease by ~32% for each unit increase in polling distance, adjusting for gender and age.\n\n# Calculating conditional effect of polling distance for Lifetime Voter = 1\n(-.386 + .366 * 1) |&gt; exp()\n\n# Calculating conditional effect of polling distance for Lifetime Voter = 0 \n(-.386 + .366 * 0) |&gt; exp()\n\n\n\n[1] 0.98\n\n\n[1] 0.68"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#modeling-a-nonlinear-effect-as-a-cross-product",
+    "href": "lectures/04-lecture-slides.html#modeling-a-nonlinear-effect-as-a-cross-product",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Modeling a Nonlinear Effect as a Cross-Product",
+    "text": "Modeling a Nonlinear Effect as a Cross-Product\nTo estimate the nonlinear effect of a predictor, you need to create a new variable that is the cross-product (or squared term) of the predictor with itself. Think of this as a variable interacting with itself—its effect on the outcome changes depending on the levels of the predictor variable.\n\ndata_vote &lt;- \n  data_vote |&gt;\n  dplyr::mutate(\n    age_std_sq = age_std * age_std \n  )"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#building-a-nonlinear-model",
+    "href": "lectures/04-lecture-slides.html#building-a-nonlinear-model",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Building a Nonlinear Model",
+    "text": "Building a Nonlinear Model\n\nmod_vote_nl &lt;- glm(vote ~ age_std + age_std_sq + gender + life_vote + vote_dist_num, \n                   data = data_vote,\n                   family = binomial(link = \"logit\"))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEstimate\nEstimate Transf.\nStd. Error\nz value\nPr(&gt;|z|)\n\n\n\n\n(Intercept)\n-1.15\n0.32\n0.11\n-10.18\n0.00\n\n\nage_std\n0.28\n1.32\n0.03\n8.71\n0.00\n\n\nage_std_sq\n-0.24\n0.78\n0.02\n-9.99\n0.00\n\n\ngenderM\n-0.05\n0.96\n0.06\n-0.75\n0.45\n\n\nlife_voteY\n1.87\n6.50\n0.09\n20.50\n0.00\n\n\nvote_dist_num\n-0.08\n0.93\n0.04\n-2.01\n0.04"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#plotting-nonlinear-effects",
+    "href": "lectures/04-lecture-slides.html#plotting-nonlinear-effects",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Plotting Nonlinear Effects",
+    "text": "Plotting Nonlinear Effects"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#interpreting-nonlinear-effects",
+    "href": "lectures/04-lecture-slides.html#interpreting-nonlinear-effects",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Interpreting Nonlinear Effects",
+    "text": "Interpreting Nonlinear Effects\nInterpreting nonlinear effects in a logistic regression model is hard! Because the odds ratio changes at different levels of the predictor, you need to calculate it at these different levels using the following formula:\n\\[\\text{OR}=\\exp(\\beta_1 + \\beta_2 + 2\\times\\beta_2\\times X)\\]"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#interpreting-nonlinear-effects-1",
+    "href": "lectures/04-lecture-slides.html#interpreting-nonlinear-effects-1",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Interpreting Nonlinear Effects",
+    "text": "Interpreting Nonlinear Effects\nIn the late teens (1.62 sds below the mean of 46.34), a standard deviation increase in age increases the odds of voting by 127%. At average age, a standard deviation increase in age increases the odds of voting by 5%. At older ages (1.71 sds above the mean), a standard deviation increase in age decreases the odds of voting by 54%. While adjusting for gender, lifetime voter status, and distance from the polls.\n\n# Low Value of Standardized Age: - 1.62\n(.28 + -.24 + 2 * -.24 * -1.62) |&gt; exp()\n\n# Median Value of Standardized Age: -.02\n(.28 + -.24 + -.24 * -.02) |&gt; exp()\n\n# High Value of Standardized Age: 1.71\n(.28 + -.24 + 2 * -.24 * 1.71) |&gt; exp()\n\n\n\n[1] 2.27\n\n\n[1] 1.05\n\n\n[1] 0.46"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#model-building-with-logistic-regression",
+    "href": "lectures/04-lecture-slides.html#model-building-with-logistic-regression",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Model Building with Logistic Regression",
+    "text": "Model Building with Logistic Regression\nModel building is more art than science.\nYou decide which predictors to include or drop from your logistic regression model based on a combination of theory and statistical evidence.\nYou should use your theory to decide the universe of variables you are interested in and statistical evidence to determine which of those variables truly have an effect on your outcome variable."
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#algorithmic-selection-vs-purposeful-selection",
+    "href": "lectures/04-lecture-slides.html#algorithmic-selection-vs-purposeful-selection",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Algorithmic Selection vs Purposeful Selection",
+    "text": "Algorithmic Selection vs Purposeful Selection\nOnce you have decided on the universe of variables you are interested in, there are two broad ways you can use statistical models to determine which of those variables are significant:\n\nAlgorithmic Selection like stepwise variable selection\nPurposeful Selection: A systematic and thoughtful approach to variable selection\n\nAlgorithmic selection can result in a final model that does not make a lot of sense, so we will focus on purposeful selection."
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#steps-to-purposeful-selection",
+    "href": "lectures/04-lecture-slides.html#steps-to-purposeful-selection",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Steps to Purposeful Selection",
+    "text": "Steps to Purposeful Selection\nDo this for each outcome variable you are investigating:\n\nList all the hypotheses you have that relate to that outcome variable.\nBuild a model that includes all the predictor variables and interactions needed to test each hypothesis and all the necessary control variables.\nIf you have any non-significant interaction and/or nonlinear variables, drop them.\nDrop any non-significant main effects that are not a part of significant interactions or nonlinear variables. This is your final model that tells you which hypotheses were supported.\nFollow-up with model diagnostics to ensure your model fits your data well enough."
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#a-note-on-purposeful-selection",
+    "href": "lectures/04-lecture-slides.html#a-note-on-purposeful-selection",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "A Note on Purposeful Selection",
+    "text": "A Note on Purposeful Selection\nRemember, model building is more art than science! The steps on the last slide should serve as a guide for you, especially early on in your model building career, but as you get more experience building models, you can deviate from these steps."
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#pruposeful-selection-with-our-models",
+    "href": "lectures/04-lecture-slides.html#pruposeful-selection-with-our-models",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Pruposeful Selection with Our Models",
+    "text": "Pruposeful Selection with Our Models\nOur hypotheses:\nH1. Age is nonlinearly related to voting behavior such that there is a positive relationship between age and voting behavior when voters are younger and a negative relationship when voters are older.\nH2. For first time voters, there is a negative relationship between poll distance and voting behavior such that the further away their voting poll is, the less likely they are to vote. For lifetime voters, there is no relationship between poll distance and voting behavior."
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#model-building-with-purposeful-selection",
+    "href": "lectures/04-lecture-slides.html#model-building-with-purposeful-selection",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Model Building with Purposeful Selection",
+    "text": "Model Building with Purposeful Selection\n\n# Build a model that contains all of our hypothesized effects and controls\nmod_1 &lt;- glm(vote ~ gender + age_std + age_std_sq + vote_dist_num * life_vote,\n             data = data_vote, family = binomial(link = \"logit\"))\n\n\n\n\nCall:\nglm(formula = vote ~ gender + age_std + age_std_sq + vote_dist_num * \n    life_vote, family = binomial(link = \"logit\"), data = data_vote)\n\nCoefficients:\n                         Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)              -0.67473    0.18443  -3.659 0.000254 ***\ngenderM                  -0.04511    0.06085  -0.741 0.458544    \nage_std                   0.27467    0.03165   8.679  &lt; 2e-16 ***\nage_std_sq               -0.24115    0.02430  -9.924  &lt; 2e-16 ***\nvote_dist_num            -0.36986    0.10226  -3.617 0.000298 ***\nlife_voteY                1.31860    0.19607   6.725 1.75e-11 ***\nvote_dist_num:life_voteY  0.33981    0.10980   3.095 0.001970 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 6931.0  on 4999  degrees of freedom\nResidual deviance: 6238.8  on 4993  degrees of freedom\nAIC: 6252.8\n\nNumber of Fisher Scoring iterations: 4"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#model-building-with-purposeful-selection-1",
+    "href": "lectures/04-lecture-slides.html#model-building-with-purposeful-selection-1",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Model Building with Purposeful Selection",
+    "text": "Model Building with Purposeful Selection\n\n# If we had non-significant interactions or nonlinear terms we would drop them.\n\n# Drop any non-significant main effects that are not a part of significant \n# interactions. \nmod_2 &lt;- glm(vote ~ age_std + age_std_sq + vote_dist_num * life_vote, \n             data = data_vote, family = binomial(link = \"logit\"))\n\n# Use your model to determine which of your hypotheses are supported. \n\n\n\n\nCall:\nglm(formula = vote ~ age_std + age_std_sq + vote_dist_num * life_vote, \n    family = binomial(link = \"logit\"), data = data_vote)\n\nCoefficients:\n                         Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)              -0.69941    0.18142  -3.855 0.000116 ***\nage_std                   0.27490    0.03165   8.687  &lt; 2e-16 ***\nage_std_sq               -0.24114    0.02430  -9.925  &lt; 2e-16 ***\nvote_dist_num            -0.36981    0.10227  -3.616 0.000299 ***\nlife_voteY                1.31806    0.19607   6.722 1.79e-11 ***\nvote_dist_num:life_voteY  0.34016    0.10981   3.098 0.001950 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 6931.0  on 4999  degrees of freedom\nResidual deviance: 6239.3  on 4994  degrees of freedom\nAIC: 6251.3\n\nNumber of Fisher Scoring iterations: 4"
+  },
+  {
+    "objectID": "lectures/04-lecture-slides.html#plotting-the-interaction",
+    "href": "lectures/04-lecture-slides.html#plotting-the-interaction",
+    "title": "Interactions & Model Building in Logistic Regression",
+    "section": "Plotting the Interaction",
+    "text": "Plotting the Interaction"
+  },
+  {
+    "objectID": "lectures/04-lecture-page.html",
+    "href": "lectures/04-lecture-page.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Next Week’s Materials »"
+  },
+  {
+    "objectID": "lectures/04-lecture-page.html#lecture-interactions-and-model-building",
+    "href": "lectures/04-lecture-page.html#lecture-interactions-and-model-building",
+    "title": "Quantitative Analysis 2",
+    "section": "Lecture: Interactions and Model Building",
+    "text": "Lecture: Interactions and Model Building\n\n\nTo download a pdf version of these slides, click here.\nFor today, we will also be completing the following assignments:\nAssignment 4\nAssignment 5"
   }
 ]
