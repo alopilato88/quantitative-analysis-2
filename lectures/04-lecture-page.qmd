@@ -18,4 +18,4 @@ For today, we will also be completing the following assignments:
 
 <a href="lecture-assignments/assignment_template_4.qmd" download target="_blank" rel="noopener noreferrer"><strong>Assignment 4</strong></a>
 
-<a href="" download target="_blank" rel="noopener noreferrer"><strong>Assignment 5</strong></a>
+<a href="lecture-assignments/assignment_template_5.qmd" download target="_blank" rel="noopener noreferrer"><strong>Assignment 5</strong></a>
