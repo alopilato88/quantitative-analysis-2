@@ -201,23 +201,102 @@ data_analysis |>
 
 ## Problem 11. 
 
-Because `Q262_AGE` is on a scale that is very different from any of the other variables (its standard deviation is roughly 8 times greater compared to second largest standard deviation---see `desc_stat`), we are going to create a new age variable in our data frame named `AGE_STD` which will be the standardized version of `Q262_AGE`. 
+Because `Q262_AGE` is on a scale that is very different from any of the other variables (its standard deviation is roughly 8 times greater compared to second largest standard deviation---see `desc_stat`), we are going to use the `scale` function to create a new age variable in our data frame named `AGE_STD` which will be the standardized version of `Q262_AGE`. 
 
 ```{r}
 data_analysis <- 
   data_analysis |>
   dplyr::mutate(
-    AGE_STD = as.numeric(scale(Q262_AGE)),
-    VOTE_NATIONAL = dplyr::if_else(Q222_VOTE_NATIONAL == "Yes", 1, 0)
+    AGE_STD = as.numeric(scale(Q262_AGE))
   )
 ```
 
 
 ## Problem 12. 
 
-Fit univariate  
+Fit a simple logistic regression model with `Q222_VOTE_NATIONAL` as the outcome and `AGE_STD` as the predictor. Name the model: `mod_age`.
+
+```{r}
+mod_age <- glm(Q222_VOTE_NATIONAL ~ AGE_STD, 
+           data = data_analysis |> 
+             dplyr::mutate(Q222_VOTE_NATIONAL = dplyr::if_else(Q222_VOTE_NATIONAL == "Yes", 1, 0)),
+           family = binomial
+           )
+```
 
 ## Problem 13. 
+
+Using the results of your model above, provide an interpretation of the effect of `AGE_STD` on `Q222_VOTE_NATIONAL`. Be sure to note if the effect is significant and provide an interpretation of the coefficient.
+
+### Write reponse below here
+
+## Problem 14. 
+
+Use the function `predict` to calculate the model predicted probabilities of voting based on age. Use `geom_point` from `ggplot2` to create a plot that shows how the predicted probability of voting changes as age changes. 
+
+Provide an interpretation of the plot. 
+
+```{r}
+# Finsh code below to add predicted probabilities to a new data frame
+data_predict <- 
+  data_analysis |>
+  dplyr::select(
+    AGE_STD
+  )
+
+data_predict <- 
+  data_predict |>
+  dplyr::mutate(
+    pred_prob = predict( mod_income, data_predict, type = "response")
+  )
+
+```
+
+## Problem 15. 
+
+Fit a simple logistic regression model with `Q222_VOTE_NATIONAL` as the outcome and `Q216_ENCOURAGE_VOTE` as the predictor. Name the model: `mod_encourage`.
+
+```{r}
+mod_encourage <- glm(Q222_VOTE_NATIONAL ~ Q216_ENCOURAGE_VOTE, 
+           data = data_analysis |> 
+             dplyr::mutate(Q222_VOTE_NATIONAL = dplyr::if_else(Q222_VOTE_NATIONAL == "Yes", 1, 0)),
+           family = binomial
+           )
+```
+
+## Problem 16. 
+
+Using the results of your model above, provide an interpretation of the effect of `Q216_ENCOURAGE_VOTE` on `Q222_VOTE_NATIONAL`. Be sure to note if the effect is significant and provide an interpretation of the coefficients. Hint: `Q216_ENCOURAGE_VOTE` is a categorical variable, so the regression slopes are comparisons to the reference group. 
+
+### Write reponse below here
+
+## Problem 17. 
+
+Use the function `predict` to calculate the model predicted probabilities of voting based on `Q216_ENCOURAGE_VOTE`. Use `geom_point` from `ggplot2` to create a plot that shows how the predicted probability of voting changes as age changes. 
+
+Provide an interpretation of the plot. 
+
+```{r}
+# Finsh code below to add predicted probabilities to a new data frame
+data_predict <- 
+  data_analysis |>
+  dplyr::select(
+    AGE_STD
+  )
+
+data_predict <- 
+  data_predict |>
+  dplyr::mutate(
+    pred_prob = predict( mod_income, data_predict, type = "response")
+  )
+
+```
+
+## Problem 15. 
+
+Fit univareitat with categorical interpret
+
+## Problem 14. 
 
 Fit full model 
 
@@ -233,15 +312,15 @@ mod_full <- glm(
 
 
 
-## Problem 14. 
+## Problem 15. 
 
 Interpret full model: sig, interpretation of OR
 
-## Problem 15. 
+## Problem 16. 
 
 Predict probabilities and interpret
 
-## Problem 16. 
+## Problem 17. 
 
 Interpret using mfx
 

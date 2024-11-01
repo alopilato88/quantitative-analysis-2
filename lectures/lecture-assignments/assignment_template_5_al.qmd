@@ -1,0 +1,251 @@
+---
+title: "Assignment 4: Logistic Regression"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Setup 
+
+Load the following packages: `readr`, `tibble`, `dplyr`, `tidyr`, `ggplot2`, and `mfx`.
+
+## Problem 1. 
+
+Create the `data_analysis` data frame you were using in assignment 4. If the data frame is still loaded in your R session, then you can skip this. 
+
+```{r}
+# Write your code here
+```
+
+## Problem 2. 
+
+Fit a multiple logistic regression model using `Q222_VOTE_NATIONAL` as the outcome and `AGE_STD`, `Q260_SEX`, `Q287_SES`, `Q288_INCOME`, `Q216_ENCOURAGE_VOTE`, and `Q252_SAT_POL_SYSTEM` as the predictors. Name this model `mod_full`.
+
+```{r}
+
+mod_full <- glm(
+  VOTE_NATIONAL ~ AGE_STD +  Q287_SES + Q288_INCOME + Q216_ENCOURAGE_VOTE  +
+    Q252_SAT_POL_SYSTEM + Q260_SEX, 
+  data = data_analysis, 
+  family = binomial(link = "logit")
+)
+
+```
+
+## Problem 3. 
+
+Using the results of `mod_full` interpret the effect of `AGE_STD`. Note if the effect is significant and explain how you came to that determination. 
+
+Intrepret the coefficient by transforming the coefficient into an odds ratio. Then create a plot of the predicted probability of voting as `AGE_STD` changes. Finally, use `mfx::logitmfx` to understand how much the probability of voting changes as `AGE_STD` changes, on average. 
+
+```{r}
+# Write code here
+```
+
+### Write your interpretation below here
+
+## Problem 4. 
+
+Using the results of `mod_full` interpret the effect of `Q260_SEX`. Note if the effect is significant and explain how you came to that determination. 
+
+Intrepret the coefficient by transforming the coefficient into an odds ratio. Then create a plot of the predicted probability of voting as `Q260_SEX` changes. Finally, use `mfx::logitmfx` to understand how much the probability of voting changes as `Q260_SEX` changes, on average. 
+
+```{r}
+# Write code here
+```
+
+### Write your interpretation below here
+
+## Problem 5. 
+
+Using the results of `mod_full` interpret the effect of `Q287_SES`. Note if the effect is significant and explain how you came to that determination. 
+
+Intrepret the coefficient by transforming the coefficient into an odds ratio. Then create a plot of the predicted probability of voting as `Q287_SES` changes. Finally, use `mfx::logitmfx` to understand how much the probability of voting changes as `Q287_SES` changes, on average. 
+
+```{r}
+# Write code here
+```
+
+### Write your interpretation below here
+
+## Problem 6. 
+
+Using the results of `mod_full` interpret the effect of `Q288_INCOME`. Note if the effect is significant and explain how you came to that determination. 
+
+Intrepret the coefficient by transforming the coefficient into an odds ratio. Then create a plot of the predicted probability of voting as `Q288_INCOME` changes. Finally, use `mfx::logitmfx` to understand how much the probability of voting changes as `Q288_INCOME` changes, on average. 
+
+```{r}
+# Write code here
+```
+
+### Write your interpretation below here
+
+## Problem 7. 
+
+Using the results of `mod_full` interpret the effect of `Q216_ENCOURAGE_VOTE`. Note if the effect is significant and explain how you came to that determination. 
+
+Intrepret the coefficient by transforming the coefficient into an odds ratio. Then create a plot of the predicted probability of voting as `Q216_ENCOURAGE_VOTE` changes. Finally, use `mfx::logitmfx` to understand how much the probability of voting changes as `Q216_ENCOURAGE_VOTE` changes, on average. 
+
+```{r}
+# Write code here
+```
+
+### Write your interpretation below here
+
+## Problem 8. 
+
+Using the results of `mod_full` interpret the effect of `Q252_SAT_POL_SYSTEM`. Note if the effect is significant and explain how you came to that determination. 
+
+Intrepret the coefficient by transforming the coefficient into an odds ratio. Then create a plot of the predicted probability of voting as `Q252_SAT_POL_SYSTEM` changes. Finally, use `mfx::logitmfx` to understand how much the probability of voting changes as `Q252_SAT_POL_SYSTEM` changes, on average. 
+
+```{r}
+# Write code here
+```
+
+### Write your interpretation below here
+
+## Problem 9. 
+
+Having examined the effects of each predictor which predictors do you think are the most related to voting behavior? Why?
+
+### Write explanation below
+
+## Problem 10. 
+
+Create a new model named `mod_interact` that includes all of the predictors in `mod_full` and an interaction between `Q216_ENCOURAGE_VOTE` and `Q252_SAT_POL_SYSTEM` to `mod_full`.
+
+```{r}
+# Write code here
+
+mod_full <- glm(
+  VOTE_NATIONAL ~ AGE_STD +  Q287_SES + Q288_INCOME + Q216_ENCOURAGE_VOTE  *
+    Q252_SAT_POL_SYSTEM + Q260_SEX, 
+  data = data_analysis, 
+  family = binomial(link = "logit")
+)
+```
+
+## Problem 11. 
+
+In `mod_interact` we will consider `Q216_ENCOURAGE_VOTE` to be the moderator and `Q252_SAT_POL_SYSTEM` to be the predictor. Interpret the interaction, what happens to the effect of `Q252_SAT_POL_SYSTEM` at different values of `Q216_ENCOURAGE_VOTE`? 
+
+Note if the interaction effect is significant and provide an interpretation of the odds ratio. 
+
+To aid your interpretation, create a plot that examines how the predicted probability of voting changes as `Q252_SAT_POL_SYSTEM` at each value of `Q216_ENCOURAGE_VOTE`. 
+
+```{r}
+# Finish code below
+
+# To get predicted probabilities for our plot, we also need to choose specific values of the other predictors. For AGE_STD we will use its mean, 0, for Q287_SES and Q282_INCOME we will use their median values, and for `Q260_SEX`, we will use F.
+
+data_predict <- 
+  tibble::tibble(
+    AGE_STD = 0, 
+    Q287_SES = median(data_analysis$Q287_SES, na.rm = TRUE), 
+    Q288_INCOME = median(data_analysis$Q288_INCOME, na.rm = TRUE),
+    Q260_SEX = "F",
+    Q216_ENCOURAGE_VOTE = rep(c("Have Done", "Might Do", "Would Never Do"), 
+                              each = 10), 
+    Q252_SAT_POL_SYSTEM = rep(1:10, 3)
+  )
+
+data_predict <- 
+  data_predict |>
+  dplyr::mutate(
+    pred_prob = predict(mod_interact, data_predict, type = "response")
+  )
+
+ggplot2::ggplot(
+  data_predict, 
+  ggplot2::aes(
+     x = Q252_SAT_POL_SYSTEM,
+     y = pred_prob
+  )
+) + 
+  ggplot2::facet_wrap(~Q216_ENCOURAGE_VOTE) + 
+  ggplot2::geom_point()
+```
+
+### Write interpretation below
+
+## Problem 12. 
+
+How plausible do you think the interaction above is? Does the explanation make sense to you? 
+
+Often times we can find significant effects by chance, so it is important to have a good theoretical reason behind testing an interaction or at least very strong reasoning. 
+
+### Write your response below
+
+## Problem 13. 
+
+Estimate a new model with all of the predictors in `mod_full`, but now instead of interaction between `Q252_SAT_POL_SYSTEM` and `Q216_ENCOURAGE_VOTE` add a nonlinear effect of age named `AGE_STD_SQ`. Name this model `mod_nonlinear`.  
+
+```{r}
+# Finish code below
+
+data_analysis <- 
+  data_analysis |> 
+  dplyr::mutate(
+    AGE_STD_SQ = AGE_STD * AGE_STD
+  )
+
+mod_nonlinear <- glm(
+  VOTE_NATIONAL ~ AGE_STD + AGE_STD_SQ +  Q287_SES + Q288_INCOME + Q216_ENCOURAGE_VOTE  +
+    Q252_SAT_POL_SYSTEM + Q260_SEX, 
+  data = data_analysis, 
+  family = binomial(link = "logit")
+)
+```
+
+## Problem 14.
+
+Interpret the nonlinear effect of age in `mod_nonlinear`, what happens to the effect of `AGE_STD` at different values of `AGE_STD`? 
+
+Note if the nonlinear effect is significant and provide an interpretation of the odds ratio. 
+
+To aid your interpretation, create a plot that examines how the predicted probability of voting changes as `AGE_STD` changes.
+
+```{r}
+# Finish code below
+
+# To get predicted probabilities for our plot, we also need to choose specific values of the other predictors. For Q216_ENCOURAGE_VOTE, we will use "Might Do", for Q252_SAT_POL_SYSTEM, we will use its median value, for Q287_SES and Q282_INCOME we will use their median values, and for `Q260_SEX`, we will use F.
+
+data_predict <- 
+  tibble::tibble(
+    AGE_STD = unique(data_analysis$AGE_STD), 
+    Q287_SES = median(data_analysis$Q287_SES, na.rm = TRUE), 
+    Q288_INCOME = median(data_analysis$Q288_INCOME, na.rm = TRUE),
+    Q260_SEX = "F",
+    Q216_ENCOURAGE_VOTE = "Might Do", 
+    Q252_SAT_POL_SYSTEM = median(data_analysis$Q252_SAT_POL_SYSTEM, na.rm = TRUE)
+  ) |>
+  dplyr::mutate(
+    AGE_STD_SQ = AGE_STD * AGE_STD
+  )
+
+data_predict <- 
+  data_predict |>
+  dplyr::mutate(
+    pred_prob = predict(mod_nonlinear, data_predict, type = "response")
+  )
+
+ggplot2::ggplot(
+  data_predict, 
+  ggplot2::aes(
+     x = AGE_STD,
+     y = pred_prob
+  )
+) + 
+  ggplot2::geom_point()
+```
+
+### Write your response below
+
+## Problem 15. 
+
+Pretend you are a political scientist, look through the data frame `data_politics` and come up with three to four hypotheses about what should affect voting behavior---you can include interactions and nonlinear effects if you would like. Go through the "Purposeful Selection" steps to come to a final model and decide whether or not your hypotheses were supported.
+
+```{r}
+# Write code here
+```
+
+### Write response below here
