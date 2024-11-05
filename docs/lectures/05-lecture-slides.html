@@ -469,8 +469,8 @@
 </section>
 <section id="does-your-model-fit-better-than-the-null" class="slide level2">
 <h2>Does Your Model Fit Better than the Null?</h2>
-<p>We can compare the fit of nested models using a <strong>deviance test</strong> which compares the log likelhood of the smaller (less complicated) model to the larger (more complicated) model.</p>
-<p>A signficant <strong>deviance test</strong> means the more complicated model fits our data better than the less complicated model.</p>
+<p>We can compare the fit of nested models using a <strong>deviance test</strong> which compares the log likelihood of the smaller (less complicated) model to the larger (more complicated) model.</p>
+<p>A significant <strong>deviance test</strong> means the more complicated model fits our data better than the less complicated model.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>deviance <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="fu">logLik</span>(mod_lv) <span class="sc">-</span> <span class="fu">logLik</span>(mod_null))</span>
 <span id="cb6-2"><a></a><span class="fu">pchisq</span>(deviance, <span class="at">df =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -603,7 +603,7 @@ vote    N    Y
 </section>
 <section id="receiver-operator-characteristic-curve-roc-curve" class="slide level2">
 <h2>Receiver Operator Characteristic Curve: ROC Curve</h2>
-<p>The predicted outcome threshold (.50 in our example) is arbritrary. It is possible that a different choice of threshold would give us a better true positive and true negative rate.</p>
+<p>The predicted outcome threshold (.50 in our example) is arbitrary. It is possible that a different choice of threshold would give us a better true positive and true negative rate.</p>
 <p>To explore how our true positive and negative rates change depending on our threshold, we can create a plot called a <strong>receiver operating characteristic (ROC) curve</strong>.</p>
 </section>
 <section id="receiver-operator-characteristic-curve-roc-curve-1" class="slide level2">

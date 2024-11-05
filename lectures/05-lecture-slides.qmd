@@ -134,9 +134,9 @@ round(as.numeric(logLik(mod_null)), 2)
 
 ## Does Your Model Fit Better than the Null? 
 
-We can compare the fit of nested models using a **deviance test** which compares the log likelhood of the smaller (less complicated) model to the larger (more complicated) model. 
+We can compare the fit of nested models using a **deviance test** which compares the log likelihood of the smaller (less complicated) model to the larger (more complicated) model. 
 
-A signficant **deviance test** means the more complicated model fits our data better than the less complicated model.
+A significant **deviance test** means the more complicated model fits our data better than the less complicated model.
 
 ```{r}
 deviance <- 2 * (logLik(mod_lv) - logLik(mod_null))
@@ -255,7 +255,7 @@ From the second table, we can see the accuracy is `r round(mean(data_vote$pred_v
 
 ## Receiver Operator Characteristic Curve: ROC Curve
 
-The predicted outcome threshold (.50 in our example) is arbritrary. It is possible that a different choice of threshold would give us a better true positive and true negative rate. 
+The predicted outcome threshold (.50 in our example) is arbitrary. It is possible that a different choice of threshold would give us a better true positive and true negative rate. 
 
 To explore how our true positive and negative rates change depending on our threshold, we can create a plot called a **receiver operating characteristic (ROC) curve**. 
 

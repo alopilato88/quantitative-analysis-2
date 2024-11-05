@@ -1348,7 +1348,7 @@
     "href": "lectures/05-lecture-slides.html#does-your-model-fit-better-than-the-null",
     "title": "Goodness of Fit and Predictive Power",
     "section": "Does Your Model Fit Better than the Null?",
-    "text": "Does Your Model Fit Better than the Null?\nWe can compare the fit of nested models using a deviance test which compares the log likelhood of the smaller (less complicated) model to the larger (more complicated) model.\nA signficant deviance test means the more complicated model fits our data better than the less complicated model.\n\ndeviance &lt;- 2 * (logLik(mod_lv) - logLik(mod_null))\npchisq(deviance, df = 1, lower.tail = F)\n\n'log Lik.' 1.844343e-116 (df=2)\n\n\n\n\n[1] \"Deviance = 526.25\"\n\n\n[1] \"p = 0\""
+    "text": "Does Your Model Fit Better than the Null?\nWe can compare the fit of nested models using a deviance test which compares the log likelihood of the smaller (less complicated) model to the larger (more complicated) model.\nA significant deviance test means the more complicated model fits our data better than the less complicated model.\n\ndeviance &lt;- 2 * (logLik(mod_lv) - logLik(mod_null))\npchisq(deviance, df = 1, lower.tail = F)\n\n'log Lik.' 1.844343e-116 (df=2)\n\n\n\n\n[1] \"Deviance = 526.25\"\n\n\n[1] \"p = 0\""
   },
   {
     "objectID": "lectures/05-lecture-slides.html#nested-model-comparisons",
@@ -1418,7 +1418,7 @@
     "href": "lectures/05-lecture-slides.html#receiver-operator-characteristic-curve-roc-curve",
     "title": "Goodness of Fit and Predictive Power",
     "section": "Receiver Operator Characteristic Curve: ROC Curve",
-    "text": "Receiver Operator Characteristic Curve: ROC Curve\nThe predicted outcome threshold (.50 in our example) is arbritrary. It is possible that a different choice of threshold would give us a better true positive and true negative rate.\nTo explore how our true positive and negative rates change depending on our threshold, we can create a plot called a receiver operating characteristic (ROC) curve."
+    "text": "Receiver Operator Characteristic Curve: ROC Curve\nThe predicted outcome threshold (.50 in our example) is arbitrary. It is possible that a different choice of threshold would give us a better true positive and true negative rate.\nTo explore how our true positive and negative rates change depending on our threshold, we can create a plot called a receiver operating characteristic (ROC) curve."
   },
   {
     "objectID": "lectures/05-lecture-slides.html#area-under-the-curve-auc",
