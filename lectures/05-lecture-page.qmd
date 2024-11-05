@@ -1,0 +1,15 @@
+---
+format: 
+  html:
+    page-layout: article
+---
+
+<div class = "prev-next-container">
+<a class="prev-next" href="06-lecture-page.html">Next Week's Materials &raquo;</a>
+</div>
+
+## Lecture: Goodness of Fit & Predictive Power 
+
+<iframe src="05-lecture-slides.html" name="05-lecture-slides"></iframe>
+
+To download a pdf version of these slides, click <a href="04-lecture-slides.pdf" download target="_blank" rel="noopener noreferrer"><strong>here</strong></a>.

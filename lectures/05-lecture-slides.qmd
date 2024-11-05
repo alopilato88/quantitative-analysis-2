@@ -1,0 +1,421 @@
+---
+title: "Goodness of Fit and Predictive Power"
+format: 
+  revealjs:
+    theme: [default, theme-lecture-slides.scss] 
+    css: styles-lecture-slides.css
+    slide-number: true
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+source("packages-lecture.R")
+source("helper-functions-lecture.R")
+
+```
+
+## Overview for Today
+
+Today we will be learning about: 
+
+- Determining ways to understand how well your model fits your data
+- Determining how well your model is able to predict your outcome 
+
+## Continuing with Our Vote Behavior Model
+
+```{r}
+#| echo: false
+
+set.seed(43278)
+n <- 5000
+age_dist <- dnorm(18:100, mean = 45, sd = 15) / sum(dnorm(18:100, mean = 55, sd = 10))
+
+# Distance: 0: Walkable - close
+#           1: Walkable - moderate 
+#           2: Drive - moderate 
+#           3: Drive - far
+data_vote <- 
+  tibble::tibble(
+    age = sample(18:100, n, prob = age_dist, replace = TRUE),
+    age_scale = as.numeric(scale(age)), 
+    gender = sample(0:1, size = n, replace = TRUE, prob = c(.45, .55)),
+    life_vote = sample(0:1, size = n, replace = TRUE, prob = c(.20, .80)),
+    vote_dist_num = sample(0:3, size = n, replace = TRUE, prob = c(.10, .25, .60, .15)),
+    vote_propensity = -.50 + .30*age_scale - .20*age_scale^2 + life_vote + -.50*vote_dist_num + .50*life_vote*vote_dist_num,
+    vote = rbinom(n, 1, prob = plogis(vote_propensity))
+  ) |>
+  dplyr::mutate(
+    gender = dplyr::if_else(gender == 1, "M", "F"), 
+    life_vote = dplyr::if_else(life_vote == 1, "Y", "N"),
+    vote_dist = dplyr::case_when(
+      vote_dist_num == 0 ~ "Walkable - Close",
+      vote_dist_num == 1 ~ "Walkable - Moderate", 
+      vote_dist_num == 2 ~ "Drive - Moderate", 
+      TRUE ~ "Drive - Far"
+    ), 
+    vote = dplyr::if_else(vote == 1, "Y", "N"),
+    age_std = as.numeric(scale(age)),
+    age_std_sq = age_std * age_std
+  ) |>
+  dplyr::select(
+    vote, 
+    gender,
+    age, 
+    age_std,
+    age_std_sq,
+    life_vote,
+    vote_dist,
+    vote_dist_num
+  )
+
+data_vote
+```
+
+## What Are Goodness of Fit Tests?
+
+Goodness of fit statistics (or fit statistics) and their tests are all ways to examine how well your model is able to reproduce your observed data.
+
+Just remember: 
+
+"All models are wrong, but some are useful." -- George P. Box
+
+## Remember Maximum Likelihood? 
+
+Maximum likelihood is a method to find the right parameter estimates of our model. 
+
+It answers the question: what values should your parameter estimates (e.g. slope coefficients) take to **maximize the likelihood** of seeing your data? 
+
+## Your Model's Log Likelihood: Lifetime Voter Status
+
+Maximum likelihood ensures that the values of our parameter estimates are the values that maximize the likelihood of our data.
+
+```{r}
+#| eval: false
+mod_lv <- glm(vote == "Y" ~ life_vote, data = data_vote,
+              family = binomial(link = "logit"))
+
+log_like_lv <- logLik(mod_lv)
+```
+
+```{r}
+#| echo: false
+
+mod_lv <- glm(vote == "Y" ~ life_vote, data = data_vote,
+              family = binomial(link = "logit"))
+
+round(as.numeric(logLik(mod_lv)), 2)
+```
+
+## The Null Model & Its Likelihood
+
+We can also fit different models like the Null Model---a model with no predictors---and obtain their likelihoods.
+
+```{r}
+#| eval: false
+mod_null <- glm(vote == "Y" ~ 1, data = data_vote, 
+                family = binomial(link = "logit"))
+
+log_like_null <- logLik(mod_null)
+```
+
+```{r}
+#| echo: false
+
+mod_null <- glm(vote == "Y" ~ 1, data = data_vote, 
+                family = binomial(link = "logit"))
+
+round(as.numeric(logLik(mod_null)), 2)
+```
+
+## Does Your Model Fit Better than the Null? 
+
+We can compare the fit of nested models using a **deviance test** which compares the log likelhood of the smaller (less complicated) model to the larger (more complicated) model. 
+
+A signficant **deviance test** means the more complicated model fits our data better than the less complicated model.
+
+```{r}
+deviance <- 2 * (logLik(mod_lv) - logLik(mod_null))
+pchisq(deviance, df = 1, lower.tail = F)
+```
+
+```{r}
+#| echo: false
+
+deviance <- as.numeric(deviance)
+paste0("Deviance = ", round(deviance, 2))
+paste0("p = ", round(pchisq(deviance, df = 1, lower.tail = F), 2))
+```
+
+## Nested Model Comparisons 
+
+We can use the **deviance test** to compare any set of nested models. A nested set of models is where the smaller model (model with less predictors) is a trimmed down version of the larger model (model with more predictors) that has been estimated from the exact same data.
+
+```{r}
+mod_large <- glm(vote == "Y" ~ gender + age_std + age_std_sq + life_vote * vote_dist,
+                 data = data_vote, family = binomial)
+
+mod_small <- glm(vote == "Y" ~ gender + age_std + life_vote + vote_dist,
+                 data = data_vote, family = binomial)
+```
+
+## Nested Model Comparisons 
+
+If the deviance test is significant, it means that the larger model fits your data significantly better than the smaller model and should be selected over the smaller model.
+
+```{r}
+anova(mod_small, mod_large, test = "Chisq")
+```
+
+## Pseudo-R-Squareds 
+
+Log likelihoods can also be used to calculate Pseudo-R-Squared values, which are similar (although not identical) to the linear regression $R^2$.
+
+There are a handful of Pseudo-R-Squareds to choose from, but I usually go with McFadden's R-Squared.
+
+## McFadden's R-Squared
+
+McFadden's R-Squared tells us how much of an improvement our target model is over our null model.
+
+$$R^2 = \frac{LL_{Null}-LL_{Model}}{LL_{Null}}= 1-\frac{LL_{Model}}{LL_{Null}}$$
+
+```{r}
+#| eval: false
+1 - logLik(mod_large) / logLik(mod_null)
+```
+
+```{r}
+#| echo: false
+paste0("McFadden: = ", (1 - as.numeric(logLik(mod_large) / logLik(mod_null))) |> round(2))
+```
+
+## Using Predicted Probability to Assess Model Fit
+
+We can use our models' predicted probabilities to assess how well our model fits our data. If our model fits our data well, then our predicted probabilities should be higher for outcomes where the value equals 1 compared to outcomes where the value equals 0. 
+
+## Correlation Between the Outcome and Model Predictions
+
+The easiest and quickest way to see how related the predicted probably values are to the outcome is to correlate the two. Higher correlations indicate a stronger relationship and better fit between your model and data. 
+
+```{r}
+#| eval: false
+predicted_values <- fitted(mod_large)
+
+cor(data_vote$vote == "Y", predicted_values)
+```
+
+```{r}
+#| echo: false
+predicted_values <- fitted(mod_large)
+
+paste0("R = ", cor(data_vote$vote == "Y", predicted_values) |> round(2))
+```
+
+## From Predicted Probability to Predicted Outcome 
+
+We can transform our predicted probability into a predicted outcome by setting a threshold value. For instance, we can say that a predicted probability value greater than .50 becomes a 1 and a predicted probability value less than or equal to .50 becomes a 0.
+
+We can then create a classification table:
+
+```{r}
+data_vote <-
+  data_vote |>
+  dplyr::mutate(
+    pred_vote = dplyr::if_else(fitted(mod_large) > .50, "Y", "N")
+  )
+
+xtabs(~vote + pred_vote, data_vote) |> addmargins()
+```
+
+## True Positive & False Positive Rates 
+
+Using the classification table, we can calculate the true positive rate (sensitivity), the true negative rate (specificity), and the overall model accuracy:
+
+$$TP = P(\hat{Y}=1|Y=1)$$
+$$TN = P(\hat{Y} = 0|Y = 0)$$
+$$Acc. = TP\times P(Y = 1) + TN \times P(Y=0)$$
+
+## True Positive & False Positive Rates 
+
+```{r}
+xtabs(~vote + pred_vote, data_vote) |> prop.table(1) |> round(2)
+```
+
+```{r}
+xtabs(~vote + pred_vote, data_vote) |> prop.table() |> round(2)
+```
+
+From the first table, we can see the true positive rate is `r round(mean(data_vote$pred_vote[data_vote$vote == "Y"] == "Y"), 2)` and the true negative rate is `r round(mean(data_vote$pred_vote[data_vote$vote == "N"] == "N"), 2)`. 
+
+From the second table, we can see the accuracy is `r round(mean(data_vote$pred_vote == "Y" & data_vote$vote == "Y"), 2)` plus `r round(mean(data_vote$pred_vote == "N" & data_vote$vote == "N"), 2)`, which equals `r round(mean(data_vote$pred_vote == "Y" & data_vote$vote == "Y"), 2) + round(mean(data_vote$pred_vote == "N" & data_vote$vote == "N"), 2)`.
+
+## Receiver Operator Characteristic Curve: ROC Curve
+
+The predicted outcome threshold (.50 in our example) is arbritrary. It is possible that a different choice of threshold would give us a better true positive and true negative rate. 
+
+To explore how our true positive and negative rates change depending on our threshold, we can create a plot called a **receiver operating characteristic (ROC) curve**. 
+
+## Receiver Operator Characteristic Curve: ROC Curve
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+roc_rates <- function(.true, .pred, .cutoff) {
+  data <- 
+    tibble::tibble(
+      true = .true,
+      pred_prob = .pred
+    ) |>
+    dplyr::mutate(
+      pred_out = dplyr::if_else(pred_prob > .cutoff, 1, 0)
+    )
+  
+  list(tp = mean(data$pred_out[data$true == 1] == 1),
+       fp = 1 - mean(data$pred_out[data$true == 0] == 0))
+}
+
+data_pred <- 
+  data_vote |>
+  dplyr::select(
+    vote
+  ) |>
+  dplyr::mutate(
+    vote = dplyr::if_else(vote == "Y", 1, 0),
+    pred_prob = fitted(mod_large)
+  )
+
+data_roc <- 
+  tibble::tibble(
+    threshold = seq(0, 1, by = .001)
+  ) |>
+  dplyr::mutate(
+    rates = purrr::map(.x = threshold, ~ roc_rates(.true = data_pred$vote, 
+                                            .pred = data_pred$pred_prob,
+                                            .cutoff = .x)),
+    tp = purrr::map_dbl(
+                     .x = 1:length(seq(0, 1, by = .001)),
+                     ~ (purrr::pluck(rates, .x, 1))),
+    fp = purrr::map_dbl(
+                     .x = 1:length(seq(0, 1, by = .001)),
+                     ~ (purrr::pluck(rates, .x, 2)))
+  ) |>
+  dplyr::arrange(dplyr::desc(threshold))
+
+data_roc |>
+  ggplot2::ggplot(
+    ggplot2::aes(x = fp, y = tp)
+  ) + 
+  ggplot2::geom_point(shape = 21, fill = plot_fill, color = plot_color) + 
+  ggplot2::geom_smooth(method = "loess", color = plot_fill, formula = "y ~ x") +
+  ggplot2::geom_abline(slope = 1, intercept = 0) + 
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "1 - True Negative (False Positive Rate)",
+    y = "True Positive Rate"
+  )
+```
+
+## Area Under the Curve: AUC
+
+The area underneath the ROC curve or AUC gives us a summary metric for how well our model is able to balance the true positive rate and the true negative rate. 
+
+AUC is always going to be between 1 (perfect prediction) and .50 (predicting by a coin toss).
+
+| AUC Value           | Interpretation       | 
+| --------------------|----------------------|
+| AUC = .50           | No discrim.          |  
+| .50 $\lt$ AUC $\lt$ .70     | Poor discrim.        |
+| .70 $\le$ AUC $\lt$  .80 | Accept. discrim.     |
+| .80 $\le$ AUC $\lt$ .90 | Excellent discrim.   |
+| AUC $\ge$ .90       | Outstanding discrim. |
+
+## Using R to Calculate AUC 
+
+```{r}
+#| message: false
+pROC::roc(vote == "Y" ~ fitted(mod_large), data = data_vote)
+```
+
+## Plotting Predicted Probabilites by Outcome Class
+
+It is also helpful to plot a histogram of the predicted probabilities by outcome to see how well your model is able to discriminate from success (1) and failures (0). 
+
+```{r}
+#| fig-align: center
+#| echo: false
+#| message: false
+data_vote |> dplyr::mutate(pred_prob = fitted(mod_large)) |>
+  ggplot2::ggplot(
+    ggplot2::aes(x = pred_prob)
+  )  +
+  ggplot2::facet_wrap(~ vote) +
+  ggplot2::geom_histogram(
+    fill = plot_fill,
+    color = plot_color,
+    bins = 25
+  ) + 
+  ggplot2::labs(
+    x = "Predicted Probability",
+    y = "Count"
+  ) + 
+  ggplot2::xlim(c(0, 1)) + 
+  lecture_ggplot_theme_barplot
+```
+
+## Examples of Bad, OK, and Good AUC Values
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+set.seed(435425)
+n <- 5000
+
+x <- rnorm(n)
+
+y_lp_bad <- -.70 + .05 * x
+y_lp_ok <- -.70 + 1.2*x
+y_lp_great <- -.70 + 3.5*x
+
+y_bad <- rbinom(n, 1, prob = plogis(y_lp_bad))
+y_ok <- rbinom(n, 1, prob = plogis(y_lp_ok))
+y_great <- rbinom(n, 1, prob = plogis(y_lp_great))
+
+mod_bad <- glm(y_bad ~ x, family = binomial)
+mod_ok <- glm(y_ok ~ x, family = binomial)
+mod_great <- glm(y_great ~ x, family = binomial)
+
+data_auc_example <- 
+  tibble::tibble(
+    discrim = rep(c("1 - Bad (AUC: .50)", "2 - OK (AUC: .77)", "3 - Great (AUC: .93)"), each = n), 
+    outcome = c(y_bad, y_ok, y_great), 
+    pred = c(fitted(mod_bad), fitted(mod_ok), fitted(mod_great))
+  )
+
+data_auc_example |>
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = pred
+    )
+  ) + 
+  ggplot2::geom_histogram(
+    fill = plot_fill,
+    color = plot_color,
+    bins = 75
+  ) + 
+  ggplot2::facet_grid(discrim ~ outcome,
+                      scales = "free_y") + 
+  ggplot2::labs(
+    x = "Predicted Probability",
+    y = "Count"
+  ) + 
+  lecture_ggplot_theme_barplot
+```
+
+
+

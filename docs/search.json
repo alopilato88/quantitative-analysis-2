@@ -1300,5 +1300,159 @@
     "title": "Quantitative Analysis 2",
     "section": "Lecture: Interactions and Model Building",
     "text": "Lecture: Interactions and Model Building\n\n\nTo download a pdf version of these slides, click here.\nFor today, we will also be completing the following assignments:\nAssignment 4\nAssignment 5"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#overview-for-today",
+    "href": "lectures/05-lecture-slides.html#overview-for-today",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Overview for Today",
+    "text": "Overview for Today\nToday we will be learning about:\n\nDetermining ways to understand how well your model fits your data\nDetermining how well your model is able to predict your outcome"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#continuing-with-our-vote-behavior-model",
+    "href": "lectures/05-lecture-slides.html#continuing-with-our-vote-behavior-model",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Continuing with Our Vote Behavior Model",
+    "text": "Continuing with Our Vote Behavior Model\n\n\n# A tibble: 5,000 × 8\n   vote  gender   age age_std age_std_sq life_vote vote_dist       vote_dist_num\n   &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;                   &lt;int&gt;\n 1 Y     M         71  1.79     3.19     N         Walkable - Mod…             1\n 2 Y     M         46 -0.0243   0.000593 Y         Drive - Modera…             2\n 3 Y     M         48  0.120    0.0145   Y         Walkable - Mod…             1\n 4 N     M         62  1.13     1.29     Y         Walkable - Mod…             1\n 5 Y     M         51  0.338    0.114    Y         Drive - Modera…             2\n 6 N     M         18 -2.05     4.21     Y         Drive - Modera…             2\n 7 N     F         35 -0.821    0.674    Y         Drive - Far                 3\n 8 N     F         59  0.917    0.841    N         Drive - Modera…             2\n 9 N     F         32 -1.04     1.08     N         Drive - Modera…             2\n10 N     F         26 -1.47     2.17     Y         Drive - Modera…             2\n# ℹ 4,990 more rows"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#what-are-goodness-of-fit-tests",
+    "href": "lectures/05-lecture-slides.html#what-are-goodness-of-fit-tests",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "What Are Goodness of Fit Tests?",
+    "text": "What Are Goodness of Fit Tests?\nGoodness of fit statistics (or fit statistics) and their tests are all ways to examine how well your model is able to reproduce your observed data.\nJust remember:\n“All models are wrong, but some are useful.” – George P. Box"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#remember-maximum-likelihood",
+    "href": "lectures/05-lecture-slides.html#remember-maximum-likelihood",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Remember Maximum Likelihood?",
+    "text": "Remember Maximum Likelihood?\nMaximum likelihood is a method to find the right parameter estimates of our model.\nIt answers the question: what values should your parameter estimates (e.g. slope coefficients) take to maximize the likelihood of seeing your data?"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#your-models-log-likelihood-lifetime-voter-status",
+    "href": "lectures/05-lecture-slides.html#your-models-log-likelihood-lifetime-voter-status",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Your Model’s Log Likelihood: Lifetime Voter Status",
+    "text": "Your Model’s Log Likelihood: Lifetime Voter Status\nMaximum likelihood ensures that the values of our parameter estimates are the values that maximize the likelihood of our data.\n\nmod_lv &lt;- glm(vote == \"Y\" ~ life_vote, data = data_vote,\n              family = binomial(link = \"logit\"))\n\nlog_like_lv &lt;- logLik(mod_lv)\n\n\n\n[1] -3202.38"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#the-null-model-its-likelihood",
+    "href": "lectures/05-lecture-slides.html#the-null-model-its-likelihood",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "The Null Model & Its Likelihood",
+    "text": "The Null Model & Its Likelihood\nWe can also fit different models like the Null Model—a model with no predictors—and obtain their likelihoods.\n\nmod_null &lt;- glm(vote == \"Y\" ~ 1, data = data_vote, \n                family = binomial(link = \"logit\"))\n\nlog_like_null &lt;- logLik(mod_null)\n\n\n\n[1] -3465.51"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#does-your-model-fit-better-than-the-null",
+    "href": "lectures/05-lecture-slides.html#does-your-model-fit-better-than-the-null",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Does Your Model Fit Better than the Null?",
+    "text": "Does Your Model Fit Better than the Null?\nWe can compare the fit of nested models using a deviance test which compares the log likelhood of the smaller (less complicated) model to the larger (more complicated) model.\nA signficant deviance test means the more complicated model fits our data better than the less complicated model.\n\ndeviance &lt;- 2 * (logLik(mod_lv) - logLik(mod_null))\npchisq(deviance, df = 1, lower.tail = F)\n\n'log Lik.' 1.844343e-116 (df=2)\n\n\n\n\n[1] \"Deviance = 526.25\"\n\n\n[1] \"p = 0\""
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#nested-model-comparisons",
+    "href": "lectures/05-lecture-slides.html#nested-model-comparisons",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Nested Model Comparisons",
+    "text": "Nested Model Comparisons\nWe can use the deviance test to compare any set of nested models. A nested set of models is where the smaller model (model with less predictors) is a trimmed down version of the larger model (model with more predictors) that has been estimated from the exact same data.\n\nmod_large &lt;- glm(vote == \"Y\" ~ gender + age_std + age_std_sq + life_vote * vote_dist,\n                 data = data_vote, family = binomial)\n\nmod_small &lt;- glm(vote == \"Y\" ~ gender + age_std + life_vote + vote_dist,\n                 data = data_vote, family = binomial)"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#nested-model-comparisons-1",
+    "href": "lectures/05-lecture-slides.html#nested-model-comparisons-1",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Nested Model Comparisons",
+    "text": "Nested Model Comparisons\nIf the deviance test is significant, it means that the larger model fits your data significantly better than the smaller model and should be selected over the smaller model.\n\nanova(mod_small, mod_large, test = \"Chisq\")\n\nAnalysis of Deviance Table\n\nModel 1: vote == \"Y\" ~ gender + age_std + life_vote + vote_dist\nModel 2: vote == \"Y\" ~ gender + age_std + age_std_sq + life_vote * vote_dist\n  Resid. Df Resid. Dev Df Deviance  Pr(&gt;Chi)    \n1      4993     6352.2                          \n2      4989     6237.0  4   115.25 &lt; 2.2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#pseudo-r-squareds",
+    "href": "lectures/05-lecture-slides.html#pseudo-r-squareds",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Pseudo-R-Squareds",
+    "text": "Pseudo-R-Squareds\nLog likelihoods can also be used to calculate Pseudo-R-Squared values, which are similar (although not identical) to the linear regression \\(R^2\\).\nThere are a handful of Pseudo-R-Squareds to choose from, but I usually go with McFadden’s R-Squared."
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#mcfaddens-r-squared",
+    "href": "lectures/05-lecture-slides.html#mcfaddens-r-squared",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "McFadden’s R-Squared",
+    "text": "McFadden’s R-Squared\nMcFadden’s R-Squared tells us how much of an improvement our target model is over our null model.\n\\[R^2 = \\frac{LL_{Null}-LL_{Model}}{LL_{Null}}= 1-\\frac{LL_{Model}}{LL_{Null}}\\]\n\n1 - logLik(mod_large) / logLik(mod_null)\n\n\n\n[1] \"McFadden: = 0.1\""
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#using-predicted-probability-to-assess-model-fit",
+    "href": "lectures/05-lecture-slides.html#using-predicted-probability-to-assess-model-fit",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Using Predicted Probability to Assess Model Fit",
+    "text": "Using Predicted Probability to Assess Model Fit\nWe can use our models’ predicted probabilities to assess how well our model fits our data. If our model fits our data well, then our predicted probabilities should be higher for outcomes where the value equals 1 compared to outcomes where the value equals 0."
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#correlation-between-the-outcome-and-model-predictions",
+    "href": "lectures/05-lecture-slides.html#correlation-between-the-outcome-and-model-predictions",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Correlation Between the Outcome and Model Predictions",
+    "text": "Correlation Between the Outcome and Model Predictions\nThe easiest and quickest way to see how related the predicted probably values are to the outcome is to correlate the two. Higher correlations indicate a stronger relationship and better fit between your model and data.\n\npredicted_values &lt;- fitted(mod_large)\n\ncor(data_vote$vote == \"Y\", predicted_values)\n\n\n\n[1] \"R = 0.36\""
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#from-predicted-probability-to-predicted-outcome",
+    "href": "lectures/05-lecture-slides.html#from-predicted-probability-to-predicted-outcome",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "From Predicted Probability to Predicted Outcome",
+    "text": "From Predicted Probability to Predicted Outcome\nWe can transform our predicted probability into a predicted outcome by setting a threshold value. For instance, we can say that a predicted probability value greater than .50 becomes a 1 and a predicted probability value less than or equal to .50 becomes a 0.\nWe can then create a classification table:\n\ndata_vote &lt;-\n  data_vote |&gt;\n  dplyr::mutate(\n    pred_vote = dplyr::if_else(fitted(mod_large) &gt; .50, \"Y\", \"N\")\n  )\n\nxtabs(~vote + pred_vote, data_vote) |&gt; addmargins()\n\n     pred_vote\nvote     N    Y  Sum\n  N   1167 1309 2476\n  Y    462 2062 2524\n  Sum 1629 3371 5000"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#true-positive-false-positive-rates",
+    "href": "lectures/05-lecture-slides.html#true-positive-false-positive-rates",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "True Positive & False Positive Rates",
+    "text": "True Positive & False Positive Rates\nUsing the classification table, we can calculate the true positive rate (sensitivity), the true negative rate (specificity), and the overall model accuracy:\n\\[TP = P(\\hat{Y}=1|Y=1)\\] \\[TN = P(\\hat{Y} = 0|Y = 0)\\] \\[Acc. = TP\\times P(Y = 1) + TN \\times P(Y=0)\\]"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#true-positive-false-positive-rates-1",
+    "href": "lectures/05-lecture-slides.html#true-positive-false-positive-rates-1",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "True Positive & False Positive Rates",
+    "text": "True Positive & False Positive Rates\n\nxtabs(~vote + pred_vote, data_vote) |&gt; prop.table(1) |&gt; round(2)\n\n    pred_vote\nvote    N    Y\n   N 0.47 0.53\n   Y 0.18 0.82\n\n\n\nxtabs(~vote + pred_vote, data_vote) |&gt; prop.table() |&gt; round(2)\n\n    pred_vote\nvote    N    Y\n   N 0.23 0.26\n   Y 0.09 0.41\n\n\nFrom the first table, we can see the true positive rate is 0.82 and the true negative rate is 0.47.\nFrom the second table, we can see the accuracy is 0.41 plus 0.23, which equals 0.64."
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#receiver-operator-characteristic-curve-roc-curve",
+    "href": "lectures/05-lecture-slides.html#receiver-operator-characteristic-curve-roc-curve",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Receiver Operator Characteristic Curve: ROC Curve",
+    "text": "Receiver Operator Characteristic Curve: ROC Curve\nThe predicted outcome threshold (.50 in our example) is arbritrary. It is possible that a different choice of threshold would give us a better true positive and true negative rate.\nTo explore how our true positive and negative rates change depending on our threshold, we can create a plot called a receiver operating characteristic (ROC) curve."
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#area-under-the-curve-auc",
+    "href": "lectures/05-lecture-slides.html#area-under-the-curve-auc",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Area Under the Curve: AUC",
+    "text": "Area Under the Curve: AUC\nThe area underneath the ROC curve or AUC gives us a summary metric for how well our model is able to balance the true positive rate and the true negative rate.\nAUC is always going to be between 1 (perfect prediction) and .50 (predicting by a coin toss).\n\n\n\nAUC Value\nInterpretation\n\n\n\n\nAUC = .50\nNo discrim.\n\n\n.50 \\(\\lt\\) AUC \\(\\lt\\) .70\nPoor discrim.\n\n\n.70 \\(\\le\\) AUC \\(\\lt\\) .80\nAccept. discrim.\n\n\n.80 \\(\\le\\) AUC \\(\\lt\\) .90\nExcellent discrim.\n\n\nAUC \\(\\ge\\) .90\nOutstanding discrim."
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#plotting-predicted-probabilites-by-outcome-class",
+    "href": "lectures/05-lecture-slides.html#plotting-predicted-probabilites-by-outcome-class",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Plotting Predicted Probabilites by Outcome Class",
+    "text": "Plotting Predicted Probabilites by Outcome Class\nIt is also helpful to plot a histogram of the predicted probabilities by outcome to see how well your model is able to discriminate from success (1) and failures (0)."
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#examples-of-bad-ok-and-good-auc-values",
+    "href": "lectures/05-lecture-slides.html#examples-of-bad-ok-and-good-auc-values",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Examples of Bad, OK, and Good AUC Values",
+    "text": "Examples of Bad, OK, and Good AUC Values"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#receiver-operator-characteristic-curve-roc-curve-1",
+    "href": "lectures/05-lecture-slides.html#receiver-operator-characteristic-curve-roc-curve-1",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Receiver Operator Characteristic Curve: ROC Curve",
+    "text": "Receiver Operator Characteristic Curve: ROC Curve"
+  },
+  {
+    "objectID": "lectures/05-lecture-slides.html#using-r-to-calculate-auc",
+    "href": "lectures/05-lecture-slides.html#using-r-to-calculate-auc",
+    "title": "Goodness of Fit and Predictive Power",
+    "section": "Using R to Calculate AUC",
+    "text": "Using R to Calculate AUC\n\npROC::roc(vote == \"Y\" ~ fitted(mod_large), data = data_vote)\n\n\nCall:\nroc.formula(formula = vote == \"Y\" ~ fitted(mod_large), data = data_vote)\n\nData: fitted(mod_large) in 2476 controls (vote == \"Y\" FALSE) &lt; 2524 cases (vote == \"Y\" TRUE).\nArea under the curve: 0.6938"
   }
 ]
