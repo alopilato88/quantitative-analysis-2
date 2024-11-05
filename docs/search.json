@@ -1454,5 +1454,19 @@
     "title": "Goodness of Fit and Predictive Power",
     "section": "Using R to Calculate AUC",
     "text": "Using R to Calculate AUC\n\npROC::roc(vote == \"Y\" ~ fitted(mod_large), data = data_vote)\n\n\nCall:\nroc.formula(formula = vote == \"Y\" ~ fitted(mod_large), data = data_vote)\n\nData: fitted(mod_large) in 2476 controls (vote == \"Y\" FALSE) &lt; 2524 cases (vote == \"Y\" TRUE).\nArea under the curve: 0.6938"
+  },
+  {
+    "objectID": "lectures/05-lecture-page.html",
+    "href": "lectures/05-lecture-page.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Next Week’s Materials »"
+  },
+  {
+    "objectID": "lectures/05-lecture-page.html#lecture-goodness-of-fit-predictive-power",
+    "href": "lectures/05-lecture-page.html#lecture-goodness-of-fit-predictive-power",
+    "title": "Quantitative Analysis 2",
+    "section": "Lecture: Goodness of Fit & Predictive Power",
+    "text": "Lecture: Goodness of Fit & Predictive Power\n\n\nTo download a pdf version of these slides, click here."
   }
 ]
