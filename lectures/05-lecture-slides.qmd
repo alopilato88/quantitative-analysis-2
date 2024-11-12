@@ -253,13 +253,13 @@ From the first table, we can see the true positive rate is `r round(mean(data_vo
 
 From the second table, we can see the accuracy is `r round(mean(data_vote$pred_vote == "Y" & data_vote$vote == "Y"), 2)` plus `r round(mean(data_vote$pred_vote == "N" & data_vote$vote == "N"), 2)`, which equals `r round(mean(data_vote$pred_vote == "Y" & data_vote$vote == "Y"), 2) + round(mean(data_vote$pred_vote == "N" & data_vote$vote == "N"), 2)`.
 
-## Receiver Operator Characteristic Curve: ROC Curve
+## Receiver Operating Characteristic Curve: ROC Curve
 
 The predicted outcome threshold (.50 in our example) is arbitrary. It is possible that a different choice of threshold would give us a better true positive and true negative rate. 
 
 To explore how our true positive and negative rates change depending on our threshold, we can create a plot called a **receiver operating characteristic (ROC) curve**. 
 
-## Receiver Operator Characteristic Curve: ROC Curve
+## Receiver Operating Characteristic Curve: ROC Curve
 
 ```{r}
 #| echo: false
