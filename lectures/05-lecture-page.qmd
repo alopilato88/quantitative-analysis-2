@@ -12,4 +12,4 @@ format:
 
 <iframe src="05-lecture-slides.html" name="05-lecture-slides"></iframe>
 
-To download a pdf version of these slides, click <a href="04-lecture-slides.pdf" download target="_blank" rel="noopener noreferrer"><strong>here</strong></a>.
+To download a pdf version of these slides, click <a href="05-lecture-slides.pdf" download target="_blank" rel="noopener noreferrer"><strong>here</strong></a>.
