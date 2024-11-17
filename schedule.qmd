@@ -89,7 +89,7 @@ The tentative Fall 2024 schedule for Quantitative Analysis 2. Use the reading li
   </tr>
   <tr>
     <td class="ts-date">11/12</td>
-    <td class="ts-topic">Clustered Data & The LMER Mode</td>
+    <td class="ts-topic">Clustered Data & The LMER Model</td>
     <td class="ts-content"><a href="readings/reading-6.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="index.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="ts-content"><a href="lectures/06-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
