@@ -1573,5 +1573,362 @@
     "title": "Assignment 1: A Review of Statistical Concepts",
     "section": "Problem 12.",
     "text": "Problem 12.\nUsing the summarize function, finish the code below to determine what proportion of the characters in the starwars data frame are form a given homeworld. Then add the arrange function at the end of the code to sort the data frame by the proportions.\n\nstarwars |&gt;\n  dplyr::summarize(\n    count = dplyr::n(),\n    .by = homeworld\n  ) |&gt;\n  dplyr::mutate(\n    total = sum(count),\n    prop = count / total) |&gt;\n  dplyr::arrange(desc(prop))\n\n# A tibble: 49 × 4\n   homeworld count total   prop\n   &lt;chr&gt;     &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;\n 1 Naboo        11    87 0.126 \n 2 Tatooine     10    87 0.115 \n 3 &lt;NA&gt;         10    87 0.115 \n 4 Alderaan      3    87 0.0345\n 5 Kamino        3    87 0.0345\n 6 Coruscant     3    87 0.0345\n 7 Kashyyyk      2    87 0.0230\n 8 Corellia      2    87 0.0230\n 9 Ryloth        2    87 0.0230\n10 Mirial        2    87 0.0230\n# ℹ 39 more rows"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#overview-for-today",
+    "href": "lectures/06-lecture-slides.html#overview-for-today",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Overview for Today",
+    "text": "Overview for Today\nToday we will be learning about:\n\nThe effects clustered designs can have on your statistical models\nThe Linear Mixed-Effects Regression (LMER) Model"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#what-are-clustered-designs",
+    "href": "lectures/06-lecture-slides.html#what-are-clustered-designs",
+    "title": "Clustered Data and the LMER Model",
+    "section": "What are Clustered Designs?",
+    "text": "What are Clustered Designs?"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#are-you-more-similar-to-your-siblings-than-a-stranger",
+    "href": "lectures/06-lecture-slides.html#are-you-more-similar-to-your-siblings-than-a-stranger",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Are You More Similar to Your Siblings than a Stranger?",
+    "text": "Are You More Similar to Your Siblings than a Stranger?"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#our-data-example",
+    "href": "lectures/06-lecture-slides.html#our-data-example",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Our Data Example",
+    "text": "Our Data Example\nYou work for an organization that is interested in understanding how the inclusive behaviors of a team’s leader impacts their team’s perceptions of psychological safety—the shared belief that it is OK to take risks, speak up, or admit mistakes without fear of negative consequences.\n\n\n# A tibble: 800 × 3\n   team_id x_inc_lead y_psych_safe\n     &lt;int&gt;      &lt;dbl&gt;        &lt;dbl&gt;\n 1       1       6.08         8.37\n 2       1       6.67         7.15\n 3       1       7.19         7.83\n 4       1       5.34         7.39\n 5       1       5.77         7.2 \n 6       1       6.63         8.01\n 7       1       6.96         7.09\n 8       1       7.26         7.37\n 9       1       5.74         7.07\n10       1       5.42         7.75\n# ℹ 790 more rows"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#the-impact-of-clustered-designs",
+    "href": "lectures/06-lecture-slides.html#the-impact-of-clustered-designs",
+    "title": "Clustered Data and the LMER Model",
+    "section": "The Impact of Clustered Designs",
+    "text": "The Impact of Clustered Designs\nIn our example, employees are clustered within a team leader. What impact could this have on the data we collect? Do you think that employees who report to the same leader are more similar than employees who report to a different leader?"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#visualizing-non-independence",
+    "href": "lectures/06-lecture-slides.html#visualizing-non-independence",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Visualizing Non-Independence",
+    "text": "Visualizing Non-Independence"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#partitioning-variance-at-different-levels",
+    "href": "lectures/06-lecture-slides.html#partitioning-variance-at-different-levels",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Partitioning Variance at Different Levels",
+    "text": "Partitioning Variance at Different Levels"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#modeling-non-independence",
+    "href": "lectures/06-lecture-slides.html#modeling-non-independence",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Modeling Non-Independence",
+    "text": "Modeling Non-Independence\nLMER, MLM, HLM"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#the-unconditional-random-intercept-model",
+    "href": "lectures/06-lecture-slides.html#the-unconditional-random-intercept-model",
+    "title": "Clustered Data and the LMER Model",
+    "section": "The Unconditional Random-Intercept Model",
+    "text": "The Unconditional Random-Intercept Model\nThe LMER model without any predictors can be written as:\n\\[\\text{Level 1:} \\space Y_{ij} = \\beta_{0j} + r_{ij}\\] \\[\\text{Level 2:} \\space \\beta_{0j} = \\gamma_{00} + u_{0j}\\]"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#the-lme4-and-lmertest-r-packages",
+    "href": "lectures/06-lecture-slides.html#the-lme4-and-lmertest-r-packages",
+    "title": "Clustered Data and the LMER Model",
+    "section": "The lme4 and lmerTest R Packages",
+    "text": "The lme4 and lmerTest R Packages"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#within--and-between-cluster-variance",
+    "href": "lectures/06-lecture-slides.html#within--and-between-cluster-variance",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Within- and Between-Cluster Variance",
+    "text": "Within- and Between-Cluster Variance"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#the-intraclass-correlation-coefficient",
+    "href": "lectures/06-lecture-slides.html#the-intraclass-correlation-coefficient",
+    "title": "Clustered Data and the LMER Model",
+    "section": "The Intraclass Correlation Coefficient",
+    "text": "The Intraclass Correlation Coefficient"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#the-icc-as-a-correlation-coefficient",
+    "href": "lectures/06-lecture-slides.html#the-icc-as-a-correlation-coefficient",
+    "title": "Clustered Data and the LMER Model",
+    "section": "The ICC as a Correlation Coefficient",
+    "text": "The ICC as a Correlation Coefficient"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#thinking-at-different-levels-level-1-predictor",
+    "href": "lectures/06-lecture-slides.html#thinking-at-different-levels-level-1-predictor",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Thinking at Different Levels: Level 1 Predictor",
+    "text": "Thinking at Different Levels: Level 1 Predictor\nConditional random-intercept model"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#example",
+    "href": "lectures/06-lecture-slides.html#example",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#interpretation",
+    "href": "lectures/06-lecture-slides.html#interpretation",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Interpretation",
+    "text": "Interpretation"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#explaining-variance-at-level-1",
+    "href": "lectures/06-lecture-slides.html#explaining-variance-at-level-1",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Explaining Variance at Level 1",
+    "text": "Explaining Variance at Level 1"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#adding-level-2-cluster-level-predictors",
+    "href": "lectures/06-lecture-slides.html#adding-level-2-cluster-level-predictors",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Adding Level 2 (Cluster Level) Predictors",
+    "text": "Adding Level 2 (Cluster Level) Predictors"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#example-1",
+    "href": "lectures/06-lecture-slides.html#example-1",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#interpretation-1",
+    "href": "lectures/06-lecture-slides.html#interpretation-1",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Interpretation",
+    "text": "Interpretation"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#explaining-variance-at-level-2",
+    "href": "lectures/06-lecture-slides.html#explaining-variance-at-level-2",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Explaining Variance at Level 2",
+    "text": "Explaining Variance at Level 2"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#contextual-cluster-level-effects",
+    "href": "lectures/06-lecture-slides.html#contextual-cluster-level-effects",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Contextual (Cluster Level) Effects",
+    "text": "Contextual (Cluster Level) Effects\nWe want to know to what extent does the average team perception of"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#what-happens-when-we-ignore-cluster-effects",
+    "href": "lectures/06-lecture-slides.html#what-happens-when-we-ignore-cluster-effects",
+    "title": "Clustered Data and the LMER Model",
+    "section": "What Happens When We Ignore Cluster Effects?",
+    "text": "What Happens When We Ignore Cluster Effects?"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#inflated-ses",
+    "href": "lectures/06-lecture-slides.html#inflated-ses",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Inflated SEs",
+    "text": "Inflated SEs"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#weird-dfs",
+    "href": "lectures/06-lecture-slides.html#weird-dfs",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Weird DFs",
+    "text": "Weird DFs"
+  },
+  {
+    "objectID": "lectures/06-lecture-page.html",
+    "href": "lectures/06-lecture-page.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Next Week’s Materials »"
+  },
+  {
+    "objectID": "lectures/06-lecture-page.html#lecture-clustered-data-and-the-lmer-model",
+    "href": "lectures/06-lecture-page.html#lecture-clustered-data-and-the-lmer-model",
+    "title": "Quantitative Analysis 2",
+    "section": "Lecture: Clustered Data and the LMER Model",
+    "text": "Lecture: Clustered Data and the LMER Model\n\n\nTo download a pdf version of these slides, click here."
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#what-are-clustered-data-structures",
+    "href": "lectures/06-lecture-slides.html#what-are-clustered-data-structures",
+    "title": "Clustered Data and the LMER Model",
+    "section": "What are Clustered Data Structures?",
+    "text": "What are Clustered Data Structures?\nClustered data structures occur when your data is nested within in a higher-level structure (a cluster):\n\nEmployees nested within a team (team = cluster)\nStudents nested within a classroom (classroom = cluster)\nRepeated measurements on an individual (individual = cluster)"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#when-data-are-not-independent",
+    "href": "lectures/06-lecture-slides.html#when-data-are-not-independent",
+    "title": "Clustered Data and the LMER Model",
+    "section": "When Data Are Not Independent",
+    "text": "When Data Are Not Independent\nClustered data structures tend to violate the regression assumption of independent data. That is, to use regular linear regression we have to assume that we can not learn about person A’s score on an outcome variable by looking at person B’s score on that outcome variable.\nThink about it this way: Are you more similar to your family members than you are a stranger?"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#partitioning-variance-into-within-and-between-clusters",
+    "href": "lectures/06-lecture-slides.html#partitioning-variance-into-within-and-between-clusters",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Partitioning Variance into Within and Between-Clusters",
+    "text": "Partitioning Variance into Within and Between-Clusters\nNon-independence occurs when some of the total variance in our outcome variable is due to belonging to a given cluster or group. If we selected a person at random from Cluster A and a person at random from Cluster B, there score on an outcome variable will differ partly because they are different people (Within-Cluster Variance) and partly because they belong to different clusters (Between-Cluster Variance).\nIf there was no between-cluster difference, then the scores would only differ because we were looking at two different people."
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#partitioning-variance-into-within-and-between-clusters-1",
+    "href": "lectures/06-lecture-slides.html#partitioning-variance-into-within-and-between-clusters-1",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Partitioning Variance into Within and Between-Clusters",
+    "text": "Partitioning Variance into Within and Between-Clusters\nThe plot below shows the individual outcome scores by cluster (blue points), the cluster means for each cluster (red points), and the grand (or overall) mean (the blue line)."
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#quantifying-non-independence-with-the-icc",
+    "href": "lectures/06-lecture-slides.html#quantifying-non-independence-with-the-icc",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Quantifying Non-Independence with the ICC",
+    "text": "Quantifying Non-Independence with the ICC\nThe ICC or Intraclass Correlation Coefficient tells us how correlated two randomly selected scores from the same cluster are:\n\\[r_{1, 2}=\\text{ICC}=\\frac{\\text{Between Cluster Variance}}{\\text{Total Variance}}\\]"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#quantifying-non-independence-with-the-icc-1",
+    "href": "lectures/06-lecture-slides.html#quantifying-non-independence-with-the-icc-1",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Quantifying Non-Independence with the ICC",
+    "text": "Quantifying Non-Independence with the ICC"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#modeling-non-independence-with-lmer-models",
+    "href": "lectures/06-lecture-slides.html#modeling-non-independence-with-lmer-models",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Modeling Non-Independence with LMER Models",
+    "text": "Modeling Non-Independence with LMER Models\nWe need to use Linear Mixed-Effects Regression Models to model data when the independence data has been violated.\nLMER models are also known as:\n\nMultilevel Models (MLM)\nHierarchical Linear Models (HLM)\nRandom Coefficient Models (RCM)"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#understanding-the-unconditional-random-intercept-model",
+    "href": "lectures/06-lecture-slides.html#understanding-the-unconditional-random-intercept-model",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Understanding the Unconditional Random-Intercept Model",
+    "text": "Understanding the Unconditional Random-Intercept Model\nYou can think of the unconditional model as a model that separates within-cluster variance from between-cluster variance.\n\n\\(Y_{ij}\\): The outcome for person i in cluster j.\n\\(\\beta_{0j}\\): The intercept for cluster j—each cluster now gets its own intercept—the “random-intercept”\n\\(\\gamma_{00}\\): The overall intercept (the grand mean of the outcome variable)\n\\(r_{ij}\\): The within-cluster residual (level 1 error term) that captures the within-cluster variation\n\\(u_{0j}\\): The between-cluster residual (level 2 error term) that captures the between-cluster variation"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#estimating-the-unconditional-random-intercept-model",
+    "href": "lectures/06-lecture-slides.html#estimating-the-unconditional-random-intercept-model",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Estimating the Unconditional Random-Intercept Model",
+    "text": "Estimating the Unconditional Random-Intercept Model\nTo estimate an LMER model, we will use the lmer function from the lmerTest package. The arguments you provide the lmer function are very similar to the ones you provide the lm function with one exception: (1|team_id).\n(1|team_id) is the piece of the LMER formula that tells R what cluster a response belongs to.\n\nmod0 &lt;- lmerTest::lmer(y_psych_safe ~ 1 + (1|team_id), data = data_ps)"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#interpreting-the-results-of-an-unconditional-random-intercept-model",
+    "href": "lectures/06-lecture-slides.html#interpreting-the-results-of-an-unconditional-random-intercept-model",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Interpreting the Results of an Unconditional Random-Intercept Model",
+    "text": "Interpreting the Results of an Unconditional Random-Intercept Model\n\n\nLinear mixed model fit by REML. t-tests use Satterthwaite's method [\nlmerModLmerTest]\nFormula: y_psych_safe ~ 1 + (1 | team_id)\n   Data: data_ps\n\nREML criterion at convergence: 2524.3\n\nScaled residuals: \n    Min      1Q  Median      3Q     Max \n-3.0540 -0.6708 -0.0355  0.6202  3.3354 \n\nRandom effects:\n Groups   Name        Variance Std.Dev.\n team_id  (Intercept) 0.624    0.790   \n Residual             1.137    1.066   \nNumber of obs: 800, groups:  team_id, 80\n\nFixed effects:\n            Estimate Std. Error       df t value Pr(&gt;|t|)    \n(Intercept)  6.75855    0.09603 79.00000   70.38   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#visualizing-the-results",
+    "href": "lectures/06-lecture-slides.html#visualizing-the-results",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Visualizing the Results",
+    "text": "Visualizing the Results\nEach cluster gets its own line with a cluster-specific intercept. The variation you see between the intercepts is the between-group variance that we would like to model."
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#calculating-an-icc-from-the-unconditional-random-intercept-model",
+    "href": "lectures/06-lecture-slides.html#calculating-an-icc-from-the-unconditional-random-intercept-model",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Calculating an ICC from the Unconditional Random-Intercept Model",
+    "text": "Calculating an ICC from the Unconditional Random-Intercept Model\nThe ICC tells us that 35.4% of the total variance in psychological safety is due to differences between leaders.\n\nwithin_cluster_var &lt;- 1.137\nbtw_cluster_var &lt;- .624\nicc &lt;- btw_cluster_var / (within_cluster_var + btw_cluster_var)\n\n\n\n[1] 0.354"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#explaining-variance-at-different-levels",
+    "href": "lectures/06-lecture-slides.html#explaining-variance-at-different-levels",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Explaining Variance at Different Levels",
+    "text": "Explaining Variance at Different Levels\nA powerful aspect of the LMER model is that not only does it allow us to correct for violations of independence by separating within-cluster variance from between-cluster variance, it also lets us directly model the different variance components by including within-cluster predictors (level 1 predictors) and between-cluster predictors (level 2 predictors):\n\nStudent SES (level 1) and classroom size (level 2) predicting student outcomes\nEmployee attitudes (level 1) and leader behavior (level 2) predicting employee performance\nDaily exercise (level 1) and age (level 2) predicting an individual’s blood pressure"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#understanding-how-leader-inclusive-behavior-relates-to-psychological-safety",
+    "href": "lectures/06-lecture-slides.html#understanding-how-leader-inclusive-behavior-relates-to-psychological-safety",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Understanding How Leader Inclusive Behavior Relates to Psychological Safety",
+    "text": "Understanding How Leader Inclusive Behavior Relates to Psychological Safety\nThis tells us that for every unit increase in an individual’s perceptions of their leader’s inclusive behaviors, we expect their psychological safety to increase by 0.37 units.\n\nsummary(mod1)\n\nLinear mixed model fit by REML. t-tests use Satterthwaite's method [\nlmerModLmerTest]\nFormula: y_psych_safe ~ x_inc_lead + (1 | team_id)\n   Data: data_ps\n\nREML criterion at convergence: 2434.6\n\nScaled residuals: \n     Min       1Q   Median       3Q      Max \n-2.94849 -0.65074 -0.02233  0.65817  3.11265 \n\nRandom effects:\n Groups   Name        Variance Std.Dev.\n team_id  (Intercept) 0.3479   0.5898  \n Residual             1.0531   1.0262  \nNumber of obs: 800, groups:  team_id, 80\n\nFixed effects:\n             Estimate Std. Error        df t value Pr(&gt;|t|)    \n(Intercept)   4.50353    0.22985 658.96855   19.59   &lt;2e-16 ***\nx_inc_lead    0.37239    0.03586 783.32479   10.38   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nCorrelation of Fixed Effects:\n           (Intr)\nx_inc_lead -0.945"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#understanding-how-leader-inclusive-behavior-relates-to-psychological-safety-1",
+    "href": "lectures/06-lecture-slides.html#understanding-how-leader-inclusive-behavior-relates-to-psychological-safety-1",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Understanding How Leader Inclusive Behavior Relates to Psychological Safety",
+    "text": "Understanding How Leader Inclusive Behavior Relates to Psychological Safety\nThis tells us that for every unit increase in an individual’s perceptions of their leader’s inclusive behaviors, we expect their psychological safety to increase by 0.37 units.\n\nsummary(mod1)\n\nLinear mixed model fit by REML. t-tests use Satterthwaite's method [\nlmerModLmerTest]\nFormula: y_psych_safe ~ x_inc_lead + (1 | team_id)\n   Data: data_ps\n\nREML criterion at convergence: 2434.6\n\nScaled residuals: \n     Min       1Q   Median       3Q      Max \n-2.94849 -0.65074 -0.02233  0.65817  3.11265 \n\nRandom effects:\n Groups   Name        Variance Std.Dev.\n team_id  (Intercept) 0.3479   0.5898  \n Residual             1.0531   1.0262  \nNumber of obs: 800, groups:  team_id, 80\n\nFixed effects:\n             Estimate Std. Error        df t value Pr(&gt;|t|)    \n(Intercept)   4.50353    0.22985 658.96855   19.59   &lt;2e-16 ***\nx_inc_lead    0.37239    0.03586 783.32479   10.38   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nCorrelation of Fixed Effects:\n           (Intr)\nx_inc_lead -0.945"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#interpreting-the-coefficient-table",
+    "href": "lectures/06-lecture-slides.html#interpreting-the-coefficient-table",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Interpreting the Coefficient Table",
+    "text": "Interpreting the Coefficient Table\nThe things to note from the coefficient table are:\n\nThe magnitude/sign of the estimated coefficient\nThe test statistic (t value)\nThe p-value (is the effect significant or not?)\nThe degrees of freedom: decimal value??"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#cluster-level-level-2-predictors",
+    "href": "lectures/06-lecture-slides.html#cluster-level-level-2-predictors",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Cluster-Level (Level 2) Predictors",
+    "text": "Cluster-Level (Level 2) Predictors\nWe can also add interesting cluster-level predictors like attitudes and personal traits about the leader that they themselves provide or we can aggregate level 1 predictors to create level 2 predictors.\nThe important thing to remember is that cluster-level variables vary across clusters, but not within them."
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#the-conditional-random-intecept-model",
+    "href": "lectures/06-lecture-slides.html#the-conditional-random-intecept-model",
+    "title": "Clustered Data and the LMER Model",
+    "section": "The Conditional Random-Intecept Model",
+    "text": "The Conditional Random-Intecept Model\nIn our example, we have measured the employees’ perceptions of their leader’s inclusive behaviors, so we have a within-cluster or level 1 predictor: Employee perceptions of their team leader’s inclusive behaviors. Now we want to know to what extent are an employee’s perceptions of their leader’s inclusive behaviors related to their individual perceptions of psychological safety.\n\nmod1 &lt;- lmerTest::lmer(y_psych_safe ~ x_inc_lead + (1|team_id), data = data_ps)"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#visualzing-the-conditional-random-intercept-model",
+    "href": "lectures/06-lecture-slides.html#visualzing-the-conditional-random-intercept-model",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Visualzing the Conditional Random-Intercept Model",
+    "text": "Visualzing the Conditional Random-Intercept Model"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#contextual-effects",
+    "href": "lectures/06-lecture-slides.html#contextual-effects",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Contextual Effects",
+    "text": "Contextual Effects\nWe want to know to what extent does the average team perception of a leader’s inclusive behavior affect perceptions of psychological safety: The contextual effect of a leader’s inclusive behavior.\nContextual effects tell us to what extent two individual’s with the same within-cluster predictor score, but a unit difference on the aggregated cluster-level predictor differ on the outcome variable. It is the extent to which the “context” of a cluster impacts the outcome above and beyond the within-cluster effect."
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#creating-a-contextual-effects",
+    "href": "lectures/06-lecture-slides.html#creating-a-contextual-effects",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Creating a Contextual Effects",
+    "text": "Creating a Contextual Effects\nContextual effects are created by taking the cluster average of a within-cluster predictor:\n\ndata_ps &lt;- \n  data_ps |&gt; \n  dplyr::group_by(\n    team_id\n  ) |&gt;\n  dplyr::mutate(\n    x_inc_lead_gpm = mean(x_inc_lead, na.rm = TRUE)\n  ) |&gt;\n  dplyr::ungroup()\n\n\nmod2 &lt;- lmerTest::lmer(y_psych_safe ~ x_inc_lead + x_inc_lead_gpm + (1|team_id),\n                       data = data_ps)"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#interpreting-the-contextual-effect",
+    "href": "lectures/06-lecture-slides.html#interpreting-the-contextual-effect",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Interpreting the Contextual Effect",
+    "text": "Interpreting the Contextual Effect\nWe expect two individuals who have the same scores on their individual measures of inclusive behavior, but report to two different leaders who differ by one unit on the aggregate inclusive behavior measure to differ by 0.51 units on their measure of psychological safety, on average.\nIt is the additional effect that shared perceptions of a leader’s inclusive behavior (or an aggregated within-cluster variable) have above their individual-level effect."
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#interpreting-the-contextual-effect-1",
+    "href": "lectures/06-lecture-slides.html#interpreting-the-contextual-effect-1",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Interpreting the Contextual Effect",
+    "text": "Interpreting the Contextual Effect\n\n\nLinear mixed model fit by REML. t-tests use Satterthwaite's method [\nlmerModLmerTest]\nFormula: y_psych_safe ~ x_inc_lead + x_inc_lead_gpm + (1 | team_id)\n   Data: data_ps\n\nREML criterion at convergence: 2410.6\n\nScaled residuals: \n     Min       1Q   Median       3Q      Max \n-3.04098 -0.66832 -0.01748  0.66517  3.09114 \n\nRandom effects:\n Groups   Name        Variance Std.Dev.\n team_id  (Intercept) 0.2347   0.4845  \n Residual             1.0485   1.0239  \nNumber of obs: 800, groups:  team_id, 80\n\nFixed effects:\n                Estimate Std. Error        df t value Pr(&gt;|t|)    \n(Intercept)      1.86275    0.51016  78.00000   3.651  0.00047 ***\nx_inc_lead       0.30254    0.03855 719.00000   7.849 1.52e-14 ***\nx_inc_lead_gpm   0.50594    0.09202 114.16898   5.498 2.37e-07 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nCorrelation of Fixed Effects:\n            (Intr) x_nc_l\nx_inc_lead   0.000       \nx_nc_ld_gpm -0.901 -0.419"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#what-happens-if-we-neglect-clusters",
+    "href": "lectures/06-lecture-slides.html#what-happens-if-we-neglect-clusters",
+    "title": "Clustered Data and the LMER Model",
+    "section": "What Happens If We Neglect Clusters?",
+    "text": "What Happens If We Neglect Clusters?\nIf we neglect to model between-cluster variance, then we run the risk of underestimating our standard errors which means we are more likely to commit a Type 1 Error: Declaring an effect significant when it is not.\n\n\n\n\n\nEffect\nLM Est.\nLMER Est.\nLM SE\nLMER SE\n\n\n\n\nIntercept\n1.863\n1.863\n0.313\n0.510\n\n\nInd. Inc. Beh.\n0.303\n0.303\n0.043\n0.039\n\n\nCont. Inc. Beh.\n0.506\n0.506\n0.067\n0.092"
   }
 ]

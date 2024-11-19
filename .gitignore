@@ -5,4 +5,4 @@
 *.Rproj
 /.quarto/
 /data
-/student-assignments
+*student-assignments
