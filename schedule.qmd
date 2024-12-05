@@ -112,8 +112,8 @@ The tentative Fall 2024 schedule for Quantitative Analysis 2. Use the reading li
     <td class="ts-date">12/6 - Immersion Day</td>
     <td class="ts-topic">Advanced Uses of LMER Models</td>
     <td class="ts-content"><a href="readings/reading-8.html"><img src="assets/reading-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="assignments/08-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
-    <td class="ts-content"><a href="lectures/08-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="assignments/07-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="ts-content"><a href="lectures/07-lecture-page.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
     <td class="ts-date">12/10</td>
