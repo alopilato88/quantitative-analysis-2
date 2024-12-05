@@ -396,7 +396,7 @@ The things to note from the coefficient table are:
 3. The p-value (is the effect significant or not?)
 4. The degrees of freedom: decimal value?? 
 
-## Visualzing the Conditional Random-Intercept Model 
+## Visualizing the Conditional Random-Intercept Model 
 
 ```{r}
 #| echo: false

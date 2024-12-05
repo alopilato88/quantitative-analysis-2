@@ -1,0 +1,782 @@
+---
+title: "Advanced Uses of LMER Models"
+subtitle: "Contextual Effects, Random Slopes, Cross-level Interactions, & More" 
+format: 
+  revealjs:
+    theme: [default, theme-lecture-slides.scss] 
+    css: styles-lecture-slides.css
+    slide-number: true
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+source("packages-lecture.R")
+source("helper-functions-lecture.R")
+
+```
+
+```{r}
+#| echo: false 
+
+set.seed(5247)
+
+n1 <- 10
+n2 <- 80
+n <- n1 * n2
+
+team_id <- rep(1:n2, each = n1)
+b_context <- .50
+b_within <- .30
+b_between <- b_context + b_within 
+z <- model.matrix(~ as.factor(team_id) - 1)
+x <- 6 + rnorm(n, sd = 1) + z %*% rnorm(n2, sd = sqrt(.50))
+x_rd <- round(as.numeric(x), 2)
+x_lo <- round(rnorm(n), 2)
+x_lead_lo <- rep(round(rnorm(n2, mean = 4, sd = 1), 2), each = n1)
+ran_ef_int <- rnorm(n2, sd = 1)
+ran_ef_slope <- .10*ran_ef_int + rnorm(n2, sd = sqrt(1 - var(.10*ran_ef_int)))
+
+ran_ef_int <- sqrt(.10)*ran_ef_int
+ran_ef_slope <- sqrt(.075)*ran_ef_slope
+
+ran_ef <- c(ran_ef_int, ran_ef_slope)
+
+z_rs <- x_lo * z
+
+z <- cbind(z, z_rs)
+
+data_ps <- 
+  tibble::tibble(
+    team_id,
+    x_inc_lead = x_rd,
+    x_learn_ort = x_lo,
+    x_lead_learn_ort = x_lead_lo
+  ) |>
+  dplyr::group_by(
+    team_id
+  ) |>
+  dplyr::mutate(
+    x_inc_lead_gpm = mean(x_inc_lead)
+  ) |>
+  dplyr::ungroup() |>
+  dplyr::mutate(
+    x_inc_lead_gpc = x_inc_lead - x_inc_lead_gpm,
+    y_psych_safe = 3 + b_within*x_inc_lead + b_context*x_inc_lead_gpm + .20*x_learn_ort + .20*x_learn_ort*x_lead_learn_ort + 
+      rnorm(n, sd = 1) + z%*%ran_ef,
+    y_psych_safe = round(as.numeric(y_psych_safe), 2)
+  ) 
+```
+
+## Overview for Today
+
+Today we will be learning about: 
+
+- Between vs Within Group Effects, Centering decisions, & Contextual Effects
+- Random Slopes & Cross-level interactions 
+- Growth models 
+
+## What are Between Group Effects? What Are Within Group Effects?
+
+A level one predictor can have effects at two different levels: 
+
+- **Within group effect** (level 1) is the effect of a predictor variable on an outcome variable within a given group.
+- **Between group effect** (level 2) is the effect of a group mean of a predictor on the group mean of an outcome variable. 
+
+Do you think these two effects can differ? Any examples? 
+
+## The Total Effect of a Predictor on an Outcome
+
+```{r}
+#| echo: false 
+#| fig-align: center
+
+set.seed(23523)
+
+n_group <- 5
+n_obs <- 5
+n <- n_group * n_obs
+
+x <- 3 + rnorm(n) + rep(rnorm(n_group, sd = 2), each = n_obs)
+
+data_bg <- 
+  tibble::tibble(
+    group = rep(1:n_group, each = n_obs),
+    x = x
+  ) |>
+  dplyr::group_by(group) |>
+  dplyr::mutate(
+    x_gm = mean(x),
+    x_cwc = x - x_gm
+  ) |>
+  dplyr::ungroup() |>
+  dplyr::mutate(
+    x_mc = x - mean(x),
+    y = 2 + 1.50*x_cwc - .60*x_gm + rnorm(n) + rep(rnorm(n_group), each = n_obs)
+  )
+
+plot_overall <- 
+  ggplot2::ggplot(
+    data = data_bg,
+    ggplot2::aes(
+      x = x,
+      y = y,
+      shape = as.factor(group)
+    )
+  ) + 
+  ggplot2::geom_point(fill = plot_fill,
+                      color = plot_color) + 
+  ggplot2::geom_smooth(
+    data = data_bg,
+    ggplot2::aes(
+      x = x,
+      y= y
+    ),
+    color = plot_fill,
+    method = lm, se = FALSE,
+                       formula = y ~ x, inherit.aes = FALSE) +
+  ggplot2::labs(
+    x = "Predictor Variable",
+    y = "Outcome Variable",
+    shape = "Group",
+    title = "Total Relationship"
+  ) + 
+  lecture_ggplot_theme_moderation_plot
+
+plot_within <- 
+  ggplot2::ggplot(
+    data = data_bg,
+    ggplot2::aes(
+      x = x_cwc,
+      y = y
+    )
+  ) + 
+  ggplot2::geom_point(shape = 21,
+                      color = plot_color,
+                      fill = plot_fill) + 
+  ggplot2::facet_wrap(~group) + 
+  ggplot2::geom_smooth(
+    method = lm,
+    se = FALSE,
+    formula = y ~ x,
+    color = plot_fill
+  ) + 
+  ggplot2::labs(
+    x = "Predictor Variable",
+    y = "Outcome Variable",
+    title = "Within Group Effect"
+  ) + 
+  lecture_ggplot_theme_barplot
+
+plot_between <- 
+  ggplot2::ggplot(
+    data = data_bg |> dplyr::summarize(
+      y_gm = mean(y),
+      x_gm = mean(x_gm),
+      .by = group
+    ),
+    ggplot2::aes(
+      x = x_gm,
+      y = y_gm
+    )
+  ) + 
+  ggplot2::geom_point(
+    shape = 21,
+    color = plot_color,
+    fill = plot_fill
+  ) + 
+  ggplot2::geom_smooth(
+    method = lm,
+    se = FALSE,
+    color = plot_fill,
+    formula = y ~ x
+  ) + 
+  ggplot2::labs(
+    x = "Predictor Variable",
+    y = "Outcome Variable",
+    title = "Between Group Effect"
+  ) + 
+  lecture_ggplot_theme_barplot
+
+plot_overall
+```
+
+## Between Group and Within Group Effects
+
+```{r}
+#| echo: false
+#| fig-align: center
+
+(plot_between / plot_within) & lecture_ggplot_theme_barplot
+```
+
+## The Between Group and Within Group Effects
+
+The total effect a predictor has on an outcome is a blend of within and between group effects, so the total effect will be somewhere between the within group effect and the between group effect:
+
+```{r}
+#| echo: false 
+#| fig-align: center
+
+mod_total <- lm(y ~ x, data = data_bg)
+mod_wg <- lm(y ~ x_cwc, data = data_bg)
+mod_between <- lm(y ~ x_gm, data = data_bg)
+
+effect_table <- 
+  tibble::tibble(
+    `Total Effect` = round(mod_total$coefficients[2], 2),
+    `Within Group Effect` = round(mod_wg$coefficients[2], 2),
+    `Between Group Effect` = round(mod_between$coefficients[2], 2)
+  ) |>
+  knitr::kable()
+
+effect_table
+```
+
+## Disentangling Within from Between Group Effects
+
+Using an LMER model, we can separate within from between group effects in two different ways: 
+
+1. Include both the level 1 predictor and its group mean in an LMER model. 
+2. Group mean center the level 1 predictor and include both the group mean centered predictor and the group mean in an LMER model.
+
+These two approaches lead to the same statistical model (i.e. these two models cannot be distinguished statistically), but to different interpretations of the model effects. 
+
+## Learning How to Group Mean Center 
+
+To group mean center a level 1 predictor variable (de-mean) you need to do the following: 
+
+1. For each group, calculate the mean of the predictor variable.
+2. For each group, subtract the group mean from the predictor variable.
+3. Save both the group mean centered predictor variable and the group mean.
+
+## Learning How to Group Mean Center
+
+```{r}
+#| echo: false
+
+data_center <- data_bg |> dplyr::select(y, x, group)
+```
+
+```{r}
+data_center <- 
+  data_center |>
+  dplyr::group_by(group) |>
+  dplyr::mutate(
+    x_group_mean = mean(x),
+    x_grp_cent = x - x_group_mean
+  )
+```
+
+```{r}
+#| echo: false
+
+data_center
+```
+
+## Contextual Effects Model 
+
+If we want to answer the question: "Is the within-group effect of a predictor on an outcome equal to the between-group effect?" we can estimate a contextual effects model, which is an LMER model that includes two focal predictors: 
+
+- The level 1 predictor of interest 
+- The group means of the level 1 predictor of interest 
+
+## Contextual Effects of Leader Inclusive Behavior on Psychological Safety
+
+```{r}
+#| eval: false
+lmerTest::lmer(y_psych_safe ~ x_inc_lead + x_inc_lead_gpm + (1 | team_id), 
+               data = data_ps)
+```
+
+```{r}
+#| echo: false
+
+mod_context <- lmerTest::lmer(y_psych_safe ~ x_inc_lead + x_inc_lead_gpm + (1 | team_id), 
+               data = data_ps)
+```
+
+The coefficient for `x_inc_lead_gpm` tells us two things: 
+
+1. The value of the estimate gives us: Between Group Effect - Within Group Effect
+2. If it is significant, then it tells us that the between and within group effects are significantly different.
+
+## Interpreting Contextual Effects 
+
+An employee with a given measure of their leader's perceived inclusive behaviors will, on average, report higher psychological safety if they are apart of a team with higher than average perceptions of leader inclusive behaviors. That is, the contextual effect of perceived inclusive leader behaviors provides an additional contribution over and above the effect of individual perceptions of inclusive leader behavior. 
+
+```{r}
+#| echo: false
+summary(mod_context, corr = FALSE)
+```
+
+## Within & Between Group Effects Model
+
+If you are want to directly model the within and between group effects of a predictor, then you can include the group mean centered level 1 predictor and its group mean in an LMER model. 
+
+This allows you to model and test the effects at two different levels, but it does not directly test the difference between the within and between group effects.
+
+## Withing & Between Group Effects of Inclusive Leader Behaviors
+
+```{r}
+#| eval: false
+lmerTest::lmer(y_psych_safe ~ x_inc_lead_gpc + x_incl_lead_gpm + (1 | team_id),
+               data = data_ps)
+```
+
+```{r}
+#| echo: false
+mod_between <- lmerTest::lmer(y_psych_safe ~ x_inc_lead_gpc + x_inc_lead_gpm + (1 | team_id),
+               data = data_ps)
+```
+
+The coefficient of `x_inc_lead_gpm` (group mean of inclusive leader behavior) tells us how the group mean of a team's perceptions of their leaders inclusive behaviors is related to the team's average perceptions of psychological safety.
+
+## Withing & Between Group Effects of Inclusive Leader Behaviors 
+
+Notice that the estimate of `x_inc_lead_gpm` minus the estimate of `x_inc_lead_gpc` is equal to the contextual effect we estimated earlier.
+
+```{r}
+#| echo: false
+summary(mod_between, corr = FALSE)
+```
+
+## Which Effect Should You Model? 
+
+The choice between estimating the contextual effect of a predictor versus the between group effect is a substantive question. The contextual and between group models are statistically identical, so you will have to decide which questions are more interesting given the research you are conducting. 
+
+## Expanding our Psychological Safety Example
+
+In addition to perceptions of inclusive leadership behavior, you have also measured the learning orientation of each employee and their team leader. 
+
+You believe that an employee's learning orientation will be related to their perceptions of psychological safety, but you think this relationship might differ by group. How would you model this? 
+
+## Adding Random Slopes to Your LMER Model
+
+LMER models allow allow the slopes of level 1 predictors to vary by group: 
+
+$$\text{Level 1:} \space Y_{ij} = \beta_{0j} + \beta_{1j}X_{1ij}+ r_{ij}$$
+$$\text{Level 2:} \space \beta_{0j} = \gamma_{00} + u_{0j}$$
+$$\text{Level 2:} \space \beta_{1j} = \gamma_{10} + u_{1j}$$
+
+## Modeling Random Slopes 
+
+To add a random slope to our model, we can use the following code: 
+
+```{r}
+#| eval: false
+lmerTest::lmer(y_psych_safe ~ x_learn_ort + (x_learn_ort | team_id), 
+               data = data_ps)
+```
+
+```{r}
+#| echo: false
+
+mod_rs <- lmerTest::lmer(y_psych_safe ~ x_learn_ort + (x_learn_ort | team_id), 
+               data = data_ps)
+```
+
+
+## The Sources of Random Intercept and Slope Variation 
+
+The sources of intercept and slope variation are $u_{oj}$ and $u_{1j}$, which you can think of as level 2 residuals. 
+
+These residuals are assumed to be distributed normally with a mean of 0 and variances, $\tau_{00}$ and $\tau_{11}$. Additionally, these level two residuals are allowed to covary with one another, $\tau_{01}$. 
+
+It is these sources of variation (variance components) that we want to explain with level 2 predictors. 
+
+## Interpreting the Results of Our Random Slope Model
+
+When estimating a model slopes model, you will want to focus on the following things: 
+
+1. The magnitude and significance of the level predictor.
+2. The random slope variance.
+3. The random intercept variance and its correlation with the random slope variance. 
+
+## Interpreting the Results of Our Random Slope Model
+
+```{r}
+#| echo: false
+summary(mod_rs, corr = FALSE)
+```
+
+## Interpreting the Random Slope Variance 
+
+```{r}
+#| echo: false
+
+rand_slope <- summary(mod_rs)$coef[2,1] + as.numeric(ranef(mod_rs)$team_id[,2])
+rand_int <- summary(mod_rs)$coef[1,1] + as.numeric(ranef(mod_rs)$team_id[,1])
+
+data_re <- 
+  tibble::tibble(
+    team_id = unique(data_ps$team_id),
+    rand_slope,
+    rand_int
+  )
+
+data_re_sim <- 
+  tibble::tibble(
+    team_id = rep(1:n2, each = length(seq(-3, 4, by = .10))),
+    x = rep(seq(-3, 4, by = .10), n2)
+  ) |>
+  dplyr::left_join(
+    data_re,
+    dplyr::join_by(team_id)
+  ) |>
+  dplyr::mutate(
+    y = rand_int + x*rand_slope
+  )
+
+plot_pred <- 
+  ggplot2::ggplot(
+    data = data_re_sim, 
+    ggplot2::aes(
+      x = x,
+      y = y
+    )) +
+  ggplot2::geom_point(alpha = 0) + 
+  ggplot2::geom_abline(
+    color = plot_fill,
+    ggplot2::aes(
+      intercept = rand_int,
+      slope = rand_slope
+    )
+  ) +
+  ggplot2::geom_abline(
+    color = "red",
+    size = 1.2,
+    ggplot2::aes(
+      intercept = summary(mod_rs)$coef[1,1],
+      slope = summary(mod_rs)$coef[2,1]
+    )
+  ) + 
+  ggplot2::labs(
+    x = "Learning Orientation",
+    y = "Psychological Safety"
+  ) + 
+  lecture_ggplot_theme_barplot
+
+plot_rs <- 
+  ggplot2::ggplot(
+    data = data_re,
+    ggplot2::aes(x = rand_slope)
+  ) + 
+  ggplot2::geom_histogram(bins = 25,
+                          color = plot_color,
+                          fill = plot_fill) + 
+  lecture_ggplot_theme_barplot + 
+  ggplot2::labs(
+    x = "Random Slope",
+    y = "Count"
+  )
+
+plot_re <- 
+  ggplot2::ggplot(
+    data = data_re,
+    ggplot2::aes(
+      x = rand_int,
+      y = rand_slope
+    )
+  ) + 
+  ggplot2::geom_point(
+    shape = 21,
+    color = plot_color,
+    fill = plot_fill
+  ) + 
+  ggplot2::labs(
+    x = "Random Intercept",
+    y = "Random Slope"
+  ) + 
+  lecture_ggplot_theme_barplot
+
+plot_re_complete <- (plot_pred / (plot_rs + plot_re)) 
+plot_re_complete & lecture_ggplot_theme_barplot
+```
+
+## Explaining Variation in Random Slope
+
+We can use level 2 predictors to explain variance in our random slopes: 
+
+$$\text{Level 1:} \space Y_{ij} = \beta_{0j} + \beta_{1j}X_{1j}+ r_{ij}$$
+$$\text{Level 2:} \space \beta_{0j} = \gamma_{00} + \gamma_{01}X_{2j} + u_{0j}$$
+$$\text{Level 2:} \space \beta_{1j} = \gamma_{10} + \gamma_{11}X_{2j} + u_{1j}$$
+
+## Explaining Variation in Random Slope
+
+We can write out the full model as: 
+
+$$Y_{ij} = \gamma_{00} + \gamma_{10}X_{1ij} + \gamma_{01}X_{2j} + \gamma_{11}X_{1ij}X_{2j} + u_{oj} + u_{1j}X_{1ij} + r_{ij}$$
+
+## Cross-Level Interactions as Explanations for Slope Variation 
+
+When we include a predictor for the random slopes, we are actually building a cross-level interaction: an interaction between variables at two different levels. 
+
+We are arguing that the relationship between the level 1 predictor and the outcome differ because of some level 2 variable. 
+
+Additionally, we will also want to include the main effect of the level 2 predictor, which means it will be used as an explanation of the slope variance as well. 
+
+## Leader Learning Orientation as a Cross-Level Interaction
+
+We saw that the relationship between employee learning orientation and psychological safety differs by team. Our hypothesis is that this is due to the moderating effect of their leader's learning orientation (a cross-level interaction): 
+
+```{r}
+#| eval: false
+lmerTest::lmer(y_psych_safe ~ x_learn_ort * x_lead_learn_ort + (x_learn_ort | team_id),
+               data = data_ps)
+```
+
+## Centering Decisions with Cross-Level Interactions 
+
+When modeling interactions that include level 1 predictors, we will generally want to group mean center the level 1 predictors:
+
+```{r}
+data_ps <- 
+  data_ps |>
+  dplyr::group_by(
+    team_id
+  ) |>
+  dplyr::mutate(
+    x_learn_ort_gpm = mean(x_learn_ort),
+    x_learn_ort_gpc = x_learn_ort - x_learn_ort_gpm
+  ) |>
+  dplyr::ungroup()
+```
+
+## Leader Learning Orientation as a Cross-Level Interaction
+
+```{r}
+#| eval: false
+lmerTest::lmer(y_psych_safe ~ x_learn_ort_gpc * x_lead_learn_ort + (x_learn_ort_gpc | team_id),
+               data = data_ps)
+```
+
+```{r}
+#| echo: false
+
+mod_cl <- lmerTest::lmer(y_psych_safe ~ x_learn_ort_gpc * x_lead_learn_ort + (x_learn_ort_gpc | team_id),
+               data = data_ps)
+```
+
+## Building Your LMER Model
+
+Building a LMER model is a mixture of art and science (surprise!). You can consider building up the model from level 1: 
+
+1. Add all focal level 1 predictor variables (and controls) and their level 1 interactions. 
+2. Decide which predictor variables should have random slopes (requires subject matter expertise).
+3. Use a series of deviance tests to determine which random slopes to keep.
+4. Check the significance of your effects after removing random slopes.
+5. Build the level 2 model.
+6. Check significance of all effects.
+
+## Building Your LMER Model
+
+First, we build and test our level 1 model: 
+
+```{r}
+#| eval: false
+mod_null <- lmerTest::lmer(y_psych_safe ~ 1 + (1|team_id), data_ps)
+mod_1 <- lmerTest::lmer(y_psych_safe ~ x_inc_lead + x_learn_ort_gpc + (x_inc_lead + x_learn_ort_gpc | team_id), data_ps)
+mod_2a <- lmerTest::lmer(y_psych_safe ~ x_inc_lead + x_learn_ort_gpc + (x_learn_ort_gpc | team_id), data_ps)
+mod_2b <- lmerTest::lmer(y_psych_safe ~ x_inc_lead + x_learn_ort_gpc + (x_inc_lead | team_id), data_ps)
+
+anova(mod_1, mod_null)
+anova(mod_1, mod_2a)
+anova(mod_1, mod_2b)
+```
+
+## Building Your LMER Model
+
+Next, we build and test our level 2 model: 
+
+```{r}
+#| eval: false
+mod_3 <- lmerTest::lmer(y_psych_safe ~ x_inc_lead + x_inc_lead_gpm + x_learn_ort_gpc*x_lead_learn_ort + (x_learn_ort_gpc | team_id), data_ps)
+
+anova(mod_2a, mod_3)
+```
+
+## Rules of Thumb for Centering 
+
+- If you are looking at between group effects (level 2), then you can use grand mean centering.
+- If you are looking at level 1 effects and their interactions, then you should consider group mean centering. 
+- If you are interested in questions of equivalence across within and between group effects then do not center the level 1 predictor or use grand mean centering. 
+
+## Advanced Applications of LMER Models: Growth Models
+
+If you are interested in questions about change like how does someone's health change as they age or what happens to population over time, then you will likely have a data structure where you have repeated measurements nested within a level 2 unit:
+
+- Change in job satisfaction 
+- Change in performance 
+- Change in subjective well being
+
+Really anytime you are interested in how something changes across time, you can generally model it with an LMER model. 
+
+## Our Growth Model Example
+
+We are interested in how weekly exercise habits impact the health of individuals in a study who are all around the age of 50. 
+
+```{r}
+#| echo: false
+
+set.seed(888645)
+
+n2 <- 200
+n1 <- 16
+n <- n1*n2
+
+ind_id <- rep(1:n2, each = n1)
+Z <- model.matrix(~as.factor(ind_id) - 1)
+
+Z_slope <- rep(0:(n1 - 1), n2) * Z
+
+
+
+ran_int <- rnorm(n2, sd = 1)
+ran_slope <- -.30*ran_int + rnorm(n2, sd = sqrt(1 - var(-.30*ran_int)))
+ran_slope <- sqrt(.25)*ran_slope
+ran_int <- sqrt(.50)*ran_int
+
+ran_eff <- matrix(c(ran_int, ran_slope), ncol = 1)
+
+x_workout <- round(3.80 + rnorm(n, sd = sqrt(.50)) + Z%*%t(t(rnorm(n2, sd = sqrt(1)))), 2)
+# x_workout[x_workout > 7] <- 7
+
+Z <- cbind(Z, Z_slope)
+
+data_growth <- 
+  tibble::tibble(
+    id = ind_id,
+    time = rep(1:n1, n2),
+    x_gender = rep(sample(c(0, 1), n1, prob = c(.60, .40), replace = TRUE), each = n2),
+    x_workout = x_workout
+  ) |>
+  dplyr::group_by(
+    id
+  ) |>
+  dplyr::mutate(
+    x_workout_gpm = mean(x_workout),
+    time_0 = time - 1
+  ) |>
+  dplyr::ungroup() |>
+  dplyr::mutate(
+    y_health = 4 + -.30 * time_0 + .10 * x_workout + .10*x_workout_gpm + .25*x_workout_gpm*time_0  + -.80*x_gender + Z%*%ran_eff + rnorm(n, sd = sqrt(.50)),
+    y_health = round(as.numeric(y_health), 2),
+    y_health = as.numeric(scale(y_health)),
+    y_health = 6 + y_health*sqrt(3),
+    x_workout = as.numeric(x_workout)
+  ) |>
+  dplyr::select(
+    person = id,
+    time,
+    time_0,
+    x_sex = x_gender,
+    x_exr = x_workout,
+    x_exr_gpm = x_workout_gpm,
+    y_health
+  )
+```
+
+```{r}
+#| echo: false
+data_growth
+```
+
+## Modeling Within and Between Individual Growth
+
+Everything we have learned about LMER models applies to the growth modeling context: 
+
+1. Within-person (or within unit) variables are considered level 1 and they will vary within the unit.
+2. Between-unit variables are invariant across time (they don't change!).
+3. You can build cross-level interactions just as we have discussed. 
+
+BUT we can also include **time** as a predictor to capture how people change. 
+
+## Using Time as a Predictor to Model Change
+
+You will usually want to create a time variable that counts up from 0 (first point of measurement) by increments of 1 until the final measurement period. Then this variable can be used as a level 1 predictor.
+
+```{r}
+#| eval: false 
+
+lmerTest::lmer(y_health ~ time_0 + (time_0 | person),
+               data = data_growth)
+```
+
+In the model above, the coefficient associated with `time_0` can be interpreted as the average amount of linear growth (or decay) participants in the study experience. 
+
+
+## Using Time as a Predictor to Model Change
+
+```{r}
+#| echo: false
+summary(lmerTest::lmer(y_health ~ time_0 + (time_0 | person),
+               data = data_growth), corr = FALSE)
+```
+
+## Adding Time Invariant (Level 2) Predictors
+
+We can model between-unit variance with between-unit predictors like the average amount of exercise a person reported doing over the study (`x_exr_gpm`) and the person's sex (`_sex`). 
+
+```{r}
+#| eval: false
+
+lmerTest::lmer(y_health ~ time_0 + x_exr + x_exr_gpm + x_sex + (time_0 | person),
+               data = data_growth)
+```
+
+These predictors are called time invariant because they do not change within an individual (level 2 unit).
+
+## Adding a Cross-Level Interaction
+
+We can also test for cross-level interactions to explain variance in the random slopes. Perhaps the average amount of exercise a person reported interacts with time in a way that increases the amount of positive change experienced by that individual: `time_0 * x_exr_gpm`.
+
+```{r}
+#| echo: false
+
+lmerTest::lmer(y_health ~ time_0 * x_exr_gpm + x_exr + x_sex + (time_0 | person),
+               data = data_growth)
+```
+
+## Building Our Growth Model: Within-Person
+
+```{r}
+#| eval: false
+mod_null <- lmerTest::lmer(y_health ~ 1 + (1 | person), data_growth)
+mod_within <- lmerTest::lmer(y_health ~ time_0 + x_exr + (time_0 + x_exr | person), data_growth)
+mod_within_1 <- lmerTest::lmer(y_health ~ time_0 + x_exr + (time_0 | person), data_growth)
+mod_within_2 <- lmerTest::lmer(y_health ~ time_0 + x_exr + (x_exr | person), data_growth)
+
+anova(mod_null, mod_within)
+anova(mod_within, mod_within_1)
+anova(mod_within, mod_within_2)
+```
+
+## Building Our Growth Model: Between-Person
+
+```{r}
+#| eval: false
+mod_between <- lmerTest::lmer(y_health ~ time_0 * x_exr_gpm + x_sex + (time_0 | person), data_growth)
+
+anova(mod_within_1, mod_between)
+```
+
+## Interpreting our Final Model
+
+1. Interpret the effects of the predictor: Magnitude & Significance.
+2. Examine how much the level 1 and level 2 variance components have changed from the null model.
+3. Examine the correlation between random intercept and slope components
+
+## Interpreting our Final Model
+
+```{r}
+#| echo: false
+
+mod_between <- lmerTest::lmer(y_health ~ time_0 * x_exr_gpm + x_sex + (time_0 | person), data_growth)
+summary(mod_between, corr = FALSE)
+```
+
