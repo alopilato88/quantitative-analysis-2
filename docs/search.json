@@ -1578,8 +1578,8 @@
     "objectID": "lectures/06-lecture-slides.html#overview-for-today",
     "href": "lectures/06-lecture-slides.html#overview-for-today",
     "title": "Clustered Data and the LMER Model",
-    "section": "Overview for Today",
-    "text": "Overview for Today\nToday we will be learning about:\n\nThe effects clustered designs can have on your statistical models\nThe Linear Mixed-Effects Regression (LMER) Model"
+    "section": "",
+    "text": "Today we will be learning about:\n\nThe effects clustered designs can have on your statistical models\nThe Linear Mixed-Effects Regression (LMER) Model"
   },
   {
     "objectID": "lectures/06-lecture-slides.html#what-are-clustered-designs",
@@ -1789,7 +1789,7 @@
     "href": "lectures/06-lecture-slides.html#partitioning-variance-into-within-and-between-clusters-1",
     "title": "Clustered Data and the LMER Model",
     "section": "Partitioning Variance into Within and Between-Clusters",
-    "text": "Partitioning Variance into Within and Between-Clusters\nThe plot below shows the individual outcome scores by cluster (blue points), the cluster means for each cluster (red points), and the grand (or overall) mean (the blue line)."
+    "text": "Partitioning Variance into Within and Between-Clusters\nThe plot below shows the individual outcome scores by cluster (blue points), the cluster means for each cluster (red points), and the grand (or overall) mean (the blue line).\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
   },
   {
     "objectID": "lectures/06-lecture-slides.html#quantifying-non-independence-with-the-icc",
@@ -2273,5 +2273,33 @@
     "title": "Advanced Uses of LMER Models",
     "section": "Interpreting our Final Model",
     "text": "Interpreting our Final Model\n\n\nLinear mixed model fit by REML. t-tests use Satterthwaite's method [\nlmerModLmerTest]\nFormula: y_health ~ time_0 * x_exr_gpm + x_sex + (time_0 | person)\n   Data: data_growth\n\nREML criterion at convergence: 625.3\n\nScaled residuals: \n    Min      1Q  Median      3Q     Max \n-3.2966 -0.6349 -0.0111  0.6395  3.3508 \n\nRandom effects:\n Groups   Name        Variance Std.Dev. Corr \n person   (Intercept) 0.03432  0.1853        \n          time_0      0.01924  0.1387   -0.23\n Residual             0.04345  0.2084        \nNumber of obs: 3200, groups:  person, 200\n\nFixed effects:\n                  Estimate Std. Error        df t value Pr(&gt;|t|)    \n(Intercept)        4.57453    0.05556 198.90947  82.337  &lt; 2e-16 ***\ntime_0            -0.17578    0.03597 197.99637  -4.886 2.12e-06 ***\nx_exr_gpm          0.06146    0.01362 197.17936   4.514 1.09e-05 ***\nx_sex             -0.27418    0.02818 220.74592  -9.730  &lt; 2e-16 ***\ntime_0:x_exr_gpm   0.09123    0.00901 197.99617  10.126  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "lectures/07-lecture-page.html",
+    "href": "lectures/07-lecture-page.html",
+    "title": "Quantitative Analysis 2",
+    "section": "",
+    "text": "Next Week’s Materials »"
+  },
+  {
+    "objectID": "lectures/07-lecture-page.html#lecture-advanced-uses-of-lmer-models",
+    "href": "lectures/07-lecture-page.html#lecture-advanced-uses-of-lmer-models",
+    "title": "Quantitative Analysis 2",
+    "section": "Lecture: Advanced Uses of LMER Models",
+    "text": "Lecture: Advanced Uses of LMER Models\n\n\nTo download a pdf version of these slides, click here.\nAssignment 6"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html",
+    "href": "lectures/06-lecture-slides.html",
+    "title": "Clustered Data and the LMER Model",
+    "section": "",
+    "text": "Today we will be learning about:\n\nThe effects clustered designs can have on your statistical models\nThe Linear Mixed-Effects Regression (LMER) Model"
+  },
+  {
+    "objectID": "lectures/06-lecture-slides.html#visualizing-the-conditional-random-intercept-model",
+    "href": "lectures/06-lecture-slides.html#visualizing-the-conditional-random-intercept-model",
+    "title": "Clustered Data and the LMER Model",
+    "section": "Visualizing the Conditional Random-Intercept Model",
+    "text": "Visualizing the Conditional Random-Intercept Model"
   }
 ]

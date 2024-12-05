@@ -1,0 +1,195 @@
+---
+title: "Assignment 6: LMER Models"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Setup 
+
+Load the following packages: `tibble`, `dplyr`, `tidyr`, `ggplot2`, and `lmerTest`.
+
+```{r}
+
+```
+
+Run the following code to create your multilevel dataset.
+
+```{r}
+set.seed(4234)
+
+# Generate groups
+n1 <- 15 # Max level 1 sample size
+n2 <- 200 # Max level 2 sample size 
+miss_prop <- .20
+miss_vector <- sample(0:1, n1*n2, replace = TRUE, prob = c(miss_prop, 1 - miss_prop))
+
+id_vector <- rep(1:n2, each = n1)
+id_vector <- dplyr::if_else(miss_vector == 0, NA, id_vector)
+id_vector <- na.omit(id_vector) |> as.numeric()
+
+n <- length(id_vector) # Total sample size
+n2 <- length(unique(id_vector))
+
+# Create random intercept design matrix 
+Z_int <- model.matrix(~as.factor(id_vector) - 1)
+
+# Generate predictors
+x_inc_lead <- 5 + rnorm(n, sd = 1) + Z_int%*%t(t(rnorm(n2, sd = sqrt(.25))))
+x_learn_ort <- 4 + rnorm(n)
+
+# Generate random slope and intercept effects
+ran_int <- rnorm(n2, sd = 1)
+ran_slope <- .2*ran_int + rnorm(n2, sd = sqrt(1 - var(.2*ran_int)))
+
+ran_int <- sqrt(.50)*ran_int
+ran_slope <- sqrt(.25)*ran_slope
+
+ran_effect <- matrix(c(ran_int, ran_slope), ncol = 1)
+
+# Create dataset and generate outcome
+data_lmer <- 
+  tibble::tibble(
+    team_id = id_vector, 
+    x_inc_lead = as.numeric(x_inc_lead),
+    x_learn_ort
+  ) |>
+  dplyr::group_by(
+    team_id
+  ) |>
+  dplyr::mutate(
+    x_inc_lead_gpm = mean(x_inc_lead),
+    team_size = dplyr::n(),
+    x_learn_ort_gpm = mean(x_learn_ort)
+  ) |>
+  dplyr::ungroup() |>
+  dplyr::mutate(
+    x_learn_ort_gpc = x_learn_ort - x_learn_ort_gpm,
+    x_inc_lead = round(x_inc_lead, 2),
+    x_learn_ort_gpc = round(x_learn_ort_gpc, 2)
+  )
+
+# Create random slope design matrix 
+Z_slope <- data_lmer$x_learn_ort_gpc * Z_int
+
+Z <- cbind(Z_int, Z_slope)
+
+data_lmer <- 
+  data_lmer |>
+  dplyr::mutate(
+    y_psych_safe = 5 + .25*x_inc_lead + .50*x_inc_lead_gpm + .20*x_learn_ort_gpc + -.20*team_size + rnorm(n, sd = sqrt(.75)) + Z%*%ran_effect,
+    y_psych_safe = round(as.numeric(y_psych_safe), 2),
+  ) |>
+  dplyr::select(
+    team_id,
+    x_inc_lead,
+    x_learn_ort,
+    team_size,
+    y_psych_safe
+  )
+```
+
+The code chunk above created the data frame: `data_lmer`. This data frame includes the following variables: 
+
+- `team_id`: An identifier that tells you what team the employee belongs to
+- `x_inc_lead`: Employee's perception of their leader's inclusive behaviors. Higher values indicate the employee perceives their leader as behaving inclusively. 
+- `x_learn_ort`: Employee's self-rated learning orientation. Higher values indicate that the employee is more learning oriented. 
+- `y_psych_safe`: Employee's perceptions of their psychological safety in their team. Higher values indicate they employee feels more psychological safety. 
+
+The overall objective of this assignment is to build and compare several LMER models in order to determine the one that best fits your data. 
+
+The following hypotheses will help guide your model building: 
+
+1. Within a team, an employee's perception of their leader's inclusive behaviors is positively related to their perceptions of psychological safety. 
+2. The between-team effect of perceptions of a leader's inclusive behaviors on team psychological safety is stronger than the within-team effect. 
+3. Within a team, an employee's learning orientation is positively related to the perceptions of psychological safety. 
+
+Additionally, you have the following research question:
+
+1. Does team size impact a team's average psychological safety? 
+
+## Problem 1. 
+
+Using the data frame `data_lmer`, fit a null LMER model (a random intercept model with no predictors) using `y_psych_safe` as the outcome and `team_id` as the group identifier. 
+
+Name the model: `mod_null`. 
+
+```{r}
+
+```
+
+## Problem 2. 
+
+Using the results from `mod_null`, calculate the intraclass correlation coefficient (ICC), which is the proportion of between-team variance in psychological safety divided by the total variance of psychological safety. 
+
+Provide an interpretation of the ICC below the code chunk. 
+
+```{r}
+
+```
+
+### Write interpretation below here
+
+## Problem 3. 
+
+Build several within-team LMER models. That is, include all of the within-team effects. Because you are interested only in the within-team effects of `x_learn_ort` be sure to **group mean center** this variable and name the new variable: `x_learn_ort_gpc`. 
+
+Each model you build should include all of the level 1 predictors of interest. Try building one model where both `x_inc_lead` and `x_learn_ort_gpc` have random slopes. Then build two additional models, one where only `x_inc_lead` has a random slope and one where only `x_learn_ort_gpc` has a random slope. 
+
+Name your models: 
+
+- `mod_within_1`: First model you fit with two random slopes.
+- `mod_within_2a`: Second model you fit with random slope for `x_inc_lead`.
+- `mod_within_2b`: Third model you fit with random slope for `x_learn_ort_gpc`. 
+
+```{r}
+
+```
+
+## Problem 5. 
+
+Use the `anova` function to determine which within-team model best fits your data. 
+
+You will want to make the following comparisons 
+
+1. `mod_null` vs `mod_within_1` 
+2. `mod_within_1` vs `mod_within_2a`
+3. `mod_within_1` vs `mod_within_2b`
+
+```{r}
+
+```
+
+## Problem 6.
+
+Using the model you choose in `Problem 5.`, build several between-team portion of your model. 
+
+1. `mod_between_1a`: Include `team_size` and `x_inc_lead_gpm`.
+2. `mod_between_1b`: Include only `team_size`.
+3. `mod_between_1c`: Include only `x_inc_lead_gpm`.
+
+You will have to create the variable `x_inc_lead_gpm`, which is the team mean of `x_inc_lead`.
+
+Then use the `anova` function to determine which model best fits your data:
+
+1. `mod_between_1a` vs `mod_between_1b`
+2. `mod_between_1a` vs `mod_between_1c`
+
+Remember choose the least complicated model that still fits your data as well as more complicated models (complicated means more predictors).
+
+```{r}
+
+```
+
+## Problem 7. 
+
+Using your final model, interpret the model output and determine which of your hypotheses were supported. Make sure to note why the hypothesis was supported and what the model is telling you about the hypothesized effect. 
+
+Additionally, provide an answer to your research question.
+
+```{r}
+
+```
+
+### Write interpreation here
+
+
