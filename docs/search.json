@@ -1578,8 +1578,8 @@
     "objectID": "lectures/06-lecture-slides.html#overview-for-today",
     "href": "lectures/06-lecture-slides.html#overview-for-today",
     "title": "Clustered Data and the LMER Model",
-    "section": "",
-    "text": "Today we will be learning about:\n\nThe effects clustered designs can have on your statistical models\nThe Linear Mixed-Effects Regression (LMER) Model"
+    "section": "Overview for Today",
+    "text": "Overview for Today\nToday we will be learning about:\n\nThe effects clustered designs can have on your statistical models\nThe Linear Mixed-Effects Regression (LMER) Model"
   },
   {
     "objectID": "lectures/06-lecture-slides.html#what-are-clustered-designs",
@@ -1789,7 +1789,7 @@
     "href": "lectures/06-lecture-slides.html#partitioning-variance-into-within-and-between-clusters-1",
     "title": "Clustered Data and the LMER Model",
     "section": "Partitioning Variance into Within and Between-Clusters",
-    "text": "Partitioning Variance into Within and Between-Clusters\nThe plot below shows the individual outcome scores by cluster (blue points), the cluster means for each cluster (red points), and the grand (or overall) mean (the blue line).\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
+    "text": "Partitioning Variance into Within and Between-Clusters\nThe plot below shows the individual outcome scores by cluster (blue points), the cluster means for each cluster (red points), and the grand (or overall) mean (the blue line)."
   },
   {
     "objectID": "lectures/06-lecture-slides.html#quantifying-non-independence-with-the-icc",
