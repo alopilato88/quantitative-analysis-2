@@ -736,7 +736,7 @@ These predictors are called time invariant because they do not change within an 
 We can also test for cross-level interactions to explain variance in the random slopes. Perhaps the average amount of exercise a person reported interacts with time in a way that increases the amount of positive change experienced by that individual: `time_0 * x_exr_gpm`.
 
 ```{r}
-#| echo: false
+#| eval: false
 
 lmerTest::lmer(y_health ~ time_0 * x_exr_gpm + x_exr + x_sex + (time_0 | person),
                data = data_growth)

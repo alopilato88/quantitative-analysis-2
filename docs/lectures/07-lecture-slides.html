@@ -851,23 +851,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <h2>Adding a Cross-Level Interaction</h2>
 <p>We can also test for cross-level interactions to explain variance in the random slopes. Perhaps the average amount of exercise a person reported interacts with time in a way that increases the amount of positive change experienced by that individual: <code>time_0 * x_exr_gpm</code>.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>Linear mixed model fit by REML ['lmerModLmerTest']
-Formula: y_health ~ time_0 * x_exr_gpm + x_exr + x_sex + (time_0 | person)
-   Data: data_growth
-REML criterion at convergence: 612.3679
-Random effects:
- Groups   Name        Std.Dev. Corr 
- person   (Intercept) 0.1861        
-          time_0      0.1388   -0.23
- Residual             0.2076        
-Number of obs: 3200, groups:  person, 200
-Fixed Effects:
-     (Intercept)            time_0         x_exr_gpm             x_exr  
-         4.57482          -0.17581           0.03592           0.02557  
-           x_sex  time_0:x_exr_gpm  
-        -0.27424           0.09123  </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>lmerTest<span class="sc">::</span><span class="fu">lmer</span>(y_health <span class="sc">~</span> time_0 <span class="sc">*</span> x_exr_gpm <span class="sc">+</span> x_exr <span class="sc">+</span> x_sex <span class="sc">+</span> (time_0 <span class="sc">|</span> person),</span>
+<span id="cb18-2"><a></a>               <span class="at">data =</span> data_growth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="building-our-growth-model-within-person" class="slide level2">

@@ -2244,7 +2244,7 @@
     "href": "lectures/07-lecture-slides.html#adding-a-cross-level-interaction",
     "title": "Advanced Uses of LMER Models",
     "section": "Adding a Cross-Level Interaction",
-    "text": "Adding a Cross-Level Interaction\nWe can also test for cross-level interactions to explain variance in the random slopes. Perhaps the average amount of exercise a person reported interacts with time in a way that increases the amount of positive change experienced by that individual: time_0 * x_exr_gpm.\n\n\nLinear mixed model fit by REML ['lmerModLmerTest']\nFormula: y_health ~ time_0 * x_exr_gpm + x_exr + x_sex + (time_0 | person)\n   Data: data_growth\nREML criterion at convergence: 612.3679\nRandom effects:\n Groups   Name        Std.Dev. Corr \n person   (Intercept) 0.1861        \n          time_0      0.1388   -0.23\n Residual             0.2076        \nNumber of obs: 3200, groups:  person, 200\nFixed Effects:\n     (Intercept)            time_0         x_exr_gpm             x_exr  \n         4.57482          -0.17581           0.03592           0.02557  \n           x_sex  time_0:x_exr_gpm  \n        -0.27424           0.09123"
+    "text": "Adding a Cross-Level Interaction\nWe can also test for cross-level interactions to explain variance in the random slopes. Perhaps the average amount of exercise a person reported interacts with time in a way that increases the amount of positive change experienced by that individual: time_0 * x_exr_gpm.\n\nlmerTest::lmer(y_health ~ time_0 * x_exr_gpm + x_exr + x_sex + (time_0 | person),\n               data = data_growth)"
   },
   {
     "objectID": "lectures/07-lecture-slides.html#building-our-growth-model-within-person",
