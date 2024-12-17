@@ -1,0 +1,276 @@
+---
+title: "Assignment 4: Logistic Regression"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Setup 
+
+Load the following packages: `readr`, `tibble`, `dplyr`, `tidyr`, `ggplot2`, and `mfx`.
+
+## Problem 1. 
+
+Download `data_politics.csv` from OneDrive and save it in your RProject folder. Read your data into R using the `readr` package and name the data frame `data_politics`. 
+
+```{r}
+# Write your code here
+```
+
+
+## Problem 2. 
+
+A big part of data analysis is exploring your data and getting comfortable with your variables. You will always want to look at the distributions of your variables, their descriptive statistics like mean and standard deviation, and the proportion of missing responses. 
+
+Run the code in the code chunk below to determine the propotion of missing data for each column and for each respondent.
+
+```{r}
+# Write a function that takes an input, x, and returns the propotion of NA values (missing values).
+prop_missing <- function(x) round(mean(is.na(x)), 2)
+
+# The apply function applys a function---in this case prop_missing---and "applies" it to either all 
+# the columns of a data frame (MARGIN = 2) or all rows (MARGIN = 1).
+missing_variable <- 
+  tibble::tibble(
+    name_var = names(data_politics),
+    prop_missing = apply(data_politics, MARGIN = 2, prop_missing)
+  )
+
+missing_respondents <- 
+  tibble::tibble(
+    respondent_id = 1:nrow(data_politics),
+    prop_missing = apply(data_politics, MARGIN = 1, prop_missing)
+  )
+```
+
+## Problem 3. 
+
+Calculate the mean, median, min, and max of missingness in your `missing_variable` data frame using the `summarize` function. Then create a histogram to get a visual summary of the amount of missingness in your dataset. 
+
+```{r}
+# Finish the code below
+missing_variable |>
+  dplyr::summarize(
+    mean = 
+    median = 
+    max =
+    min =
+  )
+
+ggplot2::ggplot(
+  missing_variable,
+  ggplot2::aes(
+    x = prop_missing
+  )
+) + 
+```
+
+## Problem 4.
+
+Repeat the analyses you conducted in `Problem 3`, but use `missing_respondents` instead of `missing_variable`. 
+
+```{r}
+# Type code here
+```
+
+## Problem 5.
+
+Using the information you learned in problems 3 and 4, decide if you should drop any variables or respondents from your data frame. A good rule of thumb is that if a variable is missing 70% or more of its values, then you should not use it in your analyses and if a respondent is missing 70% or more of their data, then you should drop that respondent in your analyses. 
+
+Create a new column named `USE` in your data frame, `data_politics`. This new column will equal 1 when the respondent should be used in your analyses (e.g. if they have less 80% missing) and 0 when they should not be used.  
+
+```{r}
+# Finish code below
+
+data_politics <- 
+  data_politics |>
+  dplyr::bind_cols(
+    
+  ) |>
+  dplyr::mutate(
+    
+  )
+```
+
+## Problem 6. 
+
+Are there any variables in your data frame that you decided not to include in further analyses? Which ones and why? 
+
+### Write Response Below Here
+
+## Problem 7. 
+
+Create a data frame named `data_analysis` that contains only the following variables: 
+
+`Q222_VOTE_NATIONAL`, `Q262_AGE`, `Q287_SES`, `Q288_INCOME`, `Q216_ENCOURAGE_VOTE`, `Q252_SAT_POL_SYSTEM`, `Q260_SEX`, and `USE`.
+
+Filter out any respondents with `USE` values equal to 0. 
+
+Also be sure to pull up the World Values Survey codebook on OneDrive and read the question text and response options for each of the above variables. 
+
+```{r}
+# Write code below -- hint use the select function to select specific variables
+```
+
+## Problem 8.
+
+Which variables do you think are categorical and which do you think are quantitative? Why? 
+
+### Write Response Below Here
+
+## Problem 9. 
+
+Calculate descriptive statistics for each variable in your data frame (except for `USE`). For quantitative variables, look at the mean and standard deviation. For categorical variables, look at the proportion of responses that fall into each of the different response options (e.g X% of respondents responded "Have Done" to `Q216_ENCOURAGE_VOTE`).  
+
+Create plots to visualize the distribution of each variable as well. Use `geom_histogram` for quantitative variables and `geom_bar` for categorical variables. 
+
+```{r}
+# Finish the code
+desc_stat <- 
+  data_analysis |>
+  dplyr::summarize(
+    PROP_Q222_YES = mean(Q222_VOTE_NATIONAL == "Yes", na.rm = TRUE),
+    PROP_Q222_NO = mean(Q222_VOTE_NATIONAL == "No", na.rm = TRUE),
+    PROP_Q216_Have = 
+    PROP_Q216_Might = 
+    PROP_Q216_Never = 
+    PROP_Q260_M =
+    PROP_Q260_F = 
+    MEAN_Q262 = 
+    SD_Q262 = 
+    MEAN_Q287 = 
+    SD_Q287 = 
+    MEAN_Q288 = 
+    SD_Q288 = 
+    MEAN_Q252 = 
+    SD_Q252 = 
+  )
+
+View(desc_stat)
+```
+
+```{r}
+# Write plot code here
+
+# Code to use for categorical variables
+ggplot2::ggplot(
+  data_analysis, 
+  ggplot2::aes(x = Q222_VOTE_NATIONAL)
+) + 
+  ggplot2::geom_bar(fill = "lightblue", color = "black") +
+  ggplot2::theme_minimal()
+
+# Code to use for quantitative variables
+ggplot2::ggplot(
+  data_analysis, 
+  ggplot2::aes(x = )
+) + 
+  ggplot2::geom_histogram(fill = "lightblue", color = "black") +
+  ggplot2::theme_minimal()
+
+```
+
+## Problem 10. 
+
+We are going to use `Q222_VOTE_NATIONAL` as our outcome variable. Using the remaining predictor variables, create a bivariate plot for each predictor variable that shows the propotion of voters by different levels of the predictor variables. This gives us an understanding of whether or not voting behavior changes across different levels of each predictor. 
+
+```{r}
+# Example code to use for the plots
+data_analysis |>
+  dplyr::summarize(
+    prop_vote = mean(Q222_VOTE_NATIONAL == "Yes", na.rm = TRUE),
+    .by = Q262_AGE
+  ) |>
+  ggplot2::ggplot(
+    ggplot2::aes(
+      y = prop_vote, 
+      x = Q262_AGE
+    )
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity",
+    color = "black",
+    fill = "lightblue"
+  ) + 
+  ggplot2::theme_minimal()
+```
+
+## Problem 11. 
+
+Because `Q262_AGE` is on a scale that is very different from any of the other variables (its standard deviation is roughly 8 times greater compared to second largest standard deviation---see `desc_stat`), we are going to use the `scale` function to create a new age variable in our data frame named `AGE_STD` which will be the standardized version of `Q262_AGE`. 
+
+```{r}
+# Finish code below
+
+data_analysis <- 
+  data_analysis |>
+  dplyr::mutate(
+    
+  )
+```
+
+
+## Problem 12. 
+
+Fit a simple logistic regression model with `Q222_VOTE_NATIONAL` as the outcome and `AGE_STD` as the predictor. Name the model: `mod_age`.
+
+```{r}
+# Write code here
+```
+
+## Problem 13. 
+
+Using the results of your model above, provide an interpretation of the effect of `AGE_STD` on `Q222_VOTE_NATIONAL`. Be sure to note if the effect is significant and provide an interpretation of the coefficient by transforming it into an odds ratio.
+
+```{r}
+# Code to calculate odds ratio
+exp(summary(mod_age$coef[, 1]))
+```
+
+### Write reponse below here
+
+## Problem 14. 
+
+Use the function `predict` to calculate the model predicted probabilities of voting based on age. Use `geom_point` from `ggplot2` to create a plot that shows how the predicted probability of voting changes as age changes. 
+
+Provide an interpretation of the plot. 
+
+```{r}
+# Finsh code below to add predicted probabilities to a new data frame
+data_predict <- 
+  data_analysis |>
+  dplyr::select(
+    AGE_STD
+  )
+
+data_predict <- 
+  data_predict |>
+  dplyr::mutate(
+    pred_prob = predict(  , data_predict, type = "response")
+  )
+
+```
+
+## Problem 15. 
+
+Fit a simple logistic regression model with `Q222_VOTE_NATIONAL` as the outcome and `Q216_ENCOURAGE_VOTE` as the predictor. Name the model: `mod_encourage`.
+
+```{r}
+# Write code here
+```
+
+## Problem 16. 
+
+Using the results of your model above, provide an interpretation of the effect of `Q216_ENCOURAGE_VOTE` on `Q222_VOTE_NATIONAL`. Be sure to note if the effect is significant and provide an interpretation of the coefficients. Hint: `Q216_ENCOURAGE_VOTE` is a categorical variable, so the regression slopes are comparisons to the reference group. 
+
+### Write reponse below here
+
+## Problem 17. 
+
+Use the function `predict` to calculate the model predicted probabilities of voting based on `Q216_ENCOURAGE_VOTE`. Use `geom_point` from `ggplot2` to create a plot that shows how the predicted probability of voting changes as age changes. 
+
+Provide an interpretation of the plot. 
+
+```{r}
+# Write code here
+
+```

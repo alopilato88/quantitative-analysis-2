@@ -9,7 +9,7 @@ The Fall 2024 assignment schedule for Quantiative Analysis 2. Use the links belo
 <table class="table-assignment">
 <thead>
   <tr>
-    <th class="tassign-date">Due Date</th>
+    <th class="tassign-date">Number</th>
     <th class="tassign-topic">Topic</th>
     <th class="tassign-content">Assignment</th>
     <th class="tassign-content">Answers</th>
@@ -17,33 +17,39 @@ The Fall 2024 assignment schedule for Quantiative Analysis 2. Use the links belo
 </thead>
 <tbody>
   <tr>
-    <td class="tassign-date">9/10</td>
+    <td class="tassign-date">1</td>
     <td class="tassign-topic">Review of Statistical Concepts</td>
     <td class="tassign-content"><a href="assignments/assignment_template_1.qmd" download target="_blank" rel="noopener noreferrer"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="tassign-content"><a href="assignments/01-assignment-answers.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
   <tr>
-    <td class="tassign-date">10/01</td>
-    <td class="tassign-topic">Simple & Multiple Logistic Regression</td>
-    <td class="tassign-content"><a href="assignments/02-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="tassign-date">2</td>
+    <td class="tassign-topic">Fun with R</td>
+    <td class="tassign-content"><a href="assignments/assignment_template_2a.qmd"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="tassign-content"><a href="assignments/02-assignment-answers.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
     <tr>
-    <td class="tassign-date">10/22</td>
-    <td class="tassign-topic">Advanced Logistic Regression</td>
-    <td class="tassign-content"><a href="assignments/03-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="tassign-date">3</td>
+    <td class="tassign-topic">Categorical Data Analysis</td>
+    <td class="tassign-content"><a href="assignments/assignment_template_3.qmd"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="tassign-content"><a href="assignments/03-assignment-answers.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
     <tr>
-    <td class="tassign-date">11/05</td>
-    <td class="tassign-topic">Multicategorical Outcome Models</td>
-    <td class="tassign-content"><a href="assignments/04-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="tassign-date">4</td>
+    <td class="tassign-topic">Logistic Regression Models</td>
+    <td class="tassign-content"><a href="assignments/assignment_template_4.qmd"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="tassign-content"><a href="assignments/04-assignment-answers.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
     <tr>
-    <td class="tassign-date">11/19</td>
+    <td class="tassign-date">5</td>
     <td class="tassign-topic">Linear Mixed-Effects Regression Models</td>
-    <td class="tassign-content"><a href="assignments/05-assignment-page.html"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="tassign-content"><a href="assignments/assignment_template_5.qmd"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
+    <td class="tassign-content"><a href="assignments/05-assignment-answers.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
+  </tr>
+    <tr>
+    <td class="tassign-date">6</td>
+    <td class="tassign-topic">Linear Mixed-Effects Regression Models</td>
+    <td class="tassign-content"><a href="assignments/assignment_template_6.qmd"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="tassign-content"><a href="assignments/05-assignment-answers.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
 </tbody>
