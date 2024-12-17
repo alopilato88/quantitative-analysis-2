@@ -42,7 +42,7 @@ The Fall 2024 assignment schedule for Quantiative Analysis 2. Use the links belo
   </tr>
     <tr>
     <td class="tassign-date">5</td>
-    <td class="tassign-topic">Linear Mixed-Effects Regression Models</td>
+    <td class="tassign-topic">More Logistic Regression</td>
     <td class="tassign-content"><a href="assignments/assignment_template_5.qmd"><img src="assets/assignment-icon-1.png" width="50" height="54"></a></td>
     <td class="tassign-content"><a href="assignments/05-assignment-answers.html"><img src="assets/lecture-icon-1.png" width="50" height="54"></a></td>
   </tr>
